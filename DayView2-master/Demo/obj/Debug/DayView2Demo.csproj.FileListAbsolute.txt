@@ -1,0 +1,12 @@
+E:\ScheduleProject\scheduleCT1\DayView2-master\Demo\obj\Debug\DayView2Demo.csprojResolveAssemblyReference.cache
+E:\ScheduleProject\scheduleCT1\DayView2-master\Demo\obj\Debug\DayView2Demo.frmDayViewDemo.resources
+E:\ScheduleProject\scheduleCT1\DayView2-master\Demo\obj\Debug\DayView2Demo.Properties.Resources.resources
+E:\ScheduleProject\scheduleCT1\DayView2-master\Demo\obj\Debug\DayView2Demo.csproj.GenerateResource.Cache
+E:\ScheduleProject\scheduleCT1\DayView2-master\Demo\obj\Debug\DayView2Demo.csproj.CoreCompileInputs.cache
+E:\ScheduleProject\scheduleCT1\DayView2-master\Demo\bin\Debug\DayView2Demo.exe.config
+E:\ScheduleProject\scheduleCT1\DayView2-master\Demo\bin\Debug\DayView2Demo.exe
+E:\ScheduleProject\scheduleCT1\DayView2-master\Demo\bin\Debug\DayView2Demo.pdb
+E:\ScheduleProject\scheduleCT1\DayView2-master\Demo\bin\Debug\Calendar.DayView.dll
+E:\ScheduleProject\scheduleCT1\DayView2-master\Demo\bin\Debug\Calendar.DayView.pdb
+E:\ScheduleProject\scheduleCT1\DayView2-master\Demo\obj\Debug\DayView2Demo.exe
+E:\ScheduleProject\scheduleCT1\DayView2-master\Demo\obj\Debug\DayView2Demo.pdb

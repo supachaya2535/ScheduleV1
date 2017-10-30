@@ -1,0 +1,6 @@
+E:\ScheduleProject\scheduleCT1\DayView2-master\Dayview\obj\Debug\DayView.csprojResolveAssemblyReference.cache
+E:\ScheduleProject\scheduleCT1\DayView2-master\Builds\Debug\Calendar.DayView.dll
+E:\ScheduleProject\scheduleCT1\DayView2-master\Builds\Debug\Calendar.DayView.pdb
+E:\ScheduleProject\scheduleCT1\DayView2-master\Dayview\obj\Debug\DayView.csproj.CoreCompileInputs.cache
+E:\ScheduleProject\scheduleCT1\DayView2-master\Dayview\obj\Debug\Calendar.DayView.dll
+E:\ScheduleProject\scheduleCT1\DayView2-master\Dayview\obj\Debug\Calendar.DayView.pdb
