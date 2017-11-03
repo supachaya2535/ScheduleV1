@@ -22,3 +22,6 @@ E:\GitHub\ScheduleV1\scheduleCT1\obj\Debug\scheduleCT1.csproj.GenerateResource.C
 E:\GitHub\ScheduleV1\scheduleCT1\obj\Debug\scheduleCT1.csproj.CoreCompileInputs.cache
 E:\GitHub\ScheduleV1\scheduleCT1\obj\Debug\scheduleCT1.exe
 E:\GitHub\ScheduleV1\scheduleCT1\obj\Debug\scheduleCT1.pdb
+E:\GitHub\ScheduleV1\scheduleCT1\obj\Debug\scheduleCT1.AddAppmForm.resources
+E:\GitHub\ScheduleV1\scheduleCT1\bin\Debug\AppointmentDatabase.mdf
+E:\GitHub\ScheduleV1\scheduleCT1\bin\Debug\AppointmentDatabase_log.ldf

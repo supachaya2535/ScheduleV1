@@ -10,3 +10,9 @@ E:\ScheduleProject\scheduleCT1\Dayview\obj\Debug\DayView.csprojResolveAssemblyRe
 E:\ScheduleProject\scheduleCT1\Dayview\obj\Debug\DayView.csproj.CoreCompileInputs.cache
 E:\ScheduleProject\scheduleCT1\Dayview\obj\Debug\Calendar.DayView.dll
 E:\ScheduleProject\scheduleCT1\Dayview\obj\Debug\Calendar.DayView.pdb
+E:\GitHub\ScheduleV1\Builds\Debug\Calendar.DayView.dll
+E:\GitHub\ScheduleV1\Builds\Debug\Calendar.DayView.pdb
+E:\GitHub\ScheduleV1\Dayview\obj\Debug\DayView.csprojResolveAssemblyReference.cache
+E:\GitHub\ScheduleV1\Dayview\obj\Debug\DayView.csproj.CoreCompileInputs.cache
+E:\GitHub\ScheduleV1\Dayview\obj\Debug\Calendar.DayView.dll
+E:\GitHub\ScheduleV1\Dayview\obj\Debug\Calendar.DayView.pdb
