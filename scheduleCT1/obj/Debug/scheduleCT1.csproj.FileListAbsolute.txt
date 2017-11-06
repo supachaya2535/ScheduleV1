@@ -25,3 +25,17 @@ E:\GitHub\ScheduleV1\scheduleCT1\obj\Debug\scheduleCT1.pdb
 E:\GitHub\ScheduleV1\scheduleCT1\obj\Debug\scheduleCT1.AddAppmForm.resources
 E:\GitHub\ScheduleV1\scheduleCT1\bin\Debug\AppointmentDatabase.mdf
 E:\GitHub\ScheduleV1\scheduleCT1\bin\Debug\AppointmentDatabase_log.ldf
+C:\Users\PanPC\Documents\GitHub\ScheduleV1\scheduleCT1\bin\Debug\AppointmentDatabase.mdf
+C:\Users\PanPC\Documents\GitHub\ScheduleV1\scheduleCT1\bin\Debug\AppointmentDatabase_log.ldf
+C:\Users\PanPC\Documents\GitHub\ScheduleV1\scheduleCT1\bin\Debug\scheduleCT1.exe.config
+C:\Users\PanPC\Documents\GitHub\ScheduleV1\scheduleCT1\bin\Debug\scheduleCT1.exe
+C:\Users\PanPC\Documents\GitHub\ScheduleV1\scheduleCT1\bin\Debug\scheduleCT1.pdb
+C:\Users\PanPC\Documents\GitHub\ScheduleV1\scheduleCT1\bin\Debug\Calendar.DayView.dll
+C:\Users\PanPC\Documents\GitHub\ScheduleV1\scheduleCT1\bin\Debug\Calendar.DayView.pdb
+C:\Users\PanPC\Documents\GitHub\ScheduleV1\scheduleCT1\obj\Debug\scheduleCT1.csprojResolveAssemblyReference.cache
+C:\Users\PanPC\Documents\GitHub\ScheduleV1\scheduleCT1\obj\Debug\scheduleCT1.AddAppmForm.resources
+C:\Users\PanPC\Documents\GitHub\ScheduleV1\scheduleCT1\obj\Debug\scheduleCT1.MainForm.resources
+C:\Users\PanPC\Documents\GitHub\ScheduleV1\scheduleCT1\obj\Debug\scheduleCT1.Properties.Resources.resources
+C:\Users\PanPC\Documents\GitHub\ScheduleV1\scheduleCT1\obj\Debug\scheduleCT1.csproj.GenerateResource.Cache
+C:\Users\PanPC\Documents\GitHub\ScheduleV1\scheduleCT1\obj\Debug\scheduleCT1.exe
+C:\Users\PanPC\Documents\GitHub\ScheduleV1\scheduleCT1\obj\Debug\scheduleCT1.pdb
