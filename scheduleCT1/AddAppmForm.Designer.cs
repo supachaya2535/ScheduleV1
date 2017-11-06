@@ -86,24 +86,22 @@
             this.helpSeachBtn = new System.Windows.Forms.Button();
             this.label16 = new System.Windows.Forms.Label();
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
-            this.appointmentsBindingSource = new System.Windows.Forms.BindingSource(this.components);
-            this.appointmentDatabaseDataSet = new scheduleCT1.AppointmentDatabaseDataSet();
-            this.appointmentsBindingSource1 = new System.Windows.Forms.BindingSource(this.components);
-            this.appointmentsTableAdapter = new scheduleCT1.AppointmentDatabaseDataSetTableAdapters.AppointmentsTableAdapter();
             this.apmIdDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.apmdateDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.apmscannerDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.apmpatientDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.apmorganDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.apmdoctorDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.appointmentDatabaseDataSet = new scheduleCT1.AppointmentDatabaseDataSet();
+            this.appointmentsBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.appointmentsTableAdapter = new scheduleCT1.AppointmentDatabaseDataSetTableAdapters.AppointmentsTableAdapter();
             this.groupBox1.SuspendLayout();
             this.groupBox2.SuspendLayout();
             this.groupBox3.SuspendLayout();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.appointmentsBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.appointmentDatabaseDataSet)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.appointmentsBindingSource1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.appointmentsBindingSource)).BeginInit();
             this.SuspendLayout();
             // 
             // ApmSaveBtn
@@ -737,30 +735,11 @@
             this.apmpatientDataGridViewTextBoxColumn,
             this.apmorganDataGridViewTextBoxColumn,
             this.apmdoctorDataGridViewTextBoxColumn});
-            this.dataGridView1.DataSource = this.appointmentsBindingSource1;
+            this.dataGridView1.DataSource = this.appointmentsBindingSource;
             this.dataGridView1.Location = new System.Drawing.Point(12, 401);
             this.dataGridView1.Name = "dataGridView1";
             this.dataGridView1.Size = new System.Drawing.Size(653, 145);
             this.dataGridView1.TabIndex = 28;
-            // 
-            // appointmentsBindingSource
-            // 
-            this.appointmentsBindingSource.DataMember = "Appointments";
-            this.appointmentsBindingSource.DataSource = this.appointmentDatabaseDataSet;
-            // 
-            // appointmentDatabaseDataSet
-            // 
-            this.appointmentDatabaseDataSet.DataSetName = "AppointmentDatabaseDataSet";
-            this.appointmentDatabaseDataSet.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
-            // 
-            // appointmentsBindingSource1
-            // 
-            this.appointmentsBindingSource1.DataMember = "Appointments";
-            this.appointmentsBindingSource1.DataSource = this.appointmentDatabaseDataSet;
-            // 
-            // appointmentsTableAdapter
-            // 
-            this.appointmentsTableAdapter.ClearBeforeFill = true;
             // 
             // apmIdDataGridViewTextBoxColumn
             // 
@@ -799,6 +778,20 @@
             this.apmdoctorDataGridViewTextBoxColumn.HeaderText = "Apm_doctor";
             this.apmdoctorDataGridViewTextBoxColumn.Name = "apmdoctorDataGridViewTextBoxColumn";
             // 
+            // appointmentDatabaseDataSet
+            // 
+            this.appointmentDatabaseDataSet.DataSetName = "AppointmentDatabaseDataSet";
+            this.appointmentDatabaseDataSet.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
+            // 
+            // appointmentsBindingSource
+            // 
+            this.appointmentsBindingSource.DataMember = "Appointments";
+            this.appointmentsBindingSource.DataSource = this.appointmentDatabaseDataSet;
+            // 
+            // appointmentsTableAdapter
+            // 
+            this.appointmentsTableAdapter.ClearBeforeFill = true;
+            // 
             // AddAppmForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -826,9 +819,8 @@
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.appointmentsBindingSource)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.appointmentDatabaseDataSet)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.appointmentsBindingSource1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.appointmentsBindingSource)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -896,7 +888,6 @@
         private System.Windows.Forms.DateTimePicker dateTimePicker2;
         private System.Windows.Forms.DateTimePicker dateTimePicker1;
         private System.Windows.Forms.DateTimePicker dateApm;
-        private System.Windows.Forms.BindingSource appointmentsBindingSource1;
         private AppointmentDatabaseDataSetTableAdapters.AppointmentsTableAdapter appointmentsTableAdapter;
         private System.Windows.Forms.DataGridViewTextBoxColumn apmIdDataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn apmdateDataGridViewTextBoxColumn;

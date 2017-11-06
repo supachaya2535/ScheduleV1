@@ -38,8 +38,6 @@ namespace scheduleCT1 {
         
         private ScannersDataTable tableScanners;
         
-        private global::System.Data.DataRelation relationFK_Partiens_Appointments;
-        
         private global::System.Data.DataRelation relationFK_ScaningDurations_Scanners;
         
         private global::System.Data.SchemaSerializationMode _schemaSerializationMode = global::System.Data.SchemaSerializationMode.IncludeSchema;
@@ -342,7 +340,6 @@ namespace scheduleCT1 {
                     this.tableScanners.InitVars();
                 }
             }
-            this.relationFK_Partiens_Appointments = this.Relations["FK_Partiens_Appointments"];
             this.relationFK_ScaningDurations_Scanners = this.Relations["FK_ScaningDurations_Scanners"];
         }
         
@@ -368,10 +365,6 @@ namespace scheduleCT1 {
             base.Tables.Add(this.tableScaningSchedules);
             this.tableScanners = new ScannersDataTable();
             base.Tables.Add(this.tableScanners);
-            this.relationFK_Partiens_Appointments = new global::System.Data.DataRelation("FK_Partiens_Appointments", new global::System.Data.DataColumn[] {
-                        this.tablePatients.patient_IdColumn}, new global::System.Data.DataColumn[] {
-                        this.tableAppointments.Apm_patientColumn}, false);
-            this.Relations.Add(this.relationFK_Partiens_Appointments);
             this.relationFK_ScaningDurations_Scanners = new global::System.Data.DataRelation("FK_ScaningDurations_Scanners", new global::System.Data.DataColumn[] {
                         this.tableScanners.scan_IdColumn}, new global::System.Data.DataColumn[] {
                         this.tableScaningDurations.ts_scanColumn}, false);
@@ -633,18 +626,15 @@ namespace scheduleCT1 {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
-            public AppointmentsRow AddAppointmentsRow(System.DateTime Apm_date, int Apm_scanner, PatientsRow parentPatientsRowByFK_Partiens_Appointments, int Apm_organ, int Apm_doctor) {
+            public AppointmentsRow AddAppointmentsRow(System.DateTime Apm_date, int Apm_scanner, string Apm_patient, int Apm_organ, int Apm_doctor) {
                 AppointmentsRow rowAppointmentsRow = ((AppointmentsRow)(this.NewRow()));
                 object[] columnValuesArray = new object[] {
                         null,
                         Apm_date,
                         Apm_scanner,
-                        null,
+                        Apm_patient,
                         Apm_organ,
                         Apm_doctor};
-                if ((parentPatientsRowByFK_Partiens_Appointments != null)) {
-                    columnValuesArray[3] = parentPatientsRowByFK_Partiens_Appointments[0];
-                }
                 rowAppointmentsRow.ItemArray = columnValuesArray;
                 this.Rows.Add(rowAppointmentsRow);
                 return rowAppointmentsRow;
@@ -2803,17 +2793,6 @@ namespace scheduleCT1 {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
-            public PatientsRow PatientsRow {
-                get {
-                    return ((PatientsRow)(this.GetParentRow(this.Table.ParentRelations["FK_Partiens_Appointments"])));
-                }
-                set {
-                    this.SetParentRow(value, this.Table.ParentRelations["FK_Partiens_Appointments"]);
-                }
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
             public bool IsApm_dateNull() {
                 return this.IsNull(this.tableAppointments.Apm_dateColumn);
             }
@@ -3284,17 +3263,6 @@ namespace scheduleCT1 {
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
             public void Setpatient_statusNull() {
                 this[this.tablePatients.patient_statusColumn] = global::System.Convert.DBNull;
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
-            public AppointmentsRow[] GetAppointmentsRows() {
-                if ((this.Table.ChildRelations["FK_Partiens_Appointments"] == null)) {
-                    return new AppointmentsRow[0];
-                }
-                else {
-                    return ((AppointmentsRow[])(base.GetChildRows(this.Table.ChildRelations["FK_Partiens_Appointments"])));
-                }
             }
         }
         
@@ -6920,15 +6888,6 @@ SELECT ss_Id, ss_scan, ss_organ, ss_doctor, ss_preriod FROM ScaningSchedules WHE
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
         private int UpdateUpdatedRows(AppointmentDatabaseDataSet dataSet, global::System.Collections.Generic.List<global::System.Data.DataRow> allChangedRows, global::System.Collections.Generic.List<global::System.Data.DataRow> allAddedRows) {
             int result = 0;
-            if ((this._patientsTableAdapter != null)) {
-                global::System.Data.DataRow[] updatedRows = dataSet.Patients.Select(null, null, global::System.Data.DataViewRowState.ModifiedCurrent);
-                updatedRows = this.GetRealUpdatedRows(updatedRows, allAddedRows);
-                if (((updatedRows != null) 
-                            && (0 < updatedRows.Length))) {
-                    result = (result + this._patientsTableAdapter.Update(updatedRows));
-                    allChangedRows.AddRange(updatedRows);
-                }
-            }
             if ((this._scannersTableAdapter != null)) {
                 global::System.Data.DataRow[] updatedRows = dataSet.Scanners.Select(null, null, global::System.Data.DataViewRowState.ModifiedCurrent);
                 updatedRows = this.GetRealUpdatedRows(updatedRows, allAddedRows);
@@ -6965,6 +6924,15 @@ SELECT ss_Id, ss_scan, ss_organ, ss_doctor, ss_preriod FROM ScaningSchedules WHE
                     allChangedRows.AddRange(updatedRows);
                 }
             }
+            if ((this._patientsTableAdapter != null)) {
+                global::System.Data.DataRow[] updatedRows = dataSet.Patients.Select(null, null, global::System.Data.DataViewRowState.ModifiedCurrent);
+                updatedRows = this.GetRealUpdatedRows(updatedRows, allAddedRows);
+                if (((updatedRows != null) 
+                            && (0 < updatedRows.Length))) {
+                    result = (result + this._patientsTableAdapter.Update(updatedRows));
+                    allChangedRows.AddRange(updatedRows);
+                }
+            }
             if ((this._scaningDurationsTableAdapter != null)) {
                 global::System.Data.DataRow[] updatedRows = dataSet.ScaningDurations.Select(null, null, global::System.Data.DataViewRowState.ModifiedCurrent);
                 updatedRows = this.GetRealUpdatedRows(updatedRows, allAddedRows);
@@ -6993,14 +6961,6 @@ SELECT ss_Id, ss_scan, ss_organ, ss_doctor, ss_preriod FROM ScaningSchedules WHE
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
         private int UpdateInsertedRows(AppointmentDatabaseDataSet dataSet, global::System.Collections.Generic.List<global::System.Data.DataRow> allAddedRows) {
             int result = 0;
-            if ((this._patientsTableAdapter != null)) {
-                global::System.Data.DataRow[] addedRows = dataSet.Patients.Select(null, null, global::System.Data.DataViewRowState.Added);
-                if (((addedRows != null) 
-                            && (0 < addedRows.Length))) {
-                    result = (result + this._patientsTableAdapter.Update(addedRows));
-                    allAddedRows.AddRange(addedRows);
-                }
-            }
             if ((this._scannersTableAdapter != null)) {
                 global::System.Data.DataRow[] addedRows = dataSet.Scanners.Select(null, null, global::System.Data.DataViewRowState.Added);
                 if (((addedRows != null) 
@@ -7030,6 +6990,14 @@ SELECT ss_Id, ss_scan, ss_organ, ss_doctor, ss_preriod FROM ScaningSchedules WHE
                 if (((addedRows != null) 
                             && (0 < addedRows.Length))) {
                     result = (result + this._organsTableAdapter.Update(addedRows));
+                    allAddedRows.AddRange(addedRows);
+                }
+            }
+            if ((this._patientsTableAdapter != null)) {
+                global::System.Data.DataRow[] addedRows = dataSet.Patients.Select(null, null, global::System.Data.DataViewRowState.Added);
+                if (((addedRows != null) 
+                            && (0 < addedRows.Length))) {
+                    result = (result + this._patientsTableAdapter.Update(addedRows));
                     allAddedRows.AddRange(addedRows);
                 }
             }
@@ -7075,6 +7043,14 @@ SELECT ss_Id, ss_scan, ss_organ, ss_doctor, ss_preriod FROM ScaningSchedules WHE
                     allChangedRows.AddRange(deletedRows);
                 }
             }
+            if ((this._patientsTableAdapter != null)) {
+                global::System.Data.DataRow[] deletedRows = dataSet.Patients.Select(null, null, global::System.Data.DataViewRowState.Deleted);
+                if (((deletedRows != null) 
+                            && (0 < deletedRows.Length))) {
+                    result = (result + this._patientsTableAdapter.Update(deletedRows));
+                    allChangedRows.AddRange(deletedRows);
+                }
+            }
             if ((this._organsTableAdapter != null)) {
                 global::System.Data.DataRow[] deletedRows = dataSet.Organs.Select(null, null, global::System.Data.DataViewRowState.Deleted);
                 if (((deletedRows != null) 
@@ -7104,14 +7080,6 @@ SELECT ss_Id, ss_scan, ss_organ, ss_doctor, ss_preriod FROM ScaningSchedules WHE
                 if (((deletedRows != null) 
                             && (0 < deletedRows.Length))) {
                     result = (result + this._scannersTableAdapter.Update(deletedRows));
-                    allChangedRows.AddRange(deletedRows);
-                }
-            }
-            if ((this._patientsTableAdapter != null)) {
-                global::System.Data.DataRow[] deletedRows = dataSet.Patients.Select(null, null, global::System.Data.DataViewRowState.Deleted);
-                if (((deletedRows != null) 
-                            && (0 < deletedRows.Length))) {
-                    result = (result + this._patientsTableAdapter.Update(deletedRows));
                     allChangedRows.AddRange(deletedRows);
                 }
             }

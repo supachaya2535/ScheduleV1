@@ -30,10 +30,15 @@ namespace scheduleCT1
             SqlConnection cn = new SqlConnection(global::scheduleCT1.Properties.Settings.Default.AppointmentDatabaseConnectionString);
             try
             {
-                string sql = "INSERT INTO Appointments (Apm_date,Apm_scanner,Apm_patient,Apm_organ,Apm_doctor) values('" 
-                    + dateApm.Value + "','"+ txtScan.Text + "','" + txtPatient.Text + "','"
-                    + txtOrgan.Text + "','" + txtDoctor.Text + "')";
+                string sql = "INSERT INTO Appointments (Apm_date,Apm_scanner,Apm_patient,Apm_organ,Apm_doctor) VALUES(@Apm_date,@Apm_scanner,@Apm_patient,@Apm_organ,@Apm_doctor)";
+                   // + dateApm.Value + "','"+ txtScan.Text + "','" + txtPatient.Text + "','"
+                    //+ txtOrgan.Text + "','" + txtDoctor.Text + "')";
                 SqlCommand exeSql = new SqlCommand(sql, cn);
+                exeSql.Parameters.AddWithValue("@Apm_date", dateApm.Value);
+                exeSql.Parameters.AddWithValue("@Apm_scanner", txtScan.Text);
+                exeSql.Parameters.AddWithValue("@Apm_patient", txtPatient.Text);
+                exeSql.Parameters.AddWithValue("@Apm_organ", txtOrgan.Text);
+                exeSql.Parameters.AddWithValue("@Apm_doctor", txtDoctor.Text);
                 cn.Open();
                 exeSql.ExecuteNonQuery();
 
