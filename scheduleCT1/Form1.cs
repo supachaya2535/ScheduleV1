@@ -353,5 +353,12 @@ namespace scheduleCT1
             AddAppmForm addf = new AddAppmForm();
             addf.ShowDialog(); 
         }
+
+       
+
+        private void MainForm_Load(object sender, EventArgs e)
+        {
+            this.WindowState = FormWindowState.Maximized;
+        }
     }
 }
