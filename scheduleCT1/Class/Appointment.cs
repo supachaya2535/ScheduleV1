@@ -15,7 +15,7 @@ public enum typeOfScanners: int
 
 namespace scheduleCT1
 {
-    class Appointments
+    class Appointment
     {
         #region static color
         public static string CT_1 = "#FFDFD991";
@@ -29,7 +29,7 @@ namespace scheduleCT1
         //Use for return appointment
         public Calendar.Appointment getAppointment { get { return appt; }  }
 
-        public Appointments()
+        public Appointment()
         {
             
 
