@@ -29,21 +29,20 @@ namespace scheduleCT1
         {
             _appointments = new List<Calendar.Appointment>();
             InitializeComponent();
-            Console.WriteLine("test");
-            dayView1.ViewType = Calendar.DayView.DayViewType.TeamView;
+      
+            dayView1.ViewType = Calendar.DayView.DayViewType.SingleView;
 
             //select all people
             for (int i = 0; i < lstTypeOfScan.Items.Count; i++)
                 lstTypeOfScan.SetItemChecked(i, true);
 
-            lstTypeOfScan.SelectedIndex = 0;
-
+           
             CreateRandomAppointments();
 
             ForceRefresh();
             UpdateUI();
 
-            
+
         }
         #endregion Constructors
 
@@ -134,7 +133,12 @@ namespace scheduleCT1
             }
 
             Random rnd = new Random();
+<<<<<<< HEAD
 
+=======
+            //Get class manage Appointment
+            Appointment newApp = new Appointment();
+>>>>>>> d37cf9e39861e9834372e35c3ec209f1d3833c6d
             foreach (string person in lstTypeOfScan.Items)
             {
                 for (int i = 2; i < 5; i++) // four each
@@ -149,7 +153,11 @@ namespace scheduleCT1
                         //typeOfScanners randType = (typeOfScanners)Enum.Parse(typeof(typeOfScanners), rnd.Next(0, 4) + "", true);
                         //newApp.CreateAppointment("นายแพทย์จุดๆ", randType, start, ened, String.Format("Test Appointment {0}", i));
 
+<<<<<<< HEAD
                         //_appointments.Add(test(day, rnd, i));
+=======
+
+>>>>>>> d37cf9e39861e9834372e35c3ec209f1d3833c6d
                         //_appointments.Add(newApp.appt);
 
                         Calendar.Appointment appt = new Calendar.Appointment();
