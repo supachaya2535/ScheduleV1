@@ -10,3 +10,15 @@ E:\ScheduleProject\scheduleCT1\DayView2-master\Demo\bin\Debug\Calendar.DayView.d
 E:\ScheduleProject\scheduleCT1\DayView2-master\Demo\bin\Debug\Calendar.DayView.pdb
 E:\ScheduleProject\scheduleCT1\DayView2-master\Demo\obj\Debug\DayView2Demo.exe
 E:\ScheduleProject\scheduleCT1\DayView2-master\Demo\obj\Debug\DayView2Demo.pdb
+C:\Users\PanPC\Documents\GitHub\ScheduleV1\DayView2-master\Demo\bin\Debug\DayView2Demo.exe.config
+C:\Users\PanPC\Documents\GitHub\ScheduleV1\DayView2-master\Demo\bin\Debug\DayView2Demo.exe
+C:\Users\PanPC\Documents\GitHub\ScheduleV1\DayView2-master\Demo\bin\Debug\DayView2Demo.pdb
+C:\Users\PanPC\Documents\GitHub\ScheduleV1\DayView2-master\Demo\bin\Debug\Calendar.DayView.dll
+C:\Users\PanPC\Documents\GitHub\ScheduleV1\DayView2-master\Demo\bin\Debug\Calendar.DayView.pdb
+C:\Users\PanPC\Documents\GitHub\ScheduleV1\DayView2-master\Demo\obj\Debug\DayView2Demo.csprojResolveAssemblyReference.cache
+C:\Users\PanPC\Documents\GitHub\ScheduleV1\DayView2-master\Demo\obj\Debug\DayView2Demo.frmDayViewDemo.resources
+C:\Users\PanPC\Documents\GitHub\ScheduleV1\DayView2-master\Demo\obj\Debug\DayView2Demo.Properties.Resources.resources
+C:\Users\PanPC\Documents\GitHub\ScheduleV1\DayView2-master\Demo\obj\Debug\DayView2Demo.csproj.GenerateResource.Cache
+C:\Users\PanPC\Documents\GitHub\ScheduleV1\DayView2-master\Demo\obj\Debug\DayView2Demo.csproj.CoreCompileInputs.cache
+C:\Users\PanPC\Documents\GitHub\ScheduleV1\DayView2-master\Demo\obj\Debug\DayView2Demo.exe
+C:\Users\PanPC\Documents\GitHub\ScheduleV1\DayView2-master\Demo\obj\Debug\DayView2Demo.pdb

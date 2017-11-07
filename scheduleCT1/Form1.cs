@@ -67,7 +67,7 @@ namespace scheduleCT1
             toolStripButtonDayView.Checked = !toolStripButtonTeamView.Checked;
             dayView1.Focus();
         }
-
+        /*
         private void CreateAppointments()
         {
             //allday appointments
@@ -118,37 +118,56 @@ namespace scheduleCT1
                 _appointments.Add(appt);
             }
         }
+        */
+        public Calendar.Appointment test(int day, Random rnd, int i)
+        {
+            Calendar.Appointment appt = new Calendar.Appointment();
+            appt.Object = "wewewe";
+            appt.Color = Color.BlanchedAlmond;
+            DateTime date2 = DateTime.Now.Date.AddDays(day).AddHours(rnd.Next(10, 17));
+            appt.StartDate = date2;
+            appt.EndDate = date2.AddMinutes(i * 15);
+            appt.Title = String.Format("Test Appointment {0}", i);
+            return appt;
+        }
         private void CreateRandomAppointments()
         {
+            
             //allday appointments
-            for (int i = 0; i < 2; ++i)
-            {
-                Calendar.Appointment appt = new Calendar.Appointment();
-                appt.AllDayEvent = true;
-                appt.Color = Color.BurlyWood;
-                DateTime date = DateTime.Now.Date;
-                appt.StartDate = date;
-                appt.EndDate = date.AddDays(i);
-                appt.Title = String.Format("All Day Appointment {0}", i);
-                _appointments.Add(appt);
-            }
 
             Random rnd = new Random();
-
+            //Get class manage Appointment
+            Appointments newApp = new Appointments();
             foreach (string person in lstTypeOfScan.Items)
             {
                 for (int i = 2; i < 5; i++) // four each
                 {
+                    
                     for (int day = 0; day < 7; ++day) //per day
                     {
-                        Calendar.Appointment appt = new Calendar.Appointment();
-                        appt.Object = person;
-                        appt.Color = Color.BlanchedAlmond; // dont ask me why I chose this color?
-                        DateTime date = DateTime.Now.Date.AddDays(day).AddHours(rnd.Next(10, 17));
-                        appt.StartDate = date;
-                        appt.EndDate = date.AddMinutes(i * 15);
-                        appt.Title = String.Format("Test Appointment {0}", i);
-                        _appointments.Add(appt);
+
+                        //DateTime date = DateTime.Now.Date.AddDays(day).AddHours(rnd.Next(10, 17));
+                        //DateTime start = date;
+                        //DateTime ened = date.AddMinutes(i * 15);
+                        //typeOfScanners randType = (typeOfScanners)Enum.Parse(typeof(typeOfScanners), rnd.Next(0, 4) + "", true);
+                        //newApp.CreateAppointment("นายแพทย์จุดๆ", randType, start, ened, String.Format("Test Appointment {0}", i));
+
+                        _appointments.Add(test(day, rnd, i));
+                        //_appointments.Add(newApp.appt);
+
+                        //Calendar.Appointment appt = new Calendar.Appointment();
+                        //appt.Object = person;
+                        //appt.Color = Color.BlanchedAlmond;
+                        //DateTime date2 = DateTime.Now.Date.AddDays(day).AddHours(rnd.Next(10, 17));
+                        //appt.StartDate = date2;
+                        //appt.EndDate = date2.AddMinutes(i * 15);
+                        //appt.Title = String.Format("Test Appointment {0}", i);
+                        //_appointments.Add(appt);
+
+
+
+
+
                     }
                 }
             }
@@ -158,14 +177,21 @@ namespace scheduleCT1
 
             for (int i = 0; i < _overlappedAppointments.Length; i++)
             {
-                Calendar.Appointment appt = new Calendar.Appointment();
-                appt.Object = firstPerson;
-                appt.Color = Color.BlanchedAlmond; // dont ask me why I chose this color?
+                //Calendar.Appointment appt = new Calendar.Appointment();
+                //appt.Object = firstPerson;
+                //appt.Color = Color.BlanchedAlmond; // dont ask me why I chose this color?
                 DateTime date = DateTime.Now.Date.AddMinutes(_overlappedAppointments[i]);
-                appt.StartDate = date;
-                appt.EndDate = date.AddMinutes(_overlapDurations[i]);
-                appt.Title = String.Format("Overlap {0}", i);
-                _appointments.Add(appt);
+                //appt.StartDate = date;
+                //appt.EndDate = date.AddMinutes(_overlapDurations[i]);
+                //appt.Title = String.Format("Overlap {0}", i);
+
+                typeOfScanners randType = (typeOfScanners)Enum.Parse(typeof(typeOfScanners), rnd.Next(0, 4) + "", true);
+                newApp.CreateAppointment("นายแพทย์จุดๆ"+ firstPerson, randType, date, date.AddMinutes(_overlapDurations[i]), String.Format("Overlap {0}", i));
+
+
+
+
+                _appointments.Add(newApp.getAppointment);
             }
         }
         #endregion Private Methods
@@ -360,5 +386,69 @@ namespace scheduleCT1
         {
             this.WindowState = FormWindowState.Maximized;
         }
+
+        private void dayView1_AppointmentSelected(object sender, Calendar.AppointmentSelectedEventArgs e)
+        {
+            if (e.Selected)
+            {
+                if (e.Appointment != null)
+                    e.Appointment.Color = Color.Aqua;
+            }
+            else
+            {
+                if (e.Appointment != null)
+                    e.Appointment.Color = Color.BlanchedAlmond;
+            }
+        }
+
+        #region Context Menu Strips
+
+        private void contextMenuStripDiary_Opening(object sender, CancelEventArgs e)
+        {
+            editAppointmentToolStripMenuItem.Enabled = dayView1.SelectedAppointment != null;
+            createAppointmentToolStripMenuItem.Enabled = !editAppointmentToolStripMenuItem.Enabled;
+            deleteAppointmentToolStripMenuItem.Enabled = dayView1.SelectedAppointment != null;
+        }
+
+        private void editAppointmentToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            //ShowMessage("Edit Appointment");
+        }
+
+        private void createAppointmentToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            Calendar.Appointment appt = new Calendar.Appointment();
+            appt.ID = _appointments.Count;
+            appt.Title = "New Appointment";
+
+            DateTime date;
+            int column;
+            dayView1.GetColumnFromMousePosition(out column, out date);
+
+            appt.StartDate = dayView1.SelectionStart;
+            appt.EndDate = dayView1.SelectionEnd;
+            appt.Object = lstTypeOfScan.CheckedItems[column];
+            appt.Column = column;
+
+            //Appointment newApp = new Appointment();
+            //newApp.CreateAppointment("test",typeOfScanners.CT_1, dayView1.SelectionStart, dayView1.SelectionEnd,"name Scanner");
+
+
+            _appointments.Add(appt);
+            dayView1.Invalidate();
+        }
+
+        private void deleteAppointmentToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            DialogResult result = MessageBox.Show("Do you want to delete?", "Delete Appointment", MessageBoxButtons.YesNo,MessageBoxIcon.Question);
+
+            if (dayView1.SelectedAppointment != null && result == DialogResult.Yes)
+            {
+                _appointments.Remove(dayView1.SelectedAppointment);
+                ForceRefresh();
+            }
+        }
+
+        #endregion Context Menu Strips
     }
 }
