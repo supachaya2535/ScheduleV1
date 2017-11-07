@@ -1,3 +1,9 @@
 
 .vs/scheduleCT1/v15/Server/sqlite3/db.lock
 *.lock
+.vs/scheduleCT1/v15/.suo
+.vs/scheduleCT1/v15/.suo
+.vs/scheduleCT1/v15/Server/sqlite3/storage.ide
+*.ide-shm
+*.ide
+*.ide-wal
