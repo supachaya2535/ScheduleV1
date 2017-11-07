@@ -28,10 +28,8 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.components = new System.ComponentModel.Container();
-            Calendar.DrawTool drawTool1 = new Calendar.DrawTool();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(MainForm));
-            this.dayView1 = new Calendar.DayView();
+            Calendar.DrawTool drawTool1 = new Calendar.DrawTool();
             this.lstTypeOfScan = new System.Windows.Forms.CheckedListBox();
             this.toolStrip1 = new System.Windows.Forms.ToolStrip();
             this.toolStripDropDownButtonViewType = new System.Windows.Forms.ToolStripDropDownButton();
@@ -51,46 +49,10 @@
             this.ScanSchBtn = new System.Windows.Forms.Button();
             this.monthCalendar2 = new System.Windows.Forms.MonthCalendar();
             this.monthCalendar1 = new System.Windows.Forms.MonthCalendar();
-            this.contextMenuStripDiary = new System.Windows.Forms.ContextMenuStrip(this.components);
-            this.createAppointmentToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.editAppointmentToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.deleteAppointmentToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.dayView1 = new Calendar.DayView();
             this.toolStrip1.SuspendLayout();
             this.groupBox1.SuspendLayout();
-            this.contextMenuStripDiary.SuspendLayout();
             this.SuspendLayout();
-            // 
-            // dayView1
-            // 
-            drawTool1.DayView = this.dayView1;
-            this.dayView1.ActiveTool = drawTool1;
-            this.dayView1.AlwaysShowAppointmentText = true;
-            this.dayView1.AmPmDisplay = false;
-            this.dayView1.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.dayView1.ContextMenuAllDay = null;
-            this.dayView1.ContextMenuDiary = this.contextMenuStripDiary;
-            this.dayView1.ContextMenuHeader = null;
-            this.dayView1.DrawAllAppointmentBorders = false;
-            this.dayView1.Font = new System.Drawing.Font("Segoe UI", 8F);
-            this.dayView1.Location = new System.Drawing.Point(645, 54);
-            this.dayView1.Name = "dayView1";
-            this.dayView1.SelectedAppointment = null;
-            this.dayView1.SelectionEnd = new System.DateTime(((long)(0)));
-            this.dayView1.SelectionStart = new System.DateTime(((long)(0)));
-            this.dayView1.ShowMinutes = true;
-            this.dayView1.Size = new System.Drawing.Size(780, 811);
-            this.dayView1.StartDate = new System.DateTime(((long)(0)));
-            this.dayView1.TabIndex = 12;
-            this.dayView1.Text = "dayView2";
-            this.dayView1.AppointmentSelected += new Calendar.AppointmentSelectedEventHandler(this.dayView1_AppointmentSelected);
-            this.dayView1.ResolveAppointments += new Calendar.ResolveAppointmentsEventHandler(this.dayView1_ResolveAppointments);
-            this.dayView1.BeforeAppointmentMove += new Calendar.BeforeMoveAppointmentEventHandler(this.dayView1_BeforeAppointmentMove);
-            this.dayView1.MultiCount += new Calendar.MultiCountEventHandler(this.dayView1_MultiCount);
-            this.dayView1.MultiHeader += new Calendar.MultiGetEventHandler(this.dayView1_MultiHeader);
-            this.dayView1.ToolTipShow += new Calendar.TooltipEventHandler(this.dayView1_ToolTipShow);
-            this.dayView1.WorkingHours += new Calendar.WorkingHoursEventHandler(this.dayView1_WorkingHours);
             // 
             // lstTypeOfScan
             // 
@@ -302,37 +264,36 @@
             this.monthCalendar1.TabIndex = 11;
             this.monthCalendar1.DateChanged += new System.Windows.Forms.DateRangeEventHandler(this.monthCalendar1_DateChanged);
             // 
-            // contextMenuStripDiary
+            // dayView1
             // 
-            this.contextMenuStripDiary.ImageScalingSize = new System.Drawing.Size(32, 32);
-            this.contextMenuStripDiary.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.createAppointmentToolStripMenuItem,
-            this.editAppointmentToolStripMenuItem,
-            this.deleteAppointmentToolStripMenuItem});
-            this.contextMenuStripDiary.Name = "contextMenuStripDiary";
-            this.contextMenuStripDiary.Size = new System.Drawing.Size(309, 112);
-            this.contextMenuStripDiary.Opening += new System.ComponentModel.CancelEventHandler(this.contextMenuStripDiary_Opening);
-            // 
-            // createAppointmentToolStripMenuItem
-            // 
-            this.createAppointmentToolStripMenuItem.Name = "createAppointmentToolStripMenuItem";
-            this.createAppointmentToolStripMenuItem.Size = new System.Drawing.Size(308, 36);
-            this.createAppointmentToolStripMenuItem.Text = "Create Appointment";
-            this.createAppointmentToolStripMenuItem.Click += new System.EventHandler(this.createAppointmentToolStripMenuItem_Click);
-            // 
-            // editAppointmentToolStripMenuItem
-            // 
-            this.editAppointmentToolStripMenuItem.Name = "editAppointmentToolStripMenuItem";
-            this.editAppointmentToolStripMenuItem.Size = new System.Drawing.Size(308, 36);
-            this.editAppointmentToolStripMenuItem.Text = "Edit Appointment";
-            this.editAppointmentToolStripMenuItem.Click += new System.EventHandler(this.editAppointmentToolStripMenuItem_Click);
-            // 
-            // deleteAppointmentToolStripMenuItem
-            // 
-            this.deleteAppointmentToolStripMenuItem.Name = "deleteAppointmentToolStripMenuItem";
-            this.deleteAppointmentToolStripMenuItem.Size = new System.Drawing.Size(308, 36);
-            this.deleteAppointmentToolStripMenuItem.Text = "Delete Appointment";
-            this.deleteAppointmentToolStripMenuItem.Click += new System.EventHandler(this.deleteAppointmentToolStripMenuItem_Click);
+            drawTool1.DayView = this.dayView1;
+            this.dayView1.ActiveTool = drawTool1;
+            this.dayView1.AlwaysShowAppointmentText = true;
+            this.dayView1.AmPmDisplay = false;
+            this.dayView1.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.dayView1.ContextMenuAllDay = null;
+            this.dayView1.ContextMenuDiary = null;
+            this.dayView1.ContextMenuHeader = null;
+            this.dayView1.DrawAllAppointmentBorders = false;
+            this.dayView1.Font = new System.Drawing.Font("Segoe UI", 8F);
+            this.dayView1.Location = new System.Drawing.Point(645, 54);
+            this.dayView1.Name = "dayView1";
+            this.dayView1.SelectedAppointment = null;
+            this.dayView1.SelectionEnd = new System.DateTime(((long)(0)));
+            this.dayView1.SelectionStart = new System.DateTime(((long)(0)));
+            this.dayView1.ShowMinutes = true;
+            this.dayView1.Size = new System.Drawing.Size(780, 811);
+            this.dayView1.StartDate = new System.DateTime(((long)(0)));
+            this.dayView1.TabIndex = 12;
+            this.dayView1.Text = "dayView2";
+            this.dayView1.ResolveAppointments += new Calendar.ResolveAppointmentsEventHandler(this.dayView1_ResolveAppointments);
+            this.dayView1.BeforeAppointmentMove += new Calendar.BeforeMoveAppointmentEventHandler(this.dayView1_BeforeAppointmentMove);
+            this.dayView1.MultiCount += new Calendar.MultiCountEventHandler(this.dayView1_MultiCount);
+            this.dayView1.MultiHeader += new Calendar.MultiGetEventHandler(this.dayView1_MultiHeader);
+            this.dayView1.ToolTipShow += new Calendar.TooltipEventHandler(this.dayView1_ToolTipShow);
+            this.dayView1.WorkingHours += new Calendar.WorkingHoursEventHandler(this.dayView1_WorkingHours);
             // 
             // MainForm
             // 
@@ -357,7 +318,6 @@
             this.toolStrip1.PerformLayout();
             this.groupBox1.ResumeLayout(false);
             this.groupBox1.PerformLayout();
-            this.contextMenuStripDiary.ResumeLayout(false);
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -384,10 +344,6 @@
         private System.Windows.Forms.MonthCalendar monthCalendar2;
         private System.Windows.Forms.MonthCalendar monthCalendar1;
         private Calendar.DayView dayView1;
-        private System.Windows.Forms.ContextMenuStrip contextMenuStripDiary;
-        private System.Windows.Forms.ToolStripMenuItem createAppointmentToolStripMenuItem;
-        private System.Windows.Forms.ToolStripMenuItem editAppointmentToolStripMenuItem;
-        private System.Windows.Forms.ToolStripMenuItem deleteAppointmentToolStripMenuItem;
     }
 }
 
