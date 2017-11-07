@@ -152,17 +152,17 @@ namespace scheduleCT1
                         //typeOfScanners randType = (typeOfScanners)Enum.Parse(typeof(typeOfScanners), rnd.Next(0, 4) + "", true);
                         //newApp.CreateAppointment("นายแพทย์จุดๆ", randType, start, ened, String.Format("Test Appointment {0}", i));
 
-                        _appointments.Add(test(day, rnd, i));
+                        //_appointments.Add(test(day, rnd, i));
                         //_appointments.Add(newApp.appt);
 
-                        //Calendar.Appointment appt = new Calendar.Appointment();
-                        //appt.Object = person;
-                        //appt.Color = Color.BlanchedAlmond;
-                        //DateTime date2 = DateTime.Now.Date.AddDays(day).AddHours(rnd.Next(10, 17));
-                        //appt.StartDate = date2;
-                        //appt.EndDate = date2.AddMinutes(i * 15);
-                        //appt.Title = String.Format("Test Appointment {0}", i);
-                        //_appointments.Add(appt);
+                        Calendar.Appointment appt = new Calendar.Appointment();
+                        appt.Object = person;
+                        appt.Color = Color.BlanchedAlmond;
+                        DateTime date2 = DateTime.Now.Date.AddDays(day).AddHours(rnd.Next(10, 17));
+                        appt.StartDate = date2;
+                        appt.EndDate = date2.AddMinutes(i * 15);
+                        appt.Title = String.Format("Test Appointment {0}", i);
+                        _appointments.Add(appt);
 
 
 
