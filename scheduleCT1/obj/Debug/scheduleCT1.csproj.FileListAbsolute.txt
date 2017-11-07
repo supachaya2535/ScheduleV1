@@ -37,5 +37,6 @@ C:\Users\PanPC\Documents\GitHub\ScheduleV1\scheduleCT1\obj\Debug\scheduleCT1.Add
 C:\Users\PanPC\Documents\GitHub\ScheduleV1\scheduleCT1\obj\Debug\scheduleCT1.MainForm.resources
 C:\Users\PanPC\Documents\GitHub\ScheduleV1\scheduleCT1\obj\Debug\scheduleCT1.Properties.Resources.resources
 C:\Users\PanPC\Documents\GitHub\ScheduleV1\scheduleCT1\obj\Debug\scheduleCT1.csproj.GenerateResource.Cache
+C:\Users\PanPC\Documents\GitHub\ScheduleV1\scheduleCT1\obj\Debug\scheduleCT1.csproj.CoreCompileInputs.cache
 C:\Users\PanPC\Documents\GitHub\ScheduleV1\scheduleCT1\obj\Debug\scheduleCT1.exe
 C:\Users\PanPC\Documents\GitHub\ScheduleV1\scheduleCT1\obj\Debug\scheduleCT1.pdb

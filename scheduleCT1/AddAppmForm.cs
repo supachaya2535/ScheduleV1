@@ -20,6 +20,7 @@ namespace scheduleCT1
 
         private void AddAppmForm_Load(object sender, EventArgs e)
         {
+            this.FormBorderStyle = FormBorderStyle.FixedSingle;
             // TODO: This line of code loads data into the 'appointmentDatabaseDataSet.Appointments' table. You can move, or remove it, as needed.
             this.appointmentsTableAdapter.Fill(this.appointmentDatabaseDataSet.Appointments);
 

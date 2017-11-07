@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            this.components = new System.ComponentModel.Container();
             Calendar.DrawTool drawTool1 = new Calendar.DrawTool();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(MainForm));
             this.dayView1 = new Calendar.DayView();
@@ -50,8 +51,13 @@
             this.ScanSchBtn = new System.Windows.Forms.Button();
             this.monthCalendar2 = new System.Windows.Forms.MonthCalendar();
             this.monthCalendar1 = new System.Windows.Forms.MonthCalendar();
+            this.contextMenuStripDiary = new System.Windows.Forms.ContextMenuStrip(this.components);
+            this.createAppointmentToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.editAppointmentToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.deleteAppointmentToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.toolStrip1.SuspendLayout();
             this.groupBox1.SuspendLayout();
+            this.contextMenuStripDiary.SuspendLayout();
             this.SuspendLayout();
             // 
             // dayView1
@@ -64,21 +70,21 @@
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.dayView1.ContextMenuAllDay = null;
-            this.dayView1.ContextMenuDiary = null;
+            this.dayView1.ContextMenuDiary = this.contextMenuStripDiary;
             this.dayView1.ContextMenuHeader = null;
             this.dayView1.DrawAllAppointmentBorders = false;
             this.dayView1.Font = new System.Drawing.Font("Segoe UI", 8F);
-            this.dayView1.Location = new System.Drawing.Point(630, 45);
-            this.dayView1.Margin = new System.Windows.Forms.Padding(6, 6, 6, 6);
+            this.dayView1.Location = new System.Drawing.Point(645, 54);
             this.dayView1.Name = "dayView1";
             this.dayView1.SelectedAppointment = null;
             this.dayView1.SelectionEnd = new System.DateTime(((long)(0)));
             this.dayView1.SelectionStart = new System.DateTime(((long)(0)));
             this.dayView1.ShowMinutes = true;
-            this.dayView1.Size = new System.Drawing.Size(579, 818);
+            this.dayView1.Size = new System.Drawing.Size(780, 811);
             this.dayView1.StartDate = new System.DateTime(((long)(0)));
-            this.dayView1.TabIndex = 2;
-            this.dayView1.Text = "dayView1";
+            this.dayView1.TabIndex = 12;
+            this.dayView1.Text = "dayView2";
+            this.dayView1.AppointmentSelected += new Calendar.AppointmentSelectedEventHandler(this.dayView1_AppointmentSelected);
             this.dayView1.ResolveAppointments += new Calendar.ResolveAppointmentsEventHandler(this.dayView1_ResolveAppointments);
             this.dayView1.BeforeAppointmentMove += new Calendar.BeforeMoveAppointmentEventHandler(this.dayView1_BeforeAppointmentMove);
             this.dayView1.MultiCount += new Calendar.MultiCountEventHandler(this.dayView1_MultiCount);
@@ -95,7 +101,7 @@
             "MRI",
             "Ultrasound"});
             this.lstTypeOfScan.Location = new System.Drawing.Point(164, 867);
-            this.lstTypeOfScan.Margin = new System.Windows.Forms.Padding(6, 6, 6, 6);
+            this.lstTypeOfScan.Margin = new System.Windows.Forms.Padding(6);
             this.lstTypeOfScan.Name = "lstTypeOfScan";
             this.lstTypeOfScan.Size = new System.Drawing.Size(222, 186);
             this.lstTypeOfScan.TabIndex = 3;
@@ -111,7 +117,7 @@
             this.toolStrip1.Location = new System.Drawing.Point(0, 0);
             this.toolStrip1.Name = "toolStrip1";
             this.toolStrip1.Padding = new System.Windows.Forms.Padding(0, 0, 2, 0);
-            this.toolStrip1.Size = new System.Drawing.Size(1272, 39);
+            this.toolStrip1.Size = new System.Drawing.Size(1894, 39);
             this.toolStrip1.TabIndex = 4;
             this.toolStrip1.Text = "toolStrip1";
             // 
@@ -166,7 +172,7 @@
             this.ApmAddBtn.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
             this.ApmAddBtn.Font = new System.Drawing.Font("Cambria", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.ApmAddBtn.Location = new System.Drawing.Point(8, 54);
-            this.ApmAddBtn.Margin = new System.Windows.Forms.Padding(6, 6, 6, 6);
+            this.ApmAddBtn.Margin = new System.Windows.Forms.Padding(6);
             this.ApmAddBtn.Name = "ApmAddBtn";
             this.ApmAddBtn.Size = new System.Drawing.Size(152, 117);
             this.ApmAddBtn.TabIndex = 5;
@@ -178,7 +184,7 @@
             // 
             this.checkedListBox1.FormattingEnabled = true;
             this.checkedListBox1.Location = new System.Drawing.Point(392, 867);
-            this.checkedListBox1.Margin = new System.Windows.Forms.Padding(6, 6, 6, 6);
+            this.checkedListBox1.Margin = new System.Windows.Forms.Padding(6);
             this.checkedListBox1.Name = "checkedListBox1";
             this.checkedListBox1.Size = new System.Drawing.Size(222, 186);
             this.checkedListBox1.TabIndex = 7;
@@ -193,9 +199,9 @@
             this.groupBox1.Controls.Add(this.noonCheckBox);
             this.groupBox1.Controls.Add(this.morningCheckBox);
             this.groupBox1.Location = new System.Drawing.Point(164, 54);
-            this.groupBox1.Margin = new System.Windows.Forms.Padding(6, 6, 6, 6);
+            this.groupBox1.Margin = new System.Windows.Forms.Padding(6);
             this.groupBox1.Name = "groupBox1";
-            this.groupBox1.Padding = new System.Windows.Forms.Padding(6, 6, 6, 6);
+            this.groupBox1.Padding = new System.Windows.Forms.Padding(6);
             this.groupBox1.Size = new System.Drawing.Size(454, 183);
             this.groupBox1.TabIndex = 8;
             this.groupBox1.TabStop = false;
@@ -239,7 +245,7 @@
             this.specialCheckBox.AutoSize = true;
             this.specialCheckBox.FlatStyle = System.Windows.Forms.FlatStyle.System;
             this.specialCheckBox.Location = new System.Drawing.Point(12, 133);
-            this.specialCheckBox.Margin = new System.Windows.Forms.Padding(6, 6, 6, 6);
+            this.specialCheckBox.Margin = new System.Windows.Forms.Padding(6);
             this.specialCheckBox.Name = "specialCheckBox";
             this.specialCheckBox.Size = new System.Drawing.Size(149, 30);
             this.specialCheckBox.TabIndex = 2;
@@ -251,7 +257,7 @@
             this.noonCheckBox.AutoSize = true;
             this.noonCheckBox.FlatStyle = System.Windows.Forms.FlatStyle.System;
             this.noonCheckBox.Location = new System.Drawing.Point(12, 87);
-            this.noonCheckBox.Margin = new System.Windows.Forms.Padding(6, 6, 6, 6);
+            this.noonCheckBox.Margin = new System.Windows.Forms.Padding(6);
             this.noonCheckBox.Name = "noonCheckBox";
             this.noonCheckBox.Size = new System.Drawing.Size(136, 30);
             this.noonCheckBox.TabIndex = 1;
@@ -263,7 +269,7 @@
             this.morningCheckBox.AutoSize = true;
             this.morningCheckBox.FlatStyle = System.Windows.Forms.FlatStyle.System;
             this.morningCheckBox.Location = new System.Drawing.Point(12, 40);
-            this.morningCheckBox.Margin = new System.Windows.Forms.Padding(6, 6, 6, 6);
+            this.morningCheckBox.Margin = new System.Windows.Forms.Padding(6);
             this.morningCheckBox.Name = "morningCheckBox";
             this.morningCheckBox.Size = new System.Drawing.Size(131, 30);
             this.morningCheckBox.TabIndex = 0;
@@ -275,7 +281,7 @@
             this.ScanSchBtn.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
             this.ScanSchBtn.Font = new System.Drawing.Font("Cambria", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.ScanSchBtn.Location = new System.Drawing.Point(8, 183);
-            this.ScanSchBtn.Margin = new System.Windows.Forms.Padding(6, 6, 6, 6);
+            this.ScanSchBtn.Margin = new System.Windows.Forms.Padding(6);
             this.ScanSchBtn.Name = "ScanSchBtn";
             this.ScanSchBtn.Size = new System.Drawing.Size(152, 144);
             this.ScanSchBtn.TabIndex = 9;
@@ -284,23 +290,56 @@
             // 
             // monthCalendar2
             // 
-            this.monthCalendar2.Location = new System.Drawing.Point(176, 548);
+            this.monthCalendar2.Location = new System.Drawing.Point(164, 550);
             this.monthCalendar2.Name = "monthCalendar2";
             this.monthCalendar2.TabIndex = 10;
             this.monthCalendar2.DateChanged += new System.Windows.Forms.DateRangeEventHandler(this.monthCalendar2_DateChanged);
             // 
             // monthCalendar1
             // 
-            this.monthCalendar1.Location = new System.Drawing.Point(176, 242);
+            this.monthCalendar1.Location = new System.Drawing.Point(164, 232);
             this.monthCalendar1.Name = "monthCalendar1";
             this.monthCalendar1.TabIndex = 11;
             this.monthCalendar1.DateChanged += new System.Windows.Forms.DateRangeEventHandler(this.monthCalendar1_DateChanged);
+            // 
+            // contextMenuStripDiary
+            // 
+            this.contextMenuStripDiary.ImageScalingSize = new System.Drawing.Size(32, 32);
+            this.contextMenuStripDiary.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.createAppointmentToolStripMenuItem,
+            this.editAppointmentToolStripMenuItem,
+            this.deleteAppointmentToolStripMenuItem});
+            this.contextMenuStripDiary.Name = "contextMenuStripDiary";
+            this.contextMenuStripDiary.Size = new System.Drawing.Size(309, 112);
+            this.contextMenuStripDiary.Opening += new System.ComponentModel.CancelEventHandler(this.contextMenuStripDiary_Opening);
+            // 
+            // createAppointmentToolStripMenuItem
+            // 
+            this.createAppointmentToolStripMenuItem.Name = "createAppointmentToolStripMenuItem";
+            this.createAppointmentToolStripMenuItem.Size = new System.Drawing.Size(308, 36);
+            this.createAppointmentToolStripMenuItem.Text = "Create Appointment";
+            this.createAppointmentToolStripMenuItem.Click += new System.EventHandler(this.createAppointmentToolStripMenuItem_Click);
+            // 
+            // editAppointmentToolStripMenuItem
+            // 
+            this.editAppointmentToolStripMenuItem.Name = "editAppointmentToolStripMenuItem";
+            this.editAppointmentToolStripMenuItem.Size = new System.Drawing.Size(308, 36);
+            this.editAppointmentToolStripMenuItem.Text = "Edit Appointment";
+            this.editAppointmentToolStripMenuItem.Click += new System.EventHandler(this.editAppointmentToolStripMenuItem_Click);
+            // 
+            // deleteAppointmentToolStripMenuItem
+            // 
+            this.deleteAppointmentToolStripMenuItem.Name = "deleteAppointmentToolStripMenuItem";
+            this.deleteAppointmentToolStripMenuItem.Size = new System.Drawing.Size(308, 36);
+            this.deleteAppointmentToolStripMenuItem.Text = "Delete Appointment";
+            this.deleteAppointmentToolStripMenuItem.Click += new System.EventHandler(this.deleteAppointmentToolStripMenuItem_Click);
             // 
             // MainForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(12F, 25F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1272, 1098);
+            this.ClientSize = new System.Drawing.Size(1894, 1155);
+            this.Controls.Add(this.dayView1);
             this.Controls.Add(this.monthCalendar1);
             this.Controls.Add(this.monthCalendar2);
             this.Controls.Add(this.ScanSchBtn);
@@ -309,8 +348,8 @@
             this.Controls.Add(this.ApmAddBtn);
             this.Controls.Add(this.toolStrip1);
             this.Controls.Add(this.lstTypeOfScan);
-            this.Controls.Add(this.dayView1);
-            this.Margin = new System.Windows.Forms.Padding(6, 6, 6, 6);
+            this.Margin = new System.Windows.Forms.Padding(6);
+            this.MinimumSize = new System.Drawing.Size(1920, 1080);
             this.Name = "MainForm";
             this.Text = "ระบบจัดการการนัดหมาย";
             this.Load += new System.EventHandler(this.MainForm_Load);
@@ -318,13 +357,13 @@
             this.toolStrip1.PerformLayout();
             this.groupBox1.ResumeLayout(false);
             this.groupBox1.PerformLayout();
+            this.contextMenuStripDiary.ResumeLayout(false);
             this.ResumeLayout(false);
             this.PerformLayout();
 
         }
 
         #endregion
-        private Calendar.DayView dayView1;
         private System.Windows.Forms.CheckedListBox lstTypeOfScan;
         private System.Windows.Forms.ToolStrip toolStrip1;
         private System.Windows.Forms.ToolStripDropDownButton toolStripDropDownButtonViewType;
@@ -344,6 +383,11 @@
         private System.Windows.Forms.Button ScanSchBtn;
         private System.Windows.Forms.MonthCalendar monthCalendar2;
         private System.Windows.Forms.MonthCalendar monthCalendar1;
+        private Calendar.DayView dayView1;
+        private System.Windows.Forms.ContextMenuStrip contextMenuStripDiary;
+        private System.Windows.Forms.ToolStripMenuItem createAppointmentToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem editAppointmentToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem deleteAppointmentToolStripMenuItem;
     }
 }
 
