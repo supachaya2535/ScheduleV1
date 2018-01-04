@@ -1,0 +1,13 @@
+G:\OneDrive - Chiang Mai University\New folder (2)\AppointmentQueue\AppointmentQueue\bin\Debug\Database1.mdf
+G:\OneDrive - Chiang Mai University\New folder (2)\AppointmentQueue\AppointmentQueue\bin\Debug\Database1_log.ldf
+G:\OneDrive - Chiang Mai University\New folder (2)\AppointmentQueue\AppointmentQueue\bin\Debug\AppointmentQueue.exe.config
+G:\OneDrive - Chiang Mai University\New folder (2)\AppointmentQueue\AppointmentQueue\bin\Debug\AppointmentQueue.exe
+G:\OneDrive - Chiang Mai University\New folder (2)\AppointmentQueue\AppointmentQueue\bin\Debug\AppointmentQueue.pdb
+G:\OneDrive - Chiang Mai University\New folder (2)\AppointmentQueue\AppointmentQueue\obj\Debug\AppointmentQueue.csprojResolveAssemblyReference.cache
+G:\OneDrive - Chiang Mai University\New folder (2)\AppointmentQueue\AppointmentQueue\obj\Debug\AppointmentQueue.Form1.resources
+G:\OneDrive - Chiang Mai University\New folder (2)\AppointmentQueue\AppointmentQueue\obj\Debug\AppointmentQueue.Properties.Resources.resources
+G:\OneDrive - Chiang Mai University\New folder (2)\AppointmentQueue\AppointmentQueue\obj\Debug\AppointmentQueue.csproj.GenerateResource.Cache
+G:\OneDrive - Chiang Mai University\New folder (2)\AppointmentQueue\AppointmentQueue\obj\Debug\AppointmentQueue.csproj.CoreCompileInputs.cache
+G:\OneDrive - Chiang Mai University\New folder (2)\AppointmentQueue\AppointmentQueue\obj\Debug\AppointmentQueue.exe
+G:\OneDrive - Chiang Mai University\New folder (2)\AppointmentQueue\AppointmentQueue\obj\Debug\AppointmentQueue.pdb
+G:\OneDrive - Chiang Mai University\New folder (2)\AppointmentQueue\AppointmentQueue\obj\Debug\AppointmentQueue.seachPaForm.resources
