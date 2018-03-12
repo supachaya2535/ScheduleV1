@@ -8,7 +8,7 @@ using System.Globalization;
 
 namespace AppointmentQueue
 {
-    class Appointment
+    public class Appointment
     {
         public int id;
         public int piority;
@@ -22,6 +22,7 @@ namespace AppointmentQueue
         public int patientinsu;
         public int scan;
         public int scannum;
+
 
         public Appointment(DateTime startT, string HN, string req, string paid, DateTime birthDate, string pstatus, string pinsu, string scan, int scannum, DataTable dt)
         {
@@ -37,45 +38,74 @@ namespace AppointmentQueue
             this.scannum = scannum;
             this.piority = getPiority(dt);
         }
-        public int getScanner(string scan)
+
+        // 6/3/2561 dataset 
+        public Appointment(DateTime startT, string HN, string req, string paid, string pstatus, string pinsu, string scan, int scannum, DataTable dt)
         {
-            int r = 0;
+            this.startT = startT;
+            this.duraT = startT;
+            this.patientHN = HN;
+            this.requestScan = getRequest(req);
+            this.paid = getPaid(paid);
+            //this.birthDate = birthDate;
+            this.patientstatus = getPatientStatus(pstatus);
+            this.patientstatus = getPatientInsu(pinsu);
+            this.scan = getScanner(scan);
+            this.scannum = scannum;
+            this.piority = getPiority(dt);
+        }
+
+        public static int getScanner(string scan)
+        {
+            int r = 1;
             if (scan.StartsWith("MRI") == true)
                 r = 1;
             else if (scan.StartsWith("CT") == true)
-                r = 2;
+                r = 3;
             else if (scan.StartsWith("Ultrasound") == true)
-                r = 3;
-            return r;
-        }
-        public int getRequest(string req)
-        {
-            int r = 1;
-            if (req.StartsWith("Brain") == true)
-                r = 1;
-            else if (req.StartsWith("Spine") == true)
-                r = 2;
-            else if (req.StartsWith("Joint") == true)
-                r = 3;
-            else if (req.StartsWith("Musculoskeletal") == true)
                 r = 4;
-            else if (req.StartsWith("Head&Nesk") == true)
-                r = 5;
-            else if (req.StartsWith("Orbit") == true)
-                r = 6;
-            else if (req.StartsWith("Chest") == true)
-                r = 7;
-            else if (req.StartsWith("Upper Abdomen") == true)
-                r = 8;
-            else if (req.StartsWith("Lower Abdomen&Pelvis") == true)
-                r = 9;
-            else if (req.StartsWith("Cardiovascular") == true)
-                r = 10;
-            else if (req.StartsWith("Heart") == true)
-                r = 11;
             return r;
         }
-        public int getPaid(string paid)
+        public static int getRequest(string req)
+        {
+            int r = 4;
+            if (req.StartsWith("Brain") == true)
+                r = 4;
+            else if (req.StartsWith("Spine") == true)
+                r = 5;
+            else if (req.StartsWith("Joint") == true)
+                r = 6;
+            else if (req.StartsWith("Musculoskeletal") == true)
+                r = 7;
+            else if (req.StartsWith("Head&Nesk") == true)
+                r = 8;
+            else if (req.StartsWith("Orbit") == true)
+                r = 9;
+            else if (req.StartsWith("Chest") == true)
+                r = 10;
+            else if (req.StartsWith("Upper Abdomen") == true)
+                r = 11;
+            else if (req.StartsWith("Lower Abdomen&Pelvis") == true)
+                r = 12;
+            else if (req.StartsWith("Cardiovascular") == true)
+                r = 13;
+            else if (req.StartsWith("Heart") == true)
+                r = 14;
+            else if (req.StartsWith("BrainMRA") == true)
+                r = 15;
+            else if (req.StartsWith("Liver") == true)
+                r = 16;
+            else if (req.StartsWith("Prostable") == true)
+                r = 18;
+            else if (req.StartsWith("MRCP") == true)
+                r = 19;
+            else if (req.StartsWith("Child") == true)
+                r = 20;
+            else if (req.StartsWith("Pelvis") == true)
+                r = 21;
+            return r;
+        }
+        public static int getPaid(string paid)
         {
             int p = 0;
             if (paid.Equals("VIP") == true)
@@ -86,10 +116,10 @@ namespace AppointmentQueue
                 p = 3;
             else if ((paid.Equals("Elective") == true))
                 p = 4;
-            
+
             return p;
         }
-        public int getPatientStatus(string pstat)
+        public static int getPatientStatus(string pstat)
         {
             int ps = 3;
             if (pstat.Equals("Emergency") == true)
@@ -98,15 +128,15 @@ namespace AppointmentQueue
                 ps = 2;
             else if (pstat.Equals("OPD") == true)
                 ps = 3;
-            
+
             return ps;
         }
-        public int getPatientInsu(string pinsu)
+        public static int getPatientInsu(string pinsu)
         {
             int ps = 1;
             if (pinsu.Equals("no") == true)
                 ps = 1;
-            else 
+            else
                 ps = 2;
             return ps;
         }
@@ -115,18 +145,18 @@ namespace AppointmentQueue
             int pio = 1;
             foreach (DataRow row in table.Rows)
             {
-                if(patientstatus==1 && patientstatus < Convert.ToInt32(row.ItemArray[7].ToString()))
+                if (patientstatus == 1 && patientstatus < Convert.ToInt32(row.ItemArray[7].ToString()))
                 {//Patientstatus condition
                     pio = Convert.ToInt32(row.ItemArray[1].ToString());
                     break;
                 }
                 else
-                { 
+                {
                     if (paid > Convert.ToInt32(row.ItemArray[6].ToString()))
                     {//Paid condition
                         pio = Convert.ToInt32(row.ItemArray[1].ToString()) + 1;
                     }
-                    else if(paid == Convert.ToInt32(row.ItemArray[6].ToString()))
+                    else if (paid == Convert.ToInt32(row.ItemArray[6].ToString()))
                     {//
                         if (patientinsu < Convert.ToInt32(row.ItemArray[8].ToString()))
                         {//Insurance condition
@@ -143,9 +173,9 @@ namespace AppointmentQueue
                         pio = Convert.ToInt32(row.ItemArray[1].ToString());
                         break;
                     }
-               }
+                }
             }
-            
+
             return pio;
         }
         private void showTable(DataTable table)
@@ -163,7 +193,8 @@ namespace AppointmentQueue
                     int temp = -1;
                     bool check = int.TryParse(col.ToString(), out temp);
 
-                    if (!check) { 
+                    if (!check)
+                    {
                         Console.Write("{0,-9:dd}\t| ", col);
                     }
                     else
