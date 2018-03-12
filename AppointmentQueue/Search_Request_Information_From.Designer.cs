@@ -29,28 +29,14 @@
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
-            this.dataGridView1 = new System.Windows.Forms.DataGridView();
             this.database1DataSet1 = new AppointmentQueue.Database1DataSet1();
             this.conditionRequestBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.conditionRequestTableAdapter = new AppointmentQueue.Database1DataSet1TableAdapters.ConditionRequestTableAdapter();
-            this.day = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.time = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
+            this.dataGridView1 = new System.Windows.Forms.DataGridView();
             ((System.ComponentModel.ISupportInitialize)(this.database1DataSet1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.conditionRequestBindingSource)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             this.SuspendLayout();
-            // 
-            // dataGridView1
-            // 
-            this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridView1.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
-            this.day,
-            this.time});
-            this.dataGridView1.Location = new System.Drawing.Point(12, 12);
-            this.dataGridView1.Name = "dataGridView1";
-            this.dataGridView1.RowTemplate.Height = 24;
-            this.dataGridView1.Size = new System.Drawing.Size(653, 302);
-            this.dataGridView1.TabIndex = 1;
             // 
             // database1DataSet1
             // 
@@ -66,38 +52,36 @@
             // 
             this.conditionRequestTableAdapter.ClearBeforeFill = true;
             // 
-            // day
+            // dataGridView1
             // 
-            this.day.HeaderText = "day";
-            this.day.Name = "day";
-            // 
-            // time
-            // 
-            this.time.HeaderText = "time";
-            this.time.Name = "time";
+            this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dataGridView1.Location = new System.Drawing.Point(12, 12);
+            this.dataGridView1.Name = "dataGridView1";
+            this.dataGridView1.RowTemplate.Height = 24;
+            this.dataGridView1.Size = new System.Drawing.Size(834, 406);
+            this.dataGridView1.TabIndex = 1;
+            this.dataGridView1.RowHeaderMouseDoubleClick += new System.Windows.Forms.DataGridViewCellMouseEventHandler(this.dataGridView1_RowHeaderMouseDoubleClick);
             // 
             // Search_Request_Information_From
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(667, 317);
+            this.ClientSize = new System.Drawing.Size(858, 430);
             this.Controls.Add(this.dataGridView1);
             this.Name = "Search_Request_Information_From";
             this.Text = "Search_Request_Information_From";
             this.Load += new System.EventHandler(this.Search_Request_Information_From_Load);
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.database1DataSet1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.conditionRequestBindingSource)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
             this.ResumeLayout(false);
 
         }
 
         #endregion
-        private System.Windows.Forms.DataGridView dataGridView1;
         private Database1DataSet1 database1DataSet1;
         private System.Windows.Forms.BindingSource conditionRequestBindingSource;
         private Database1DataSet1TableAdapters.ConditionRequestTableAdapter conditionRequestTableAdapter;
-        private System.Windows.Forms.DataGridViewTextBoxColumn day;
-        private System.Windows.Forms.DataGridViewTextBoxColumn time;
+        private System.Windows.Forms.DataGridView dataGridView1;
     }
 }

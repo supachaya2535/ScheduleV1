@@ -304,9 +304,22 @@ namespace AppointmentQueue
             {
                 Search_Request_Information_From sFrom = new Search_Request_Information_From();
                 //this.todayDatePicker.Value = DateTime.Now;
+                sFrom.SetPickerDatetime(todayDatePicker);
                 sFrom.SetStartTime(this.todayDatePicker.Value);
-                sFrom.SetScanner(Appointment.getScanner(scan_CoBox.Items.ToString()));
+                DataTable req_dat = SQL.GetRequests();
+                int req_id = -99;
+                foreach (DataRow item in req_dat.Rows)
+                {
+                    string str = item["req_bodypart"].ToString().Trim();
+                    if (str == reqCob.Text.Trim())
+                    {
+                        req_id = Convert.ToInt32(item["req_Id"]);
+                        break;
+                    }
+                }
+                //sFrom.SetScanner(Appointment.getScanner(scan_CoBox.Items.ToString()));
                 sFrom.SetRequest(Appointment.getRequest(reqCob.Items.ToString()));
+                sFrom.SetRequest(req_id);
                 sFrom.ShowDialog();
             }
             else
