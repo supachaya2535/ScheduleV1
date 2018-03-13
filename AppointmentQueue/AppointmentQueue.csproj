@@ -98,6 +98,11 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>Database1DataSet1.xsd</DependentUpon>
     </Compile>
+    <Compile Include="Database1DataSet13032561.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Database1DataSet13032561.xsd</DependentUpon>
+    </Compile>
     <Compile Include="Form1.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -119,6 +124,12 @@
       <DependentUpon>Search_Request_Information_From.cs</DependentUpon>
     </Compile>
     <Compile Include="SQL.cs" />
+    <Compile Include="UpdateRequestsForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="UpdateRequestsForm.Designer.cs">
+      <DependentUpon>UpdateRequestsForm.cs</DependentUpon>
+    </Compile>
     <EmbeddedResource Include="Form1.resx">
       <DependentUpon>Form1.cs</DependentUpon>
     </EmbeddedResource>
@@ -136,6 +147,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Search_Request_Information_From.resx">
       <DependentUpon>Search_Request_Information_From.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UpdateRequestsForm.resx">
+      <DependentUpon>UpdateRequestsForm.cs</DependentUpon>
     </EmbeddedResource>
     <None Include="Database1DataSet.xsc">
       <DependentUpon>Database1DataSet.xsd</DependentUpon>
@@ -159,6 +173,17 @@
     <None Include="Database1DataSet1.xss">
       <DependentUpon>Database1DataSet1.xsd</DependentUpon>
     </None>
+    <None Include="Database1DataSet13032561.xsc">
+      <DependentUpon>Database1DataSet13032561.xsd</DependentUpon>
+    </None>
+    <None Include="Database1DataSet13032561.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>Database1DataSet13032561.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Database1DataSet13032561.xss">
+      <DependentUpon>Database1DataSet13032561.xsd</DependentUpon>
+    </None>
     <None Include="packages.config" />
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
@@ -178,8 +203,8 @@
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
     <Content Include="Database1_log.ldf">
-      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
       <DependentUpon>Database1.mdf</DependentUpon>
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
   </ItemGroup>
   <ItemGroup>

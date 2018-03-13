@@ -335,7 +335,8 @@ namespace AppointmentQueue
 
         private void edit_requests_btn_Click(object sender, EventArgs e)
         {
-
+            UpdateRequestsForm uform = new UpdateRequestsForm();
+            uform.ShowDialog();
         }
     }
 }

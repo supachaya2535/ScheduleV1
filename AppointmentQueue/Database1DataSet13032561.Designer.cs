@@ -20,9 +20,9 @@ namespace AppointmentQueue {
     [global::System.ComponentModel.DesignerCategoryAttribute("code")]
     [global::System.ComponentModel.ToolboxItem(true)]
     [global::System.Xml.Serialization.XmlSchemaProviderAttribute("GetTypedDataSetSchema")]
-    [global::System.Xml.Serialization.XmlRootAttribute("Database1DataSet1")]
+    [global::System.Xml.Serialization.XmlRootAttribute("Database1DataSet13032561")]
     [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.DataSet")]
-    public partial class Database1DataSet1 : global::System.Data.DataSet {
+    public partial class Database1DataSet13032561 : global::System.Data.DataSet {
         
         private AppointmentsDataTable tableAppointments;
         
@@ -42,7 +42,7 @@ namespace AppointmentQueue {
         
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
-        public Database1DataSet1() {
+        public Database1DataSet13032561() {
             this.BeginInit();
             this.InitClass();
             global::System.ComponentModel.CollectionChangeEventHandler schemaChangedHandler = new global::System.ComponentModel.CollectionChangeEventHandler(this.SchemaChanged);
@@ -53,7 +53,7 @@ namespace AppointmentQueue {
         
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
-        protected Database1DataSet1(global::System.Runtime.Serialization.SerializationInfo info, global::System.Runtime.Serialization.StreamingContext context) : 
+        protected Database1DataSet13032561(global::System.Runtime.Serialization.SerializationInfo info, global::System.Runtime.Serialization.StreamingContext context) : 
                 base(info, context, false) {
             if ((this.IsBinarySerialized(info, context) == true)) {
                 this.InitVars(false);
@@ -217,7 +217,7 @@ namespace AppointmentQueue {
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
         public override global::System.Data.DataSet Clone() {
-            Database1DataSet1 cln = ((Database1DataSet1)(base.Clone()));
+            Database1DataSet13032561 cln = ((Database1DataSet13032561)(base.Clone()));
             cln.InitVars();
             cln.SchemaSerializationMode = this.SchemaSerializationMode;
             return cln;
@@ -343,9 +343,9 @@ namespace AppointmentQueue {
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
         private void InitClass() {
-            this.DataSetName = "Database1DataSet1";
+            this.DataSetName = "Database1DataSet13032561";
             this.Prefix = "";
-            this.Namespace = "http://tempuri.org/Database1DataSet1.xsd";
+            this.Namespace = "http://tempuri.org/Database1DataSet13032561.xsd";
             this.EnforceConstraints = true;
             this.SchemaSerializationMode = global::System.Data.SchemaSerializationMode.IncludeSchema;
             this.tableAppointments = new AppointmentsDataTable();
@@ -417,7 +417,7 @@ namespace AppointmentQueue {
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
         public static global::System.Xml.Schema.XmlSchemaComplexType GetTypedDataSetSchema(global::System.Xml.Schema.XmlSchemaSet xs) {
-            Database1DataSet1 ds = new Database1DataSet1();
+            Database1DataSet13032561 ds = new Database1DataSet13032561();
             global::System.Xml.Schema.XmlSchemaComplexType type = new global::System.Xml.Schema.XmlSchemaComplexType();
             global::System.Xml.Schema.XmlSchemaSequence sequence = new global::System.Xml.Schema.XmlSchemaSequence();
             global::System.Xml.Schema.XmlSchemaAny any = new global::System.Xml.Schema.XmlSchemaAny();
@@ -826,7 +826,7 @@ namespace AppointmentQueue {
             public static global::System.Xml.Schema.XmlSchemaComplexType GetTypedTableSchema(global::System.Xml.Schema.XmlSchemaSet xs) {
                 global::System.Xml.Schema.XmlSchemaComplexType type = new global::System.Xml.Schema.XmlSchemaComplexType();
                 global::System.Xml.Schema.XmlSchemaSequence sequence = new global::System.Xml.Schema.XmlSchemaSequence();
-                Database1DataSet1 ds = new Database1DataSet1();
+                Database1DataSet13032561 ds = new Database1DataSet13032561();
                 global::System.Xml.Schema.XmlSchemaAny any1 = new global::System.Xml.Schema.XmlSchemaAny();
                 any1.Namespace = "http://www.w3.org/2001/XMLSchema";
                 any1.MinOccurs = new decimal(0);
@@ -1103,7 +1103,7 @@ namespace AppointmentQueue {
             public static global::System.Xml.Schema.XmlSchemaComplexType GetTypedTableSchema(global::System.Xml.Schema.XmlSchemaSet xs) {
                 global::System.Xml.Schema.XmlSchemaComplexType type = new global::System.Xml.Schema.XmlSchemaComplexType();
                 global::System.Xml.Schema.XmlSchemaSequence sequence = new global::System.Xml.Schema.XmlSchemaSequence();
-                Database1DataSet1 ds = new Database1DataSet1();
+                Database1DataSet13032561 ds = new Database1DataSet13032561();
                 global::System.Xml.Schema.XmlSchemaAny any1 = new global::System.Xml.Schema.XmlSchemaAny();
                 any1.Namespace = "http://www.w3.org/2001/XMLSchema";
                 any1.MinOccurs = new decimal(0);
@@ -1171,13 +1171,13 @@ namespace AppointmentQueue {
             
             private global::System.Data.DataColumn columnId;
             
-            private global::System.Data.DataColumn columncond_req;
+            private global::System.Data.DataColumn columnpossible_req;
             
             private global::System.Data.DataColumn columncond_time;
             
             private global::System.Data.DataColumn columncond_day;
             
-            private global::System.Data.DataColumn columncond_limit;
+            private global::System.Data.DataColumn columncond_limit_time;
             
             private global::System.Data.DataColumn columncond_mri_machine_id;
             
@@ -1224,9 +1224,9 @@ namespace AppointmentQueue {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
-            public global::System.Data.DataColumn cond_reqColumn {
+            public global::System.Data.DataColumn possible_reqColumn {
                 get {
-                    return this.columncond_req;
+                    return this.columnpossible_req;
                 }
             }
             
@@ -1248,9 +1248,9 @@ namespace AppointmentQueue {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
-            public global::System.Data.DataColumn cond_limitColumn {
+            public global::System.Data.DataColumn cond_limit_timeColumn {
                 get {
-                    return this.columncond_limit;
+                    return this.columncond_limit_time;
                 }
             }
             
@@ -1299,14 +1299,14 @@ namespace AppointmentQueue {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
-            public ConditionRequestRow AddConditionRequestRow(int Id, int cond_req, int cond_time, int cond_day, int cond_limit, int cond_mri_machine_id) {
+            public ConditionRequestRow AddConditionRequestRow(int Id, string possible_req, int cond_time, int cond_day, int cond_limit_time, int cond_mri_machine_id) {
                 ConditionRequestRow rowConditionRequestRow = ((ConditionRequestRow)(this.NewRow()));
                 object[] columnValuesArray = new object[] {
                         Id,
-                        cond_req,
+                        possible_req,
                         cond_time,
                         cond_day,
-                        cond_limit,
+                        cond_limit_time,
                         cond_mri_machine_id};
                 rowConditionRequestRow.ItemArray = columnValuesArray;
                 this.Rows.Add(rowConditionRequestRow);
@@ -1338,10 +1338,10 @@ namespace AppointmentQueue {
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
             internal void InitVars() {
                 this.columnId = base.Columns["Id"];
-                this.columncond_req = base.Columns["cond_req"];
+                this.columnpossible_req = base.Columns["possible_req"];
                 this.columncond_time = base.Columns["cond_time"];
                 this.columncond_day = base.Columns["cond_day"];
-                this.columncond_limit = base.Columns["cond_limit"];
+                this.columncond_limit_time = base.Columns["cond_limit_time"];
                 this.columncond_mri_machine_id = base.Columns["cond_mri_machine_id"];
             }
             
@@ -1350,20 +1350,21 @@ namespace AppointmentQueue {
             private void InitClass() {
                 this.columnId = new global::System.Data.DataColumn("Id", typeof(int), null, global::System.Data.MappingType.Element);
                 base.Columns.Add(this.columnId);
-                this.columncond_req = new global::System.Data.DataColumn("cond_req", typeof(int), null, global::System.Data.MappingType.Element);
-                base.Columns.Add(this.columncond_req);
+                this.columnpossible_req = new global::System.Data.DataColumn("possible_req", typeof(string), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnpossible_req);
                 this.columncond_time = new global::System.Data.DataColumn("cond_time", typeof(int), null, global::System.Data.MappingType.Element);
                 base.Columns.Add(this.columncond_time);
                 this.columncond_day = new global::System.Data.DataColumn("cond_day", typeof(int), null, global::System.Data.MappingType.Element);
                 base.Columns.Add(this.columncond_day);
-                this.columncond_limit = new global::System.Data.DataColumn("cond_limit", typeof(int), null, global::System.Data.MappingType.Element);
-                base.Columns.Add(this.columncond_limit);
+                this.columncond_limit_time = new global::System.Data.DataColumn("cond_limit_time", typeof(int), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columncond_limit_time);
                 this.columncond_mri_machine_id = new global::System.Data.DataColumn("cond_mri_machine_id", typeof(int), null, global::System.Data.MappingType.Element);
                 base.Columns.Add(this.columncond_mri_machine_id);
                 this.Constraints.Add(new global::System.Data.UniqueConstraint("Constraint1", new global::System.Data.DataColumn[] {
                                 this.columnId}, true));
                 this.columnId.AllowDBNull = false;
                 this.columnId.Unique = true;
+                this.columnpossible_req.MaxLength = 20;
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -1431,7 +1432,7 @@ namespace AppointmentQueue {
             public static global::System.Xml.Schema.XmlSchemaComplexType GetTypedTableSchema(global::System.Xml.Schema.XmlSchemaSet xs) {
                 global::System.Xml.Schema.XmlSchemaComplexType type = new global::System.Xml.Schema.XmlSchemaComplexType();
                 global::System.Xml.Schema.XmlSchemaSequence sequence = new global::System.Xml.Schema.XmlSchemaSequence();
-                Database1DataSet1 ds = new Database1DataSet1();
+                Database1DataSet13032561 ds = new Database1DataSet13032561();
                 global::System.Xml.Schema.XmlSchemaAny any1 = new global::System.Xml.Schema.XmlSchemaAny();
                 any1.Namespace = "http://www.w3.org/2001/XMLSchema";
                 any1.MinOccurs = new decimal(0);
@@ -1734,7 +1735,7 @@ namespace AppointmentQueue {
             public static global::System.Xml.Schema.XmlSchemaComplexType GetTypedTableSchema(global::System.Xml.Schema.XmlSchemaSet xs) {
                 global::System.Xml.Schema.XmlSchemaComplexType type = new global::System.Xml.Schema.XmlSchemaComplexType();
                 global::System.Xml.Schema.XmlSchemaSequence sequence = new global::System.Xml.Schema.XmlSchemaSequence();
-                Database1DataSet1 ds = new Database1DataSet1();
+                Database1DataSet13032561 ds = new Database1DataSet13032561();
                 global::System.Xml.Schema.XmlSchemaAny any1 = new global::System.Xml.Schema.XmlSchemaAny();
                 any1.Namespace = "http://www.w3.org/2001/XMLSchema";
                 any1.MinOccurs = new decimal(0);
@@ -2039,7 +2040,7 @@ namespace AppointmentQueue {
             public static global::System.Xml.Schema.XmlSchemaComplexType GetTypedTableSchema(global::System.Xml.Schema.XmlSchemaSet xs) {
                 global::System.Xml.Schema.XmlSchemaComplexType type = new global::System.Xml.Schema.XmlSchemaComplexType();
                 global::System.Xml.Schema.XmlSchemaSequence sequence = new global::System.Xml.Schema.XmlSchemaSequence();
-                Database1DataSet1 ds = new Database1DataSet1();
+                Database1DataSet13032561 ds = new Database1DataSet13032561();
                 global::System.Xml.Schema.XmlSchemaAny any1 = new global::System.Xml.Schema.XmlSchemaAny();
                 any1.Namespace = "http://www.w3.org/2001/XMLSchema";
                 any1.MinOccurs = new decimal(0);
@@ -2330,7 +2331,7 @@ namespace AppointmentQueue {
             public static global::System.Xml.Schema.XmlSchemaComplexType GetTypedTableSchema(global::System.Xml.Schema.XmlSchemaSet xs) {
                 global::System.Xml.Schema.XmlSchemaComplexType type = new global::System.Xml.Schema.XmlSchemaComplexType();
                 global::System.Xml.Schema.XmlSchemaSequence sequence = new global::System.Xml.Schema.XmlSchemaSequence();
-                Database1DataSet1 ds = new Database1DataSet1();
+                Database1DataSet13032561 ds = new Database1DataSet13032561();
                 global::System.Xml.Schema.XmlSchemaAny any1 = new global::System.Xml.Schema.XmlSchemaAny();
                 any1.Namespace = "http://www.w3.org/2001/XMLSchema";
                 any1.MinOccurs = new decimal(0);
@@ -2733,7 +2734,7 @@ namespace AppointmentQueue {
             public static global::System.Xml.Schema.XmlSchemaComplexType GetTypedTableSchema(global::System.Xml.Schema.XmlSchemaSet xs) {
                 global::System.Xml.Schema.XmlSchemaComplexType type = new global::System.Xml.Schema.XmlSchemaComplexType();
                 global::System.Xml.Schema.XmlSchemaSequence sequence = new global::System.Xml.Schema.XmlSchemaSequence();
-                Database1DataSet1 ds = new Database1DataSet1();
+                Database1DataSet13032561 ds = new Database1DataSet13032561();
                 global::System.Xml.Schema.XmlSchemaAny any1 = new global::System.Xml.Schema.XmlSchemaAny();
                 any1.Namespace = "http://www.w3.org/2001/XMLSchema";
                 any1.MinOccurs = new decimal(0);
@@ -3179,17 +3180,17 @@ namespace AppointmentQueue {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
-            public int cond_req {
+            public string possible_req {
                 get {
                     try {
-                        return ((int)(this[this.tableConditionRequest.cond_reqColumn]));
+                        return ((string)(this[this.tableConditionRequest.possible_reqColumn]));
                     }
                     catch (global::System.InvalidCastException e) {
-                        throw new global::System.Data.StrongTypingException("The value for column \'cond_req\' in table \'ConditionRequest\' is DBNull.", e);
+                        throw new global::System.Data.StrongTypingException("The value for column \'possible_req\' in table \'ConditionRequest\' is DBNull.", e);
                     }
                 }
                 set {
-                    this[this.tableConditionRequest.cond_reqColumn] = value;
+                    this[this.tableConditionRequest.possible_reqColumn] = value;
                 }
             }
             
@@ -3227,17 +3228,17 @@ namespace AppointmentQueue {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
-            public int cond_limit {
+            public int cond_limit_time {
                 get {
                     try {
-                        return ((int)(this[this.tableConditionRequest.cond_limitColumn]));
+                        return ((int)(this[this.tableConditionRequest.cond_limit_timeColumn]));
                     }
                     catch (global::System.InvalidCastException e) {
-                        throw new global::System.Data.StrongTypingException("The value for column \'cond_limit\' in table \'ConditionRequest\' is DBNull.", e);
+                        throw new global::System.Data.StrongTypingException("The value for column \'cond_limit_time\' in table \'ConditionRequest\' is DBNull.", e);
                     }
                 }
                 set {
-                    this[this.tableConditionRequest.cond_limitColumn] = value;
+                    this[this.tableConditionRequest.cond_limit_timeColumn] = value;
                 }
             }
             
@@ -3260,14 +3261,14 @@ namespace AppointmentQueue {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
-            public bool Iscond_reqNull() {
-                return this.IsNull(this.tableConditionRequest.cond_reqColumn);
+            public bool Ispossible_reqNull() {
+                return this.IsNull(this.tableConditionRequest.possible_reqColumn);
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
-            public void Setcond_reqNull() {
-                this[this.tableConditionRequest.cond_reqColumn] = global::System.Convert.DBNull;
+            public void Setpossible_reqNull() {
+                this[this.tableConditionRequest.possible_reqColumn] = global::System.Convert.DBNull;
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -3296,14 +3297,14 @@ namespace AppointmentQueue {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
-            public bool Iscond_limitNull() {
-                return this.IsNull(this.tableConditionRequest.cond_limitColumn);
+            public bool Iscond_limit_timeNull() {
+                return this.IsNull(this.tableConditionRequest.cond_limit_timeColumn);
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
-            public void Setcond_limitNull() {
-                this[this.tableConditionRequest.cond_limitColumn] = global::System.Convert.DBNull;
+            public void Setcond_limit_timeNull() {
+                this[this.tableConditionRequest.cond_limit_timeColumn] = global::System.Convert.DBNull;
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -4166,7 +4167,7 @@ namespace AppointmentQueue {
         }
     }
 }
-namespace AppointmentQueue.Database1DataSet1TableAdapters {
+namespace AppointmentQueue.Database1DataSet13032561TableAdapters {
     
     
     /// <summary>
@@ -4403,7 +4404,7 @@ SELECT ap_Id, ap_piority, ap_startT, ap_duraT, ap_patient, ap_request, ap_paid, 
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
         [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Fill, true)]
-        public virtual int Fill(Database1DataSet1.AppointmentsDataTable dataTable) {
+        public virtual int Fill(Database1DataSet13032561.AppointmentsDataTable dataTable) {
             this.Adapter.SelectCommand = this.CommandCollection[0];
             if ((this.ClearBeforeFill == true)) {
                 dataTable.Clear();
@@ -4416,9 +4417,9 @@ SELECT ap_Id, ap_piority, ap_startT, ap_duraT, ap_patient, ap_request, ap_paid, 
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
         [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Select, true)]
-        public virtual Database1DataSet1.AppointmentsDataTable GetData() {
+        public virtual Database1DataSet13032561.AppointmentsDataTable GetData() {
             this.Adapter.SelectCommand = this.CommandCollection[0];
-            Database1DataSet1.AppointmentsDataTable dataTable = new Database1DataSet1.AppointmentsDataTable();
+            Database1DataSet13032561.AppointmentsDataTable dataTable = new Database1DataSet13032561.AppointmentsDataTable();
             this.Adapter.Fill(dataTable);
             return dataTable;
         }
@@ -4426,14 +4427,14 @@ SELECT ap_Id, ap_piority, ap_startT, ap_duraT, ap_patient, ap_request, ap_paid, 
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
-        public virtual int Update(Database1DataSet1.AppointmentsDataTable dataTable) {
+        public virtual int Update(Database1DataSet13032561.AppointmentsDataTable dataTable) {
             return this.Adapter.Update(dataTable);
         }
         
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
-        public virtual int Update(Database1DataSet1 dataSet) {
+        public virtual int Update(Database1DataSet13032561 dataSet) {
             return this.Adapter.Update(dataSet, "Appointments");
         }
         
@@ -5022,7 +5023,7 @@ SELECT ap_Id, ap_piority, ap_startT, ap_duraT, ap_patient, ap_request, ap_paid, 
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
         [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Fill, true)]
-        public virtual int Fill(Database1DataSet1.BodyPartsDataTable dataTable) {
+        public virtual int Fill(Database1DataSet13032561.BodyPartsDataTable dataTable) {
             this.Adapter.SelectCommand = this.CommandCollection[0];
             if ((this.ClearBeforeFill == true)) {
                 dataTable.Clear();
@@ -5035,9 +5036,9 @@ SELECT ap_Id, ap_piority, ap_startT, ap_duraT, ap_patient, ap_request, ap_paid, 
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
         [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Select, true)]
-        public virtual Database1DataSet1.BodyPartsDataTable GetData() {
+        public virtual Database1DataSet13032561.BodyPartsDataTable GetData() {
             this.Adapter.SelectCommand = this.CommandCollection[0];
-            Database1DataSet1.BodyPartsDataTable dataTable = new Database1DataSet1.BodyPartsDataTable();
+            Database1DataSet13032561.BodyPartsDataTable dataTable = new Database1DataSet13032561.BodyPartsDataTable();
             this.Adapter.Fill(dataTable);
             return dataTable;
         }
@@ -5045,14 +5046,14 @@ SELECT ap_Id, ap_piority, ap_startT, ap_duraT, ap_patient, ap_request, ap_paid, 
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
-        public virtual int Update(Database1DataSet1.BodyPartsDataTable dataTable) {
+        public virtual int Update(Database1DataSet13032561.BodyPartsDataTable dataTable) {
             return this.Adapter.Update(dataTable);
         }
         
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
-        public virtual int Update(Database1DataSet1 dataSet) {
+        public virtual int Update(Database1DataSet13032561 dataSet) {
             return this.Adapter.Update(dataSet, "BodyParts");
         }
         
@@ -5296,58 +5297,58 @@ SELECT ap_Id, ap_piority, ap_startT, ap_duraT, ap_patient, ap_request, ap_paid, 
             tableMapping.SourceTable = "Table";
             tableMapping.DataSetTable = "ConditionRequest";
             tableMapping.ColumnMappings.Add("Id", "Id");
-            tableMapping.ColumnMappings.Add("cond_req", "cond_req");
+            tableMapping.ColumnMappings.Add("possible_req", "possible_req");
             tableMapping.ColumnMappings.Add("cond_time", "cond_time");
             tableMapping.ColumnMappings.Add("cond_day", "cond_day");
-            tableMapping.ColumnMappings.Add("cond_limit", "cond_limit");
+            tableMapping.ColumnMappings.Add("cond_limit_time", "cond_limit_time");
             tableMapping.ColumnMappings.Add("cond_mri_machine_id", "cond_mri_machine_id");
             this._adapter.TableMappings.Add(tableMapping);
             this._adapter.DeleteCommand = new global::System.Data.SqlClient.SqlCommand();
             this._adapter.DeleteCommand.Connection = this.Connection;
-            this._adapter.DeleteCommand.CommandText = @"DELETE FROM [dbo].[ConditionRequest] WHERE (([Id] = @Original_Id) AND ((@IsNull_cond_req = 1 AND [cond_req] IS NULL) OR ([cond_req] = @Original_cond_req)) AND ((@IsNull_cond_time = 1 AND [cond_time] IS NULL) OR ([cond_time] = @Original_cond_time)) AND ((@IsNull_cond_day = 1 AND [cond_day] IS NULL) OR ([cond_day] = @Original_cond_day)) AND ((@IsNull_cond_limit = 1 AND [cond_limit] IS NULL) OR ([cond_limit] = @Original_cond_limit)) AND ((@IsNull_cond_mri_machine_id = 1 AND [cond_mri_machine_id] IS NULL) OR ([cond_mri_machine_id] = @Original_cond_mri_machine_id)))";
+            this._adapter.DeleteCommand.CommandText = @"DELETE FROM [dbo].[ConditionRequest] WHERE (([Id] = @Original_Id) AND ((@IsNull_possible_req = 1 AND [possible_req] IS NULL) OR ([possible_req] = @Original_possible_req)) AND ((@IsNull_cond_time = 1 AND [cond_time] IS NULL) OR ([cond_time] = @Original_cond_time)) AND ((@IsNull_cond_day = 1 AND [cond_day] IS NULL) OR ([cond_day] = @Original_cond_day)) AND ((@IsNull_cond_limit_time = 1 AND [cond_limit_time] IS NULL) OR ([cond_limit_time] = @Original_cond_limit_time)) AND ((@IsNull_cond_mri_machine_id = 1 AND [cond_mri_machine_id] IS NULL) OR ([cond_mri_machine_id] = @Original_cond_mri_machine_id)))";
             this._adapter.DeleteCommand.CommandType = global::System.Data.CommandType.Text;
             this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_Id", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Id", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
-            this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@IsNull_cond_req", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "cond_req", global::System.Data.DataRowVersion.Original, true, null, "", "", ""));
-            this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_cond_req", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "cond_req", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
+            this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@IsNull_possible_req", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "possible_req", global::System.Data.DataRowVersion.Original, true, null, "", "", ""));
+            this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_possible_req", global::System.Data.SqlDbType.Char, 0, global::System.Data.ParameterDirection.Input, 0, 0, "possible_req", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
             this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@IsNull_cond_time", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "cond_time", global::System.Data.DataRowVersion.Original, true, null, "", "", ""));
             this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_cond_time", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "cond_time", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
             this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@IsNull_cond_day", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "cond_day", global::System.Data.DataRowVersion.Original, true, null, "", "", ""));
             this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_cond_day", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "cond_day", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
-            this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@IsNull_cond_limit", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "cond_limit", global::System.Data.DataRowVersion.Original, true, null, "", "", ""));
-            this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_cond_limit", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "cond_limit", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
+            this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@IsNull_cond_limit_time", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "cond_limit_time", global::System.Data.DataRowVersion.Original, true, null, "", "", ""));
+            this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_cond_limit_time", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "cond_limit_time", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
             this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@IsNull_cond_mri_machine_id", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "cond_mri_machine_id", global::System.Data.DataRowVersion.Original, true, null, "", "", ""));
             this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_cond_mri_machine_id", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "cond_mri_machine_id", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
             this._adapter.InsertCommand = new global::System.Data.SqlClient.SqlCommand();
             this._adapter.InsertCommand.Connection = this.Connection;
-            this._adapter.InsertCommand.CommandText = @"INSERT INTO [dbo].[ConditionRequest] ([Id], [cond_req], [cond_time], [cond_day], [cond_limit], [cond_mri_machine_id]) VALUES (@Id, @cond_req, @cond_time, @cond_day, @cond_limit, @cond_mri_machine_id);
-SELECT Id, cond_req, cond_time, cond_day, cond_limit, cond_mri_machine_id FROM ConditionRequest WHERE (Id = @Id)";
+            this._adapter.InsertCommand.CommandText = @"INSERT INTO [dbo].[ConditionRequest] ([Id], [possible_req], [cond_time], [cond_day], [cond_limit_time], [cond_mri_machine_id]) VALUES (@Id, @possible_req, @cond_time, @cond_day, @cond_limit_time, @cond_mri_machine_id);
+SELECT Id, possible_req, cond_time, cond_day, cond_limit_time, cond_mri_machine_id FROM ConditionRequest WHERE (Id = @Id)";
             this._adapter.InsertCommand.CommandType = global::System.Data.CommandType.Text;
             this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Id", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Id", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
-            this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@cond_req", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "cond_req", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@possible_req", global::System.Data.SqlDbType.Char, 0, global::System.Data.ParameterDirection.Input, 0, 0, "possible_req", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@cond_time", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "cond_time", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@cond_day", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "cond_day", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
-            this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@cond_limit", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "cond_limit", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@cond_limit_time", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "cond_limit_time", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@cond_mri_machine_id", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "cond_mri_machine_id", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._adapter.UpdateCommand = new global::System.Data.SqlClient.SqlCommand();
             this._adapter.UpdateCommand.Connection = this.Connection;
-            this._adapter.UpdateCommand.CommandText = @"UPDATE [dbo].[ConditionRequest] SET [Id] = @Id, [cond_req] = @cond_req, [cond_time] = @cond_time, [cond_day] = @cond_day, [cond_limit] = @cond_limit, [cond_mri_machine_id] = @cond_mri_machine_id WHERE (([Id] = @Original_Id) AND ((@IsNull_cond_req = 1 AND [cond_req] IS NULL) OR ([cond_req] = @Original_cond_req)) AND ((@IsNull_cond_time = 1 AND [cond_time] IS NULL) OR ([cond_time] = @Original_cond_time)) AND ((@IsNull_cond_day = 1 AND [cond_day] IS NULL) OR ([cond_day] = @Original_cond_day)) AND ((@IsNull_cond_limit = 1 AND [cond_limit] IS NULL) OR ([cond_limit] = @Original_cond_limit)) AND ((@IsNull_cond_mri_machine_id = 1 AND [cond_mri_machine_id] IS NULL) OR ([cond_mri_machine_id] = @Original_cond_mri_machine_id)));
-SELECT Id, cond_req, cond_time, cond_day, cond_limit, cond_mri_machine_id FROM ConditionRequest WHERE (Id = @Id)";
+            this._adapter.UpdateCommand.CommandText = @"UPDATE [dbo].[ConditionRequest] SET [Id] = @Id, [possible_req] = @possible_req, [cond_time] = @cond_time, [cond_day] = @cond_day, [cond_limit_time] = @cond_limit_time, [cond_mri_machine_id] = @cond_mri_machine_id WHERE (([Id] = @Original_Id) AND ((@IsNull_possible_req = 1 AND [possible_req] IS NULL) OR ([possible_req] = @Original_possible_req)) AND ((@IsNull_cond_time = 1 AND [cond_time] IS NULL) OR ([cond_time] = @Original_cond_time)) AND ((@IsNull_cond_day = 1 AND [cond_day] IS NULL) OR ([cond_day] = @Original_cond_day)) AND ((@IsNull_cond_limit_time = 1 AND [cond_limit_time] IS NULL) OR ([cond_limit_time] = @Original_cond_limit_time)) AND ((@IsNull_cond_mri_machine_id = 1 AND [cond_mri_machine_id] IS NULL) OR ([cond_mri_machine_id] = @Original_cond_mri_machine_id)));
+SELECT Id, possible_req, cond_time, cond_day, cond_limit_time, cond_mri_machine_id FROM ConditionRequest WHERE (Id = @Id)";
             this._adapter.UpdateCommand.CommandType = global::System.Data.CommandType.Text;
             this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Id", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Id", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
-            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@cond_req", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "cond_req", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@possible_req", global::System.Data.SqlDbType.Char, 0, global::System.Data.ParameterDirection.Input, 0, 0, "possible_req", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@cond_time", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "cond_time", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@cond_day", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "cond_day", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
-            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@cond_limit", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "cond_limit", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@cond_limit_time", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "cond_limit_time", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@cond_mri_machine_id", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "cond_mri_machine_id", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_Id", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Id", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
-            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@IsNull_cond_req", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "cond_req", global::System.Data.DataRowVersion.Original, true, null, "", "", ""));
-            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_cond_req", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "cond_req", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
+            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@IsNull_possible_req", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "possible_req", global::System.Data.DataRowVersion.Original, true, null, "", "", ""));
+            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_possible_req", global::System.Data.SqlDbType.Char, 0, global::System.Data.ParameterDirection.Input, 0, 0, "possible_req", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
             this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@IsNull_cond_time", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "cond_time", global::System.Data.DataRowVersion.Original, true, null, "", "", ""));
             this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_cond_time", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "cond_time", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
             this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@IsNull_cond_day", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "cond_day", global::System.Data.DataRowVersion.Original, true, null, "", "", ""));
             this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_cond_day", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "cond_day", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
-            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@IsNull_cond_limit", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "cond_limit", global::System.Data.DataRowVersion.Original, true, null, "", "", ""));
-            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_cond_limit", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "cond_limit", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
+            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@IsNull_cond_limit_time", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "cond_limit_time", global::System.Data.DataRowVersion.Original, true, null, "", "", ""));
+            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_cond_limit_time", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "cond_limit_time", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
             this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@IsNull_cond_mri_machine_id", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "cond_mri_machine_id", global::System.Data.DataRowVersion.Original, true, null, "", "", ""));
             this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_cond_mri_machine_id", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "cond_mri_machine_id", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
         }
@@ -5365,8 +5366,8 @@ SELECT Id, cond_req, cond_time, cond_day, cond_limit, cond_mri_machine_id FROM C
             this._commandCollection = new global::System.Data.SqlClient.SqlCommand[1];
             this._commandCollection[0] = new global::System.Data.SqlClient.SqlCommand();
             this._commandCollection[0].Connection = this.Connection;
-            this._commandCollection[0].CommandText = "SELECT Id, cond_req, cond_time, cond_day, cond_limit, cond_mri_machine_id, cond_l" +
-                "imit_time, possible_req FROM ConditionRequest";
+            this._commandCollection[0].CommandText = "SELECT Id, possible_req, cond_time, cond_day, cond_limit_time, cond_mri_machine_i" +
+                "d FROM dbo.ConditionRequest";
             this._commandCollection[0].CommandType = global::System.Data.CommandType.Text;
         }
         
@@ -5374,7 +5375,7 @@ SELECT Id, cond_req, cond_time, cond_day, cond_limit, cond_mri_machine_id FROM C
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
         [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Fill, true)]
-        public virtual int Fill(Database1DataSet1.ConditionRequestDataTable dataTable) {
+        public virtual int Fill(Database1DataSet13032561.ConditionRequestDataTable dataTable) {
             this.Adapter.SelectCommand = this.CommandCollection[0];
             if ((this.ClearBeforeFill == true)) {
                 dataTable.Clear();
@@ -5387,9 +5388,9 @@ SELECT Id, cond_req, cond_time, cond_day, cond_limit, cond_mri_machine_id FROM C
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
         [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Select, true)]
-        public virtual Database1DataSet1.ConditionRequestDataTable GetData() {
+        public virtual Database1DataSet13032561.ConditionRequestDataTable GetData() {
             this.Adapter.SelectCommand = this.CommandCollection[0];
-            Database1DataSet1.ConditionRequestDataTable dataTable = new Database1DataSet1.ConditionRequestDataTable();
+            Database1DataSet13032561.ConditionRequestDataTable dataTable = new Database1DataSet13032561.ConditionRequestDataTable();
             this.Adapter.Fill(dataTable);
             return dataTable;
         }
@@ -5397,14 +5398,14 @@ SELECT Id, cond_req, cond_time, cond_day, cond_limit, cond_mri_machine_id FROM C
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
-        public virtual int Update(Database1DataSet1.ConditionRequestDataTable dataTable) {
+        public virtual int Update(Database1DataSet13032561.ConditionRequestDataTable dataTable) {
             return this.Adapter.Update(dataTable);
         }
         
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
-        public virtual int Update(Database1DataSet1 dataSet) {
+        public virtual int Update(Database1DataSet13032561 dataSet) {
             return this.Adapter.Update(dataSet, "ConditionRequest");
         }
         
@@ -5427,15 +5428,15 @@ SELECT Id, cond_req, cond_time, cond_day, cond_limit, cond_mri_machine_id FROM C
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
         [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Delete, true)]
-        public virtual int Delete(int Original_Id, global::System.Nullable<int> Original_cond_req, global::System.Nullable<int> Original_cond_time, global::System.Nullable<int> Original_cond_day, global::System.Nullable<int> Original_cond_limit, global::System.Nullable<int> Original_cond_mri_machine_id) {
+        public virtual int Delete(int Original_Id, string Original_possible_req, global::System.Nullable<int> Original_cond_time, global::System.Nullable<int> Original_cond_day, global::System.Nullable<int> Original_cond_limit_time, global::System.Nullable<int> Original_cond_mri_machine_id) {
             this.Adapter.DeleteCommand.Parameters[0].Value = ((int)(Original_Id));
-            if ((Original_cond_req.HasValue == true)) {
-                this.Adapter.DeleteCommand.Parameters[1].Value = ((object)(0));
-                this.Adapter.DeleteCommand.Parameters[2].Value = ((int)(Original_cond_req.Value));
-            }
-            else {
+            if ((Original_possible_req == null)) {
                 this.Adapter.DeleteCommand.Parameters[1].Value = ((object)(1));
                 this.Adapter.DeleteCommand.Parameters[2].Value = global::System.DBNull.Value;
+            }
+            else {
+                this.Adapter.DeleteCommand.Parameters[1].Value = ((object)(0));
+                this.Adapter.DeleteCommand.Parameters[2].Value = ((string)(Original_possible_req));
             }
             if ((Original_cond_time.HasValue == true)) {
                 this.Adapter.DeleteCommand.Parameters[3].Value = ((object)(0));
@@ -5453,9 +5454,9 @@ SELECT Id, cond_req, cond_time, cond_day, cond_limit, cond_mri_machine_id FROM C
                 this.Adapter.DeleteCommand.Parameters[5].Value = ((object)(1));
                 this.Adapter.DeleteCommand.Parameters[6].Value = global::System.DBNull.Value;
             }
-            if ((Original_cond_limit.HasValue == true)) {
+            if ((Original_cond_limit_time.HasValue == true)) {
                 this.Adapter.DeleteCommand.Parameters[7].Value = ((object)(0));
-                this.Adapter.DeleteCommand.Parameters[8].Value = ((int)(Original_cond_limit.Value));
+                this.Adapter.DeleteCommand.Parameters[8].Value = ((int)(Original_cond_limit_time.Value));
             }
             else {
                 this.Adapter.DeleteCommand.Parameters[7].Value = ((object)(1));
@@ -5489,13 +5490,13 @@ SELECT Id, cond_req, cond_time, cond_day, cond_limit, cond_mri_machine_id FROM C
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
         [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Insert, true)]
-        public virtual int Insert(int Id, global::System.Nullable<int> cond_req, global::System.Nullable<int> cond_time, global::System.Nullable<int> cond_day, global::System.Nullable<int> cond_limit, global::System.Nullable<int> cond_mri_machine_id) {
+        public virtual int Insert(int Id, string possible_req, global::System.Nullable<int> cond_time, global::System.Nullable<int> cond_day, global::System.Nullable<int> cond_limit_time, global::System.Nullable<int> cond_mri_machine_id) {
             this.Adapter.InsertCommand.Parameters[0].Value = ((int)(Id));
-            if ((cond_req.HasValue == true)) {
-                this.Adapter.InsertCommand.Parameters[1].Value = ((int)(cond_req.Value));
+            if ((possible_req == null)) {
+                this.Adapter.InsertCommand.Parameters[1].Value = global::System.DBNull.Value;
             }
             else {
-                this.Adapter.InsertCommand.Parameters[1].Value = global::System.DBNull.Value;
+                this.Adapter.InsertCommand.Parameters[1].Value = ((string)(possible_req));
             }
             if ((cond_time.HasValue == true)) {
                 this.Adapter.InsertCommand.Parameters[2].Value = ((int)(cond_time.Value));
@@ -5509,8 +5510,8 @@ SELECT Id, cond_req, cond_time, cond_day, cond_limit, cond_mri_machine_id FROM C
             else {
                 this.Adapter.InsertCommand.Parameters[3].Value = global::System.DBNull.Value;
             }
-            if ((cond_limit.HasValue == true)) {
-                this.Adapter.InsertCommand.Parameters[4].Value = ((int)(cond_limit.Value));
+            if ((cond_limit_time.HasValue == true)) {
+                this.Adapter.InsertCommand.Parameters[4].Value = ((int)(cond_limit_time.Value));
             }
             else {
                 this.Adapter.InsertCommand.Parameters[4].Value = global::System.DBNull.Value;
@@ -5541,13 +5542,13 @@ SELECT Id, cond_req, cond_time, cond_day, cond_limit, cond_mri_machine_id FROM C
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
         [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Update, true)]
-        public virtual int Update(int Id, global::System.Nullable<int> cond_req, global::System.Nullable<int> cond_time, global::System.Nullable<int> cond_day, global::System.Nullable<int> cond_limit, global::System.Nullable<int> cond_mri_machine_id, int Original_Id, global::System.Nullable<int> Original_cond_req, global::System.Nullable<int> Original_cond_time, global::System.Nullable<int> Original_cond_day, global::System.Nullable<int> Original_cond_limit, global::System.Nullable<int> Original_cond_mri_machine_id) {
+        public virtual int Update(int Id, string possible_req, global::System.Nullable<int> cond_time, global::System.Nullable<int> cond_day, global::System.Nullable<int> cond_limit_time, global::System.Nullable<int> cond_mri_machine_id, int Original_Id, string Original_possible_req, global::System.Nullable<int> Original_cond_time, global::System.Nullable<int> Original_cond_day, global::System.Nullable<int> Original_cond_limit_time, global::System.Nullable<int> Original_cond_mri_machine_id) {
             this.Adapter.UpdateCommand.Parameters[0].Value = ((int)(Id));
-            if ((cond_req.HasValue == true)) {
-                this.Adapter.UpdateCommand.Parameters[1].Value = ((int)(cond_req.Value));
+            if ((possible_req == null)) {
+                this.Adapter.UpdateCommand.Parameters[1].Value = global::System.DBNull.Value;
             }
             else {
-                this.Adapter.UpdateCommand.Parameters[1].Value = global::System.DBNull.Value;
+                this.Adapter.UpdateCommand.Parameters[1].Value = ((string)(possible_req));
             }
             if ((cond_time.HasValue == true)) {
                 this.Adapter.UpdateCommand.Parameters[2].Value = ((int)(cond_time.Value));
@@ -5561,8 +5562,8 @@ SELECT Id, cond_req, cond_time, cond_day, cond_limit, cond_mri_machine_id FROM C
             else {
                 this.Adapter.UpdateCommand.Parameters[3].Value = global::System.DBNull.Value;
             }
-            if ((cond_limit.HasValue == true)) {
-                this.Adapter.UpdateCommand.Parameters[4].Value = ((int)(cond_limit.Value));
+            if ((cond_limit_time.HasValue == true)) {
+                this.Adapter.UpdateCommand.Parameters[4].Value = ((int)(cond_limit_time.Value));
             }
             else {
                 this.Adapter.UpdateCommand.Parameters[4].Value = global::System.DBNull.Value;
@@ -5574,13 +5575,13 @@ SELECT Id, cond_req, cond_time, cond_day, cond_limit, cond_mri_machine_id FROM C
                 this.Adapter.UpdateCommand.Parameters[5].Value = global::System.DBNull.Value;
             }
             this.Adapter.UpdateCommand.Parameters[6].Value = ((int)(Original_Id));
-            if ((Original_cond_req.HasValue == true)) {
-                this.Adapter.UpdateCommand.Parameters[7].Value = ((object)(0));
-                this.Adapter.UpdateCommand.Parameters[8].Value = ((int)(Original_cond_req.Value));
-            }
-            else {
+            if ((Original_possible_req == null)) {
                 this.Adapter.UpdateCommand.Parameters[7].Value = ((object)(1));
                 this.Adapter.UpdateCommand.Parameters[8].Value = global::System.DBNull.Value;
+            }
+            else {
+                this.Adapter.UpdateCommand.Parameters[7].Value = ((object)(0));
+                this.Adapter.UpdateCommand.Parameters[8].Value = ((string)(Original_possible_req));
             }
             if ((Original_cond_time.HasValue == true)) {
                 this.Adapter.UpdateCommand.Parameters[9].Value = ((object)(0));
@@ -5598,9 +5599,9 @@ SELECT Id, cond_req, cond_time, cond_day, cond_limit, cond_mri_machine_id FROM C
                 this.Adapter.UpdateCommand.Parameters[11].Value = ((object)(1));
                 this.Adapter.UpdateCommand.Parameters[12].Value = global::System.DBNull.Value;
             }
-            if ((Original_cond_limit.HasValue == true)) {
+            if ((Original_cond_limit_time.HasValue == true)) {
                 this.Adapter.UpdateCommand.Parameters[13].Value = ((object)(0));
-                this.Adapter.UpdateCommand.Parameters[14].Value = ((int)(Original_cond_limit.Value));
+                this.Adapter.UpdateCommand.Parameters[14].Value = ((int)(Original_cond_limit_time.Value));
             }
             else {
                 this.Adapter.UpdateCommand.Parameters[13].Value = ((object)(1));
@@ -5634,8 +5635,8 @@ SELECT Id, cond_req, cond_time, cond_day, cond_limit, cond_mri_machine_id FROM C
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
         [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Update, true)]
-        public virtual int Update(global::System.Nullable<int> cond_req, global::System.Nullable<int> cond_time, global::System.Nullable<int> cond_day, global::System.Nullable<int> cond_limit, global::System.Nullable<int> cond_mri_machine_id, int Original_Id, global::System.Nullable<int> Original_cond_req, global::System.Nullable<int> Original_cond_time, global::System.Nullable<int> Original_cond_day, global::System.Nullable<int> Original_cond_limit, global::System.Nullable<int> Original_cond_mri_machine_id) {
-            return this.Update(Original_Id, cond_req, cond_time, cond_day, cond_limit, cond_mri_machine_id, Original_Id, Original_cond_req, Original_cond_time, Original_cond_day, Original_cond_limit, Original_cond_mri_machine_id);
+        public virtual int Update(string possible_req, global::System.Nullable<int> cond_time, global::System.Nullable<int> cond_day, global::System.Nullable<int> cond_limit_time, global::System.Nullable<int> cond_mri_machine_id, int Original_Id, string Original_possible_req, global::System.Nullable<int> Original_cond_time, global::System.Nullable<int> Original_cond_day, global::System.Nullable<int> Original_cond_limit_time, global::System.Nullable<int> Original_cond_mri_machine_id) {
+            return this.Update(Original_Id, possible_req, cond_time, cond_day, cond_limit_time, cond_mri_machine_id, Original_Id, Original_possible_req, Original_cond_time, Original_cond_day, Original_cond_limit_time, Original_cond_mri_machine_id);
         }
     }
     
@@ -5825,7 +5826,7 @@ SELECT pa_Id, pa_name, pa_lname, pa_birthday FROM Patients WHERE (pa_Id = @pa_Id
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
         [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Fill, true)]
-        public virtual int Fill(Database1DataSet1.PatientsDataTable dataTable) {
+        public virtual int Fill(Database1DataSet13032561.PatientsDataTable dataTable) {
             this.Adapter.SelectCommand = this.CommandCollection[0];
             if ((this.ClearBeforeFill == true)) {
                 dataTable.Clear();
@@ -5838,9 +5839,9 @@ SELECT pa_Id, pa_name, pa_lname, pa_birthday FROM Patients WHERE (pa_Id = @pa_Id
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
         [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Select, true)]
-        public virtual Database1DataSet1.PatientsDataTable GetData() {
+        public virtual Database1DataSet13032561.PatientsDataTable GetData() {
             this.Adapter.SelectCommand = this.CommandCollection[0];
-            Database1DataSet1.PatientsDataTable dataTable = new Database1DataSet1.PatientsDataTable();
+            Database1DataSet13032561.PatientsDataTable dataTable = new Database1DataSet13032561.PatientsDataTable();
             this.Adapter.Fill(dataTable);
             return dataTable;
         }
@@ -5848,14 +5849,14 @@ SELECT pa_Id, pa_name, pa_lname, pa_birthday FROM Patients WHERE (pa_Id = @pa_Id
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
-        public virtual int Update(Database1DataSet1.PatientsDataTable dataTable) {
+        public virtual int Update(Database1DataSet13032561.PatientsDataTable dataTable) {
             return this.Adapter.Update(dataTable);
         }
         
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
-        public virtual int Update(Database1DataSet1 dataSet) {
+        public virtual int Update(Database1DataSet13032561 dataSet) {
             return this.Adapter.Update(dataSet, "Patients");
         }
         
@@ -6182,7 +6183,7 @@ SELECT pa_Id, pa_name, pa_lname, pa_birthday FROM Patients WHERE (pa_Id = @pa_Id
             this._adapter.TableMappings.Add(tableMapping);
             this._adapter.DeleteCommand = new global::System.Data.SqlClient.SqlCommand();
             this._adapter.DeleteCommand.Connection = this.Connection;
-            this._adapter.DeleteCommand.CommandText = @"DELETE FROM [Requests] WHERE (([req_Id] = @Original_req_Id) AND ((@IsNull_req_scan = 1 AND [req_scan] IS NULL) OR ([req_scan] = @Original_req_scan)) AND ((@IsNull_req_bodypart = 1 AND [req_bodypart] IS NULL) OR ([req_bodypart] = @Original_req_bodypart)) AND ((@IsNull_req_time = 1 AND [req_time] IS NULL) OR ([req_time] = @Original_req_time)))";
+            this._adapter.DeleteCommand.CommandText = @"DELETE FROM [dbo].[Requests] WHERE (([req_Id] = @Original_req_Id) AND ((@IsNull_req_scan = 1 AND [req_scan] IS NULL) OR ([req_scan] = @Original_req_scan)) AND ((@IsNull_req_bodypart = 1 AND [req_bodypart] IS NULL) OR ([req_bodypart] = @Original_req_bodypart)) AND ((@IsNull_req_time = 1 AND [req_time] IS NULL) OR ([req_time] = @Original_req_time)))";
             this._adapter.DeleteCommand.CommandType = global::System.Data.CommandType.Text;
             this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_req_Id", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "req_Id", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
             this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@IsNull_req_scan", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "req_scan", global::System.Data.DataRowVersion.Original, true, null, "", "", ""));
@@ -6193,16 +6194,16 @@ SELECT pa_Id, pa_name, pa_lname, pa_birthday FROM Patients WHERE (pa_Id = @pa_Id
             this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_req_time", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "req_time", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
             this._adapter.InsertCommand = new global::System.Data.SqlClient.SqlCommand();
             this._adapter.InsertCommand.Connection = this.Connection;
-            this._adapter.InsertCommand.CommandText = "INSERT INTO [Requests] ([req_scan], [req_bodypart], [req_time]) VALUES (@req_scan" +
-                ", @req_bodypart, @req_time);\r\nSELECT req_Id, req_scan, req_bodypart, req_time FR" +
-                "OM Requests WHERE (req_Id = SCOPE_IDENTITY())";
+            this._adapter.InsertCommand.CommandText = "INSERT INTO [dbo].[Requests] ([req_scan], [req_bodypart], [req_time]) VALUES (@re" +
+                "q_scan, @req_bodypart, @req_time);\r\nSELECT req_Id, req_scan, req_bodypart, req_t" +
+                "ime FROM Requests WHERE (req_Id = SCOPE_IDENTITY())";
             this._adapter.InsertCommand.CommandType = global::System.Data.CommandType.Text;
             this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@req_scan", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "req_scan", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@req_bodypart", global::System.Data.SqlDbType.NChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "req_bodypart", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@req_time", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "req_time", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._adapter.UpdateCommand = new global::System.Data.SqlClient.SqlCommand();
             this._adapter.UpdateCommand.Connection = this.Connection;
-            this._adapter.UpdateCommand.CommandText = @"UPDATE [Requests] SET [req_scan] = @req_scan, [req_bodypart] = @req_bodypart, [req_time] = @req_time WHERE (([req_Id] = @Original_req_Id) AND ((@IsNull_req_scan = 1 AND [req_scan] IS NULL) OR ([req_scan] = @Original_req_scan)) AND ((@IsNull_req_bodypart = 1 AND [req_bodypart] IS NULL) OR ([req_bodypart] = @Original_req_bodypart)) AND ((@IsNull_req_time = 1 AND [req_time] IS NULL) OR ([req_time] = @Original_req_time)));
+            this._adapter.UpdateCommand.CommandText = @"UPDATE [dbo].[Requests] SET [req_scan] = @req_scan, [req_bodypart] = @req_bodypart, [req_time] = @req_time WHERE (([req_Id] = @Original_req_Id) AND ((@IsNull_req_scan = 1 AND [req_scan] IS NULL) OR ([req_scan] = @Original_req_scan)) AND ((@IsNull_req_bodypart = 1 AND [req_bodypart] IS NULL) OR ([req_bodypart] = @Original_req_bodypart)) AND ((@IsNull_req_time = 1 AND [req_time] IS NULL) OR ([req_time] = @Original_req_time)));
 SELECT req_Id, req_scan, req_bodypart, req_time FROM Requests WHERE (req_Id = @req_Id)";
             this._adapter.UpdateCommand.CommandType = global::System.Data.CommandType.Text;
             this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@req_scan", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "req_scan", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
@@ -6231,7 +6232,7 @@ SELECT req_Id, req_scan, req_bodypart, req_time FROM Requests WHERE (req_Id = @r
             this._commandCollection = new global::System.Data.SqlClient.SqlCommand[1];
             this._commandCollection[0] = new global::System.Data.SqlClient.SqlCommand();
             this._commandCollection[0].Connection = this.Connection;
-            this._commandCollection[0].CommandText = "SELECT req_Id, req_scan, req_bodypart, req_time FROM Requests";
+            this._commandCollection[0].CommandText = "SELECT req_Id, req_scan, req_bodypart, req_time FROM dbo.Requests";
             this._commandCollection[0].CommandType = global::System.Data.CommandType.Text;
         }
         
@@ -6239,7 +6240,7 @@ SELECT req_Id, req_scan, req_bodypart, req_time FROM Requests WHERE (req_Id = @r
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
         [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Fill, true)]
-        public virtual int Fill(Database1DataSet1.RequestsDataTable dataTable) {
+        public virtual int Fill(Database1DataSet13032561.RequestsDataTable dataTable) {
             this.Adapter.SelectCommand = this.CommandCollection[0];
             if ((this.ClearBeforeFill == true)) {
                 dataTable.Clear();
@@ -6252,9 +6253,9 @@ SELECT req_Id, req_scan, req_bodypart, req_time FROM Requests WHERE (req_Id = @r
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
         [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Select, true)]
-        public virtual Database1DataSet1.RequestsDataTable GetData() {
+        public virtual Database1DataSet13032561.RequestsDataTable GetData() {
             this.Adapter.SelectCommand = this.CommandCollection[0];
-            Database1DataSet1.RequestsDataTable dataTable = new Database1DataSet1.RequestsDataTable();
+            Database1DataSet13032561.RequestsDataTable dataTable = new Database1DataSet13032561.RequestsDataTable();
             this.Adapter.Fill(dataTable);
             return dataTable;
         }
@@ -6262,14 +6263,14 @@ SELECT req_Id, req_scan, req_bodypart, req_time FROM Requests WHERE (req_Id = @r
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
-        public virtual int Update(Database1DataSet1.RequestsDataTable dataTable) {
+        public virtual int Update(Database1DataSet13032561.RequestsDataTable dataTable) {
             return this.Adapter.Update(dataTable);
         }
         
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
-        public virtual int Update(Database1DataSet1 dataSet) {
+        public virtual int Update(Database1DataSet13032561 dataSet) {
             return this.Adapter.Update(dataSet, "Requests");
         }
         
@@ -6625,7 +6626,7 @@ SELECT scan_Id, scan_name, scan_quantity FROM Scanners WHERE (scan_Id = @scan_Id
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
         [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Fill, true)]
-        public virtual int Fill(Database1DataSet1.ScannersDataTable dataTable) {
+        public virtual int Fill(Database1DataSet13032561.ScannersDataTable dataTable) {
             this.Adapter.SelectCommand = this.CommandCollection[0];
             if ((this.ClearBeforeFill == true)) {
                 dataTable.Clear();
@@ -6638,9 +6639,9 @@ SELECT scan_Id, scan_name, scan_quantity FROM Scanners WHERE (scan_Id = @scan_Id
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
         [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Select, true)]
-        public virtual Database1DataSet1.ScannersDataTable GetData() {
+        public virtual Database1DataSet13032561.ScannersDataTable GetData() {
             this.Adapter.SelectCommand = this.CommandCollection[0];
-            Database1DataSet1.ScannersDataTable dataTable = new Database1DataSet1.ScannersDataTable();
+            Database1DataSet13032561.ScannersDataTable dataTable = new Database1DataSet13032561.ScannersDataTable();
             this.Adapter.Fill(dataTable);
             return dataTable;
         }
@@ -6648,14 +6649,14 @@ SELECT scan_Id, scan_name, scan_quantity FROM Scanners WHERE (scan_Id = @scan_Id
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
-        public virtual int Update(Database1DataSet1.ScannersDataTable dataTable) {
+        public virtual int Update(Database1DataSet13032561.ScannersDataTable dataTable) {
             return this.Adapter.Update(dataTable);
         }
         
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
-        public virtual int Update(Database1DataSet1 dataSet) {
+        public virtual int Update(Database1DataSet13032561 dataSet) {
             return this.Adapter.Update(dataSet, "Scanners");
         }
         
@@ -7039,7 +7040,7 @@ SELECT ap_Id, ap_piority, ap_startT, ap_duraT, ap_patient, ap_request, ap_paid, 
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
         [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Fill, true)]
-        public virtual int Fill(Database1DataSet1.TodayAppointmentDataTable dataTable) {
+        public virtual int Fill(Database1DataSet13032561.TodayAppointmentDataTable dataTable) {
             this.Adapter.SelectCommand = this.CommandCollection[0];
             if ((this.ClearBeforeFill == true)) {
                 dataTable.Clear();
@@ -7052,9 +7053,9 @@ SELECT ap_Id, ap_piority, ap_startT, ap_duraT, ap_patient, ap_request, ap_paid, 
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
         [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Select, true)]
-        public virtual Database1DataSet1.TodayAppointmentDataTable GetData() {
+        public virtual Database1DataSet13032561.TodayAppointmentDataTable GetData() {
             this.Adapter.SelectCommand = this.CommandCollection[0];
-            Database1DataSet1.TodayAppointmentDataTable dataTable = new Database1DataSet1.TodayAppointmentDataTable();
+            Database1DataSet13032561.TodayAppointmentDataTable dataTable = new Database1DataSet13032561.TodayAppointmentDataTable();
             this.Adapter.Fill(dataTable);
             return dataTable;
         }
@@ -7062,14 +7063,14 @@ SELECT ap_Id, ap_piority, ap_startT, ap_duraT, ap_patient, ap_request, ap_paid, 
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
-        public virtual int Update(Database1DataSet1.TodayAppointmentDataTable dataTable) {
+        public virtual int Update(Database1DataSet13032561.TodayAppointmentDataTable dataTable) {
             return this.Adapter.Update(dataTable);
         }
         
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
-        public virtual int Update(Database1DataSet1 dataSet) {
+        public virtual int Update(Database1DataSet13032561 dataSet) {
             return this.Adapter.Update(dataSet, "TodayAppointment");
         }
         
@@ -7715,7 +7716,7 @@ SELECT ap_Id, ap_piority, ap_startT, ap_duraT, ap_patient, ap_request, ap_paid, 
         ///</summary>
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
-        private int UpdateUpdatedRows(Database1DataSet1 dataSet, global::System.Collections.Generic.List<global::System.Data.DataRow> allChangedRows, global::System.Collections.Generic.List<global::System.Data.DataRow> allAddedRows) {
+        private int UpdateUpdatedRows(Database1DataSet13032561 dataSet, global::System.Collections.Generic.List<global::System.Data.DataRow> allChangedRows, global::System.Collections.Generic.List<global::System.Data.DataRow> allAddedRows) {
             int result = 0;
             if ((this._appointmentsTableAdapter != null)) {
                 global::System.Data.DataRow[] updatedRows = dataSet.Appointments.Select(null, null, global::System.Data.DataViewRowState.ModifiedCurrent);
@@ -7788,7 +7789,7 @@ SELECT ap_Id, ap_piority, ap_startT, ap_duraT, ap_patient, ap_request, ap_paid, 
         ///</summary>
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
-        private int UpdateInsertedRows(Database1DataSet1 dataSet, global::System.Collections.Generic.List<global::System.Data.DataRow> allAddedRows) {
+        private int UpdateInsertedRows(Database1DataSet13032561 dataSet, global::System.Collections.Generic.List<global::System.Data.DataRow> allAddedRows) {
             int result = 0;
             if ((this._appointmentsTableAdapter != null)) {
                 global::System.Data.DataRow[] addedRows = dataSet.Appointments.Select(null, null, global::System.Data.DataViewRowState.Added);
@@ -7854,7 +7855,7 @@ SELECT ap_Id, ap_piority, ap_startT, ap_duraT, ap_patient, ap_request, ap_paid, 
         ///</summary>
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
-        private int UpdateDeletedRows(Database1DataSet1 dataSet, global::System.Collections.Generic.List<global::System.Data.DataRow> allChangedRows) {
+        private int UpdateDeletedRows(Database1DataSet13032561 dataSet, global::System.Collections.Generic.List<global::System.Data.DataRow> allChangedRows) {
             int result = 0;
             if ((this._todayAppointmentTableAdapter != null)) {
                 global::System.Data.DataRow[] deletedRows = dataSet.TodayAppointment.Select(null, null, global::System.Data.DataViewRowState.Deleted);
@@ -7944,7 +7945,7 @@ SELECT ap_Id, ap_piority, ap_startT, ap_duraT, ap_patient, ap_request, ap_paid, 
         ///</summary>
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
-        public virtual int UpdateAll(Database1DataSet1 dataSet) {
+        public virtual int UpdateAll(Database1DataSet13032561 dataSet) {
             if ((dataSet == null)) {
                 throw new global::System.ArgumentNullException("dataSet");
             }
