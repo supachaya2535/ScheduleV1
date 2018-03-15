@@ -330,7 +330,26 @@ namespace AppointmentQueue
 
         private void edit_cond_req_btn_Click(object sender, EventArgs e)
         {
+            if (ID > -1)
+            {
+                if (MessageBox.Show("Do you want to update this record?", "Warning", MessageBoxButtons.YesNo) == System.Windows.Forms.DialogResult.Yes)
+                {
+                    try
+                    {
 
+                        ClearData();
+
+                    }
+                    catch
+                    {
+
+                    }
+                }
+            }
+            else
+            {
+                MessageBox.Show("Please Select Record to Update");
+            }
         }
 
         private void edit_requests_btn_Click(object sender, EventArgs e)
