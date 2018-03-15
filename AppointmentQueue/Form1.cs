@@ -300,7 +300,7 @@ namespace AppointmentQueue
 
         private void Search_request_info_btn_Click(object sender, EventArgs e)
         {
-            if (reqCob.Items != null && scan_CoBox.Items != null)
+            if (reqCob.Text.Trim() != "" && scan_CoBox.Text.Trim() != "")
             {
                 Search_Request_Information_From sFrom = new Search_Request_Information_From();
                 //this.todayDatePicker.Value = DateTime.Now;

@@ -30,13 +30,8 @@
         {
             this.components = new System.ComponentModel.Container();
             this.datagridview_req = new System.Windows.Forms.DataGridView();
-            this.database1DataSet13032561 = new AppointmentQueue.Database1DataSet13032561();
             this.requestsBindingSource = new System.Windows.Forms.BindingSource(this.components);
-            this.requestsTableAdapter = new AppointmentQueue.Database1DataSet13032561TableAdapters.RequestsTableAdapter();
-            this.reqIdDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.reqscanDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.reqbodypartDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.reqtimeDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.requestsTableAdapter = new AppointmentQueue.Database1DataSet1TableAdapters.RequestsTableAdapter();
             this.txt_req_id = new System.Windows.Forms.TextBox();
             this.label1 = new System.Windows.Forms.Label();
             this.btn_insert = new System.Windows.Forms.Button();
@@ -48,9 +43,16 @@
             this.txt_req_time = new System.Windows.Forms.TextBox();
             this.btn_delete = new System.Windows.Forms.Button();
             this.btn_update = new System.Windows.Forms.Button();
+            this.database1DataSet1 = new AppointmentQueue.Database1DataSet1();
+            this.requestsBindingSource1 = new System.Windows.Forms.BindingSource(this.components);
+            this.reqIdDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.reqscanDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.reqbodypartDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.reqtimeDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             ((System.ComponentModel.ISupportInitialize)(this.datagridview_req)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.database1DataSet13032561)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.requestsBindingSource)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.database1DataSet1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.requestsBindingSource1)).BeginInit();
             this.SuspendLayout();
             // 
             // datagridview_req
@@ -62,7 +64,7 @@
             this.reqscanDataGridViewTextBoxColumn,
             this.reqbodypartDataGridViewTextBoxColumn,
             this.reqtimeDataGridViewTextBoxColumn});
-            this.datagridview_req.DataSource = this.requestsBindingSource;
+            this.datagridview_req.DataSource = this.requestsBindingSource1;
             this.datagridview_req.Location = new System.Drawing.Point(12, 173);
             this.datagridview_req.Name = "datagridview_req";
             this.datagridview_req.RowHeadersWidth = 50;
@@ -71,44 +73,9 @@
             this.datagridview_req.TabIndex = 1;
             this.datagridview_req.RowHeaderMouseClick += new System.Windows.Forms.DataGridViewCellMouseEventHandler(this.datagridview_req_RowHeaderMouseClick);
             // 
-            // database1DataSet13032561
-            // 
-            this.database1DataSet13032561.DataSetName = "Database1DataSet13032561";
-            this.database1DataSet13032561.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
-            // 
-            // requestsBindingSource
-            // 
-            this.requestsBindingSource.DataMember = "Requests";
-            this.requestsBindingSource.DataSource = this.database1DataSet13032561;
-            // 
             // requestsTableAdapter
             // 
             this.requestsTableAdapter.ClearBeforeFill = true;
-            // 
-            // reqIdDataGridViewTextBoxColumn
-            // 
-            this.reqIdDataGridViewTextBoxColumn.DataPropertyName = "req_Id";
-            this.reqIdDataGridViewTextBoxColumn.HeaderText = "req_Id";
-            this.reqIdDataGridViewTextBoxColumn.Name = "reqIdDataGridViewTextBoxColumn";
-            this.reqIdDataGridViewTextBoxColumn.ReadOnly = true;
-            // 
-            // reqscanDataGridViewTextBoxColumn
-            // 
-            this.reqscanDataGridViewTextBoxColumn.DataPropertyName = "req_scan";
-            this.reqscanDataGridViewTextBoxColumn.HeaderText = "req_scan";
-            this.reqscanDataGridViewTextBoxColumn.Name = "reqscanDataGridViewTextBoxColumn";
-            // 
-            // reqbodypartDataGridViewTextBoxColumn
-            // 
-            this.reqbodypartDataGridViewTextBoxColumn.DataPropertyName = "req_bodypart";
-            this.reqbodypartDataGridViewTextBoxColumn.HeaderText = "req_bodypart";
-            this.reqbodypartDataGridViewTextBoxColumn.Name = "reqbodypartDataGridViewTextBoxColumn";
-            // 
-            // reqtimeDataGridViewTextBoxColumn
-            // 
-            this.reqtimeDataGridViewTextBoxColumn.DataPropertyName = "req_time";
-            this.reqtimeDataGridViewTextBoxColumn.HeaderText = "req_time";
-            this.reqtimeDataGridViewTextBoxColumn.Name = "reqtimeDataGridViewTextBoxColumn";
             // 
             // txt_req_id
             // 
@@ -216,6 +183,41 @@
             this.btn_update.UseVisualStyleBackColor = true;
             this.btn_update.Click += new System.EventHandler(this.btn_update_Click);
             // 
+            // database1DataSet1
+            // 
+            this.database1DataSet1.DataSetName = "Database1DataSet1";
+            this.database1DataSet1.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
+            // 
+            // requestsBindingSource1
+            // 
+            this.requestsBindingSource1.DataMember = "Requests";
+            this.requestsBindingSource1.DataSource = this.database1DataSet1;
+            // 
+            // reqIdDataGridViewTextBoxColumn
+            // 
+            this.reqIdDataGridViewTextBoxColumn.DataPropertyName = "req_Id";
+            this.reqIdDataGridViewTextBoxColumn.HeaderText = "req_Id";
+            this.reqIdDataGridViewTextBoxColumn.Name = "reqIdDataGridViewTextBoxColumn";
+            this.reqIdDataGridViewTextBoxColumn.ReadOnly = true;
+            // 
+            // reqscanDataGridViewTextBoxColumn
+            // 
+            this.reqscanDataGridViewTextBoxColumn.DataPropertyName = "req_scan";
+            this.reqscanDataGridViewTextBoxColumn.HeaderText = "req_scan";
+            this.reqscanDataGridViewTextBoxColumn.Name = "reqscanDataGridViewTextBoxColumn";
+            // 
+            // reqbodypartDataGridViewTextBoxColumn
+            // 
+            this.reqbodypartDataGridViewTextBoxColumn.DataPropertyName = "req_bodypart";
+            this.reqbodypartDataGridViewTextBoxColumn.HeaderText = "req_bodypart";
+            this.reqbodypartDataGridViewTextBoxColumn.Name = "reqbodypartDataGridViewTextBoxColumn";
+            // 
+            // reqtimeDataGridViewTextBoxColumn
+            // 
+            this.reqtimeDataGridViewTextBoxColumn.DataPropertyName = "req_time";
+            this.reqtimeDataGridViewTextBoxColumn.HeaderText = "req_time";
+            this.reqtimeDataGridViewTextBoxColumn.Name = "reqtimeDataGridViewTextBoxColumn";
+            // 
             // UpdateRequestsForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
@@ -237,8 +239,9 @@
             this.Text = "UpdateRequestsForm";
             this.Load += new System.EventHandler(this.UpdateRequestsForm_Load);
             ((System.ComponentModel.ISupportInitialize)(this.datagridview_req)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.database1DataSet13032561)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.requestsBindingSource)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.database1DataSet1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.requestsBindingSource1)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -246,13 +249,8 @@
 
         #endregion
         private System.Windows.Forms.DataGridView datagridview_req;
-        private Database1DataSet13032561 database1DataSet13032561;
         private System.Windows.Forms.BindingSource requestsBindingSource;
-        private Database1DataSet13032561TableAdapters.RequestsTableAdapter requestsTableAdapter;
-        private System.Windows.Forms.DataGridViewTextBoxColumn reqIdDataGridViewTextBoxColumn;
-        private System.Windows.Forms.DataGridViewTextBoxColumn reqscanDataGridViewTextBoxColumn;
-        private System.Windows.Forms.DataGridViewTextBoxColumn reqbodypartDataGridViewTextBoxColumn;
-        private System.Windows.Forms.DataGridViewTextBoxColumn reqtimeDataGridViewTextBoxColumn;
+        private Database1DataSet1TableAdapters.RequestsTableAdapter requestsTableAdapter;
         private System.Windows.Forms.TextBox txt_req_id;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Button btn_insert;
@@ -264,5 +262,11 @@
         private System.Windows.Forms.TextBox txt_req_time;
         private System.Windows.Forms.Button btn_delete;
         private System.Windows.Forms.Button btn_update;
+        private System.Windows.Forms.DataGridViewTextBoxColumn reqIdDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn reqscanDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn reqbodypartDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn reqtimeDataGridViewTextBoxColumn;
+        private System.Windows.Forms.BindingSource requestsBindingSource1;
+        private Database1DataSet1 database1DataSet1;
     }
 }
