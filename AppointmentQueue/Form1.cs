@@ -28,6 +28,8 @@ namespace AppointmentQueue
             // TODO: This line of code loads data into the 'database1DataSet.Appointments' table. You can move, or remove it, as needed.
             this.appointmentsTableAdapter.Fill(this.database1DataSet.Appointments);
 
+            Search_request_info_btn.Enabled = false;
+
             DataTable dt2 = readAppointmentToday();
             dataGridView2.DataSource = dt2;
 
@@ -307,7 +309,9 @@ namespace AppointmentQueue
                 sFrom.SetPickerDatetime(todayDatePicker);
                 sFrom.SetStartTime(this.todayDatePicker.Value);
                 DataTable req_dat = SQL.GetRequests();
+                DataTable scan_dat = SQL.GetScanner();
                 int req_id = -99;
+                int scan_id = -99;
                 foreach (DataRow item in req_dat.Rows)
                 {
                     string str = item["req_bodypart"].ToString().Trim();
@@ -317,9 +321,19 @@ namespace AppointmentQueue
                         break;
                     }
                 }
+                foreach (DataRow item in scan_dat.Rows)
+                {
+                    string str = item["scan_name"].ToString().Trim();
+                    if (str == scan_CoBox.Text.Trim())
+                    {
+                        scan_id = Convert.ToInt32(item["scan_Id"]);
+                        break;
+                    }
+                }
                 //sFrom.SetScanner(Appointment.getScanner(scan_CoBox.Items.ToString()));
                 sFrom.SetRequest(Appointment.getRequest(reqCob.Items.ToString()));
                 sFrom.SetRequest(req_id);
+                sFrom.SetScanner(scan_id);
                 sFrom.ShowDialog();
             }
             else
@@ -356,6 +370,32 @@ namespace AppointmentQueue
         {
             UpdateRequestsForm uform = new UpdateRequestsForm();
             uform.ShowDialog();
+        }
+
+        private void reqCob_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            // check the list of request
+            // if Null (-1 in database) --> can't assign
+            DataTable req_dat = SQL.GetRequests();
+            bool isHasReqTime = true;
+            foreach (DataRow item in req_dat.Rows)
+            {
+                string str = item["req_bodypart"].ToString().Trim();
+                if (str == reqCob.Text.ToString().Trim())
+                {
+                    if (Convert.ToInt32(item["req_time"]) == -1)
+                    {
+                        isHasReqTime = false;
+                        reqCob.SelectedIndex = -1;
+                        Search_request_info_btn.Enabled = false;
+                        MessageBox.Show("This request is not Available, Please set the request time of this request");
+                    }
+
+                }
+            }
+
+            if (isHasReqTime)
+                Search_request_info_btn.Enabled = true;
         }
     }
 }

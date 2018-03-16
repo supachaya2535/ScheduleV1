@@ -203,6 +203,7 @@
             this.reqCob.Name = "reqCob";
             this.reqCob.Size = new System.Drawing.Size(241, 26);
             this.reqCob.TabIndex = 8;
+            this.reqCob.SelectedIndexChanged += new System.EventHandler(this.reqCob_SelectedIndexChanged);
             // 
             // label3
             // 
@@ -275,6 +276,7 @@
             // 
             // Search_request_info_btn
             // 
+            this.Search_request_info_btn.Enabled = false;
             this.Search_request_info_btn.Font = new System.Drawing.Font("Verdana", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.Search_request_info_btn.Location = new System.Drawing.Point(9, 31);
             this.Search_request_info_btn.Name = "Search_request_info_btn";
@@ -301,6 +303,7 @@
             // 
             // insuCob
             // 
+            this.insuCob.Enabled = false;
             this.insuCob.Font = new System.Drawing.Font("Verdana", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.insuCob.FormattingEnabled = true;
             this.insuCob.Items.AddRange(new object[] {
@@ -311,10 +314,12 @@
             this.insuCob.Name = "insuCob";
             this.insuCob.Size = new System.Drawing.Size(184, 26);
             this.insuCob.TabIndex = 14;
+            this.insuCob.Visible = false;
             // 
             // InsuranceCob
             // 
             this.InsuranceCob.AutoSize = true;
+            this.InsuranceCob.Enabled = false;
             this.InsuranceCob.Font = new System.Drawing.Font("Verdana", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.InsuranceCob.Location = new System.Drawing.Point(356, 132);
             this.InsuranceCob.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
@@ -322,9 +327,11 @@
             this.InsuranceCob.Size = new System.Drawing.Size(95, 20);
             this.InsuranceCob.TabIndex = 13;
             this.InsuranceCob.Text = "Insurance";
+            this.InsuranceCob.Visible = false;
             // 
             // paidCob
             // 
+            this.paidCob.Enabled = false;
             this.paidCob.Font = new System.Drawing.Font("Verdana", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.paidCob.FormattingEnabled = true;
             this.paidCob.Items.AddRange(new object[] {
@@ -337,10 +344,12 @@
             this.paidCob.Name = "paidCob";
             this.paidCob.Size = new System.Drawing.Size(184, 26);
             this.paidCob.TabIndex = 12;
+            this.paidCob.Visible = false;
             // 
             // label5
             // 
             this.label5.AutoSize = true;
+            this.label5.Enabled = false;
             this.label5.Font = new System.Drawing.Font("Verdana", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label5.Location = new System.Drawing.Point(407, 36);
             this.label5.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
@@ -348,9 +357,11 @@
             this.label5.Size = new System.Drawing.Size(45, 20);
             this.label5.TabIndex = 11;
             this.label5.Text = "Paid";
+            this.label5.Visible = false;
             // 
             // statusCob
             // 
+            this.statusCob.Enabled = false;
             this.statusCob.Font = new System.Drawing.Font("Verdana", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.statusCob.FormattingEnabled = true;
             this.statusCob.Items.AddRange(new object[] {
@@ -362,10 +373,12 @@
             this.statusCob.Name = "statusCob";
             this.statusCob.Size = new System.Drawing.Size(184, 26);
             this.statusCob.TabIndex = 10;
+            this.statusCob.Visible = false;
             // 
             // label4
             // 
             this.label4.AutoSize = true;
+            this.label4.Enabled = false;
             this.label4.Font = new System.Drawing.Font("Verdana", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label4.Location = new System.Drawing.Point(384, 82);
             this.label4.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
@@ -373,6 +386,7 @@
             this.label4.Size = new System.Drawing.Size(65, 20);
             this.label4.TabIndex = 9;
             this.label4.Text = "Status";
+            this.label4.Visible = false;
             // 
             // birthDatePicker
             // 

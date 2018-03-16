@@ -150,15 +150,51 @@ namespace AppointmentQueue
             }
 
             Console.WriteLine("---read end---");
-            Console.WriteLine("---show id loading sample---");
-            foreach (DataRow item in dt.Rows)
+            //Console.WriteLine("---show id loading sample---");
+            //foreach (DataRow item in dt.Rows)
+            //{
+            //    Console.WriteLine(item["req_Id"]);
+            //    Console.WriteLine(item["req_scan"]);
+            //    Console.WriteLine(item["req_bodypart"]);
+            //    Console.WriteLine(item["req_time"]);
+            //    Console.WriteLine("-------------------------");
+            //}
+
+            Console.WriteLine("---close connection---");
+            cn.Close();
+            return dt;
+        }
+
+        public static DataTable GetScanner()
+        {
+            SqlConnection cn = new SqlConnection(global::AppointmentQueue.Properties.Settings.Default.Database1ConnectionString);
+            cn.Open();
+            SqlCommand command = new SqlCommand("SELECT scan_Id, scan_name, scan_quantity FROM Scanners", cn);
+            //command.Parameters.AddWithValue("@StartT", startT);
+            //command.Parameters.AddWithValue("@EndT", endT);
+            SqlDataReader reader = command.ExecuteReader();
+
+            DataTable dt = new DataTable();
+            dt.Columns.Add("scan_Id", typeof(Int16));
+            dt.Columns.Add("scan_name", typeof(string));
+            dt.Columns.Add("scan_quantity", typeof(Int16));
+
+            Console.WriteLine("---start read Scanners---");
+            while (reader.Read())
             {
-                Console.WriteLine(item["req_Id"]);
-                Console.WriteLine(item["req_scan"]);
-                Console.WriteLine(item["req_bodypart"]);
-                Console.WriteLine(item["req_time"]);
-                Console.WriteLine("-------------------------");
+                DataRow row = dt.NewRow();
+                row["scan_Id"] = reader[0];
+                row["scan_name"] = reader[1];
+                row["scan_quantity"] = reader[2];
+                dt.Rows.Add(row);
             }
+
+            Console.WriteLine("---read end---");
+            //Console.WriteLine("---show id loading sample---");
+            //foreach (DataRow item in dt.Rows)
+            //{
+            //    Console.WriteLine(item["scan_Id"]);
+            //}
 
             Console.WriteLine("---close connection---");
             cn.Close();
