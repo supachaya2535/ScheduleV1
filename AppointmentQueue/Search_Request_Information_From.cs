@@ -43,8 +43,90 @@ namespace AppointmentQueue
                 this.Close();
                 return;
             }
-            dataGridView1.DataSource = dt_for_show;
+            DataTable dt_for_show_read_easy = ConvertDataTableReadEasier(dt_for_show);
+            dataGridView1.DataSource = dt_for_show_read_easy;
 
+        }
+
+        private static DataTable ConvertDataTableReadEasier(DataTable dt)
+        {
+            DataTable dt_fix = new DataTable();
+            dt_fix.Columns.Add("Date Time", typeof(string));
+            dt_fix.Columns.Add("Day Of Week", typeof(string));
+            dt_fix.Columns.Add("Time On Day", typeof(string));
+            dt_fix.Columns.Add("Scanner Type", typeof(string));
+            dt_fix.Columns.Add("Request Type", typeof(string));
+            dt_fix.Columns.Add("Scanner Position", typeof(string));
+
+            DataTable scan_dat = SQL.GetScanner();
+            DataTable req_dat = SQL.GetRequests();
+
+            foreach (DataRow item in dt.Rows)
+            {
+                DateTime date = Convert.ToDateTime(item["day"]);
+                // new date time 
+                DateTime date_new = date;
+                if (date.Year < 2500)
+                    date_new = new DateTime(date.Year + 543, date.Month, date.Day);
+                else
+                    date_new = new DateTime(date.Year, date.Month, date.Day);
+                int time = Convert.ToInt32(item["time"].ToString());
+                string time_on_day = "";
+                if (time == 1)
+                    time_on_day = "Morning";
+                else
+                    time_on_day = "Afternoon";
+                int scan_type = Convert.ToInt32(item["scan_type"].ToString());
+                string scan_type_cmd = "scan_Id = " + scan_type;
+                string scanner_type = scan_dat.Select(scan_type_cmd)[0]["scan_name"].ToString();
+                int req_type = Convert.ToInt32(item["req_type"].ToString());
+                string req_type_cmd = "req_Id = " + req_type;
+                string req_type_str = req_dat.Select(req_type_cmd)[0]["req_bodypart"].ToString();
+                int pos_scan = Convert.ToInt32(item["scan_numb"].ToString());
+                string pos_scan_str = "";
+                if (pos_scan == 1) pos_scan_str = "Down";
+                else if (pos_scan == 2) pos_scan_str = "Up";
+                string day_of_week = "";
+                // 
+                DateTime test = DateTime.Today.Date;
+
+                switch (date_new.DayOfWeek)
+                {
+                    case DayOfWeek.Sunday:
+                        day_of_week = "Sunday";
+                        break;
+                    case DayOfWeek.Monday:
+                        day_of_week = "Monday";
+                        break;
+                    case DayOfWeek.Tuesday:
+                        day_of_week = "Tuesday";
+                        break;
+                    case DayOfWeek.Wednesday:
+                        day_of_week = "Wednesday";
+                        break;
+                    case DayOfWeek.Thursday:
+                        day_of_week = "Thrusday";
+                        break;
+                    case DayOfWeek.Friday:
+                        day_of_week = "Friday";
+                        break;
+                    case DayOfWeek.Saturday:
+                        day_of_week = "Saturday";
+                        break;
+                    default:
+                        break;
+                }
+                DataRow dr_fix = dt_fix.NewRow();
+                dr_fix["Date Time"] = date_new.ToString().Split(' ')[0];
+                dr_fix["Day Of Week"] = day_of_week.Trim();
+                dr_fix["Time On Day"] = time_on_day.Trim();
+                dr_fix["Scanner Type"] = scanner_type.Trim();
+                dr_fix["Request Type"] = req_type_str.Trim();
+                dr_fix["Scanner Position"] = pos_scan_str.Trim();
+                dt_fix.Rows.Add(dr_fix);
+            }
+
+            return dt_fix;
         }
 
         private static DataTable GetDayCanReservation()
@@ -174,10 +256,10 @@ namespace AppointmentQueue
             string date_str = dataGridView1.Rows[idx].Cells[0].Value.ToString();
             int day = Convert.ToInt32(date_str.Split('/')[0]);
             int month = Convert.ToInt32(date_str.Split('/')[1]);
-            int year = Convert.ToInt32(date_str.Split('/')[2]);
-            int time = Convert.ToInt32(dataGridView1.Rows[idx].Cells[1].Value);
+            int year = Convert.ToInt32(date_str.Split('/')[2]) - 543;
+            string time = dataGridView1.Rows[idx].Cells[2].Value.ToString();
             int hour = -1;
-            if (time == 1) // morning
+            if (time == "Morning") // morning
                 hour = 9;
             else
                 hour = 13;
