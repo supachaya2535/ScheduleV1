@@ -37,6 +37,12 @@ namespace AppointmentQueue
             //this.appointmentsTableAdapter1.Fill(this.database1DataSet1.Appointments);
 
             DataTable dt_for_show = GetDayCanReservation();
+            if (dt_for_show == null)
+            {
+                MessageBox.Show("No Condition for this request");
+                this.Close();
+                return;
+            }
             dataGridView1.DataSource = dt_for_show;
 
         }
@@ -59,6 +65,22 @@ namespace AppointmentQueue
             int time_req_used = Convert.ToInt32(req_dat.Select(search_req)[0]["req_time"]);
             int count_on_show = 0;
             DateTime time_shifted = startT_needed;
+            // check have cond req
+            bool isFound = false;
+            foreach (DataRow item in req_cond_dat.Rows)
+            {
+                string[] str_dat = item["possible_req"].ToString().Trim().Split(',');
+                for (int i = 0; i < str_dat.Length; i++)
+                {
+                    int req_id_dat = Convert.ToInt32(str_dat[i]);
+                    if (req_id_dat == req_needed)
+                        isFound = true;
+                }
+            }
+
+            if (!isFound)
+                return null;
+
             // find day
             while (count_on_show <= 10)
             {
