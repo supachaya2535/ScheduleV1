@@ -21,6 +21,7 @@ namespace AppointmentQueue
             InitializeComponent();
             readScanner();
             readRequest();
+            ID = -1;
         }
         private void Form1_Load(object sender, EventArgs e)
         {
@@ -42,7 +43,7 @@ namespace AppointmentQueue
             nameTxt.Text = "";
             lnameTxt.Text = "";
             ageTxt.Text = "";
-            ID = 0;
+            ID = -1;
         }
         private int getAge(DateTime birthDate)
         {
@@ -153,8 +154,6 @@ namespace AppointmentQueue
                 "ap_patientstatus,ap_insu,ap_scan,ap_scannum FROM Appointments", cn);
             SqlDataReader reader = command.ExecuteReader();
 
-            Console.WriteLine(reader[0]);
-
             DataTable dt = new DataTable();
             dt.Columns.Add("ap_piority", typeof(Int16));
             dt.Columns.Add("ap_startT", typeof(string));
@@ -200,7 +199,6 @@ namespace AppointmentQueue
                 cn.Close();
                 MessageBox.Show("Add New Appointment Done!!", "Messeg", MessageBoxButtons.OK, MessageBoxIcon.Information);
                 this.appointmentsTableAdapter.Fill(this.database1DataSet.Appointments);
-
                 dt2 = readAppointmentToday();
                 dataGridView2.DataSource = dt2;
 
@@ -330,26 +328,9 @@ namespace AppointmentQueue
 
         private void edit_cond_req_btn_Click(object sender, EventArgs e)
         {
-            if (ID > -1)
-            {
-                if (MessageBox.Show("Do you want to update this record?", "Warning", MessageBoxButtons.YesNo) == System.Windows.Forms.DialogResult.Yes)
-                {
-                    try
-                    {
-
-                        ClearData();
-
-                    }
-                    catch
-                    {
-
-                    }
-                }
-            }
-            else
-            {
-                MessageBox.Show("Please Select Record to Update");
-            }
+            ClearData();
+            edit_CondReq_Form eForm = new edit_CondReq_Form();
+            eForm.ShowDialog();
         }
 
         private void edit_requests_btn_Click(object sender, EventArgs e)
