@@ -1,6 +1,6 @@
 ﻿namespace AppointmentQueue
 {
-    partial class seachPaForm
+    partial class SeachPaForm
     {
         /// <summary>
         /// Required designer variable.
@@ -29,7 +29,7 @@
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
-            this.patGridView = new System.Windows.Forms.DataGridView();
+            this.drGridView = new System.Windows.Forms.DataGridView();
             this.database1DataSet = new AppointmentQueue.Database1DataSet();
             this.patientsBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.patientsTableAdapter = new AppointmentQueue.Database1DataSetTableAdapters.PatientsTableAdapter();
@@ -40,19 +40,20 @@
             this.lnametxt = new System.Windows.Forms.TextBox();
             this.label3 = new System.Windows.Forms.Label();
             this.acceptBtn = new System.Windows.Forms.Button();
-            ((System.ComponentModel.ISupportInitialize)(this.patGridView)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.drGridView)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.database1DataSet)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.patientsBindingSource)).BeginInit();
             this.SuspendLayout();
             // 
-            // patGridView
+            // drGridView
             // 
-            this.patGridView.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.patGridView.Location = new System.Drawing.Point(6, 93);
-            this.patGridView.Name = "patGridView";
-            this.patGridView.Size = new System.Drawing.Size(482, 182);
-            this.patGridView.TabIndex = 0;
-            this.patGridView.RowHeaderMouseDoubleClick += new System.Windows.Forms.DataGridViewCellMouseEventHandler(this.patGridView_RowHeaderMouseDoubleClick);
+            this.drGridView.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.drGridView.Location = new System.Drawing.Point(6, 93);
+            this.drGridView.Name = "drGridView";
+            this.drGridView.Size = new System.Drawing.Size(482, 182);
+            this.drGridView.TabIndex = 0;
+            this.drGridView.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.drGridView_CellContentClick);
+            this.drGridView.RowHeaderMouseDoubleClick += new System.Windows.Forms.DataGridViewCellMouseEventHandler(this.patGridView_RowHeaderMouseDoubleClick);
             // 
             // database1DataSet
             // 
@@ -129,7 +130,7 @@
             // 
             this.acceptBtn.Enabled = false;
             this.acceptBtn.Font = new System.Drawing.Font("Verdana", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.acceptBtn.Location = new System.Drawing.Point(254, 50);
+            this.acceptBtn.Location = new System.Drawing.Point(313, 48);
             this.acceptBtn.Name = "acceptBtn";
             this.acceptBtn.Size = new System.Drawing.Size(73, 30);
             this.acceptBtn.TabIndex = 21;
@@ -149,11 +150,11 @@
             this.Controls.Add(this.label2);
             this.Controls.Add(this.nametxt);
             this.Controls.Add(this.label1);
-            this.Controls.Add(this.patGridView);
+            this.Controls.Add(this.drGridView);
             this.Name = "seachPaForm";
             this.Text = "Seach Patient";
             this.Load += new System.EventHandler(this.seachPaForm_Load);
-            ((System.ComponentModel.ISupportInitialize)(this.patGridView)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.drGridView)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.database1DataSet)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.patientsBindingSource)).EndInit();
             this.ResumeLayout(false);
@@ -163,7 +164,7 @@
 
         #endregion
 
-        private System.Windows.Forms.DataGridView patGridView;
+        private System.Windows.Forms.DataGridView drGridView;
         private Database1DataSet database1DataSet;
         private System.Windows.Forms.BindingSource patientsBindingSource;
         private Database1DataSetTableAdapters.PatientsTableAdapter patientsTableAdapter;

@@ -11,18 +11,16 @@ using System.Data.SqlClient;
 
 namespace AppointmentQueue
 {
-    public partial class seachPaForm : Form
+    public partial class SeachPaForm : Form
     {
-        //SqlConnection cn = new SqlConnection(global::AppointmentQueue.Properties.Settings.Default.Database1ConnectionString);
-        //SqlCommand command;
-        //SqlDataAdapter adapt;
         int ID = 0;
         bool did_lock = false;
         private string _HNpatient;
         private string _PatName;
         private string _PatLName;
         private string _PatBD;
-        public seachPaForm()
+        public bool exist = false;
+        public SeachPaForm()
         {
             InitializeComponent();
         }
@@ -77,7 +75,7 @@ namespace AppointmentQueue
             if (!did_lock)
             {
                 DataTable dt = readPatient(HNtxt.Text, nametxt.Text, lnametxt.Text);
-                patGridView.DataSource = dt;
+                drGridView.DataSource = dt;
                 acceptBtn.Enabled = false;
             }
         }
@@ -87,7 +85,7 @@ namespace AppointmentQueue
             if (!did_lock)
             {
                 DataTable dt = readPatient(HNtxt.Text, nametxt.Text, lnametxt.Text);
-                patGridView.DataSource = dt;
+                drGridView.DataSource = dt;
                 acceptBtn.Enabled = false;
             }
         }
@@ -96,7 +94,7 @@ namespace AppointmentQueue
         {
             if (!did_lock) {
                 DataTable dt = readPatient(HNtxt.Text, nametxt.Text, lnametxt.Text);
-                patGridView.DataSource = dt;
+                drGridView.DataSource = dt;
                 acceptBtn.Enabled = false;
             }
         }
@@ -105,20 +103,36 @@ namespace AppointmentQueue
         {
             acceptBtn.Enabled = true;
             did_lock = true;
-            ID = patGridView.CurrentRow.Index;
-            HNtxt.Text = patGridView.Rows[ID].Cells[0].Value.ToString();
-            nametxt.Text = patGridView.Rows[ID].Cells[1].Value.ToString();
-            lnametxt.Text = patGridView.Rows[ID].Cells[2].Value.ToString();
+            ID = drGridView.CurrentRow.Index;
+            HNtxt.Text = drGridView.Rows[ID].Cells[0].Value.ToString();
+            nametxt.Text = drGridView.Rows[ID].Cells[1].Value.ToString();
+            lnametxt.Text = drGridView.Rows[ID].Cells[2].Value.ToString();
             this.HNpatient = HNtxt.Text;
             this.PatName = nametxt.Text;
             this.PatLName = lnametxt.Text;
-            this.PatBD = patGridView.Rows[ID].Cells[3].Value.ToString();
-        did_lock = false;
+            this.PatBD = drGridView.Rows[ID].Cells[3].Value.ToString();
+            did_lock = false;
         }
 
         private void acceptBtn_Click(object sender, EventArgs e)
         {
+            exist = true;
             Close();
+        }
+
+        private void drGridView_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
+            acceptBtn.Enabled = true;
+            did_lock = true;
+            ID = drGridView.CurrentRow.Index;
+            HNtxt.Text = drGridView.Rows[ID].Cells[0].Value.ToString();
+            nametxt.Text = drGridView.Rows[ID].Cells[1].Value.ToString();
+            lnametxt.Text = drGridView.Rows[ID].Cells[2].Value.ToString();
+            this.HNpatient = HNtxt.Text;
+            this.PatName = nametxt.Text;
+            this.PatLName = lnametxt.Text;
+            this.PatBD = drGridView.Rows[ID].Cells[3].Value.ToString();
+            did_lock = false;
         }
     }
 }

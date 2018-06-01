@@ -11,50 +11,24 @@ namespace AppointmentQueue
     public class Appointment
     {
         public int id;
-        public int piority;
         public DateTime startT;
-        public DateTime duraT;
         public string patientHN;
         public int requestScan;
-        public int paid;
-        public DateTime birthDate;
-        public int patientstatus;
-        public int patientinsu;
+        public string period;
+        public string appstatus;
         public int scan;
-        public int scannum;
-
-
-        public Appointment(DateTime startT, string HN, string req, string paid, DateTime birthDate, string pstatus, string pinsu, string scan, int scannum, DataTable dt)
+ 
+        public Appointment(DateTime startT, string HN, string req, string period, string scan)
         {
             this.startT = startT;
-            this.duraT = startT;
             this.patientHN = HN;
             this.requestScan = getRequest(req);
-            this.paid = getPaid(paid);
-            this.birthDate = birthDate;
-            this.patientstatus = getPatientStatus(pstatus);
-            this.patientstatus = getPatientInsu(pinsu);
+            this.period = period;
+            this.appstatus = "Waiting";
             this.scan = getScanner(scan);
-            this.scannum = scannum;
-            this.piority = getPiority(dt);
+           
         }
-
-        // 6/3/2561 dataset 
-        public Appointment(DateTime startT, string HN, string req, string paid, string pstatus, string pinsu, string scan, int scannum, DataTable dt)
-        {
-            this.startT = startT;
-            this.duraT = startT;
-            this.patientHN = HN;
-            this.requestScan = getRequest(req);
-            this.paid = getPaid(paid);
-            //this.birthDate = birthDate;
-            this.patientstatus = getPatientStatus(pstatus);
-            this.patientstatus = getPatientInsu(pinsu);
-            this.scan = getScanner(scan);
-            this.scannum = scannum;
-            this.piority = getPiority(dt);
-        }
-
+        
         public static int getScanner(string scan)
         {
             int r = 1;
@@ -105,79 +79,7 @@ namespace AppointmentQueue
                 r = 21;
             return r;
         }
-        public static int getPaid(string paid)
-        {
-            int p = 0;
-            if (paid.Equals("VIP") == true)
-                p = 1;
-            else if (paid.Equals("Seepat") == true)
-                p = 2;
-            else if (paid.Equals("GMC") == true)
-                p = 3;
-            else if ((paid.Equals("Elective") == true))
-                p = 4;
-
-            return p;
-        }
-        public static int getPatientStatus(string pstat)
-        {
-            int ps = 3;
-            if (pstat.Equals("Emergency") == true)
-                ps = 1;
-            else if (pstat.Equals("RPD") == true)
-                ps = 2;
-            else if (pstat.Equals("OPD") == true)
-                ps = 3;
-
-            return ps;
-        }
-        public static int getPatientInsu(string pinsu)
-        {
-            int ps = 1;
-            if (pinsu.Equals("no") == true)
-                ps = 1;
-            else
-                ps = 2;
-            return ps;
-        }
-        private int getPiority(DataTable table)
-        {
-            int pio = 1;
-            foreach (DataRow row in table.Rows)
-            {
-                if (patientstatus == 1 && patientstatus < Convert.ToInt32(row.ItemArray[7].ToString()))
-                {//Patientstatus condition
-                    pio = Convert.ToInt32(row.ItemArray[1].ToString());
-                    break;
-                }
-                else
-                {
-                    if (paid > Convert.ToInt32(row.ItemArray[6].ToString()))
-                    {//Paid condition
-                        pio = Convert.ToInt32(row.ItemArray[1].ToString()) + 1;
-                    }
-                    else if (paid == Convert.ToInt32(row.ItemArray[6].ToString()))
-                    {//
-                        if (patientinsu < Convert.ToInt32(row.ItemArray[8].ToString()))
-                        {//Insurance condition
-                            pio = Convert.ToInt32(row.ItemArray[1].ToString());
-                            break;
-                        }
-                        else
-                        {
-                            pio = Convert.ToInt32(row.ItemArray[1].ToString()) + 1;
-                        }
-                    }
-                    else
-                    {
-                        pio = Convert.ToInt32(row.ItemArray[1].ToString());
-                        break;
-                    }
-                }
-            }
-
-            return pio;
-        }
+        
         private void showTable(DataTable table)
         {
             foreach (DataColumn col in table.Columns)

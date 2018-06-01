@@ -14,39 +14,22 @@ namespace AppointmentQueue
 {
     public partial class Form1 : Form
     {
-        SqlConnection cn = new SqlConnection(global::AppointmentQueue.Properties.Settings.Default.Database1ConnectionString);
-        int ID = -1;
         public Form1()
         {
             InitializeComponent();
-            readScanner();
-            readRequest();
-            ID = -1;
+            scan_CoBox = SQL.readScanner(scan_CoBox);
+            reqCob = SQL.readRequest(reqCob);
+            scan_CoBox.SelectedIndex = 0;
+            paidCob.SelectedIndex = 0;
+            reqCob.SelectedIndex = 28;
+            todayDatePicker.Value = DateTime.Today;
+            todayDay.Value = DateTime.Today;
+            startDate.Value = DateTime.Today;
+            endDate.Value = DateTime.Today.AddDays(30);
+            DataTable dt = SQL.GetAppointment(todayDay.Value.Date, todayDay.Value.Date, " ", " ", " ");
+            appDataGridView.DataSource = dt;
         }
-        private void Form1_Load(object sender, EventArgs e)
-        {
-            this.todayDatePicker.Value = DateTime.Now;
-            // TODO: This line of code loads data into the 'database1DataSet.Appointments' table. You can move, or remove it, as needed.
-            this.appointmentsTableAdapter.Fill(this.database1DataSet.Appointments);
-
-            Search_request_info_btn.Enabled = false;
-
-            DataTable dt2 = readAppointmentToday();
-            dataGridView2.DataSource = dt2;
-
-        }
-        private void ClearData()
-        {
-            HNtxt.Text = "";
-            reqCob.Text = "";
-            paidCob.Text = "";
-            insuCob.Text = "";
-            statusCob.Text = "";
-            nameTxt.Text = "";
-            lnameTxt.Text = "";
-            ageTxt.Text = "";
-            ID = -1;
-        }
+        
         private int getAge(DateTime birthDate)
         {
             DateTime n = DateTime.Now; // To avoid a race condition around midnight
@@ -57,326 +40,167 @@ namespace AppointmentQueue
 
             return age;
         }
-        private void UpdatePiority(DateTime theday, int newPio)
+        
+        //start over again
+        private void seachPaBtn_Click_1(object sender, EventArgs e)
         {
-            cn.Open();
-            SqlCommand cmd = new SqlCommand("UPDATE Appointments SET ap_piority = ap_piority+1 WHERE ap_piority>=@NewPio " +
-                "AND ap_startT=@TheDay", cn);
-
-            cmd.Parameters.AddWithValue("@TheDay", theday);
-            cmd.Parameters.AddWithValue("@NewPio", newPio);
-            cmd.ExecuteNonQuery();
-            MessageBox.Show("Record Updated Successfully");
-            cn.Close();
-
-        }
-        private void dataGridView2_RowHeaderMouseDoubleClick(object sender, DataGridViewCellMouseEventArgs e)
-        {
-            ID = dataGridView2.CurrentRow.Index;
-            HNtxt.Text = dataGridView2.Rows[ID].Cells[4].Value.ToString();
-            reqCob.SelectedIndex = Convert.ToInt32(dataGridView2.Rows[ID].Cells[5].Value.ToString()) + 1;
-            paidCob.SelectedIndex = Convert.ToInt32(dataGridView2.Rows[ID].Cells[6].Value.ToString()) + 1;
-            statusCob.SelectedIndex = Convert.ToInt32(dataGridView2.Rows[ID].Cells[8].Value.ToString()) + 1;
-            insuCob.SelectedIndex = Convert.ToInt32(dataGridView2.Rows[ID].Cells[9].Value.ToString()) + 1;
-            scan_CoBox.SelectedIndex = Convert.ToInt32(dataGridView2.Rows[ID].Cells[10].Value.ToString()) + 1;
-
-        }
-        private DateTime calDurationTimePiority()
-        {
-            DateTime dura = new DateTime();
-
-            return dura;
-        }
-        private void readScanner()
-        {
-            Console.WriteLine("---Scanner---");
-            SqlConnection cn = new SqlConnection(global::AppointmentQueue.Properties.Settings.Default.Database1ConnectionString);
-            cn.Open();
-            SqlCommand command = new SqlCommand("SELECT scan_id,scan_name FROM Scanners", cn);
-            SqlDataReader reader = command.ExecuteReader();
-
-            while (reader.Read())
-                scan_CoBox.Items.Add(reader[1].ToString());
-            for (int i = 0; i < scan_CoBox.Items.Count; i++)
+            SeachPaForm sForm = new SeachPaForm();
+            sForm.exist = false;
+            sForm.ShowDialog();
+            if ((sForm.exist==true))
             {
-                Console.WriteLine(scan_CoBox.Items[i]);
+                this.HNtxt.Text = sForm.HNpatient;
+                this.nameTxt.Text = sForm.PatName;
+                this.lnameTxt.Text = sForm.PatLName;
+                this.birthDatePicker.Value = Convert.ToDateTime(sForm.PatBD);
+                this.ageTxt.Text = Convert.ToString(getAge(this.birthDatePicker.Value.Date));
             }
-            cn.Close();
+            
         }
-        private void readRequest()
+
+        private void seachDateForReq_Click(object sender, EventArgs e)
         {
-            Console.WriteLine("---Request---");
-            //SqlConnection cn = new SqlConnection(global::AppointmentQueue.Properties.Settings.Default.Database1ConnectionString);
-            cn.Open();
-            SqlCommand command = new SqlCommand("SELECT req_id,req_scan,req_bodypart FROM Requests WHERE [req_scan] =" + "1", cn);
-            SqlDataReader reader = command.ExecuteReader();
-            while (reader.Read())
-                reqCob.Items.Add(reader[2].ToString());
-            for (int i = 0; i < reqCob.Items.Count; i++)
+
+            DateForReqSuggestionForm sForm = new DateForReqSuggestionForm(scan_CoBox.SelectedIndex,paidCob.SelectedIndex, reqCob.SelectedIndex, todayDatePicker.Value.Date);
+            sForm.exist = false;
+            sForm.ShowDialog();
+            if ((sForm.exist == true))
             {
-                Console.WriteLine(reqCob.Items[i]);
+                todayDatePicker.Value = sForm.chosenT;
+                scan_CoBox.SelectedIndex = sForm.scannerInx;
+                reqCob.SelectedIndex = sForm.requestInx;
+                paidCob.SelectedIndex = sForm.periodInx;
+                addBtn.Enabled = true;
             }
-            cn.Close();
+            
         }
-        private DataTable readAppointmentToday()
+
+        private void betweenCheckBox_CheckedChanged(object sender, EventArgs e)
         {
-            //SqlConnection cn = new SqlConnection(global::AppointmentQueue.Properties.Settings.Default.Database1ConnectionString);
-            cn.Open();
-            DateTime startT = todayDatePicker.Value.Date;
-            DateTime endT = startT.Date.AddDays(1).AddTicks(-1);
-            SqlCommand command = new SqlCommand("SELECT ap_id,ap_piority,ap_startT,ap_duraT,ap_patient,ap_request,ap_paid," +
-                "ap_patientstatus,ap_insu,ap_scan,ap_scannum FROM Appointments WHERE ap_startT >= @StartT AND ap_startT < @EndT ORDER BY ap_piority", cn);
-            command.Parameters.AddWithValue("@StartT", startT);
-            command.Parameters.AddWithValue("@EndT", endT);
-            SqlDataReader reader = command.ExecuteReader();
-
-            DataTable dt = new DataTable();
-            dt.Columns.Add("ap_id", typeof(Int16));
-            dt.Columns.Add("ap_piority", typeof(Int16));
-            dt.Columns.Add("ap_startT", typeof(string));
-            dt.Columns.Add("ap_duraT", typeof(string));
-            dt.Columns.Add("ap_patient", typeof(string));
-            dt.Columns.Add("ap_request", typeof(Int16));
-            dt.Columns.Add("ap_paid", typeof(Int16));
-            dt.Columns.Add("ap_patientstatus", typeof(Int16));
-            dt.Columns.Add("ap_insu", typeof(Int16));
-            dt.Columns.Add("ap_scan", typeof(Int16));
-            dt.Columns.Add("ap_scannum", typeof(Int16));
-            dt.Load(reader);
-
-            cn.Close();
-            return dt;
-
-        }
-        private DataTable readAppointment()
-        {
-            //SqlConnection cn = new SqlConnection(global::AppointmentQueue.Properties.Settings.Default.Database1ConnectionString);
-            cn.Open();
-            SqlCommand command = new SqlCommand("SELECT ap_piority,ap_startT,ap_duraT,ap_patient,ap_request,ap_paid," +
-                "ap_patientstatus,ap_insu,ap_scan,ap_scannum FROM Appointments", cn);
-            SqlDataReader reader = command.ExecuteReader();
-
-            DataTable dt = new DataTable();
-            dt.Columns.Add("ap_piority", typeof(Int16));
-            dt.Columns.Add("ap_startT", typeof(string));
-            dt.Columns.Add("ap_duraT", typeof(string));
-            dt.Columns.Add("ap_patient", typeof(string));
-            dt.Columns.Add("ap_request", typeof(Int16));
-            dt.Columns.Add("ap_paid", typeof(Int16));
-            dt.Columns.Add("ap_patientstatus", typeof(Int16));
-            dt.Columns.Add("ap_insu", typeof(Int16));
-            dt.Columns.Add("ap_scan", typeof(Int16));
-            dt.Columns.Add("ap_scannum", typeof(Int16));
-            dt.Load(reader);
-
-            cn.Close();
-            return dt;
-        }
-        private void addBtn_Click(object sender, EventArgs e)
-        {
-            //SqlConnection cn = new SqlConnection(global::AppointmentQueue.Properties.Settings.Default.Database1ConnectionString);
-            try
+            if (betweenCheckBox.Checked == true)
             {
-                string sql = "INSERT INTO Appointments (ap_piority,ap_startT,ap_duraT,ap_patient,ap_request,ap_paid,ap_patientstatus,ap_insu,ap_scan,ap_scannum) " +
-                    "VALUES(@ap_piority,@ap_startT,@ap_duraT,@ap_patient,@ap_request,@ap_paid,@ap_patientstatus,@ap_insu,@ap_scan,@ap_scannum)";
-                SqlCommand exeSql = new SqlCommand(sql, cn);
-
-                int scannum = 1;
-                //DataTable dt = readAppointment();
-                DataTable dt2 = readAppointmentToday();
-                Appointment app = new Appointment(todayDatePicker.Value.Date, HNtxt.Text, reqCob.Text, paidCob.Text, birthDatePicker.Value.Date, statusCob.Text, insuCob.Text, scan_CoBox.Text, scannum, dt2);
-                UpdatePiority(app.startT, app.piority);
-                exeSql.Parameters.AddWithValue("@ap_piority", app.piority);
-                exeSql.Parameters.AddWithValue("@ap_startT", app.startT);
-                exeSql.Parameters.AddWithValue("@ap_duraT", app.duraT);
-                exeSql.Parameters.AddWithValue("@ap_patient", app.patientHN);
-                exeSql.Parameters.AddWithValue("@ap_request", app.requestScan);
-                exeSql.Parameters.AddWithValue("@ap_paid", app.paid);
-                exeSql.Parameters.AddWithValue("@ap_patientstatus", app.patientstatus);
-                exeSql.Parameters.AddWithValue("@ap_insu", app.patientinsu);
-                exeSql.Parameters.AddWithValue("@ap_scan", app.scan);
-                exeSql.Parameters.AddWithValue("@ap_scannum", app.scannum);
-                cn.Open();
-                exeSql.ExecuteNonQuery();
-                cn.Close();
-                MessageBox.Show("Add New Appointment Done!!", "Messeg", MessageBoxButtons.OK, MessageBoxIcon.Information);
-                this.appointmentsTableAdapter.Fill(this.database1DataSet.Appointments);
-                dt2 = readAppointmentToday();
-                dataGridView2.DataSource = dt2;
-
-                ClearData();
-            }
-            catch (Exception ex)
-            {
-                MessageBox.Show(ex.Message, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
-            }
-            finally
-            {
-                cn.Close();
+                todayCheckBox.Checked = false;
+                DataTable dt = SQL.GetAppointment(startDate.Value, endDate.Value, "", "", "");
+                appDataGridView.DataSource = dt;
             }
         }
-        private void scan_CoBox_SelectedIndexChanged(object sender, EventArgs e)
+
+        private void todayCheckBox_CheckedChanged(object sender, EventArgs e)
         {
-            reqCob.Enabled = true;
-            addBtn.Enabled = true;
+            if(todayCheckBox.Checked == true)
+            {
+                betweenCheckBox.Checked = false;
+                DataTable dt = SQL.GetAppointment(todayDay.Value, todayDay.Value, "", "", "");
+                appDataGridView.DataSource = dt;
+            }
         }
+
+        private void todayDay_ValueChanged(object sender, EventArgs e)
+        {
+            todayCheckBox_CheckedChanged(sender, e);
+        }
+
+        private void startDate_ValueChanged(object sender, EventArgs e)
+        {
+            DateTime date1 = startDate.Value.Date;
+            DateTime date2 = endDate.Value.Date;
+            int result = DateTime.Compare(date1, date2);
+            if (result>0)
+                endDate.Value = startDate.Value.Date.AddDays(1);
+            betweenCheckBox_CheckedChanged(sender, e);
+        }
+
+        private void endDate_ValueChanged(object sender, EventArgs e)
+        {
+            int result = DateTime.Compare(startDate.Value.Date, endDate.Value.Date);
+            if (result>0)
+                endDate.Value = startDate.Value.Date;
+            betweenCheckBox_CheckedChanged(sender, e);
+        }
+
+        private void HNtxt_TextChanged(object sender, EventArgs e)
+        {
+            if(HNtxt.Text == null)
+                seachDateForReq.Enabled = false;
+            else
+                seachDateForReq.Enabled = true;
+        }
+
         private void todayDatePicker_ValueChanged(object sender, EventArgs e)
         {
-            DataTable dt2 = readAppointmentToday();
-            dataGridView2.DataSource = dt2;
+            //DataTable dt = SQL.GetAppointment(todayDay.Value.Date, todayDay.Value.Date, " ", " ", " ");
+            //appDataGridView.DataSource = dt;
+            
+            
         }
-        private void deleteBtn_Click(object sender, EventArgs e)
+
+        private void addBtn_Click(object sender, EventArgs e)
         {
-            if (ID > -1)
-            {
-                if (MessageBox.Show("Do you want to delete this record?", "Warning", MessageBoxButtons.YesNo) == System.Windows.Forms.DialogResult.Yes)
+            try {
+                if (MessageBox.Show("Do you want to insert a new appointment?", "Insert new appointment", MessageBoxButtons.YesNo) == DialogResult.Yes)
                 {
-                    try
-                    {
-                        //SqlConnection cn = new SqlConnection(global::AppointmentQueue.Properties.Settings.Default.Database1ConnectionString);
-                        cn.Open();
-                        string id = dataGridView2.Rows[ID].Cells[0].Value.ToString();
-                        string sql = "DELETE FROM Appointments WHERE ap_id=" + id + "";
+                    SqlConnection cn = new SqlConnection(global::AppointmentQueue.Properties.Settings.Default.Database1ConnectionString);
+                    SqlCommand command = new SqlCommand(
+                        "INSERT INTO Appointments (ap_startT,ap_patient,ap_request,ap_period,ap_appstatus,ap_scan) " +
+                        "VALUES (@ap_startT,@ap_patient,@ap_request,@ap_period,@ap_appstatus,@ap_scan)", cn);
 
-                        SqlCommand delcmd = new SqlCommand(sql, cn);
-                        delcmd.Connection = cn;
-                        int x = delcmd.ExecuteNonQuery();
-                        cn.Close();
-                        this.appointmentsTableAdapter.Fill(this.database1DataSet.Appointments);
+                    command.Parameters.AddWithValue("@ap_startT", todayDay.Value.Date.ToString().Trim());
+                    command.Parameters.AddWithValue("@ap_patient", HNtxt.Text.Trim());
+                    command.Parameters.AddWithValue("@ap_request", reqCob.SelectedIndex + 1);
+                    command.Parameters.AddWithValue("@ap_period", paidCob.SelectedItem.ToString().Trim());
+                    command.Parameters.AddWithValue("@ap_appstatus", "Waiting");
+                    command.Parameters.AddWithValue("@ap_scan", scan_CoBox.SelectedIndex + 1);
+                    command.Connection = cn;
 
-                        DataTable dt2 = readAppointmentToday();
-                        dataGridView2.DataSource = dt2;
-                        ClearData();
-
-                        if (x != 0)
-                        {
-                            MessageBox.Show("Deleted succesfully");
-                        }
-                    }
-                    catch (Exception)
-                    {
-                        throw;
-                    }
+                    cn.Open();
+                    command.ExecuteNonQuery();
+                    MessageBox.Show("Row inserted !! ");
+                    cn.Close();
                 }
+                
             }
-            else
+            catch (SystemException ex)
             {
-                MessageBox.Show("Please Select Record to Delete");
+                MessageBox.Show(string.Format("Couldn't insert a new record : An error occurred: {0}", ex.Message));
             }
+            todayCheckBox_CheckedChanged(sender, e);
+
         }
-        private void editBtn_Click(object sender, EventArgs e)
+
+        private void appDataGridView_CellContentClick(object sender, DataGridViewCellEventArgs e)
         {
-            if (ID > -1)
-            {
-                if (MessageBox.Show("Do you want to update this record?", "Warning", MessageBoxButtons.YesNo) == System.Windows.Forms.DialogResult.Yes)
-                {
-                    try
-                    {
-
-                        ClearData();
-
-                    }
-                    catch
-                    {
-
-                    }
-                }
-            }
-            else
-            {
-                MessageBox.Show("Please Select Record to Update");
-            }
+            AppointmentForm sForm = new AppointmentForm();
+            //ap_id,ap_startT,ap_patient,ap_period,ap_request,req_bodypart,ap_appstatus,ap_scan,scan_name,req_time
+            int ID = appDataGridView.CurrentCell.RowIndex;
+            todayDay.Value = Convert.ToDateTime(appDataGridView.Rows[ID].Cells[2].ToString().Trim());
+            scan_CoBox.SelectedIndex = Convert.ToInt16(appDataGridView.Rows[ID].Cells[7].ToString().Trim())-1;
+            reqCob.SelectedItem = appDataGridView.Rows[ID].Cells[5].ToString().Trim();
+            paidCob.SelectedItem = appDataGridView.Rows[ID].Cells[3].ToString().Trim();
         }
-        private void seachPaBtn_Click(object sender, EventArgs e)
+
+        private void manReq_Click(object sender, EventArgs e)
         {
-            seachPaForm sForm = new seachPaForm();
+            DocterRequestForm sForm = new DocterRequestForm();
             sForm.ShowDialog();
-            this.HNtxt.Text = sForm.HNpatient;
-            this.nameTxt.Text = sForm.PatName;
-            this.lnameTxt.Text = sForm.PatLName;
-            this.birthDatePicker.Value = Convert.ToDateTime(sForm.PatBD);
-            this.ageTxt.Text = Convert.ToString(getAge(this.birthDatePicker.Value.Date));
         }
 
-        private void Search_request_info_btn_Click(object sender, EventArgs e)
+        private void manDayOff_Click(object sender, EventArgs e)
         {
-            if (reqCob.Text.Trim() != "" && scan_CoBox.Text.Trim() != "")
-            {
-                Search_Request_Information_From sFrom = new Search_Request_Information_From();
-                //this.todayDatePicker.Value = DateTime.Now;
-                sFrom.SetPickerDatetime(todayDatePicker);
-                sFrom.SetStartTime(this.todayDatePicker.Value);
-                DataTable req_dat = SQL.GetRequests();
-                DataTable scan_dat = SQL.GetScanner();
-                int req_id = -99;
-                int scan_id = -99;
-                foreach (DataRow item in req_dat.Rows)
-                {
-                    string str = item["req_bodypart"].ToString().Trim();
-                    if (str == reqCob.Text.Trim())
-                    {
-                        req_id = Convert.ToInt32(item["req_Id"]);
-                        break;
-                    }
-                }
-                foreach (DataRow item in scan_dat.Rows)
-                {
-                    string str = item["scan_name"].ToString().Trim();
-                    if (str == scan_CoBox.Text.Trim())
-                    {
-                        scan_id = Convert.ToInt32(item["scan_Id"]);
-                        break;
-                    }
-                }
-                //sFrom.SetScanner(Appointment.getScanner(scan_CoBox.Items.ToString()));
-                sFrom.SetRequest(Appointment.getRequest(reqCob.Items.ToString()));
-                sFrom.SetRequest(req_id);
-                sFrom.SetScanner(scan_id);
-                sFrom.ShowDialog();
-            }
-            else
-            {
-                MessageBox.Show("Please insert your request and scanner you want");
-            }
+            DayOffForm sForm = new DayOffForm();
+            sForm.ShowDialog();
         }
 
-        private void edit_cond_req_btn_Click(object sender, EventArgs e)
+        private void button1_Click(object sender, EventArgs e)
         {
-            ClearData();
-            edit_CondReq_Form eForm = new edit_CondReq_Form();
-            eForm.ShowDialog();
+            RequestForm sForm = new RequestForm();
+            sForm.ShowDialog();
         }
 
-        private void edit_requests_btn_Click(object sender, EventArgs e)
+        private void button2_Click(object sender, EventArgs e)
         {
-            UpdateRequestsForm uform = new UpdateRequestsForm();
-            uform.ShowDialog();
+            ScannerForm sForm = new ScannerForm();
+            sForm.ShowDialog();
         }
-
-        private void reqCob_SelectedIndexChanged(object sender, EventArgs e)
-        {
-            // check the list of request
-            // if Null (-1 in database) --> can't assign
-            DataTable req_dat = SQL.GetRequests();
-            bool isHasReqTime = true;
-            foreach (DataRow item in req_dat.Rows)
-            {
-                string str = item["req_bodypart"].ToString().Trim();
-                if (str == reqCob.Text.ToString().Trim())
-                {
-                    if (Convert.ToInt32(item["req_time"]) == -1)
-                    {
-                        isHasReqTime = false;
-                        reqCob.SelectedIndex = -1;
-                        Search_request_info_btn.Enabled = false;
-                        MessageBox.Show("This request is not Available, Please set the request time of this request");
-                    }
-
-                }
-            }
-
-            if (isHasReqTime)
-                Search_request_info_btn.Enabled = true;
-        }
+        
     }
 }
