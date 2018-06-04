@@ -192,10 +192,11 @@ namespace AppointmentQueue
 
         private void appDataGridView_RowHeaderMouseDoubleClick(object sender, DataGridViewCellMouseEventArgs e)
         {
-            AppointmentForm sForm = new AppointmentForm();
-            //ap_id,ap_startT,ap_patient,ap_period,ap_request,req_bodypart,ap_appstatus,ap_scan,scan_name,req_time
+             //ap_id,ap_startT,ap_patient,ap_period,ap_request,req_bodypart,ap_appstatus,ap_scan,scan_name,req_time
             int ID = appDataGridView.CurrentCell.RowIndex;
-            todayDay.Value = Convert.ToDateTime(appDataGridView.Rows[ID].Cells[2].ToString().Trim());
+            AppointmentForm sForm = new AppointmentForm(appDataGridView.Rows[ID]);
+           // DateTime tmpDate = DateTime.ParseExact(appDataGridView.Rows[ID].Cells[2].ToString());
+            //todayDay.Value = tmpDate.Date;
             scan_CoBox.SelectedIndex = Convert.ToInt16(appDataGridView.Rows[ID].Cells[7].ToString().Trim()) - 1;
             reqCob.SelectedItem = appDataGridView.Rows[ID].Cells[5].ToString().Trim();
             paidCob.SelectedItem = appDataGridView.Rows[ID].Cells[3].ToString().Trim();

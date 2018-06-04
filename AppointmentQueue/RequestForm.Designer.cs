@@ -29,15 +29,14 @@
         private void InitializeComponent()
         {
             this.groupBox6 = new System.Windows.Forms.GroupBox();
+            this.drReqId = new System.Windows.Forms.TextBox();
+            this.label2 = new System.Windows.Forms.Label();
+            this.reqName = new System.Windows.Forms.TextBox();
             this.label1 = new System.Windows.Forms.Label();
             this.reqTime = new System.Windows.Forms.NumericUpDown();
-            this.delBtn = new System.Windows.Forms.Button();
             this.label20 = new System.Windows.Forms.Label();
             this.insertBtn = new System.Windows.Forms.Button();
             this.reqDataGridView = new System.Windows.Forms.DataGridView();
-            this.reqName = new System.Windows.Forms.TextBox();
-            this.drReqId = new System.Windows.Forms.TextBox();
-            this.label2 = new System.Windows.Forms.Label();
             this.groupBox6.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.reqTime)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.reqDataGridView)).BeginInit();
@@ -51,7 +50,6 @@
             this.groupBox6.Controls.Add(this.reqName);
             this.groupBox6.Controls.Add(this.label1);
             this.groupBox6.Controls.Add(this.reqTime);
-            this.groupBox6.Controls.Add(this.delBtn);
             this.groupBox6.Controls.Add(this.label20);
             this.groupBox6.Controls.Add(this.insertBtn);
             this.groupBox6.Font = new System.Drawing.Font("Verdana", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
@@ -61,6 +59,34 @@
             this.groupBox6.TabIndex = 58;
             this.groupBox6.TabStop = false;
             this.groupBox6.Text = "Request Information";
+            // 
+            // drReqId
+            // 
+            this.drReqId.Enabled = false;
+            this.drReqId.Font = new System.Drawing.Font("Verdana", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.drReqId.Location = new System.Drawing.Point(115, 26);
+            this.drReqId.Name = "drReqId";
+            this.drReqId.Size = new System.Drawing.Size(233, 23);
+            this.drReqId.TabIndex = 69;
+            // 
+            // label2
+            // 
+            this.label2.AutoSize = true;
+            this.label2.Font = new System.Drawing.Font("Verdana", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label2.Location = new System.Drawing.Point(31, 29);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(51, 16);
+            this.label2.TabIndex = 68;
+            this.label2.Text = "Req.ID";
+            // 
+            // reqName
+            // 
+            this.reqName.Enabled = false;
+            this.reqName.Font = new System.Drawing.Font("Verdana", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.reqName.Location = new System.Drawing.Point(115, 55);
+            this.reqName.Name = "reqName";
+            this.reqName.Size = new System.Drawing.Size(233, 23);
+            this.reqName.TabIndex = 46;
             // 
             // label1
             // 
@@ -95,17 +121,6 @@
             0,
             0});
             // 
-            // delBtn
-            // 
-            this.delBtn.Enabled = false;
-            this.delBtn.Font = new System.Drawing.Font("Verdana", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.delBtn.Location = new System.Drawing.Point(193, 117);
-            this.delBtn.Name = "delBtn";
-            this.delBtn.Size = new System.Drawing.Size(170, 30);
-            this.delBtn.TabIndex = 43;
-            this.delBtn.Text = "Delete a request";
-            this.delBtn.UseVisualStyleBackColor = true;
-            // 
             // label20
             // 
             this.label20.AutoSize = true;
@@ -120,7 +135,7 @@
             // 
             this.insertBtn.Enabled = false;
             this.insertBtn.Font = new System.Drawing.Font("Verdana", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.insertBtn.Location = new System.Drawing.Point(7, 117);
+            this.insertBtn.Location = new System.Drawing.Point(95, 119);
             this.insertBtn.Name = "insertBtn";
             this.insertBtn.Size = new System.Drawing.Size(180, 30);
             this.insertBtn.TabIndex = 38;
@@ -138,33 +153,6 @@
             this.reqDataGridView.Name = "reqDataGridView";
             this.reqDataGridView.Size = new System.Drawing.Size(373, 345);
             this.reqDataGridView.TabIndex = 59;
-            // 
-            // reqName
-            // 
-            this.reqName.Font = new System.Drawing.Font("Verdana", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.reqName.Location = new System.Drawing.Point(115, 55);
-            this.reqName.Name = "reqName";
-            this.reqName.Size = new System.Drawing.Size(233, 23);
-            this.reqName.TabIndex = 46;
-            // 
-            // drReqId
-            // 
-            this.drReqId.Enabled = false;
-            this.drReqId.Font = new System.Drawing.Font("Verdana", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.drReqId.Location = new System.Drawing.Point(115, 26);
-            this.drReqId.Name = "drReqId";
-            this.drReqId.Size = new System.Drawing.Size(233, 23);
-            this.drReqId.TabIndex = 69;
-            // 
-            // label2
-            // 
-            this.label2.AutoSize = true;
-            this.label2.Font = new System.Drawing.Font("Verdana", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label2.Location = new System.Drawing.Point(31, 29);
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(51, 16);
-            this.label2.TabIndex = 68;
-            this.label2.Text = "Req.ID";
             // 
             // RequestForm
             // 
@@ -189,7 +177,6 @@
         private System.Windows.Forms.Label label20;
         private System.Windows.Forms.Button insertBtn;
         private System.Windows.Forms.DataGridView reqDataGridView;
-        private System.Windows.Forms.Button delBtn;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.NumericUpDown reqTime;
         private System.Windows.Forms.TextBox reqName;

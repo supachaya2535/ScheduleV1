@@ -16,7 +16,7 @@ namespace AppointmentQueue
         public RequestForm()
         {
             InitializeComponent();
-            DataTable dt = SQL.GetRequests(reqName.Text.Trim());
+            DataTable dt = SQL.GetRequests("");
             reqDataGridView.DataSource = dt;
         }
 
@@ -38,6 +38,7 @@ namespace AppointmentQueue
                     cn.Open();
                     command.ExecuteNonQuery();
                     cn.Close();
+                    reqDataGridView.DataSource = SQL.GetRequests("");
                 }
 
             }
