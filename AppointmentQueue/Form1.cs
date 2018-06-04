@@ -14,6 +14,7 @@ namespace AppointmentQueue
 {
     public partial class Form1 : Form
     {
+        
         public Form1()
         {
             InitializeComponent();
@@ -22,11 +23,13 @@ namespace AppointmentQueue
             scan_CoBox.SelectedIndex = 0;
             paidCob.SelectedIndex = 0;
             reqCob.SelectedIndex = 28;
+
             todayDatePicker.Value = DateTime.Today;
             todayDay.Value = DateTime.Today;
             startDate.Value = DateTime.Today;
-            endDate.Value = DateTime.Today.AddDays(30);
-            DataTable dt = SQL.GetAppointment(todayDay.Value.Date, todayDay.Value.Date, " ", " ", " ");
+            endDate.Value = DateTime.Today.AddDays(7);
+            
+            DataTable dt = SQL.GetAppointment(todayDay.Value, todayDay.Value, " ", " ", " ");
             appDataGridView.DataSource = dt;
         }
         
@@ -54,6 +57,7 @@ namespace AppointmentQueue
                 this.lnameTxt.Text = sForm.PatLName;
                 this.birthDatePicker.Value = Convert.ToDateTime(sForm.PatBD);
                 this.ageTxt.Text = Convert.ToString(getAge(this.birthDatePicker.Value.Date));
+                addBtn.Enabled = true;
             }
             
         }
@@ -70,7 +74,6 @@ namespace AppointmentQueue
                 scan_CoBox.SelectedIndex = sForm.scannerInx;
                 reqCob.SelectedIndex = sForm.requestInx;
                 paidCob.SelectedIndex = sForm.periodInx;
-                addBtn.Enabled = true;
             }
             
         }
@@ -102,19 +105,15 @@ namespace AppointmentQueue
 
         private void startDate_ValueChanged(object sender, EventArgs e)
         {
-            DateTime date1 = startDate.Value.Date;
-            DateTime date2 = endDate.Value.Date;
-            int result = DateTime.Compare(date1, date2);
-            if (result>0)
+            if (startDate.Value.Date> endDate.Value.Date)
                 endDate.Value = startDate.Value.Date.AddDays(1);
             betweenCheckBox_CheckedChanged(sender, e);
         }
 
         private void endDate_ValueChanged(object sender, EventArgs e)
         {
-            int result = DateTime.Compare(startDate.Value.Date, endDate.Value.Date);
-            if (result>0)
-                endDate.Value = startDate.Value.Date;
+            if (startDate.Value.Date > endDate.Value.Date)
+                endDate.Value = startDate.Value.Date.AddDays(1);
             betweenCheckBox_CheckedChanged(sender, e);
         }
 
@@ -144,7 +143,7 @@ namespace AppointmentQueue
                         "INSERT INTO Appointments (ap_startT,ap_patient,ap_request,ap_period,ap_appstatus,ap_scan) " +
                         "VALUES (@ap_startT,@ap_patient,@ap_request,@ap_period,@ap_appstatus,@ap_scan)", cn);
 
-                    command.Parameters.AddWithValue("@ap_startT", todayDay.Value.Date.ToString().Trim());
+                    command.Parameters.AddWithValue("@ap_startT", todayDatePicker.Value.Date.ToString().Trim());
                     command.Parameters.AddWithValue("@ap_patient", HNtxt.Text.Trim());
                     command.Parameters.AddWithValue("@ap_request", reqCob.SelectedIndex + 1);
                     command.Parameters.AddWithValue("@ap_period", paidCob.SelectedItem.ToString().Trim());
@@ -166,18 +165,7 @@ namespace AppointmentQueue
             todayCheckBox_CheckedChanged(sender, e);
 
         }
-
-        private void appDataGridView_CellContentClick(object sender, DataGridViewCellEventArgs e)
-        {
-            AppointmentForm sForm = new AppointmentForm();
-            //ap_id,ap_startT,ap_patient,ap_period,ap_request,req_bodypart,ap_appstatus,ap_scan,scan_name,req_time
-            int ID = appDataGridView.CurrentCell.RowIndex;
-            todayDay.Value = Convert.ToDateTime(appDataGridView.Rows[ID].Cells[2].ToString().Trim());
-            scan_CoBox.SelectedIndex = Convert.ToInt16(appDataGridView.Rows[ID].Cells[7].ToString().Trim())-1;
-            reqCob.SelectedItem = appDataGridView.Rows[ID].Cells[5].ToString().Trim();
-            paidCob.SelectedItem = appDataGridView.Rows[ID].Cells[3].ToString().Trim();
-        }
-
+        
         private void manReq_Click(object sender, EventArgs e)
         {
             DocterRequestForm sForm = new DocterRequestForm();
@@ -201,6 +189,16 @@ namespace AppointmentQueue
             ScannerForm sForm = new ScannerForm();
             sForm.ShowDialog();
         }
-        
+
+        private void appDataGridView_RowHeaderMouseDoubleClick(object sender, DataGridViewCellMouseEventArgs e)
+        {
+            AppointmentForm sForm = new AppointmentForm();
+            //ap_id,ap_startT,ap_patient,ap_period,ap_request,req_bodypart,ap_appstatus,ap_scan,scan_name,req_time
+            int ID = appDataGridView.CurrentCell.RowIndex;
+            todayDay.Value = Convert.ToDateTime(appDataGridView.Rows[ID].Cells[2].ToString().Trim());
+            scan_CoBox.SelectedIndex = Convert.ToInt16(appDataGridView.Rows[ID].Cells[7].ToString().Trim()) - 1;
+            reqCob.SelectedItem = appDataGridView.Rows[ID].Cells[5].ToString().Trim();
+            paidCob.SelectedItem = appDataGridView.Rows[ID].Cells[3].ToString().Trim();
+        }
     }
 }

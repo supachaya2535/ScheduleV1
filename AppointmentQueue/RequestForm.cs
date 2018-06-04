@@ -16,6 +16,8 @@ namespace AppointmentQueue
         public RequestForm()
         {
             InitializeComponent();
+            DataTable dt = SQL.GetRequests(reqName.Text.Trim());
+            reqDataGridView.DataSource = dt;
         }
 
         private void reqEditBtn_Click(object sender, EventArgs e)
@@ -26,11 +28,10 @@ namespace AppointmentQueue
                 {
                     SqlConnection cn = new SqlConnection(global::AppointmentQueue.Properties.Settings.Default.Database1ConnectionString);
                     SqlCommand command = new SqlCommand(
-                        "INSERT INTO Requests (req_Id,req_scan,req_bodypart,req_time) " +
-                        "VALUE (@req_Id,@req_scan,@req_bodypart,@req_time)", cn);
+                        "INSERT INTO Requests (req_Id,req_bodypart,req_time) " +
+                        "VALUE (@req_Id,@req_bodypart,@req_time)", cn);
 
-                    command.Parameters.AddWithValue("@req_scan", scanComb.SelectedItem.ToString().Trim());
-                    command.Parameters.AddWithValue("@req_bodypart", reqComb.SelectedItem.ToString().Trim());
+                    command.Parameters.AddWithValue("@req_bodypart", reqName.Text.Trim());
                     command.Parameters.AddWithValue("@req_time", reqTime.Value);
                     command.Connection = cn;
 
@@ -46,5 +47,6 @@ namespace AppointmentQueue
             }
 
         }
+
     }
 }

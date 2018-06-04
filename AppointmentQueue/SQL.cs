@@ -26,7 +26,7 @@ namespace AppointmentQueue
                 "FROM Appointments " +
                 "JOIN Scanners ON ap_scan = scan_Id "+
                 "JOIN Requests ON ap_request = req_Id "+
-                "WHERE ap_startT >= @StartT AND ap_startT <= @EndT "+
+                "WHERE ap_startT BETWEEN @StartT AND @EndT "+
                 "AND ap_patient LIKE '%" + patient.Trim() + "%' "+
                 "AND ap_period LIKE '" + period.Trim() + "%'"+
                 "AND req_bodypart LIKE '" + request.Trim() + "%' ORDER BY ap_startT", cn);
@@ -135,7 +135,7 @@ namespace AppointmentQueue
             return dt;
         }
 
-        public static DataTable GetDayOffs(DateTime startT, DateTime endT)
+        public static DataTable GetDayOffs(DateTime startT, DateTime endT, String drName)
         {
             SqlConnection cn = new SqlConnection(global::AppointmentQueue.Properties.Settings.Default.Database1ConnectionString);
             cn.Open();
@@ -143,11 +143,12 @@ namespace AppointmentQueue
             SqlCommand command = new SqlCommand(
                 "SELECT df_id,df_date,df_dr,dr_name,df_period,df_detail " +
                 "FROM DayOffs "+
-                "JOIN Doctors ON df_dr = dr_Id "
-                //"WHERE df_date >= @StartT AND df_date <= @EndT "
+                "JOIN Doctors ON df_dr = dr_Id "+
+                "WHERE df_date BETWEEN @StartT AND  @EndT "+
+                "AND dr_lname LIKE '%" + drName + "%'"
                 , cn);
-            //command.Parameters.AddWithValue("@StartT", startT);
-            //command.Parameters.AddWithValue("@EndT", endT);
+            command.Parameters.AddWithValue("@StartT", startT);
+            command.Parameters.AddWithValue("@EndT", endT);
             SqlDataReader reader = command.ExecuteReader();
 
             DataTable dt = new DataTable();
@@ -168,7 +169,7 @@ namespace AppointmentQueue
             SqlConnection cn = new SqlConnection(global::AppointmentQueue.Properties.Settings.Default.Database1ConnectionString);
             cn.Open();
             SqlCommand command = new SqlCommand(
-                "SELECT drreq_Id,req_bodypart,dr_name,drreq_period,drreq_time,drreq_dayofweek " +
+                "SELECT drreq_Id,req_bodypart,dr_name,drreq_period,drreq_time,drreq_dayofweek,dr_Id " +
                 "FROM DoctorRequests "+
                 "JOIN Doctors ON dr_Id = drreq_dr " +
                 "JOIN Requests ON req_Id = drreq_req " +
@@ -185,6 +186,7 @@ namespace AppointmentQueue
             dt.Columns.Add("drreq_period", typeof(string));
             dt.Columns.Add("drreq_time", typeof(string));
             dt.Columns.Add("drreq_dayofweek", typeof(string));
+            dt.Columns.Add("dr_Id", typeof(Int16));
             dt.Load(reader);
             cn.Close();
             return dt;

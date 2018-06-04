@@ -76,7 +76,7 @@ namespace AppointmentQueue
             startT = startT.Date;
             int offSet = Convert.ToInt16(dayNumericUpDown.Value);
             DateTime endT = startT.AddDays(offSet);
-            DataTable dtDayOff = SQL.GetDayOffs(startT,endT);
+            DataTable dtDayOff = SQL.GetDayOffs(startT,endT,"");
             dataGridView1.DataSource = dtDayOff;
 
             DataTable suggestDate = new DataTable();

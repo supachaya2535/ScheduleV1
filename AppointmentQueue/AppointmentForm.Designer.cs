@@ -52,6 +52,8 @@
             this.deleteBtn = new System.Windows.Forms.Button();
             this.label7 = new System.Windows.Forms.Label();
             this.textBox1 = new System.Windows.Forms.TextBox();
+            this.statusComb = new System.Windows.Forms.ComboBox();
+            this.label9 = new System.Windows.Forms.Label();
             this.groupBox2.SuspendLayout();
             this.groupBox1.SuspendLayout();
             this.SuspendLayout();
@@ -179,6 +181,8 @@
             // groupBox1
             // 
             this.groupBox1.BackColor = System.Drawing.SystemColors.GradientActiveCaption;
+            this.groupBox1.Controls.Add(this.statusComb);
+            this.groupBox1.Controls.Add(this.label9);
             this.groupBox1.Controls.Add(this.label6);
             this.groupBox1.Controls.Add(this.todayDatePicker);
             this.groupBox1.Controls.Add(this.reqCob);
@@ -190,7 +194,7 @@
             this.groupBox1.Font = new System.Drawing.Font("Verdana", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.groupBox1.Location = new System.Drawing.Point(1, 247);
             this.groupBox1.Name = "groupBox1";
-            this.groupBox1.Size = new System.Drawing.Size(343, 149);
+            this.groupBox1.Size = new System.Drawing.Size(343, 187);
             this.groupBox1.TabIndex = 22;
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Request Information";
@@ -265,7 +269,7 @@
             this.label5.AutoSize = true;
             this.label5.Enabled = false;
             this.label5.Font = new System.Drawing.Font("Verdana", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label5.Location = new System.Drawing.Point(11, 113);
+            this.label5.Location = new System.Drawing.Point(15, 116);
             this.label5.Name = "label5";
             this.label5.Size = new System.Drawing.Size(48, 16);
             this.label5.TabIndex = 11;
@@ -284,7 +288,7 @@
             // editBtn
             // 
             this.editBtn.Font = new System.Drawing.Font("Verdana", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.editBtn.Location = new System.Drawing.Point(1, 402);
+            this.editBtn.Location = new System.Drawing.Point(1, 440);
             this.editBtn.Name = "editBtn";
             this.editBtn.Size = new System.Drawing.Size(116, 30);
             this.editBtn.TabIndex = 21;
@@ -294,7 +298,7 @@
             // deleteBtn
             // 
             this.deleteBtn.Font = new System.Drawing.Font("Verdana", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.deleteBtn.Location = new System.Drawing.Point(221, 402);
+            this.deleteBtn.Location = new System.Drawing.Point(221, 440);
             this.deleteBtn.Name = "deleteBtn";
             this.deleteBtn.Size = new System.Drawing.Size(123, 30);
             this.deleteBtn.TabIndex = 4;
@@ -319,11 +323,36 @@
             this.textBox1.Size = new System.Drawing.Size(231, 23);
             this.textBox1.TabIndex = 25;
             // 
+            // statusComb
+            // 
+            this.statusComb.Font = new System.Drawing.Font("Verdana", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.statusComb.FormattingEnabled = true;
+            this.statusComb.Items.AddRange(new object[] {
+            "Waiting",
+            "Cancled",
+            "Done",
+            "Changed"});
+            this.statusComb.Location = new System.Drawing.Point(78, 143);
+            this.statusComb.Name = "statusComb";
+            this.statusComb.Size = new System.Drawing.Size(229, 24);
+            this.statusComb.TabIndex = 22;
+            // 
+            // label9
+            // 
+            this.label9.AutoSize = true;
+            this.label9.Enabled = false;
+            this.label9.Font = new System.Drawing.Font("Verdana", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label9.Location = new System.Drawing.Point(15, 146);
+            this.label9.Name = "label9";
+            this.label9.Size = new System.Drawing.Size(52, 16);
+            this.label9.TabIndex = 21;
+            this.label9.Text = "Status";
+            // 
             // AppointmentForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(345, 434);
+            this.ClientSize = new System.Drawing.Size(345, 473);
             this.Controls.Add(this.label7);
             this.Controls.Add(this.textBox1);
             this.Controls.Add(this.groupBox1);
@@ -367,5 +396,7 @@
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.Label label7;
         private System.Windows.Forms.TextBox textBox1;
+        private System.Windows.Forms.ComboBox statusComb;
+        private System.Windows.Forms.Label label9;
     }
 }

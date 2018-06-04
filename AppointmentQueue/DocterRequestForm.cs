@@ -15,6 +15,8 @@ namespace AppointmentQueue
     public partial class DocterRequestForm : Form
     {
         bool did_lock = false;
+        int pkDr;
+        int pkReq;
         public DocterRequestForm()
         {
             InitializeComponent();
@@ -38,74 +40,50 @@ namespace AppointmentQueue
             DataTable dt = SQL.GetDoctors(drNameTxt2.Text, drLnameTxt2.Text);
             drDataGridView2.DataSource = dt;
         }
-
-        private void scanId_TextChanged(object sender, EventArgs e)
-        {
-            DataTable dt = SQL.GetRequests(reqComb.SelectedItem.ToString().Trim());
-            dataGridView1.DataSource = dt;
-        }
-
+        
         private void reqComb_SelectedIndexChanged(object sender, EventArgs e)
         {
-            DataTable dt = SQL.GetRequests(reqComb.SelectedItem.ToString().Trim());
-            dataGridView1.DataSource = dt;
-            reqId.Text = Convert.ToString(reqComb.SelectedIndex + 1);
+            pkReq = Convert.ToInt16(reqComb.SelectedIndex+1);
         }
 
         private void drDataGridView2_RowHeaderMouseDoubleClick(object sender, DataGridViewCellMouseEventArgs e)
         {
-            if (!did_lock)
-            { 
-                did_lock = true;
-                int ID = drDataGridView2.CurrentCell.RowIndex;
-                drIdTxt.Text = drDataGridView2.Rows[ID].Cells[0].Value.ToString().Trim();
-                drNameTxt2.Text = drDataGridView2.Rows[ID].Cells[1].Value.ToString().Trim();
-                drLnameTxt2.Text = drDataGridView2.Rows[ID].Cells[2].Value.ToString().Trim();
-            }
-            did_lock = false;
+            int ID = drDataGridView2.CurrentCell.RowIndex;
+            
+            String tempdrIdTxt = drDataGridView2.Rows[ID].Cells[0].Value.ToString().Trim();
+            String tempdrNameTxt = drDataGridView2.Rows[ID].Cells[1].Value.ToString().Trim();
+            String tempdrLnameTxt = drDataGridView2.Rows[ID].Cells[2].Value.ToString().Trim();
+
+            pkDr = Convert.ToInt16(drDataGridView2.Rows[ID].Cells[0].Value.ToString());
+            drName2.Text = tempdrNameTxt;
+
+            drIdTxt.Text = tempdrIdTxt;
+            drNameTxt2.Text = tempdrNameTxt;
+            drLnameTxt2.Text = tempdrLnameTxt;
+            
         }
-
-        private void dataGridView1_RowHeaderMouseDoubleClick(object sender, DataGridViewCellMouseEventArgs e)
-        {
-            if (!did_lock)
-            {
-                did_lock = true;
-                int ID = dataGridView1.CurrentCell.RowIndex;
-                reqId.Text = dataGridView1.Rows[ID].Cells[0].Value.ToString().Trim();
-                reqComb.SelectedIndex = Convert.ToInt16(dataGridView1.Rows[ID].Cells[0].Value.ToString())-1;
-            }
-            did_lock = false;
-        }
-
-        private void drReqGidView_RowHeaderMouseDoubleClick(object sender, DataGridViewCellMouseEventArgs e)
-        {
-            if (!did_lock)
-            {
-                did_lock = true;
-                int ID1 = drReqGidView.CurrentCell.RowIndex;
-                int ID2 = drDataGridView2.CurrentCell.RowIndex;
-                int ID3 = dataGridView1.CurrentCell.RowIndex;
-                drIdTxt.Text = drDataGridView2.Rows[ID2].Cells[0].Value.ToString().Trim();
-                drNameTxt2.Text = drDataGridView2.Rows[ID2].Cells[1].Value.ToString().Trim();
-                drLnameTxt2.Text = drDataGridView2.Rows[ID2].Cells[2].Value.ToString().Trim();
-
-                reqId.Text = dataGridView1.Rows[ID3].Cells[0].Value.ToString().Trim();
-                reqComb.SelectedIndex = Convert.ToInt16(dataGridView1.Rows[ID3].Cells[0].Value.ToString().Trim()) - 1;
-
-                drReqId.Text = drDataGridView2.Rows[ID1].Cells[0].Value.ToString().Trim();
-                dofComb.SelectedIndex = Convert.ToInt16(SQL.getDof(drDataGridView2.Rows[ID1].Cells[5].Value.ToString().Trim())) - 1;
-                pedComb.Text = drDataGridView2.Rows[ID1].Cells[3].Value.ToString().Trim();
-            }
-            did_lock = false;
-        }
-
         
+        private void drReqGidView_RowHeaderMouseDoubleClick(object sender, DataGridViewCellMouseEventArgs e)
+        {//drreq_Id,req_bodypart,dr_name,drreq_period,drreq_time,drreq_dayofweek,
+            int ID = drReqGidView.CurrentCell.RowIndex;
+            pkReq = Convert.ToInt16(SQL.getDof(drReqGidView.Rows[ID].Cells[5].Value.ToString().Trim()));
+            pkDr = Convert.ToInt16(drReqGidView.Rows[ID].Cells[6].Value.ToString().Trim());
+
+            drReqId.Text = drReqGidView.Rows[ID].Cells[0].Value.ToString().Trim();
+            drName2.Text = drReqGidView.Rows[ID].Cells[2].Value.ToString().Trim();
+            reqComb.Text = drReqGidView.Rows[ID].Cells[1].Value.ToString().Trim();
+            dofComb.SelectedIndex = Convert.ToInt16(SQL.getDof(drReqGidView.Rows[ID].Cells[5].Value.ToString().Trim())) - 1;
+            pedComb.Text = drReqGidView.Rows[ID].Cells[3].Value.ToString().Trim();
+          
+        }
+
+
         private void seachDrReq_Click(object sender, EventArgs e)
         {
-            DataTable dt = SQL.GetDoctorRequests(pedComb.SelectedItem.ToString(), "",drNameTxt2.Text);
+            DataTable dt = SQL.GetDoctorRequests("", "", drNameTxt2.Text);
             drReqGidView.DataSource = dt;
         }
-        
+
         private void drReqAddBtn_Click(object sender, EventArgs e)
         {
             try
@@ -114,10 +92,10 @@ namespace AppointmentQueue
                 {
                     SqlConnection cn = new SqlConnection(global::AppointmentQueue.Properties.Settings.Default.Database1ConnectionString);
                     SqlCommand command = new SqlCommand(
-                        "INSERT INTO doctorRequests (drreq_Id,drreq_req,drreq_dr,drreq_period,drreq_time,drreq_dayofweek) " +
-                        "VALUE (@drreq_Id,@drreq_req,@drreq_dr,@drreq_period,@drreq_time,@drreq_dayofweek)", cn);
+                        "INSERT INTO doctorRequests (drreq_req,drreq_dr,drreq_period,drreq_time,drreq_dayofweek) " +
+                        "VALUES (@drreq_req,@drreq_dr,@drreq_period,@drreq_time,@drreq_dayofweek)", cn);
 
-                    command.Parameters.AddWithValue("@drreq_req", Convert.ToString(reqId.Text ));
+                    command.Parameters.AddWithValue("@drreq_req", Convert.ToString(pkReq));
                     command.Parameters.AddWithValue("@drreq_dr", Convert.ToString(drIdTxt.Text.Trim()));
                     command.Parameters.AddWithValue("@drreq_period", pedComb.SelectedItem.ToString().Trim());
                     command.Parameters.AddWithValue("@drreq_time", 100);
@@ -127,6 +105,7 @@ namespace AppointmentQueue
                     cn.Open();
                     command.ExecuteNonQuery();
                     cn.Close();
+                    seachDrReq_Click(sender, e);
                 }
 
             }
@@ -134,6 +113,18 @@ namespace AppointmentQueue
             {
                 MessageBox.Show(string.Format("Couldn't insert a new record : An error occurred: {0}", ex.Message));
             }
+
+        }
+
+        private void drDataGridView2_ColumnHeaderMouseDoubleClick(object sender, DataGridViewCellMouseEventArgs e)
+        {
+            int ID = drDataGridView2.CurrentCell.RowIndex;
+        
+
+        }
+
+        private void drReqDelBtn_Click(object sender, EventArgs e)
+        {
 
         }
     }

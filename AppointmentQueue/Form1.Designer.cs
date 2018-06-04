@@ -56,13 +56,13 @@
             this.addBtn = new System.Windows.Forms.Button();
             this.todayCheckBox = new System.Windows.Forms.CheckBox();
             this.startDate = new System.Windows.Forms.DateTimePicker();
-            this.endDate = new System.Windows.Forms.DateTimePicker();
             this.betweenCheckBox = new System.Windows.Forms.CheckBox();
             this.label4 = new System.Windows.Forms.Label();
             this.manDayOff = new System.Windows.Forms.Button();
             this.manReq = new System.Windows.Forms.Button();
             this.button1 = new System.Windows.Forms.Button();
             this.button2 = new System.Windows.Forms.Button();
+            this.endDate = new System.Windows.Forms.DateTimePicker();
             this.groupBox1.SuspendLayout();
             this.groupBox2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.appDataGridView)).BeginInit();
@@ -353,7 +353,7 @@
             this.appDataGridView.Name = "appDataGridView";
             this.appDataGridView.Size = new System.Drawing.Size(726, 346);
             this.appDataGridView.TabIndex = 34;
-            this.appDataGridView.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.appDataGridView_CellContentClick);
+            this.appDataGridView.RowHeaderMouseDoubleClick += new System.Windows.Forms.DataGridViewCellMouseEventHandler(this.appDataGridView_RowHeaderMouseDoubleClick);
             // 
             // addBtn
             // 
@@ -394,20 +394,6 @@
             this.startDate.TabIndex = 42;
             this.startDate.Value = new System.DateTime(2018, 5, 22, 0, 0, 0, 0);
             this.startDate.ValueChanged += new System.EventHandler(this.startDate_ValueChanged);
-            // 
-            // endDate
-            // 
-            this.endDate.CalendarFont = new System.Drawing.Font("Verdana", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.endDate.Font = new System.Drawing.Font("Verdana", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.endDate.Format = System.Windows.Forms.DateTimePickerFormat.Short;
-            this.endDate.Location = new System.Drawing.Point(901, 34);
-            this.endDate.MaxDate = new System.DateTime(2019, 12, 31, 0, 0, 0, 0);
-            this.endDate.MinDate = new System.DateTime(1909, 11, 24, 0, 0, 0, 0);
-            this.endDate.Name = "endDate";
-            this.endDate.Size = new System.Drawing.Size(140, 23);
-            this.endDate.TabIndex = 43;
-            this.endDate.Value = new System.DateTime(2018, 5, 22, 0, 0, 0, 0);
-            this.endDate.ValueChanged += new System.EventHandler(this.endDate_ValueChanged);
             // 
             // betweenCheckBox
             // 
@@ -479,18 +465,32 @@
             this.button2.UseVisualStyleBackColor = true;
             this.button2.Click += new System.EventHandler(this.button2_Click);
             // 
+            // endDate
+            // 
+            this.endDate.CalendarFont = new System.Drawing.Font("Verdana", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.endDate.Font = new System.Drawing.Font("Verdana", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.endDate.Format = System.Windows.Forms.DateTimePickerFormat.Short;
+            this.endDate.Location = new System.Drawing.Point(901, 34);
+            this.endDate.MaxDate = new System.DateTime(2029, 12, 31, 0, 0, 0, 0);
+            this.endDate.MinDate = new System.DateTime(2018, 6, 1, 0, 0, 0, 0);
+            this.endDate.Name = "endDate";
+            this.endDate.Size = new System.Drawing.Size(140, 23);
+            this.endDate.TabIndex = 59;
+            this.endDate.Value = new System.DateTime(2018, 6, 1, 0, 0, 0, 0);
+            this.endDate.ValueChanged += new System.EventHandler(this.endDate_ValueChanged);
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1068, 470);
+            this.Controls.Add(this.endDate);
             this.Controls.Add(this.button2);
             this.Controls.Add(this.button1);
             this.Controls.Add(this.manDayOff);
             this.Controls.Add(this.manReq);
             this.Controls.Add(this.label4);
             this.Controls.Add(this.betweenCheckBox);
-            this.Controls.Add(this.endDate);
             this.Controls.Add(this.startDate);
             this.Controls.Add(this.todayCheckBox);
             this.Controls.Add(this.todayDay);
@@ -548,13 +548,13 @@
         private System.Windows.Forms.Button addBtn;
         private System.Windows.Forms.CheckBox todayCheckBox;
         private System.Windows.Forms.DateTimePicker startDate;
-        private System.Windows.Forms.DateTimePicker endDate;
         private System.Windows.Forms.CheckBox betweenCheckBox;
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.Button manDayOff;
         private System.Windows.Forms.Button manReq;
         private System.Windows.Forms.Button button1;
         private System.Windows.Forms.Button button2;
+        public System.Windows.Forms.DateTimePicker endDate;
     }
 }
 

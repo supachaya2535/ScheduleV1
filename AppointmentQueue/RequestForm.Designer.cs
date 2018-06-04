@@ -32,12 +32,12 @@
             this.label1 = new System.Windows.Forms.Label();
             this.reqTime = new System.Windows.Forms.NumericUpDown();
             this.delBtn = new System.Windows.Forms.Button();
-            this.reqComb = new System.Windows.Forms.ComboBox();
-            this.scanComb = new System.Windows.Forms.ComboBox();
             this.label20 = new System.Windows.Forms.Label();
             this.insertBtn = new System.Windows.Forms.Button();
-            this.label21 = new System.Windows.Forms.Label();
             this.reqDataGridView = new System.Windows.Forms.DataGridView();
+            this.reqName = new System.Windows.Forms.TextBox();
+            this.drReqId = new System.Windows.Forms.TextBox();
+            this.label2 = new System.Windows.Forms.Label();
             this.groupBox6.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.reqTime)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.reqDataGridView)).BeginInit();
@@ -46,18 +46,18 @@
             // groupBox6
             // 
             this.groupBox6.BackColor = System.Drawing.SystemColors.GradientActiveCaption;
+            this.groupBox6.Controls.Add(this.drReqId);
+            this.groupBox6.Controls.Add(this.label2);
+            this.groupBox6.Controls.Add(this.reqName);
             this.groupBox6.Controls.Add(this.label1);
             this.groupBox6.Controls.Add(this.reqTime);
             this.groupBox6.Controls.Add(this.delBtn);
-            this.groupBox6.Controls.Add(this.reqComb);
-            this.groupBox6.Controls.Add(this.scanComb);
             this.groupBox6.Controls.Add(this.label20);
             this.groupBox6.Controls.Add(this.insertBtn);
-            this.groupBox6.Controls.Add(this.label21);
             this.groupBox6.Font = new System.Drawing.Font("Verdana", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.groupBox6.Location = new System.Drawing.Point(1, 1);
             this.groupBox6.Name = "groupBox6";
-            this.groupBox6.Size = new System.Drawing.Size(373, 177);
+            this.groupBox6.Size = new System.Drawing.Size(373, 155);
             this.groupBox6.TabIndex = 58;
             this.groupBox6.TabStop = false;
             this.groupBox6.Text = "Request Information";
@@ -75,7 +75,7 @@
             // reqTime
             // 
             this.reqTime.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.reqTime.Location = new System.Drawing.Point(131, 87);
+            this.reqTime.Location = new System.Drawing.Point(115, 84);
             this.reqTime.Maximum = new decimal(new int[] {
             365,
             0,
@@ -87,7 +87,7 @@
             0,
             0});
             this.reqTime.Name = "reqTime";
-            this.reqTime.Size = new System.Drawing.Size(179, 22);
+            this.reqTime.Size = new System.Drawing.Size(143, 22);
             this.reqTime.TabIndex = 44;
             this.reqTime.Value = new decimal(new int[] {
             30,
@@ -99,36 +99,18 @@
             // 
             this.delBtn.Enabled = false;
             this.delBtn.Font = new System.Drawing.Font("Verdana", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.delBtn.Location = new System.Drawing.Point(209, 132);
+            this.delBtn.Location = new System.Drawing.Point(193, 117);
             this.delBtn.Name = "delBtn";
-            this.delBtn.Size = new System.Drawing.Size(154, 30);
+            this.delBtn.Size = new System.Drawing.Size(170, 30);
             this.delBtn.TabIndex = 43;
-            this.delBtn.Text = "Delete a new request";
+            this.delBtn.Text = "Delete a request";
             this.delBtn.UseVisualStyleBackColor = true;
-            // 
-            // reqComb
-            // 
-            this.reqComb.Font = new System.Drawing.Font("Verdana", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.reqComb.FormattingEnabled = true;
-            this.reqComb.Location = new System.Drawing.Point(84, 57);
-            this.reqComb.Name = "reqComb";
-            this.reqComb.Size = new System.Drawing.Size(226, 24);
-            this.reqComb.TabIndex = 42;
-            // 
-            // scanComb
-            // 
-            this.scanComb.Font = new System.Drawing.Font("Verdana", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.scanComb.FormattingEnabled = true;
-            this.scanComb.Location = new System.Drawing.Point(84, 27);
-            this.scanComb.Name = "scanComb";
-            this.scanComb.Size = new System.Drawing.Size(226, 24);
-            this.scanComb.TabIndex = 41;
             // 
             // label20
             // 
             this.label20.AutoSize = true;
             this.label20.Font = new System.Drawing.Font("Verdana", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label20.Location = new System.Drawing.Point(11, 60);
+            this.label20.Location = new System.Drawing.Point(25, 58);
             this.label20.Name = "label20";
             this.label20.Size = new System.Drawing.Size(67, 16);
             this.label20.TabIndex = 35;
@@ -138,23 +120,13 @@
             // 
             this.insertBtn.Enabled = false;
             this.insertBtn.Font = new System.Drawing.Font("Verdana", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.insertBtn.Location = new System.Drawing.Point(11, 132);
+            this.insertBtn.Location = new System.Drawing.Point(7, 117);
             this.insertBtn.Name = "insertBtn";
-            this.insertBtn.Size = new System.Drawing.Size(159, 30);
+            this.insertBtn.Size = new System.Drawing.Size(180, 30);
             this.insertBtn.TabIndex = 38;
-            this.insertBtn.Text = "Insert a new request";
+            this.insertBtn.Text = "Save adjusting request";
             this.insertBtn.UseVisualStyleBackColor = true;
             this.insertBtn.Click += new System.EventHandler(this.reqEditBtn_Click);
-            // 
-            // label21
-            // 
-            this.label21.AutoSize = true;
-            this.label21.Font = new System.Drawing.Font("Verdana", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label21.Location = new System.Drawing.Point(11, 30);
-            this.label21.Name = "label21";
-            this.label21.Size = new System.Drawing.Size(62, 16);
-            this.label21.TabIndex = 29;
-            this.label21.Text = "Scanner";
             // 
             // reqDataGridView
             // 
@@ -162,16 +134,43 @@
             this.reqDataGridView.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
             this.reqDataGridView.BackgroundColor = System.Drawing.SystemColors.ActiveBorder;
             this.reqDataGridView.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.reqDataGridView.Location = new System.Drawing.Point(1, 184);
+            this.reqDataGridView.Location = new System.Drawing.Point(1, 162);
             this.reqDataGridView.Name = "reqDataGridView";
-            this.reqDataGridView.Size = new System.Drawing.Size(373, 255);
+            this.reqDataGridView.Size = new System.Drawing.Size(373, 345);
             this.reqDataGridView.TabIndex = 59;
+            // 
+            // reqName
+            // 
+            this.reqName.Font = new System.Drawing.Font("Verdana", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.reqName.Location = new System.Drawing.Point(115, 55);
+            this.reqName.Name = "reqName";
+            this.reqName.Size = new System.Drawing.Size(233, 23);
+            this.reqName.TabIndex = 46;
+            // 
+            // drReqId
+            // 
+            this.drReqId.Enabled = false;
+            this.drReqId.Font = new System.Drawing.Font("Verdana", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.drReqId.Location = new System.Drawing.Point(115, 26);
+            this.drReqId.Name = "drReqId";
+            this.drReqId.Size = new System.Drawing.Size(233, 23);
+            this.drReqId.TabIndex = 69;
+            // 
+            // label2
+            // 
+            this.label2.AutoSize = true;
+            this.label2.Font = new System.Drawing.Font("Verdana", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label2.Location = new System.Drawing.Point(31, 29);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(51, 16);
+            this.label2.TabIndex = 68;
+            this.label2.Text = "Req.ID";
             // 
             // RequestForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(376, 439);
+            this.ClientSize = new System.Drawing.Size(376, 508);
             this.Controls.Add(this.reqDataGridView);
             this.Controls.Add(this.groupBox6);
             this.Name = "RequestForm";
@@ -187,14 +186,14 @@
         #endregion
 
         private System.Windows.Forms.GroupBox groupBox6;
-        private System.Windows.Forms.ComboBox reqComb;
-        private System.Windows.Forms.ComboBox scanComb;
         private System.Windows.Forms.Label label20;
         private System.Windows.Forms.Button insertBtn;
-        private System.Windows.Forms.Label label21;
         private System.Windows.Forms.DataGridView reqDataGridView;
         private System.Windows.Forms.Button delBtn;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.NumericUpDown reqTime;
+        private System.Windows.Forms.TextBox reqName;
+        private System.Windows.Forms.TextBox drReqId;
+        private System.Windows.Forms.Label label2;
     }
 }
