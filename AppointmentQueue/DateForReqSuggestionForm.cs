@@ -125,6 +125,14 @@ namespace AppointmentQueue
                     sT = sT.AddDays(7);
                 }
             }
+
+            // fix show only suggest date -> not show time
+            foreach (DataRow item in suggestDate.Rows)
+            {
+                string date = item["Suggest_date"].ToString();
+                string new_format_date = date.Split(' ')[0];
+                item["Suggest_date"] = new_format_date;
+            }
             
             return suggestDate;
         }

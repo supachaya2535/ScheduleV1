@@ -49,6 +49,14 @@ namespace AppointmentQueue
 
             dt.Load(reader);
 
+            // cut out time from column ap_startT
+            foreach (DataRow item in dt.Rows)
+            {
+                string date = item["ap_startT"].ToString();
+                string new_format_date = date.Split(' ')[0];
+                item["ap_startT"] = new_format_date;
+            }
+
             cn.Close();
             return dt;
         }
@@ -158,9 +166,16 @@ namespace AppointmentQueue
             dt.Columns.Add("dr_name", typeof(string));
             dt.Columns.Add("df_period", typeof(string));
             dt.Columns.Add("df_detail", typeof(string));
-
             dt.Load(reader);
             cn.Close();
+
+            foreach (DataRow item in dt.Rows)
+            {
+                string date = item["df_date"].ToString();
+                string new_format_date = date.Split(' ')[0];
+                item["df_date"] = new_format_date;
+            }
+
             return dt;
         }
 
