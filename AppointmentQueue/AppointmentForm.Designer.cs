@@ -50,9 +50,10 @@
             // 
             this.label1.AutoSize = true;
             this.label1.Font = new System.Drawing.Font("Verdana", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.Location = new System.Drawing.Point(20, 48);
+            this.label1.Location = new System.Drawing.Point(27, 59);
+            this.label1.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(26, 16);
+            this.label1.Size = new System.Drawing.Size(35, 20);
             this.label1.TabIndex = 2;
             this.label1.Text = "HN";
             // 
@@ -60,31 +61,35 @@
             // 
             this.HNtxt.Enabled = false;
             this.HNtxt.Font = new System.Drawing.Font("Verdana", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.HNtxt.Location = new System.Drawing.Point(77, 48);
+            this.HNtxt.Location = new System.Drawing.Point(103, 59);
+            this.HNtxt.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.HNtxt.Name = "HNtxt";
-            this.HNtxt.Size = new System.Drawing.Size(233, 23);
+            this.HNtxt.Size = new System.Drawing.Size(309, 27);
             this.HNtxt.TabIndex = 5;
             // 
             // label6
             // 
             this.label6.AutoSize = true;
             this.label6.Font = new System.Drawing.Font("Verdana", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label6.Location = new System.Drawing.Point(16, 85);
+            this.label6.Location = new System.Drawing.Point(21, 105);
+            this.label6.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(39, 16);
+            this.label6.Size = new System.Drawing.Size(49, 20);
             this.label6.TabIndex = 20;
             this.label6.Text = "Date";
             // 
             // dateSelected
             // 
             this.dateSelected.CalendarFont = new System.Drawing.Font("Verdana", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.dateSelected.Enabled = false;
             this.dateSelected.Font = new System.Drawing.Font("Verdana", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.dateSelected.Format = System.Windows.Forms.DateTimePickerFormat.Short;
-            this.dateSelected.Location = new System.Drawing.Point(77, 85);
+            this.dateSelected.Location = new System.Drawing.Point(103, 105);
+            this.dateSelected.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.dateSelected.MaxDate = new System.DateTime(2019, 12, 31, 0, 0, 0, 0);
             this.dateSelected.MinDate = new System.DateTime(1909, 11, 24, 0, 0, 0, 0);
             this.dateSelected.Name = "dateSelected";
-            this.dateSelected.Size = new System.Drawing.Size(233, 23);
+            this.dateSelected.Size = new System.Drawing.Size(309, 27);
             this.dateSelected.TabIndex = 18;
             this.dateSelected.Value = new System.DateTime(2018, 1, 5, 0, 0, 0, 0);
             // 
@@ -92,9 +97,10 @@
             // 
             this.label3.AutoSize = true;
             this.label3.Font = new System.Drawing.Font("Verdana", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label3.Location = new System.Drawing.Point(10, 169);
+            this.label3.Location = new System.Drawing.Point(13, 208);
+            this.label3.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(61, 16);
+            this.label3.Size = new System.Drawing.Size(79, 20);
             this.label3.TabIndex = 7;
             this.label3.Text = "Request";
             // 
@@ -103,9 +109,10 @@
             this.label5.AutoSize = true;
             this.label5.Enabled = false;
             this.label5.Font = new System.Drawing.Font("Verdana", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label5.Location = new System.Drawing.Point(14, 211);
+            this.label5.Location = new System.Drawing.Point(19, 260);
+            this.label5.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(48, 16);
+            this.label5.Size = new System.Drawing.Size(62, 20);
             this.label5.TabIndex = 11;
             this.label5.Text = "Period";
             // 
@@ -113,18 +120,20 @@
             // 
             this.Scanner.AutoSize = true;
             this.Scanner.Font = new System.Drawing.Font("Verdana", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.Scanner.Location = new System.Drawing.Point(7, 128);
+            this.Scanner.Location = new System.Drawing.Point(9, 158);
+            this.Scanner.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.Scanner.Name = "Scanner";
-            this.Scanner.Size = new System.Drawing.Size(62, 16);
+            this.Scanner.Size = new System.Drawing.Size(79, 20);
             this.Scanner.TabIndex = 0;
             this.Scanner.Text = "Scanner";
             // 
             // saveBtn
             // 
             this.saveBtn.Font = new System.Drawing.Font("Verdana", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.saveBtn.Location = new System.Drawing.Point(23, 288);
+            this.saveBtn.Location = new System.Drawing.Point(31, 354);
+            this.saveBtn.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.saveBtn.Name = "saveBtn";
-            this.saveBtn.Size = new System.Drawing.Size(116, 30);
+            this.saveBtn.Size = new System.Drawing.Size(155, 37);
             this.saveBtn.TabIndex = 21;
             this.saveBtn.Text = "Save";
             this.saveBtn.UseVisualStyleBackColor = true;
@@ -133,9 +142,10 @@
             // deleteBtn
             // 
             this.deleteBtn.Font = new System.Drawing.Font("Verdana", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.deleteBtn.Location = new System.Drawing.Point(187, 288);
+            this.deleteBtn.Location = new System.Drawing.Point(249, 354);
+            this.deleteBtn.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.deleteBtn.Name = "deleteBtn";
-            this.deleteBtn.Size = new System.Drawing.Size(123, 30);
+            this.deleteBtn.Size = new System.Drawing.Size(164, 37);
             this.deleteBtn.TabIndex = 4;
             this.deleteBtn.Text = "Delete";
             this.deleteBtn.UseVisualStyleBackColor = true;
@@ -144,9 +154,10 @@
             // 
             this.label7.AutoSize = true;
             this.label7.Font = new System.Drawing.Font("Verdana", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label7.Location = new System.Drawing.Point(7, 15);
+            this.label7.Location = new System.Drawing.Point(9, 18);
+            this.label7.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label7.Name = "label7";
-            this.label7.Size = new System.Drawing.Size(57, 16);
+            this.label7.Size = new System.Drawing.Size(76, 20);
             this.label7.TabIndex = 24;
             this.label7.Text = "App. ID";
             // 
@@ -154,9 +165,10 @@
             // 
             this.appId.Enabled = false;
             this.appId.Font = new System.Drawing.Font("Verdana", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.appId.Location = new System.Drawing.Point(77, 12);
+            this.appId.Location = new System.Drawing.Point(103, 15);
+            this.appId.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.appId.Name = "appId";
-            this.appId.Size = new System.Drawing.Size(233, 23);
+            this.appId.Size = new System.Drawing.Size(309, 27);
             this.appId.TabIndex = 25;
             // 
             // statusComb
@@ -168,9 +180,10 @@
             "Cancled",
             "Done",
             "Changed"});
-            this.statusComb.Location = new System.Drawing.Point(75, 247);
+            this.statusComb.Location = new System.Drawing.Point(100, 304);
+            this.statusComb.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.statusComb.Name = "statusComb";
-            this.statusComb.Size = new System.Drawing.Size(233, 24);
+            this.statusComb.Size = new System.Drawing.Size(309, 26);
             this.statusComb.TabIndex = 22;
             // 
             // label9
@@ -178,9 +191,10 @@
             this.label9.AutoSize = true;
             this.label9.Enabled = false;
             this.label9.Font = new System.Drawing.Font("Verdana", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label9.Location = new System.Drawing.Point(14, 250);
+            this.label9.Location = new System.Drawing.Point(19, 308);
+            this.label9.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label9.Name = "label9";
-            this.label9.Size = new System.Drawing.Size(52, 16);
+            this.label9.Size = new System.Drawing.Size(65, 20);
             this.label9.TabIndex = 21;
             this.label9.Text = "Status";
             // 
@@ -188,34 +202,37 @@
             // 
             this.scanTxt.Enabled = false;
             this.scanTxt.Font = new System.Drawing.Font("Verdana", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.scanTxt.Location = new System.Drawing.Point(75, 125);
+            this.scanTxt.Location = new System.Drawing.Point(100, 154);
+            this.scanTxt.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.scanTxt.Name = "scanTxt";
-            this.scanTxt.Size = new System.Drawing.Size(233, 23);
+            this.scanTxt.Size = new System.Drawing.Size(309, 27);
             this.scanTxt.TabIndex = 26;
             // 
             // reqTxt
             // 
             this.reqTxt.Enabled = false;
             this.reqTxt.Font = new System.Drawing.Font("Verdana", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.reqTxt.Location = new System.Drawing.Point(75, 166);
+            this.reqTxt.Location = new System.Drawing.Point(100, 204);
+            this.reqTxt.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.reqTxt.Name = "reqTxt";
-            this.reqTxt.Size = new System.Drawing.Size(233, 23);
+            this.reqTxt.Size = new System.Drawing.Size(309, 27);
             this.reqTxt.TabIndex = 27;
             // 
             // pedTxt
             // 
             this.pedTxt.Enabled = false;
             this.pedTxt.Font = new System.Drawing.Font("Verdana", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.pedTxt.Location = new System.Drawing.Point(75, 208);
+            this.pedTxt.Location = new System.Drawing.Point(100, 256);
+            this.pedTxt.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.pedTxt.Name = "pedTxt";
-            this.pedTxt.Size = new System.Drawing.Size(233, 23);
+            this.pedTxt.Size = new System.Drawing.Size(309, 27);
             this.pedTxt.TabIndex = 28;
             // 
             // AppointmentForm
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(345, 329);
+            this.ClientSize = new System.Drawing.Size(460, 405);
             this.Controls.Add(this.pedTxt);
             this.Controls.Add(this.reqTxt);
             this.Controls.Add(this.scanTxt);
@@ -232,6 +249,7 @@
             this.Controls.Add(this.Scanner);
             this.Controls.Add(this.saveBtn);
             this.Controls.Add(this.deleteBtn);
+            this.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.Name = "AppointmentForm";
             this.Text = "AppointmentForm";
             this.ResumeLayout(false);
