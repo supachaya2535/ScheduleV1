@@ -39,6 +39,8 @@ namespace AppointmentQueue
                     cn.Open();
                     command.ExecuteNonQuery();
                     cn.Close();
+
+                    seachDrReq_Click(sender, e);
                 }
 
             }
