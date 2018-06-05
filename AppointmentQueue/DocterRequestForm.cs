@@ -40,16 +40,16 @@ namespace AppointmentQueue
             DataTable dt = SQL.GetDoctors(drNameTxt2.Text, drLnameTxt2.Text);
             drDataGridView2.DataSource = dt;
         }
-        
+
         private void reqComb_SelectedIndexChanged(object sender, EventArgs e)
         {
-            pkReq = Convert.ToInt16(reqComb.SelectedIndex+1);
+            pkReq = Convert.ToInt16(reqComb.SelectedIndex + 1);
         }
 
         private void drDataGridView2_RowHeaderMouseDoubleClick(object sender, DataGridViewCellMouseEventArgs e)
         {
             int ID = drDataGridView2.CurrentCell.RowIndex;
-            
+
             String tempdrIdTxt = drDataGridView2.Rows[ID].Cells[0].Value.ToString().Trim();
             String tempdrNameTxt = drDataGridView2.Rows[ID].Cells[1].Value.ToString().Trim();
             String tempdrLnameTxt = drDataGridView2.Rows[ID].Cells[2].Value.ToString().Trim();
@@ -60,9 +60,8 @@ namespace AppointmentQueue
             drIdTxt.Text = tempdrIdTxt;
             drNameTxt2.Text = tempdrNameTxt;
             drLnameTxt2.Text = tempdrLnameTxt;
-            
         }
-        
+
         private void drReqGidView_RowHeaderMouseDoubleClick(object sender, DataGridViewCellMouseEventArgs e)
         {//drreq_Id,req_bodypart,dr_name,drreq_period,drreq_time,drreq_dayofweek,
             int ID = drReqGidView.CurrentCell.RowIndex;
@@ -74,7 +73,7 @@ namespace AppointmentQueue
             reqComb.Text = drReqGidView.Rows[ID].Cells[1].Value.ToString().Trim();
             dofComb.SelectedIndex = Convert.ToInt16(SQL.getDof(drReqGidView.Rows[ID].Cells[5].Value.ToString().Trim())) - 1;
             pedComb.Text = drReqGidView.Rows[ID].Cells[3].Value.ToString().Trim();
-          
+
         }
 
 
@@ -92,7 +91,7 @@ namespace AppointmentQueue
                 {
                     SqlConnection cn = new SqlConnection(global::AppointmentQueue.Properties.Settings.Default.Database1ConnectionString);
                     SqlCommand command = new SqlCommand(
-                        "INSERT INTO doctorRequests (drreq_req,drreq_dr,drreq_period,drreq_time,drreq_dayofweek) " +
+                        "INSERT INTO DoctorRequests (drreq_req,drreq_dr,drreq_period,drreq_time,drreq_dayofweek) " +
                         "VALUES (@drreq_req,@drreq_dr,@drreq_period,@drreq_time,@drreq_dayofweek)", cn);
 
                     command.Parameters.AddWithValue("@drreq_req", Convert.ToString(pkReq));
@@ -119,13 +118,29 @@ namespace AppointmentQueue
         private void drDataGridView2_ColumnHeaderMouseDoubleClick(object sender, DataGridViewCellMouseEventArgs e)
         {
             int ID = drDataGridView2.CurrentCell.RowIndex;
-        
+
 
         }
 
         private void drReqDelBtn_Click(object sender, EventArgs e)
         {
+            if (drReqId.Text != "")
+            {
+                int id_del = Convert.ToInt32(drReqId.Text);
+                SqlConnection cn = new SqlConnection(global::AppointmentQueue.Properties.Settings.Default.Database1ConnectionString);
+                SqlCommand command = new SqlCommand("DELETE FROM DoctorRequests WHERE drreq_Id = '" + id_del + "'", cn);
 
+                cn.Open();
+                command.ExecuteNonQuery();
+                cn.Close();
+                seachDrReq_Click(sender, e);
+                drReqId.Text = "";
+                MessageBox.Show("Delete Requests Success");
+            }
+            else
+            {
+                MessageBox.Show("Please Choose Your Requests that want to delete");
+            }
         }
     }
 }

@@ -21,7 +21,8 @@ namespace AppointmentQueue
 
         private void addDayOffBtn_Click(object sender, EventArgs e)
         {
-            try{
+            try
+            {
                 if (MessageBox.Show("Do you want to insert a new day off?", "Insert new day off", MessageBoxButtons.YesNo) == DialogResult.Yes)
                 {
                     SqlConnection cn = new SqlConnection(global::AppointmentQueue.Properties.Settings.Default.Database1ConnectionString);
@@ -85,6 +86,34 @@ namespace AppointmentQueue
         {
             DataTable dt = SQL.GetDayOffs(dayOffDate.Value, dayOffDate.Value.Date.AddYears(1), drNameTxt2.Text);
             dayOffGridView.DataSource = dt;
+        }
+
+        private void button2_Click(object sender, EventArgs e)
+        {
+            if (id_df != -1)
+            {
+                SqlConnection cn = new SqlConnection(global::AppointmentQueue.Properties.Settings.Default.Database1ConnectionString);
+                SqlCommand command = new SqlCommand("DELETE FROM DayOffs WHERE df_id = '" + id_df + "'", cn);
+
+                cn.Open();
+                command.ExecuteNonQuery();
+                cn.Close();
+                seachDrReq_Click(sender, e);
+                id_df = -1;
+                MessageBox.Show("Delete Dayoff Success");
+            }
+            else
+            {
+                MessageBox.Show("Please Choose Your Dayoff that want to delete");
+            }
+        }
+
+        int id_df = -1;
+
+        private void dayOffGridView_RowHeaderMouseClick(object sender, DataGridViewCellMouseEventArgs e)
+        {
+            int ID = dayOffGridView.CurrentCell.RowIndex;
+            id_df = Convert.ToInt32(dayOffGridView.Rows[ID].Cells[0].Value.ToString().Trim());
         }
     }
 }
