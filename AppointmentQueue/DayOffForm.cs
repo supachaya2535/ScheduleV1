@@ -83,7 +83,7 @@ namespace AppointmentQueue
 
         private void seachDrReq_Click(object sender, EventArgs e)
         {
-            DataTable dt = SQL.GetDayOffs(dayOffDate.Value, dayOffDate.Value.Date.AddYears(1), drNameTxt2.Text);
+            DataTable dt = SQL.GetDayOffs(dayOffDate.Value, dayOffDate.Value.Date.AddMonths(1), drNameTxt2.Text);
             dayOffGridView.DataSource = dt;
         }
     }

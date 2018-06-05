@@ -35,7 +35,7 @@
             this.label1 = new System.Windows.Forms.Label();
             this.reqTime = new System.Windows.Forms.NumericUpDown();
             this.label20 = new System.Windows.Forms.Label();
-            this.insertBtn = new System.Windows.Forms.Button();
+            this.saveBtn = new System.Windows.Forms.Button();
             this.reqDataGridView = new System.Windows.Forms.DataGridView();
             this.groupBox6.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.reqTime)).BeginInit();
@@ -51,7 +51,7 @@
             this.groupBox6.Controls.Add(this.label1);
             this.groupBox6.Controls.Add(this.reqTime);
             this.groupBox6.Controls.Add(this.label20);
-            this.groupBox6.Controls.Add(this.insertBtn);
+            this.groupBox6.Controls.Add(this.saveBtn);
             this.groupBox6.Font = new System.Drawing.Font("Verdana", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.groupBox6.Location = new System.Drawing.Point(1, 1);
             this.groupBox6.Name = "groupBox6";
@@ -103,7 +103,7 @@
             this.reqTime.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.reqTime.Location = new System.Drawing.Point(115, 84);
             this.reqTime.Maximum = new decimal(new int[] {
-            365,
+            150,
             0,
             0,
             0});
@@ -111,7 +111,7 @@
             1,
             0,
             0,
-            0});
+            -2147483648});
             this.reqTime.Name = "reqTime";
             this.reqTime.Size = new System.Drawing.Size(143, 22);
             this.reqTime.TabIndex = 44;
@@ -120,6 +120,7 @@
             0,
             0,
             0});
+            this.reqTime.ValueChanged += new System.EventHandler(this.reqTime_ValueChanged);
             // 
             // label20
             // 
@@ -131,17 +132,17 @@
             this.label20.TabIndex = 35;
             this.label20.Text = "BodyPart";
             // 
-            // insertBtn
+            // saveBtn
             // 
-            this.insertBtn.Enabled = false;
-            this.insertBtn.Font = new System.Drawing.Font("Verdana", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.insertBtn.Location = new System.Drawing.Point(95, 119);
-            this.insertBtn.Name = "insertBtn";
-            this.insertBtn.Size = new System.Drawing.Size(180, 30);
-            this.insertBtn.TabIndex = 38;
-            this.insertBtn.Text = "Save adjusting request";
-            this.insertBtn.UseVisualStyleBackColor = true;
-            this.insertBtn.Click += new System.EventHandler(this.reqEditBtn_Click);
+            this.saveBtn.Enabled = false;
+            this.saveBtn.Font = new System.Drawing.Font("Verdana", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.saveBtn.Location = new System.Drawing.Point(95, 119);
+            this.saveBtn.Name = "saveBtn";
+            this.saveBtn.Size = new System.Drawing.Size(180, 30);
+            this.saveBtn.TabIndex = 38;
+            this.saveBtn.Text = "Save adjusting request";
+            this.saveBtn.UseVisualStyleBackColor = true;
+            this.saveBtn.Click += new System.EventHandler(this.reqEditBtn_Click);
             // 
             // reqDataGridView
             // 
@@ -153,6 +154,7 @@
             this.reqDataGridView.Name = "reqDataGridView";
             this.reqDataGridView.Size = new System.Drawing.Size(373, 345);
             this.reqDataGridView.TabIndex = 59;
+            this.reqDataGridView.RowHeaderMouseDoubleClick += new System.Windows.Forms.DataGridViewCellMouseEventHandler(this.reqDataGridView_RowHeaderMouseDoubleClick);
             // 
             // RequestForm
             // 
@@ -175,7 +177,7 @@
 
         private System.Windows.Forms.GroupBox groupBox6;
         private System.Windows.Forms.Label label20;
-        private System.Windows.Forms.Button insertBtn;
+        private System.Windows.Forms.Button saveBtn;
         private System.Windows.Forms.DataGridView reqDataGridView;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.NumericUpDown reqTime;

@@ -31,6 +31,7 @@
             this.groupBox7 = new System.Windows.Forms.GroupBox();
             this.label4 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
+            this.reqComb = new System.Windows.Forms.ComboBox();
             this.drName2 = new System.Windows.Forms.TextBox();
             this.seachDrReq = new System.Windows.Forms.Button();
             this.drReqId = new System.Windows.Forms.TextBox();
@@ -42,7 +43,6 @@
             this.drReqDelBtn = new System.Windows.Forms.Button();
             this.drReqAddBtn = new System.Windows.Forms.Button();
             this.drReqGidView = new System.Windows.Forms.DataGridView();
-            this.reqComb = new System.Windows.Forms.ComboBox();
             this.drDataGridView2 = new System.Windows.Forms.DataGridView();
             this.groupBox4 = new System.Windows.Forms.GroupBox();
             this.label14 = new System.Windows.Forms.Label();
@@ -101,6 +101,16 @@
             this.label3.TabIndex = 71;
             this.label3.Text = "Dr.Name";
             // 
+            // reqComb
+            // 
+            this.reqComb.Font = new System.Drawing.Font("Verdana", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.reqComb.FormattingEnabled = true;
+            this.reqComb.Location = new System.Drawing.Point(146, 103);
+            this.reqComb.Name = "reqComb";
+            this.reqComb.Size = new System.Drawing.Size(255, 24);
+            this.reqComb.TabIndex = 42;
+            this.reqComb.SelectedIndexChanged += new System.EventHandler(this.reqComb_SelectedIndexChanged);
+            // 
             // drName2
             // 
             this.drName2.Font = new System.Drawing.Font("Verdana", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
@@ -157,7 +167,7 @@
             this.dofComb.Items.AddRange(new object[] {
             "Monday",
             "Tuesday",
-            "Wednesay",
+            "Wednesday",
             "Thursday",
             "Friday",
             "Saturday",
@@ -222,16 +232,6 @@
             this.drReqGidView.Size = new System.Drawing.Size(485, 229);
             this.drReqGidView.TabIndex = 56;
             this.drReqGidView.RowHeaderMouseDoubleClick += new System.Windows.Forms.DataGridViewCellMouseEventHandler(this.drReqGidView_RowHeaderMouseDoubleClick);
-            // 
-            // reqComb
-            // 
-            this.reqComb.Font = new System.Drawing.Font("Verdana", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.reqComb.FormattingEnabled = true;
-            this.reqComb.Location = new System.Drawing.Point(146, 103);
-            this.reqComb.Name = "reqComb";
-            this.reqComb.Size = new System.Drawing.Size(255, 24);
-            this.reqComb.TabIndex = 42;
-            this.reqComb.SelectedIndexChanged += new System.EventHandler(this.reqComb_SelectedIndexChanged);
             // 
             // drDataGridView2
             // 

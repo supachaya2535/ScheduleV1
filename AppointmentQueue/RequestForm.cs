@@ -28,11 +28,11 @@ namespace AppointmentQueue
                 {
                     SqlConnection cn = new SqlConnection(global::AppointmentQueue.Properties.Settings.Default.Database1ConnectionString);
                     SqlCommand command = new SqlCommand(
-                        "INSERT INTO Requests (req_Id,req_bodypart,req_time) " +
-                        "VALUE (@req_Id,@req_bodypart,@req_time)", cn);
-
-                    command.Parameters.AddWithValue("@req_bodypart", reqName.Text.Trim());
-                    command.Parameters.AddWithValue("@req_time", reqTime.Value);
+                        "UPDATE Requests SET req_time = @newV " +
+                        "WHERE req_Id = @req_Id"
+                        , cn);
+                    command.Parameters.AddWithValue("@newV", reqTime.Value);
+                    command.Parameters.AddWithValue("@req_Id", Convert.ToInt16(drReqId.Text));
                     command.Connection = cn;
 
                     cn.Open();
@@ -44,10 +44,22 @@ namespace AppointmentQueue
             }
             catch (SystemException ex)
             {
-                MessageBox.Show(string.Format("Couldn't insert a new record : An error occurred: {0}", ex.Message));
+                MessageBox.Show(string.Format("Couldn't save a new value : An error occurred: {0}", ex.Message));
             }
 
         }
 
+        private void reqDataGridView_RowHeaderMouseDoubleClick(object sender, DataGridViewCellMouseEventArgs e)
+        {
+            int ID = reqDataGridView.CurrentCell.RowIndex;
+            drReqId.Text = reqDataGridView.Rows[ID].Cells[0].Value.ToString().Trim();
+            reqName.Text = reqDataGridView.Rows[ID].Cells[1].Value.ToString().Trim();
+            reqTime.Value = Convert.ToInt16(reqDataGridView.Rows[ID].Cells[2].Value.ToString().Trim());
+        }
+
+        private void reqTime_ValueChanged(object sender, EventArgs e)
+        {
+            saveBtn.Enabled = true;
+        }
     }
 }

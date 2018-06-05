@@ -163,6 +163,7 @@ namespace AppointmentQueue
                 MessageBox.Show(string.Format("Couldn't insert a new record : An error occurred: {0}", ex.Message));
             }
             todayCheckBox_CheckedChanged(sender, e);
+            betweenCheckBox_CheckedChanged(sender, e);
 
         }
         
