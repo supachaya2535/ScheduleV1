@@ -2698,6 +2698,8 @@ namespace AppointmentQueue {
             
             private global::System.Data.DataColumn columnap_scan;
             
+            private global::System.Data.DataColumn columnap_detail;
+            
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
             public AppointmentsDataTable() {
@@ -2789,6 +2791,14 @@ namespace AppointmentQueue {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+            public global::System.Data.DataColumn ap_detailColumn {
+                get {
+                    return this.columnap_detail;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
             [global::System.ComponentModel.Browsable(false)]
             public int Count {
                 get {
@@ -2824,7 +2834,7 @@ namespace AppointmentQueue {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
-            public AppointmentsRow AddAppointmentsRow(System.DateTime ap_startT, string ap_patient, int ap_request, string ap_period, string ap_appstatus, string ap_scan) {
+            public AppointmentsRow AddAppointmentsRow(System.DateTime ap_startT, string ap_patient, int ap_request, string ap_period, string ap_appstatus, string ap_scan, string ap_detail) {
                 AppointmentsRow rowAppointmentsRow = ((AppointmentsRow)(this.NewRow()));
                 object[] columnValuesArray = new object[] {
                         null,
@@ -2833,7 +2843,8 @@ namespace AppointmentQueue {
                         ap_request,
                         ap_period,
                         ap_appstatus,
-                        ap_scan};
+                        ap_scan,
+                        ap_detail};
                 rowAppointmentsRow.ItemArray = columnValuesArray;
                 this.Rows.Add(rowAppointmentsRow);
                 return rowAppointmentsRow;
@@ -2870,6 +2881,7 @@ namespace AppointmentQueue {
                 this.columnap_period = base.Columns["ap_period"];
                 this.columnap_appstatus = base.Columns["ap_appstatus"];
                 this.columnap_scan = base.Columns["ap_scan"];
+                this.columnap_detail = base.Columns["ap_detail"];
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -2889,6 +2901,8 @@ namespace AppointmentQueue {
                 base.Columns.Add(this.columnap_appstatus);
                 this.columnap_scan = new global::System.Data.DataColumn("ap_scan", typeof(string), null, global::System.Data.MappingType.Element);
                 base.Columns.Add(this.columnap_scan);
+                this.columnap_detail = new global::System.Data.DataColumn("ap_detail", typeof(string), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnap_detail);
                 this.Constraints.Add(new global::System.Data.UniqueConstraint("Constraint1", new global::System.Data.DataColumn[] {
                                 this.columnap_Id}, true));
                 this.columnap_Id.AutoIncrement = true;
@@ -2901,6 +2915,7 @@ namespace AppointmentQueue {
                 this.columnap_period.MaxLength = 10;
                 this.columnap_appstatus.MaxLength = 10;
                 this.columnap_scan.MaxLength = 10;
+                this.columnap_detail.MaxLength = 100;
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -3909,6 +3924,22 @@ namespace AppointmentQueue {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+            public string ap_detail {
+                get {
+                    try {
+                        return ((string)(this[this.tableAppointments.ap_detailColumn]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("The value for column \'ap_detail\' in table \'Appointments\' is DBNull.", e);
+                    }
+                }
+                set {
+                    this[this.tableAppointments.ap_detailColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
             public bool Isap_startTNull() {
                 return this.IsNull(this.tableAppointments.ap_startTColumn);
             }
@@ -3977,6 +4008,18 @@ namespace AppointmentQueue {
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
             public void Setap_scanNull() {
                 this[this.tableAppointments.ap_scanColumn] = global::System.Convert.DBNull;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+            public bool Isap_detailNull() {
+                return this.IsNull(this.tableAppointments.ap_detailColumn);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+            public void Setap_detailNull() {
+                this[this.tableAppointments.ap_detailColumn] = global::System.Convert.DBNull;
             }
         }
         
@@ -7195,10 +7238,11 @@ SELECT dr_Id, dr_name, dr_lname FROM Doctors WHERE (dr_Id = @dr_Id)";
             tableMapping.ColumnMappings.Add("ap_period", "ap_period");
             tableMapping.ColumnMappings.Add("ap_appstatus", "ap_appstatus");
             tableMapping.ColumnMappings.Add("ap_scan", "ap_scan");
+            tableMapping.ColumnMappings.Add("ap_detail", "ap_detail");
             this._adapter.TableMappings.Add(tableMapping);
             this._adapter.DeleteCommand = new global::System.Data.SqlClient.SqlCommand();
             this._adapter.DeleteCommand.Connection = this.Connection;
-            this._adapter.DeleteCommand.CommandText = @"DELETE FROM [dbo].[Appointments] WHERE (([ap_Id] = @Original_ap_Id) AND ((@IsNull_ap_startT = 1 AND [ap_startT] IS NULL) OR ([ap_startT] = @Original_ap_startT)) AND ((@IsNull_ap_patient = 1 AND [ap_patient] IS NULL) OR ([ap_patient] = @Original_ap_patient)) AND ((@IsNull_ap_request = 1 AND [ap_request] IS NULL) OR ([ap_request] = @Original_ap_request)) AND ((@IsNull_ap_period = 1 AND [ap_period] IS NULL) OR ([ap_period] = @Original_ap_period)) AND ((@IsNull_ap_appstatus = 1 AND [ap_appstatus] IS NULL) OR ([ap_appstatus] = @Original_ap_appstatus)) AND ((@IsNull_ap_scan = 1 AND [ap_scan] IS NULL) OR ([ap_scan] = @Original_ap_scan)))";
+            this._adapter.DeleteCommand.CommandText = @"DELETE FROM [Appointments] WHERE (([ap_Id] = @Original_ap_Id) AND ((@IsNull_ap_startT = 1 AND [ap_startT] IS NULL) OR ([ap_startT] = @Original_ap_startT)) AND ((@IsNull_ap_patient = 1 AND [ap_patient] IS NULL) OR ([ap_patient] = @Original_ap_patient)) AND ((@IsNull_ap_request = 1 AND [ap_request] IS NULL) OR ([ap_request] = @Original_ap_request)) AND ((@IsNull_ap_period = 1 AND [ap_period] IS NULL) OR ([ap_period] = @Original_ap_period)) AND ((@IsNull_ap_appstatus = 1 AND [ap_appstatus] IS NULL) OR ([ap_appstatus] = @Original_ap_appstatus)) AND ((@IsNull_ap_scan = 1 AND [ap_scan] IS NULL) OR ([ap_scan] = @Original_ap_scan)) AND ((@IsNull_ap_detail = 1 AND [ap_detail] IS NULL) OR ([ap_detail] = @Original_ap_detail)))";
             this._adapter.DeleteCommand.CommandType = global::System.Data.CommandType.Text;
             this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_ap_Id", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "ap_Id", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
             this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@IsNull_ap_startT", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "ap_startT", global::System.Data.DataRowVersion.Original, true, null, "", "", ""));
@@ -7213,10 +7257,12 @@ SELECT dr_Id, dr_name, dr_lname FROM Doctors WHERE (dr_Id = @dr_Id)";
             this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_ap_appstatus", global::System.Data.SqlDbType.NChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "ap_appstatus", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
             this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@IsNull_ap_scan", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "ap_scan", global::System.Data.DataRowVersion.Original, true, null, "", "", ""));
             this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_ap_scan", global::System.Data.SqlDbType.NChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "ap_scan", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
+            this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@IsNull_ap_detail", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "ap_detail", global::System.Data.DataRowVersion.Original, true, null, "", "", ""));
+            this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_ap_detail", global::System.Data.SqlDbType.NChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "ap_detail", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
             this._adapter.InsertCommand = new global::System.Data.SqlClient.SqlCommand();
             this._adapter.InsertCommand.Connection = this.Connection;
-            this._adapter.InsertCommand.CommandText = @"INSERT INTO [dbo].[Appointments] ([ap_startT], [ap_patient], [ap_request], [ap_period], [ap_appstatus], [ap_scan]) VALUES (@ap_startT, @ap_patient, @ap_request, @ap_period, @ap_appstatus, @ap_scan);
-SELECT ap_Id, ap_startT, ap_patient, ap_request, ap_period, ap_appstatus, ap_scan FROM Appointments WHERE (ap_Id = SCOPE_IDENTITY())";
+            this._adapter.InsertCommand.CommandText = @"INSERT INTO [Appointments] ([ap_startT], [ap_patient], [ap_request], [ap_period], [ap_appstatus], [ap_scan], [ap_detail]) VALUES (@ap_startT, @ap_patient, @ap_request, @ap_period, @ap_appstatus, @ap_scan, @ap_detail);
+SELECT ap_Id, ap_startT, ap_patient, ap_request, ap_period, ap_appstatus, ap_scan, ap_detail FROM Appointments WHERE (ap_Id = SCOPE_IDENTITY())";
             this._adapter.InsertCommand.CommandType = global::System.Data.CommandType.Text;
             this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@ap_startT", global::System.Data.SqlDbType.DateTime, 0, global::System.Data.ParameterDirection.Input, 0, 0, "ap_startT", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@ap_patient", global::System.Data.SqlDbType.NChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "ap_patient", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
@@ -7224,10 +7270,11 @@ SELECT ap_Id, ap_startT, ap_patient, ap_request, ap_period, ap_appstatus, ap_sca
             this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@ap_period", global::System.Data.SqlDbType.NChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "ap_period", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@ap_appstatus", global::System.Data.SqlDbType.NChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "ap_appstatus", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@ap_scan", global::System.Data.SqlDbType.NChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "ap_scan", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@ap_detail", global::System.Data.SqlDbType.NChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "ap_detail", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._adapter.UpdateCommand = new global::System.Data.SqlClient.SqlCommand();
             this._adapter.UpdateCommand.Connection = this.Connection;
-            this._adapter.UpdateCommand.CommandText = @"UPDATE [dbo].[Appointments] SET [ap_startT] = @ap_startT, [ap_patient] = @ap_patient, [ap_request] = @ap_request, [ap_period] = @ap_period, [ap_appstatus] = @ap_appstatus, [ap_scan] = @ap_scan WHERE (([ap_Id] = @Original_ap_Id) AND ((@IsNull_ap_startT = 1 AND [ap_startT] IS NULL) OR ([ap_startT] = @Original_ap_startT)) AND ((@IsNull_ap_patient = 1 AND [ap_patient] IS NULL) OR ([ap_patient] = @Original_ap_patient)) AND ((@IsNull_ap_request = 1 AND [ap_request] IS NULL) OR ([ap_request] = @Original_ap_request)) AND ((@IsNull_ap_period = 1 AND [ap_period] IS NULL) OR ([ap_period] = @Original_ap_period)) AND ((@IsNull_ap_appstatus = 1 AND [ap_appstatus] IS NULL) OR ([ap_appstatus] = @Original_ap_appstatus)) AND ((@IsNull_ap_scan = 1 AND [ap_scan] IS NULL) OR ([ap_scan] = @Original_ap_scan)));
-SELECT ap_Id, ap_startT, ap_patient, ap_request, ap_period, ap_appstatus, ap_scan FROM Appointments WHERE (ap_Id = @ap_Id)";
+            this._adapter.UpdateCommand.CommandText = @"UPDATE [Appointments] SET [ap_startT] = @ap_startT, [ap_patient] = @ap_patient, [ap_request] = @ap_request, [ap_period] = @ap_period, [ap_appstatus] = @ap_appstatus, [ap_scan] = @ap_scan, [ap_detail] = @ap_detail WHERE (([ap_Id] = @Original_ap_Id) AND ((@IsNull_ap_startT = 1 AND [ap_startT] IS NULL) OR ([ap_startT] = @Original_ap_startT)) AND ((@IsNull_ap_patient = 1 AND [ap_patient] IS NULL) OR ([ap_patient] = @Original_ap_patient)) AND ((@IsNull_ap_request = 1 AND [ap_request] IS NULL) OR ([ap_request] = @Original_ap_request)) AND ((@IsNull_ap_period = 1 AND [ap_period] IS NULL) OR ([ap_period] = @Original_ap_period)) AND ((@IsNull_ap_appstatus = 1 AND [ap_appstatus] IS NULL) OR ([ap_appstatus] = @Original_ap_appstatus)) AND ((@IsNull_ap_scan = 1 AND [ap_scan] IS NULL) OR ([ap_scan] = @Original_ap_scan)) AND ((@IsNull_ap_detail = 1 AND [ap_detail] IS NULL) OR ([ap_detail] = @Original_ap_detail)));
+SELECT ap_Id, ap_startT, ap_patient, ap_request, ap_period, ap_appstatus, ap_scan, ap_detail FROM Appointments WHERE (ap_Id = @ap_Id)";
             this._adapter.UpdateCommand.CommandType = global::System.Data.CommandType.Text;
             this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@ap_startT", global::System.Data.SqlDbType.DateTime, 0, global::System.Data.ParameterDirection.Input, 0, 0, "ap_startT", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@ap_patient", global::System.Data.SqlDbType.NChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "ap_patient", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
@@ -7235,6 +7282,7 @@ SELECT ap_Id, ap_startT, ap_patient, ap_request, ap_period, ap_appstatus, ap_sca
             this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@ap_period", global::System.Data.SqlDbType.NChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "ap_period", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@ap_appstatus", global::System.Data.SqlDbType.NChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "ap_appstatus", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@ap_scan", global::System.Data.SqlDbType.NChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "ap_scan", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@ap_detail", global::System.Data.SqlDbType.NChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "ap_detail", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_ap_Id", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "ap_Id", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
             this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@IsNull_ap_startT", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "ap_startT", global::System.Data.DataRowVersion.Original, true, null, "", "", ""));
             this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_ap_startT", global::System.Data.SqlDbType.DateTime, 0, global::System.Data.ParameterDirection.Input, 0, 0, "ap_startT", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
@@ -7248,6 +7296,8 @@ SELECT ap_Id, ap_startT, ap_patient, ap_request, ap_period, ap_appstatus, ap_sca
             this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_ap_appstatus", global::System.Data.SqlDbType.NChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "ap_appstatus", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
             this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@IsNull_ap_scan", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "ap_scan", global::System.Data.DataRowVersion.Original, true, null, "", "", ""));
             this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_ap_scan", global::System.Data.SqlDbType.NChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "ap_scan", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
+            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@IsNull_ap_detail", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "ap_detail", global::System.Data.DataRowVersion.Original, true, null, "", "", ""));
+            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_ap_detail", global::System.Data.SqlDbType.NChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "ap_detail", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
             this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@ap_Id", global::System.Data.SqlDbType.Int, 4, global::System.Data.ParameterDirection.Input, 0, 0, "ap_Id", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
         }
         
@@ -7265,7 +7315,7 @@ SELECT ap_Id, ap_startT, ap_patient, ap_request, ap_period, ap_appstatus, ap_sca
             this._commandCollection[0] = new global::System.Data.SqlClient.SqlCommand();
             this._commandCollection[0].Connection = this.Connection;
             this._commandCollection[0].CommandText = "SELECT ap_Id, ap_startT, ap_patient, ap_request, ap_period, ap_appstatus, ap_scan" +
-                " FROM dbo.Appointments";
+                ", ap_detail FROM Appointments";
             this._commandCollection[0].CommandType = global::System.Data.CommandType.Text;
         }
         
@@ -7326,7 +7376,7 @@ SELECT ap_Id, ap_startT, ap_patient, ap_request, ap_period, ap_appstatus, ap_sca
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
         [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Delete, true)]
-        public virtual int Delete(int Original_ap_Id, global::System.Nullable<global::System.DateTime> Original_ap_startT, string Original_ap_patient, global::System.Nullable<int> Original_ap_request, string Original_ap_period, string Original_ap_appstatus, string Original_ap_scan) {
+        public virtual int Delete(int Original_ap_Id, global::System.Nullable<global::System.DateTime> Original_ap_startT, string Original_ap_patient, global::System.Nullable<int> Original_ap_request, string Original_ap_period, string Original_ap_appstatus, string Original_ap_scan, string Original_ap_detail) {
             this.Adapter.DeleteCommand.Parameters[0].Value = ((int)(Original_ap_Id));
             if ((Original_ap_startT.HasValue == true)) {
                 this.Adapter.DeleteCommand.Parameters[1].Value = ((object)(0));
@@ -7376,6 +7426,14 @@ SELECT ap_Id, ap_startT, ap_patient, ap_request, ap_period, ap_appstatus, ap_sca
                 this.Adapter.DeleteCommand.Parameters[11].Value = ((object)(0));
                 this.Adapter.DeleteCommand.Parameters[12].Value = ((string)(Original_ap_scan));
             }
+            if ((Original_ap_detail == null)) {
+                this.Adapter.DeleteCommand.Parameters[13].Value = ((object)(1));
+                this.Adapter.DeleteCommand.Parameters[14].Value = global::System.DBNull.Value;
+            }
+            else {
+                this.Adapter.DeleteCommand.Parameters[13].Value = ((object)(0));
+                this.Adapter.DeleteCommand.Parameters[14].Value = ((string)(Original_ap_detail));
+            }
             global::System.Data.ConnectionState previousConnectionState = this.Adapter.DeleteCommand.Connection.State;
             if (((this.Adapter.DeleteCommand.Connection.State & global::System.Data.ConnectionState.Open) 
                         != global::System.Data.ConnectionState.Open)) {
@@ -7396,7 +7454,7 @@ SELECT ap_Id, ap_startT, ap_patient, ap_request, ap_period, ap_appstatus, ap_sca
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
         [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Insert, true)]
-        public virtual int Insert(global::System.Nullable<global::System.DateTime> ap_startT, string ap_patient, global::System.Nullable<int> ap_request, string ap_period, string ap_appstatus, string ap_scan) {
+        public virtual int Insert(global::System.Nullable<global::System.DateTime> ap_startT, string ap_patient, global::System.Nullable<int> ap_request, string ap_period, string ap_appstatus, string ap_scan, string ap_detail) {
             if ((ap_startT.HasValue == true)) {
                 this.Adapter.InsertCommand.Parameters[0].Value = ((System.DateTime)(ap_startT.Value));
             }
@@ -7433,6 +7491,12 @@ SELECT ap_Id, ap_startT, ap_patient, ap_request, ap_period, ap_appstatus, ap_sca
             else {
                 this.Adapter.InsertCommand.Parameters[5].Value = ((string)(ap_scan));
             }
+            if ((ap_detail == null)) {
+                this.Adapter.InsertCommand.Parameters[6].Value = global::System.DBNull.Value;
+            }
+            else {
+                this.Adapter.InsertCommand.Parameters[6].Value = ((string)(ap_detail));
+            }
             global::System.Data.ConnectionState previousConnectionState = this.Adapter.InsertCommand.Connection.State;
             if (((this.Adapter.InsertCommand.Connection.State & global::System.Data.ConnectionState.Open) 
                         != global::System.Data.ConnectionState.Open)) {
@@ -7453,7 +7517,23 @@ SELECT ap_Id, ap_startT, ap_patient, ap_request, ap_period, ap_appstatus, ap_sca
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
         [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Update, true)]
-        public virtual int Update(global::System.Nullable<global::System.DateTime> ap_startT, string ap_patient, global::System.Nullable<int> ap_request, string ap_period, string ap_appstatus, string ap_scan, int Original_ap_Id, global::System.Nullable<global::System.DateTime> Original_ap_startT, string Original_ap_patient, global::System.Nullable<int> Original_ap_request, string Original_ap_period, string Original_ap_appstatus, string Original_ap_scan, int ap_Id) {
+        public virtual int Update(
+                    global::System.Nullable<global::System.DateTime> ap_startT, 
+                    string ap_patient, 
+                    global::System.Nullable<int> ap_request, 
+                    string ap_period, 
+                    string ap_appstatus, 
+                    string ap_scan, 
+                    string ap_detail, 
+                    int Original_ap_Id, 
+                    global::System.Nullable<global::System.DateTime> Original_ap_startT, 
+                    string Original_ap_patient, 
+                    global::System.Nullable<int> Original_ap_request, 
+                    string Original_ap_period, 
+                    string Original_ap_appstatus, 
+                    string Original_ap_scan, 
+                    string Original_ap_detail, 
+                    int ap_Id) {
             if ((ap_startT.HasValue == true)) {
                 this.Adapter.UpdateCommand.Parameters[0].Value = ((System.DateTime)(ap_startT.Value));
             }
@@ -7490,56 +7570,70 @@ SELECT ap_Id, ap_startT, ap_patient, ap_request, ap_period, ap_appstatus, ap_sca
             else {
                 this.Adapter.UpdateCommand.Parameters[5].Value = ((string)(ap_scan));
             }
-            this.Adapter.UpdateCommand.Parameters[6].Value = ((int)(Original_ap_Id));
-            if ((Original_ap_startT.HasValue == true)) {
-                this.Adapter.UpdateCommand.Parameters[7].Value = ((object)(0));
-                this.Adapter.UpdateCommand.Parameters[8].Value = ((System.DateTime)(Original_ap_startT.Value));
+            if ((ap_detail == null)) {
+                this.Adapter.UpdateCommand.Parameters[6].Value = global::System.DBNull.Value;
             }
             else {
-                this.Adapter.UpdateCommand.Parameters[7].Value = ((object)(1));
-                this.Adapter.UpdateCommand.Parameters[8].Value = global::System.DBNull.Value;
+                this.Adapter.UpdateCommand.Parameters[6].Value = ((string)(ap_detail));
+            }
+            this.Adapter.UpdateCommand.Parameters[7].Value = ((int)(Original_ap_Id));
+            if ((Original_ap_startT.HasValue == true)) {
+                this.Adapter.UpdateCommand.Parameters[8].Value = ((object)(0));
+                this.Adapter.UpdateCommand.Parameters[9].Value = ((System.DateTime)(Original_ap_startT.Value));
+            }
+            else {
+                this.Adapter.UpdateCommand.Parameters[8].Value = ((object)(1));
+                this.Adapter.UpdateCommand.Parameters[9].Value = global::System.DBNull.Value;
             }
             if ((Original_ap_patient == null)) {
-                this.Adapter.UpdateCommand.Parameters[9].Value = ((object)(1));
-                this.Adapter.UpdateCommand.Parameters[10].Value = global::System.DBNull.Value;
+                this.Adapter.UpdateCommand.Parameters[10].Value = ((object)(1));
+                this.Adapter.UpdateCommand.Parameters[11].Value = global::System.DBNull.Value;
             }
             else {
-                this.Adapter.UpdateCommand.Parameters[9].Value = ((object)(0));
-                this.Adapter.UpdateCommand.Parameters[10].Value = ((string)(Original_ap_patient));
+                this.Adapter.UpdateCommand.Parameters[10].Value = ((object)(0));
+                this.Adapter.UpdateCommand.Parameters[11].Value = ((string)(Original_ap_patient));
             }
             if ((Original_ap_request.HasValue == true)) {
-                this.Adapter.UpdateCommand.Parameters[11].Value = ((object)(0));
-                this.Adapter.UpdateCommand.Parameters[12].Value = ((int)(Original_ap_request.Value));
+                this.Adapter.UpdateCommand.Parameters[12].Value = ((object)(0));
+                this.Adapter.UpdateCommand.Parameters[13].Value = ((int)(Original_ap_request.Value));
             }
             else {
-                this.Adapter.UpdateCommand.Parameters[11].Value = ((object)(1));
-                this.Adapter.UpdateCommand.Parameters[12].Value = global::System.DBNull.Value;
+                this.Adapter.UpdateCommand.Parameters[12].Value = ((object)(1));
+                this.Adapter.UpdateCommand.Parameters[13].Value = global::System.DBNull.Value;
             }
             if ((Original_ap_period == null)) {
-                this.Adapter.UpdateCommand.Parameters[13].Value = ((object)(1));
-                this.Adapter.UpdateCommand.Parameters[14].Value = global::System.DBNull.Value;
+                this.Adapter.UpdateCommand.Parameters[14].Value = ((object)(1));
+                this.Adapter.UpdateCommand.Parameters[15].Value = global::System.DBNull.Value;
             }
             else {
-                this.Adapter.UpdateCommand.Parameters[13].Value = ((object)(0));
-                this.Adapter.UpdateCommand.Parameters[14].Value = ((string)(Original_ap_period));
+                this.Adapter.UpdateCommand.Parameters[14].Value = ((object)(0));
+                this.Adapter.UpdateCommand.Parameters[15].Value = ((string)(Original_ap_period));
             }
             if ((Original_ap_appstatus == null)) {
-                this.Adapter.UpdateCommand.Parameters[15].Value = ((object)(1));
-                this.Adapter.UpdateCommand.Parameters[16].Value = global::System.DBNull.Value;
+                this.Adapter.UpdateCommand.Parameters[16].Value = ((object)(1));
+                this.Adapter.UpdateCommand.Parameters[17].Value = global::System.DBNull.Value;
             }
             else {
-                this.Adapter.UpdateCommand.Parameters[15].Value = ((object)(0));
-                this.Adapter.UpdateCommand.Parameters[16].Value = ((string)(Original_ap_appstatus));
+                this.Adapter.UpdateCommand.Parameters[16].Value = ((object)(0));
+                this.Adapter.UpdateCommand.Parameters[17].Value = ((string)(Original_ap_appstatus));
             }
             if ((Original_ap_scan == null)) {
-                this.Adapter.UpdateCommand.Parameters[17].Value = ((object)(1));
-                this.Adapter.UpdateCommand.Parameters[18].Value = global::System.DBNull.Value;
+                this.Adapter.UpdateCommand.Parameters[18].Value = ((object)(1));
+                this.Adapter.UpdateCommand.Parameters[19].Value = global::System.DBNull.Value;
             }
             else {
-                this.Adapter.UpdateCommand.Parameters[17].Value = ((object)(0));
-                this.Adapter.UpdateCommand.Parameters[18].Value = ((string)(Original_ap_scan));
+                this.Adapter.UpdateCommand.Parameters[18].Value = ((object)(0));
+                this.Adapter.UpdateCommand.Parameters[19].Value = ((string)(Original_ap_scan));
             }
-            this.Adapter.UpdateCommand.Parameters[19].Value = ((int)(ap_Id));
+            if ((Original_ap_detail == null)) {
+                this.Adapter.UpdateCommand.Parameters[20].Value = ((object)(1));
+                this.Adapter.UpdateCommand.Parameters[21].Value = global::System.DBNull.Value;
+            }
+            else {
+                this.Adapter.UpdateCommand.Parameters[20].Value = ((object)(0));
+                this.Adapter.UpdateCommand.Parameters[21].Value = ((string)(Original_ap_detail));
+            }
+            this.Adapter.UpdateCommand.Parameters[22].Value = ((int)(ap_Id));
             global::System.Data.ConnectionState previousConnectionState = this.Adapter.UpdateCommand.Connection.State;
             if (((this.Adapter.UpdateCommand.Connection.State & global::System.Data.ConnectionState.Open) 
                         != global::System.Data.ConnectionState.Open)) {
@@ -7560,8 +7654,8 @@ SELECT ap_Id, ap_startT, ap_patient, ap_request, ap_period, ap_appstatus, ap_sca
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
         [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Update, true)]
-        public virtual int Update(global::System.Nullable<global::System.DateTime> ap_startT, string ap_patient, global::System.Nullable<int> ap_request, string ap_period, string ap_appstatus, string ap_scan, int Original_ap_Id, global::System.Nullable<global::System.DateTime> Original_ap_startT, string Original_ap_patient, global::System.Nullable<int> Original_ap_request, string Original_ap_period, string Original_ap_appstatus, string Original_ap_scan) {
-            return this.Update(ap_startT, ap_patient, ap_request, ap_period, ap_appstatus, ap_scan, Original_ap_Id, Original_ap_startT, Original_ap_patient, Original_ap_request, Original_ap_period, Original_ap_appstatus, Original_ap_scan, Original_ap_Id);
+        public virtual int Update(global::System.Nullable<global::System.DateTime> ap_startT, string ap_patient, global::System.Nullable<int> ap_request, string ap_period, string ap_appstatus, string ap_scan, string ap_detail, int Original_ap_Id, global::System.Nullable<global::System.DateTime> Original_ap_startT, string Original_ap_patient, global::System.Nullable<int> Original_ap_request, string Original_ap_period, string Original_ap_appstatus, string Original_ap_scan, string Original_ap_detail) {
+            return this.Update(ap_startT, ap_patient, ap_request, ap_period, ap_appstatus, ap_scan, ap_detail, Original_ap_Id, Original_ap_startT, Original_ap_patient, Original_ap_request, Original_ap_period, Original_ap_appstatus, Original_ap_scan, Original_ap_detail, Original_ap_Id);
         }
     }
     

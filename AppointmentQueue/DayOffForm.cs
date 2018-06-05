@@ -94,15 +94,18 @@ namespace AppointmentQueue
         {
             if (id_df != -1)
             {
-                SqlConnection cn = new SqlConnection(global::AppointmentQueue.Properties.Settings.Default.Database1ConnectionString);
-                SqlCommand command = new SqlCommand("DELETE FROM DayOffs WHERE df_id = '" + id_df + "'", cn);
+                if (MessageBox.Show("Do you want to delete a day off?", "Delete day off", MessageBoxButtons.YesNo) == DialogResult.Yes)
+                {
+                    SqlConnection cn = new SqlConnection(global::AppointmentQueue.Properties.Settings.Default.Database1ConnectionString);
+                    SqlCommand command = new SqlCommand("DELETE FROM DayOffs WHERE df_id = '" + id_df + "'", cn);
 
-                cn.Open();
-                command.ExecuteNonQuery();
-                cn.Close();
-                seachDrReq_Click(sender, e);
-                id_df = -1;
-                MessageBox.Show("Delete Dayoff Success");
+                    cn.Open();
+                    command.ExecuteNonQuery();
+                    cn.Close();
+                    seachDrReq_Click(sender, e);
+                    id_df = -1;
+                    MessageBox.Show("Delete Dayoff Success");
+                }
             }
             else
             {

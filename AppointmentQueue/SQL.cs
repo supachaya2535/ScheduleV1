@@ -22,7 +22,7 @@ namespace AppointmentQueue
             //startT = startT.AddTicks(+1);
             endT = endT.AddDays(1).AddTicks(-1);
             SqlCommand command = new SqlCommand(
-                "SELECT ap_id,ap_startT,ap_patient,ap_period,ap_request,req_bodypart,ap_appstatus,ap_scan,scan_name,req_time " +
+                "SELECT ap_id,ap_startT,ap_patient,ap_period,ap_request,ap_detail,req_bodypart,ap_appstatus,ap_scan,scan_name,req_time " +
                 "FROM Appointments " +
                 "JOIN Scanners ON ap_scan = scan_Id "+
                 "JOIN Requests ON ap_request = req_Id "+
@@ -42,6 +42,7 @@ namespace AppointmentQueue
             dt.Columns.Add("ap_period", typeof(String));
             dt.Columns.Add("ap_request", typeof(Int16));
             dt.Columns.Add("req_bodypart", typeof(String));
+            dt.Columns.Add("ap_detail", typeof(String));
             dt.Columns.Add("ap_appstatus", typeof(String));
             dt.Columns.Add("ap_scan", typeof(Int16));
             dt.Columns.Add("scan_name", typeof(String));

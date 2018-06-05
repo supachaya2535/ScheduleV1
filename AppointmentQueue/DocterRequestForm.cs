@@ -126,16 +126,19 @@ namespace AppointmentQueue
         {
             if (drReqId.Text != "")
             {
-                int id_del = Convert.ToInt32(drReqId.Text);
-                SqlConnection cn = new SqlConnection(global::AppointmentQueue.Properties.Settings.Default.Database1ConnectionString);
-                SqlCommand command = new SqlCommand("DELETE FROM DoctorRequests WHERE drreq_Id = '" + id_del + "'", cn);
+                if (MessageBox.Show("Do you want to delete doctor request?", "Delete doctor request", MessageBoxButtons.YesNo) == DialogResult.Yes)
+                {
+                    int id_del = Convert.ToInt32(drReqId.Text);
+                    SqlConnection cn = new SqlConnection(global::AppointmentQueue.Properties.Settings.Default.Database1ConnectionString);
+                    SqlCommand command = new SqlCommand("DELETE FROM DoctorRequests WHERE drreq_Id = '" + id_del + "'", cn);
 
-                cn.Open();
-                command.ExecuteNonQuery();
-                cn.Close();
-                seachDrReq_Click(sender, e);
-                drReqId.Text = "";
-                MessageBox.Show("Delete Requests Success");
+                    cn.Open();
+                    command.ExecuteNonQuery();
+                    cn.Close();
+                    seachDrReq_Click(sender, e);
+                    drReqId.Text = "";
+                    MessageBox.Show("Delete Requests Success");
+                }
             }
             else
             {

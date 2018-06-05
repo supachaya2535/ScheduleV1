@@ -31,6 +31,9 @@ namespace AppointmentQueue
             
             DataTable dt = SQL.GetAppointment(todayDay.Value, todayDay.Value, " ", " ", " ");
             appDataGridView.DataSource = dt;
+
+            detail_text.Enabled = false;
+            HNtxt.Enabled = false;
         }
         
         private int getAge(DateTime birthDate)
@@ -140,12 +143,13 @@ namespace AppointmentQueue
                 {
                     SqlConnection cn = new SqlConnection(global::AppointmentQueue.Properties.Settings.Default.Database1ConnectionString);
                     SqlCommand command = new SqlCommand(
-                        "INSERT INTO Appointments (ap_startT,ap_patient,ap_request,ap_period,ap_appstatus,ap_scan) " +
-                        "VALUES (@ap_startT,@ap_patient,@ap_request,@ap_period,@ap_appstatus,@ap_scan)", cn);
+                        "INSERT INTO Appointments (ap_startT,ap_patient,ap_request,ap_detail,ap_period,ap_appstatus,ap_scan) " +
+                        "VALUES (@ap_startT,@ap_patient,@ap_request,@ap_detail,@ap_period,@ap_appstatus,@ap_scan)", cn);
 
                     command.Parameters.AddWithValue("@ap_startT", todayDatePicker.Value.Date.ToString().Trim());
                     command.Parameters.AddWithValue("@ap_patient", HNtxt.Text.Trim());
                     command.Parameters.AddWithValue("@ap_request", reqCob.SelectedIndex + 1);
+                    command.Parameters.AddWithValue("@ap_detail", detail_text.Text.Trim());
                     command.Parameters.AddWithValue("@ap_period", paidCob.SelectedItem.ToString().Trim());
                     command.Parameters.AddWithValue("@ap_appstatus", "Waiting");
                     command.Parameters.AddWithValue("@ap_scan", scan_CoBox.SelectedIndex + 1);
@@ -155,6 +159,7 @@ namespace AppointmentQueue
                     command.ExecuteNonQuery();
                     MessageBox.Show("Row inserted !! ");
                     cn.Close();
+
                 }
                 
             }
@@ -201,6 +206,20 @@ namespace AppointmentQueue
             //DateTime tmpDate = Convert.ToDateTime(date_str);
             todayCheckBox_CheckedChanged(sender, e);
             betweenCheckBox_CheckedChanged(sender, e);
+        }
+
+        private void reqCob_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            if(reqCob.SelectedIndex >= 39 && reqCob.SelectedIndex <= 49)
+            {
+                detail_text.Enabled = true;
+                detail_text.Text = "";
+            }
+            else
+            {
+                detail_text.Enabled = false;
+                detail_text.Text = "";
+            }
         }
     }
 }
