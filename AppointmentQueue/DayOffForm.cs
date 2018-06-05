@@ -41,6 +41,7 @@ namespace AppointmentQueue
                     cn.Close();
 
                     seachDrReq_Click(sender, e);
+                    detailTxt.Text = "";
                 }
 
             }

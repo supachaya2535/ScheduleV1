@@ -31,6 +31,8 @@
             this.todayDay = new System.Windows.Forms.DateTimePicker();
             this.label23 = new System.Windows.Forms.Label();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
+            this.detail_text = new System.Windows.Forms.TextBox();
+            this.label7 = new System.Windows.Forms.Label();
             this.label6 = new System.Windows.Forms.Label();
             this.seachDateForReq = new System.Windows.Forms.Button();
             this.todayDatePicker = new System.Windows.Forms.DateTimePicker();
@@ -63,8 +65,6 @@
             this.button1 = new System.Windows.Forms.Button();
             this.button2 = new System.Windows.Forms.Button();
             this.endDate = new System.Windows.Forms.DateTimePicker();
-            this.label7 = new System.Windows.Forms.Label();
-            this.detail_text = new System.Windows.Forms.TextBox();
             this.groupBox1.SuspendLayout();
             this.groupBox2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.appDataGridView)).BeginInit();
@@ -77,7 +77,7 @@
             this.todayDay.Font = new System.Drawing.Font("Verdana", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.todayDay.Format = System.Windows.Forms.DateTimePickerFormat.Short;
             this.todayDay.Location = new System.Drawing.Point(549, 44);
-            this.todayDay.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.todayDay.Margin = new System.Windows.Forms.Padding(4);
             this.todayDay.MaxDate = new System.DateTime(2019, 12, 31, 0, 0, 0, 0);
             this.todayDay.MinDate = new System.DateTime(1909, 11, 24, 0, 0, 0, 0);
             this.todayDay.Name = "todayDay";
@@ -113,13 +113,34 @@
             this.groupBox1.Controls.Add(this.Scanner);
             this.groupBox1.Font = new System.Drawing.Font("Verdana", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.groupBox1.Location = new System.Drawing.Point(4, 279);
-            this.groupBox1.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.groupBox1.Margin = new System.Windows.Forms.Padding(4);
             this.groupBox1.Name = "groupBox1";
-            this.groupBox1.Padding = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.groupBox1.Padding = new System.Windows.Forms.Padding(4);
             this.groupBox1.Size = new System.Drawing.Size(436, 308);
             this.groupBox1.TabIndex = 31;
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Request Information";
+            // 
+            // detail_text
+            // 
+            this.detail_text.Font = new System.Drawing.Font("Verdana", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.detail_text.Location = new System.Drawing.Point(104, 182);
+            this.detail_text.Margin = new System.Windows.Forms.Padding(4);
+            this.detail_text.Multiline = true;
+            this.detail_text.Name = "detail_text";
+            this.detail_text.Size = new System.Drawing.Size(307, 63);
+            this.detail_text.TabIndex = 24;
+            // 
+            // label7
+            // 
+            this.label7.AutoSize = true;
+            this.label7.Font = new System.Drawing.Font("Verdana", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label7.Location = new System.Drawing.Point(13, 182);
+            this.label7.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.label7.Name = "label7";
+            this.label7.Size = new System.Drawing.Size(59, 20);
+            this.label7.TabIndex = 21;
+            this.label7.Text = "Detail";
             // 
             // label6
             // 
@@ -151,7 +172,7 @@
             this.todayDatePicker.Font = new System.Drawing.Font("Verdana", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.todayDatePicker.Format = System.Windows.Forms.DateTimePickerFormat.Short;
             this.todayDatePicker.Location = new System.Drawing.Point(104, 34);
-            this.todayDatePicker.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.todayDatePicker.Margin = new System.Windows.Forms.Padding(4);
             this.todayDatePicker.MaxDate = new System.DateTime(2019, 12, 31, 0, 0, 0, 0);
             this.todayDatePicker.MinDate = new System.DateTime(1909, 11, 24, 0, 0, 0, 0);
             this.todayDatePicker.Name = "todayDatePicker";
@@ -165,7 +186,7 @@
             this.reqCob.Font = new System.Drawing.Font("Verdana", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.reqCob.FormattingEnabled = true;
             this.reqCob.Location = new System.Drawing.Point(104, 132);
-            this.reqCob.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.reqCob.Margin = new System.Windows.Forms.Padding(4);
             this.reqCob.Name = "reqCob";
             this.reqCob.Size = new System.Drawing.Size(307, 26);
             this.reqCob.TabIndex = 8;
@@ -187,7 +208,7 @@
             this.scan_CoBox.Font = new System.Drawing.Font("Verdana", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.scan_CoBox.FormattingEnabled = true;
             this.scan_CoBox.Location = new System.Drawing.Point(104, 82);
-            this.scan_CoBox.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.scan_CoBox.Margin = new System.Windows.Forms.Padding(4);
             this.scan_CoBox.Name = "scan_CoBox";
             this.scan_CoBox.Size = new System.Drawing.Size(307, 26);
             this.scan_CoBox.TabIndex = 1;
@@ -201,7 +222,7 @@
             "Afternoon",
             "Evening"});
             this.paidCob.Location = new System.Drawing.Point(104, 263);
-            this.paidCob.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.paidCob.Margin = new System.Windows.Forms.Padding(4);
             this.paidCob.Name = "paidCob";
             this.paidCob.Size = new System.Drawing.Size(307, 26);
             this.paidCob.TabIndex = 12;
@@ -245,9 +266,9 @@
             this.groupBox2.Controls.Add(this.HNtxt);
             this.groupBox2.Font = new System.Drawing.Font("Verdana", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.groupBox2.Location = new System.Drawing.Point(4, 6);
-            this.groupBox2.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.groupBox2.Margin = new System.Windows.Forms.Padding(4);
             this.groupBox2.Name = "groupBox2";
-            this.groupBox2.Padding = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.groupBox2.Padding = new System.Windows.Forms.Padding(4);
             this.groupBox2.Size = new System.Drawing.Size(436, 266);
             this.groupBox2.TabIndex = 33;
             this.groupBox2.TabStop = false;
@@ -257,7 +278,7 @@
             // 
             this.label18.AutoSize = true;
             this.label18.Font = new System.Drawing.Font("Verdana", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label18.Location = new System.Drawing.Point(8, 134);
+            this.label18.Location = new System.Drawing.Point(8, 186);
             this.label18.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label18.Name = "label18";
             this.label18.Size = new System.Drawing.Size(94, 20);
@@ -267,12 +288,12 @@
             // seachPaBtn
             // 
             this.seachPaBtn.Font = new System.Drawing.Font("Verdana", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.seachPaBtn.Location = new System.Drawing.Point(328, 28);
-            this.seachPaBtn.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.seachPaBtn.Location = new System.Drawing.Point(68, 34);
+            this.seachPaBtn.Margin = new System.Windows.Forms.Padding(4);
             this.seachPaBtn.Name = "seachPaBtn";
-            this.seachPaBtn.Size = new System.Drawing.Size(84, 37);
+            this.seachPaBtn.Size = new System.Drawing.Size(303, 37);
             this.seachPaBtn.TabIndex = 20;
-            this.seachPaBtn.Text = "Seach";
+            this.seachPaBtn.Text = "Seach Patient Information";
             this.seachPaBtn.UseVisualStyleBackColor = true;
             this.seachPaBtn.Click += new System.EventHandler(this.seachPaBtn_Click_1);
             // 
@@ -280,7 +301,7 @@
             // 
             this.label2.AutoSize = true;
             this.label2.Font = new System.Drawing.Font("Verdana", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label2.Location = new System.Drawing.Point(8, 178);
+            this.label2.Location = new System.Drawing.Point(187, 228);
             this.label2.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(51, 20);
@@ -293,33 +314,37 @@
             this.birthDatePicker.Enabled = false;
             this.birthDatePicker.Font = new System.Drawing.Font("Verdana", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.birthDatePicker.Format = System.Windows.Forms.DateTimePickerFormat.Short;
-            this.birthDatePicker.Location = new System.Drawing.Point(104, 178);
-            this.birthDatePicker.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.birthDatePicker.Location = new System.Drawing.Point(259, 225);
+            this.birthDatePicker.Margin = new System.Windows.Forms.Padding(4);
             this.birthDatePicker.MaxDate = new System.DateTime(2019, 12, 31, 0, 0, 0, 0);
             this.birthDatePicker.MinDate = new System.DateTime(1900, 12, 31, 0, 0, 0, 0);
             this.birthDatePicker.Name = "birthDatePicker";
-            this.birthDatePicker.Size = new System.Drawing.Size(307, 27);
+            this.birthDatePicker.Size = new System.Drawing.Size(152, 27);
             this.birthDatePicker.TabIndex = 21;
             this.birthDatePicker.Value = new System.DateTime(2018, 1, 5, 0, 0, 0, 0);
             // 
             // lnameTxt
             // 
+            this.lnameTxt.BackColor = System.Drawing.SystemColors.GradientActiveCaption;
+            this.lnameTxt.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.lnameTxt.Enabled = false;
             this.lnameTxt.Font = new System.Drawing.Font("Verdana", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lnameTxt.Location = new System.Drawing.Point(104, 130);
-            this.lnameTxt.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.lnameTxt.Location = new System.Drawing.Point(104, 186);
+            this.lnameTxt.Margin = new System.Windows.Forms.Padding(4);
             this.lnameTxt.Name = "lnameTxt";
-            this.lnameTxt.Size = new System.Drawing.Size(307, 27);
+            this.lnameTxt.Size = new System.Drawing.Size(307, 20);
             this.lnameTxt.TabIndex = 17;
             // 
             // ageTxt
             // 
+            this.ageTxt.BackColor = System.Drawing.SystemColors.GradientActiveCaption;
+            this.ageTxt.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.ageTxt.Enabled = false;
             this.ageTxt.Font = new System.Drawing.Font("Verdana", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.ageTxt.Location = new System.Drawing.Point(104, 225);
-            this.ageTxt.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.ageTxt.Margin = new System.Windows.Forms.Padding(4);
             this.ageTxt.Name = "ageTxt";
-            this.ageTxt.Size = new System.Drawing.Size(307, 27);
+            this.ageTxt.Size = new System.Drawing.Size(60, 20);
             this.ageTxt.TabIndex = 16;
             // 
             // label8
@@ -335,19 +360,21 @@
             // 
             // nameTxt
             // 
+            this.nameTxt.BackColor = System.Drawing.SystemColors.GradientActiveCaption;
+            this.nameTxt.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.nameTxt.Enabled = false;
             this.nameTxt.Font = new System.Drawing.Font("Verdana", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.nameTxt.Location = new System.Drawing.Point(104, 82);
-            this.nameTxt.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.nameTxt.Location = new System.Drawing.Point(104, 138);
+            this.nameTxt.Margin = new System.Windows.Forms.Padding(4);
             this.nameTxt.Name = "nameTxt";
-            this.nameTxt.Size = new System.Drawing.Size(307, 27);
+            this.nameTxt.Size = new System.Drawing.Size(307, 20);
             this.nameTxt.TabIndex = 5;
             // 
             // label12
             // 
             this.label12.AutoSize = true;
             this.label12.Font = new System.Drawing.Font("Verdana", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label12.Location = new System.Drawing.Point(8, 86);
+            this.label12.Location = new System.Drawing.Point(8, 138);
             this.label12.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label12.Name = "label12";
             this.label12.Size = new System.Drawing.Size(59, 20);
@@ -358,7 +385,7 @@
             // 
             this.label1.AutoSize = true;
             this.label1.Font = new System.Drawing.Font("Verdana", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.Location = new System.Drawing.Point(8, 33);
+            this.label1.Location = new System.Drawing.Point(11, 92);
             this.label1.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(35, 20);
@@ -367,11 +394,13 @@
             // 
             // HNtxt
             // 
+            this.HNtxt.BackColor = System.Drawing.SystemColors.GradientActiveCaption;
+            this.HNtxt.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.HNtxt.Font = new System.Drawing.Font("Verdana", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.HNtxt.Location = new System.Drawing.Point(104, 33);
-            this.HNtxt.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.HNtxt.Location = new System.Drawing.Point(107, 92);
+            this.HNtxt.Margin = new System.Windows.Forms.Padding(4);
             this.HNtxt.Name = "HNtxt";
-            this.HNtxt.Size = new System.Drawing.Size(216, 27);
+            this.HNtxt.Size = new System.Drawing.Size(216, 20);
             this.HNtxt.TabIndex = 5;
             this.HNtxt.TextChanged += new System.EventHandler(this.HNtxt_TextChanged);
             // 
@@ -380,7 +409,7 @@
             this.appDataGridView.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.ColumnHeader;
             this.appDataGridView.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.appDataGridView.Location = new System.Drawing.Point(444, 79);
-            this.appDataGridView.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.appDataGridView.Margin = new System.Windows.Forms.Padding(4);
             this.appDataGridView.Name = "appDataGridView";
             this.appDataGridView.Size = new System.Drawing.Size(968, 508);
             this.appDataGridView.TabIndex = 34;
@@ -391,7 +420,7 @@
             this.addBtn.Enabled = false;
             this.addBtn.Font = new System.Drawing.Font("Verdana", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.addBtn.Location = new System.Drawing.Point(108, 609);
-            this.addBtn.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.addBtn.Margin = new System.Windows.Forms.Padding(4);
             this.addBtn.Name = "addBtn";
             this.addBtn.Size = new System.Drawing.Size(267, 63);
             this.addBtn.TabIndex = 32;
@@ -406,7 +435,7 @@
             this.todayCheckBox.CheckState = System.Windows.Forms.CheckState.Checked;
             this.todayCheckBox.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.todayCheckBox.Location = new System.Drawing.Point(452, 47);
-            this.todayCheckBox.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.todayCheckBox.Margin = new System.Windows.Forms.Padding(4);
             this.todayCheckBox.Name = "todayCheckBox";
             this.todayCheckBox.Size = new System.Drawing.Size(76, 24);
             this.todayCheckBox.TabIndex = 41;
@@ -420,7 +449,7 @@
             this.startDate.Font = new System.Drawing.Font("Verdana", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.startDate.Format = System.Windows.Forms.DateTimePickerFormat.Short;
             this.startDate.Location = new System.Drawing.Point(956, 43);
-            this.startDate.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.startDate.Margin = new System.Windows.Forms.Padding(4);
             this.startDate.MaxDate = new System.DateTime(2019, 12, 31, 0, 0, 0, 0);
             this.startDate.MinDate = new System.DateTime(1909, 11, 24, 0, 0, 0, 0);
             this.startDate.Name = "startDate";
@@ -434,7 +463,7 @@
             this.betweenCheckBox.AutoSize = true;
             this.betweenCheckBox.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.betweenCheckBox.Location = new System.Drawing.Point(839, 44);
-            this.betweenCheckBox.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.betweenCheckBox.Margin = new System.Windows.Forms.Padding(4);
             this.betweenCheckBox.Name = "betweenCheckBox";
             this.betweenCheckBox.Size = new System.Drawing.Size(96, 24);
             this.betweenCheckBox.TabIndex = 44;
@@ -491,6 +520,7 @@
             // 
             // button2
             // 
+            this.button2.Enabled = false;
             this.button2.Font = new System.Drawing.Font("Verdana", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.button2.Location = new System.Drawing.Point(1239, 609);
             this.button2.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
@@ -499,6 +529,7 @@
             this.button2.TabIndex = 58;
             this.button2.Text = "Manage Scanner";
             this.button2.UseVisualStyleBackColor = true;
+            this.button2.Visible = false;
             this.button2.Click += new System.EventHandler(this.button2_Click);
             // 
             // endDate
@@ -507,7 +538,7 @@
             this.endDate.Font = new System.Drawing.Font("Verdana", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.endDate.Format = System.Windows.Forms.DateTimePickerFormat.Short;
             this.endDate.Location = new System.Drawing.Point(1201, 42);
-            this.endDate.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.endDate.Margin = new System.Windows.Forms.Padding(4);
             this.endDate.MaxDate = new System.DateTime(2029, 12, 31, 0, 0, 0, 0);
             this.endDate.MinDate = new System.DateTime(2018, 6, 1, 0, 0, 0, 0);
             this.endDate.Name = "endDate";
@@ -515,27 +546,6 @@
             this.endDate.TabIndex = 59;
             this.endDate.Value = new System.DateTime(2018, 6, 1, 0, 0, 0, 0);
             this.endDate.ValueChanged += new System.EventHandler(this.endDate_ValueChanged);
-            // 
-            // label7
-            // 
-            this.label7.AutoSize = true;
-            this.label7.Font = new System.Drawing.Font("Verdana", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label7.Location = new System.Drawing.Point(13, 182);
-            this.label7.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
-            this.label7.Name = "label7";
-            this.label7.Size = new System.Drawing.Size(59, 20);
-            this.label7.TabIndex = 21;
-            this.label7.Text = "Detail";
-            // 
-            // detail_text
-            // 
-            this.detail_text.Font = new System.Drawing.Font("Verdana", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.detail_text.Location = new System.Drawing.Point(104, 182);
-            this.detail_text.Margin = new System.Windows.Forms.Padding(4);
-            this.detail_text.Multiline = true;
-            this.detail_text.Name = "detail_text";
-            this.detail_text.Size = new System.Drawing.Size(307, 63);
-            this.detail_text.TabIndex = 24;
             // 
             // Form1
             // 
@@ -557,7 +567,7 @@
             this.Controls.Add(this.groupBox2);
             this.Controls.Add(this.appDataGridView);
             this.Controls.Add(this.addBtn);
-            this.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.Margin = new System.Windows.Forms.Padding(4);
             this.MaximizeBox = false;
             this.MinimizeBox = false;
             this.Name = "Form1";

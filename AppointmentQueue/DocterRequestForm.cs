@@ -87,7 +87,7 @@ namespace AppointmentQueue
         {
             try
             {
-                if (MessageBox.Show("Do you want to insert a new appointment?", "Insert new appointment", MessageBoxButtons.YesNo) == DialogResult.Yes)
+                if (MessageBox.Show("Do you want to insert a new doctor request?", "Insert new appointment", MessageBoxButtons.YesNo) == DialogResult.Yes)
                 {
                     SqlConnection cn = new SqlConnection(global::AppointmentQueue.Properties.Settings.Default.Database1ConnectionString);
                     SqlCommand command = new SqlCommand(
