@@ -187,11 +187,5 @@ namespace AppointmentQueue
             suggDataGridView.DataSource = getSuggestionDate();
         }
         
-        private void DateForReqSuggestionForm_Load(object sender, EventArgs e)
-        {
-            // TODO: This line of code loads data into the 'database1DataSet.Scanners' table. You can move, or remove it, as needed.
-            this.scannersTableAdapter.Fill(this.database1DataSet.Scanners);
-
-        }
     }
 }
