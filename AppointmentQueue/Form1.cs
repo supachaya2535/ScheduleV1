@@ -67,7 +67,6 @@ namespace AppointmentQueue
 
         private void seachDateForReq_Click(object sender, EventArgs e)
         {
-
             DateForReqSuggestionForm sForm = new DateForReqSuggestionForm(scan_CoBox.SelectedIndex,paidCob.SelectedIndex, reqCob.SelectedIndex, todayDatePicker.Value.Date);
             sForm.exist = false;
             sForm.ShowDialog();

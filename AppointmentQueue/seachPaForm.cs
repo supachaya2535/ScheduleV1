@@ -23,6 +23,8 @@ namespace AppointmentQueue
         public SeachPaForm()
         {
             InitializeComponent();
+            DataTable dt = readPatient(HNtxt.Text, nametxt.Text, lnametxt.Text);
+            drGridView.DataSource = dt;
         }
 
         private void seachPaForm_Load(object sender, EventArgs e)

@@ -18,6 +18,8 @@ namespace AppointmentQueue
         public ScannerForm()
         {
             InitializeComponent();
+            DataTable dt = SQL.GetScanner("");
+            scanDataGridView.DataSource = dt;
         }
 
         private void insertBtn_Click(object sender, EventArgs e)
@@ -37,6 +39,8 @@ namespace AppointmentQueue
                     cn.Open();
                     command.ExecuteNonQuery();
                     cn.Close();
+                    DataTable dt = SQL.GetScanner("");
+                    scanDataGridView.DataSource = dt;
                 }
 
             }
@@ -58,6 +62,8 @@ namespace AppointmentQueue
                     cn.Open();
                     command.ExecuteNonQuery();
                     cn.Close();
+                    DataTable dt = SQL.GetScanner("");
+                    scanDataGridView.DataSource = dt;
                 }
                 
             }
@@ -66,6 +72,15 @@ namespace AppointmentQueue
                 MessageBox.Show(string.Format("Couldn't insert a new record : An error occurred: {0}", ex.Message));
             }
         }
-    
+
+        private void scanName_TextChanged(object sender, EventArgs e)
+        {
+            insertBtn.Enabled = true;
+        }
+
+        private void scanDataGridView_RowHeaderMouseDoubleClick(object sender, DataGridViewCellMouseEventArgs e)
+        {
+            int ID = scanDataGridView.CurrentCell.RowIndex;
+        }
     }
 }
