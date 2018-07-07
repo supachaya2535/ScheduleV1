@@ -14,7 +14,6 @@ namespace AppointmentQueue
 {
     public partial class Form1 : Form
     {
-        
         public Form1()
         {
             InitializeComponent();
@@ -131,7 +130,6 @@ namespace AppointmentQueue
         {
             //DataTable dt = SQL.GetAppointment(todayDay.Value.Date, todayDay.Value.Date, " ", " ", " ");
             //appDataGridView.DataSource = dt;
-            
             
         }
 

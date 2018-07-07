@@ -30,7 +30,7 @@ namespace AppointmentQueue
                     SqlConnection cn = new SqlConnection(global::AppointmentQueue.Properties.Settings.Default.Database1ConnectionString);
                     SqlCommand command = new SqlCommand(
                         "INSERT INTO Scanners (scan_name,scan_detail) " +
-                        "VALUE (@scan_name,@scan_detail)", cn);
+                        "VALUES (@scan_name,@scan_detail)", cn);
 
                    command.Parameters.AddWithValue("@scan_name", scanName.Text);
                    command.Parameters.AddWithValue("@scan_detail", drDetail.Text);
@@ -81,6 +81,8 @@ namespace AppointmentQueue
         private void scanDataGridView_RowHeaderMouseDoubleClick(object sender, DataGridViewCellMouseEventArgs e)
         {
             int ID = scanDataGridView.CurrentCell.RowIndex;
+            scanId.Text = scanDataGridView.Rows[ID].Cells[0].Value.ToString().Trim();
+            scanName.Text = scanDataGridView.Rows[ID].Cells[1].Value.ToString().Trim();
         }
     }
 }
