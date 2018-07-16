@@ -51,6 +51,7 @@
             this.scanDataGridView.Name = "scanDataGridView";
             this.scanDataGridView.Size = new System.Drawing.Size(373, 169);
             this.scanDataGridView.TabIndex = 61;
+            this.scanDataGridView.RowHeaderMouseDoubleClick += new System.Windows.Forms.DataGridViewCellMouseEventHandler(this.scanDataGridView_RowHeaderMouseDoubleClick);
             // 
             // groupBox3
             // 
@@ -91,6 +92,7 @@
             // 
             // delBtn
             // 
+            this.delBtn.Enabled = false;
             this.delBtn.Font = new System.Drawing.Font("Verdana", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.delBtn.Location = new System.Drawing.Point(191, 152);
             this.delBtn.Name = "delBtn";
@@ -104,7 +106,7 @@
             // 
             this.insertBtn.Enabled = false;
             this.insertBtn.Font = new System.Drawing.Font("Verdana", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.insertBtn.Location = new System.Drawing.Point(5, 152);
+            this.insertBtn.Location = new System.Drawing.Point(11, 152);
             this.insertBtn.Name = "insertBtn";
             this.insertBtn.Size = new System.Drawing.Size(159, 30);
             this.insertBtn.TabIndex = 55;
@@ -119,6 +121,7 @@
             this.scanName.Name = "scanName";
             this.scanName.Size = new System.Drawing.Size(264, 23);
             this.scanName.TabIndex = 32;
+            this.scanName.TextChanged += new System.EventHandler(this.scanName_TextChanged);
             // 
             // label10
             // 

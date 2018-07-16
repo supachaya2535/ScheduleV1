@@ -39,13 +39,6 @@ namespace AppointmentQueue
             
         }
         
-        public static DataTable GetDistinctRecords(DataTable dt, string[] Columns)
-        {
-            DataTable dtUniqRecords = new DataTable();
-            dtUniqRecords = dt.DefaultView.ToTable(true, Columns);
-            return dtUniqRecords;
-        }
-
         public int getDof(string dayName)
         {
             dayName = dayName.Trim();
@@ -68,7 +61,7 @@ namespace AppointmentQueue
         public DataTable getSuggestionDate()
         {
            //1.Find possible day of week of req in the range time
-            DataTable dtPossibleDrReq = SQL.GetDoctorRequests(comboBox1.SelectedItem.ToString().Trim(), reqCob.SelectedItem.ToString().Trim(),"");
+            DataTable dtPossibleDrReq = SQL.GetDoctorRequests(comboBox1.SelectedItem.ToString().Trim(), reqCob.SelectedItem.ToString().Trim(),"",Convert.ToInt16(kidCheckBox.Checked).ToString().Trim());
             dataGridView2.DataSource = dtPossibleDrReq;
 
             //2.Find Day off of req in the range time
@@ -80,12 +73,13 @@ namespace AppointmentQueue
             dataGridView1.DataSource = dtDayOff;
 
             DataTable suggestDate = new DataTable();
-            suggestDate.Columns.Add("Suggest_date", typeof(String));
-            suggestDate.Columns.Add("day_of_week", typeof(String));
-            suggestDate.Columns.Add("Dr name", typeof(String));
-            suggestDate.Columns.Add("Used time", typeof(Int16));
-            suggestDate.Columns.Add("Scan name", typeof(String));
+            suggestDate.Columns.Add("Date", typeof(String));
+            suggestDate.Columns.Add("Dof", typeof(String));
+            suggestDate.Columns.Add("Doctor", typeof(String));
+            suggestDate.Columns.Add("UsedTime", typeof(Int16));
+            suggestDate.Columns.Add("Scanner", typeof(String));
             suggestDate.Columns.Add("Period", typeof(String));
+            suggestDate.Columns.Add("Kid", typeof(String));
             for (int r = 0; r < dtPossibleDrReq.Rows.Count; r++)
             {
                 //3.Select req to insert into a suggestion table
@@ -118,6 +112,7 @@ namespace AppointmentQueue
                         dr[3] = usedTime;
                         dr[4] = scan_CoBox.SelectedItem.ToString().Trim();
                         dr[5] = comboBox1.SelectedItem.ToString().Trim();
+                        dr[6] = req["drreq_kid"];
                         suggestDate.Rows.Add(dr);
                         
                         suggDataGridView.DataSource = suggestDate;
@@ -126,13 +121,13 @@ namespace AppointmentQueue
                 }
             }
 
-            // fix show only suggest date -> not show time
+            /*/ fix show only suggest date -> not show time
             foreach (DataRow item in suggestDate.Rows)
             {
                 string date = item["Suggest_date"].ToString();
                 string new_format_date = date.Split(' ')[0];
                 item["Suggest_date"] = new_format_date;
-            }
+            }*/
             
             return suggestDate;
         }

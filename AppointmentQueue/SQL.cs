@@ -50,40 +50,18 @@ namespace AppointmentQueue
 
             dt.Load(reader);
 
-            // cut out time from column ap_startT
+            /*// cut out time from column ap_startT
             foreach (DataRow item in dt.Rows)
             {
                 string date = item["ap_startT"].ToString();
                 string new_format_date = date.Split(' ')[0];
                 item["ap_startT"] = new_format_date;
-            }
+            }*/
 
             cn.Close();
             return dt;
         }
-
-        public static DataTable GetReqCondition()
-        {
-            SqlConnection cn = new SqlConnection(global::AppointmentQueue.Properties.Settings.Default.Database1ConnectionString);
-            cn.Open();
-            SqlCommand command = new SqlCommand("SELECT Id, possible_req, cond_time, cond_day, " +
-                "cond_limit_time, cond_mri_machine_id FROM ConditionRequest", cn);
-           
-            SqlDataReader reader = command.ExecuteReader();
-
-            DataTable dt = new DataTable();
-            dt.Columns.Add("Id", typeof(Int16));
-            dt.Columns.Add("possible_req", typeof(string));
-            dt.Columns.Add("cond_time", typeof(Int16));
-            dt.Columns.Add("cond_day", typeof(Int16));
-            dt.Columns.Add("cond_limit_time", typeof(Int16));
-            dt.Columns.Add("cond_mri_machine_id", typeof(Int16));
-           
-            dt.Load(reader);
-            cn.Close();
-            return dt;
-        }
-
+        
         public static DataTable GetRequests(String request)
         {
             SqlConnection cn = new SqlConnection(global::AppointmentQueue.Properties.Settings.Default.Database1ConnectionString);
@@ -109,8 +87,8 @@ namespace AppointmentQueue
         {
             SqlConnection cn = new SqlConnection(global::AppointmentQueue.Properties.Settings.Default.Database1ConnectionString);
             cn.Open();
-            SqlCommand command = new SqlCommand("SELECT scan_Id, scan_name, scan_quantity FROM Scanners"+
-                "WHERE scan_name LIKE '" + scanname + "' ", cn);
+            SqlCommand command = new SqlCommand("SELECT scan_Id, scan_name, scan_quantity FROM Scanners "+
+                "WHERE scan_name LIKE '%" + scanname + "%'", cn);
             
             SqlDataReader reader = command.ExecuteReader();
 
@@ -170,45 +148,46 @@ namespace AppointmentQueue
             dt.Load(reader);
             cn.Close();
 
-            foreach (DataRow item in dt.Rows)
+            /*foreach (DataRow item in dt.Rows)
             {
                 string date = item["df_date"].ToString();
                 string new_format_date = date.Split(' ')[0];
                 item["df_date"] = new_format_date;
-            }
+            }*/
 
             return dt;
         }
 
-        public static DataTable GetDoctorRequests(String ped,String req, String dr)
+        public static DataTable GetDoctorRequests(String ped,String req, String dr, string kid)
         {
             SqlConnection cn = new SqlConnection(global::AppointmentQueue.Properties.Settings.Default.Database1ConnectionString);
             cn.Open();
             SqlCommand command = new SqlCommand(
-                "SELECT drreq_Id,req_bodypart,dr_name,drreq_period,drreq_time,drreq_dayofweek,dr_Id " +
+                "SELECT drreq_Id,req_bodypart,dr_name,drreq_period,drreq_kid,drreq_dayofweek,dr_Id " +
                 "FROM DoctorRequests "+
                 "JOIN Doctors ON dr_Id = drreq_dr " +
                 "JOIN Requests ON req_Id = drreq_req " +
                 "WHERE req_bodypart LIKE '" + req.Trim() + "%' " +
                 "AND dr_name LIKE '" + dr.Trim() + "%'" +
+                "AND drreq_kid LIKE '" + kid.Trim() + "%'" +
                 "AND drreq_period LIKE '" + ped.Trim() + "%'" 
                 , cn);
             SqlDataReader reader = command.ExecuteReader();
 
             DataTable dt = new DataTable();
             dt.Columns.Add("drreq_Id", typeof(Int16));
-            dt.Columns.Add("req_bodypart", typeof(string));
-            dt.Columns.Add("dr_name", typeof(string));
-            dt.Columns.Add("drreq_period", typeof(string));
-            dt.Columns.Add("drreq_time", typeof(string));
-            dt.Columns.Add("drreq_dayofweek", typeof(string));
+            dt.Columns.Add("req_bodypart", typeof(String));
+            dt.Columns.Add("dr_name", typeof(String));
+            dt.Columns.Add("drreq_period", typeof(String));
+            dt.Columns.Add("drreq_kid", typeof(String));
+            dt.Columns.Add("drreq_dayofweek", typeof(String));
             dt.Columns.Add("dr_Id", typeof(Int16));
             dt.Load(reader);
             cn.Close();
             return dt;
         }
 
-        public static int getDof(string dayName)
+        public static int getDof(String dayName)
         {
             dayName = dayName.Trim();
             if (dayName.Equals("Monday".Trim()))
