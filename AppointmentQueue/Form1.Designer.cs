@@ -65,6 +65,7 @@
             this.button1 = new System.Windows.Forms.Button();
             this.button2 = new System.Windows.Forms.Button();
             this.endDate = new System.Windows.Forms.DateTimePicker();
+            this.button3 = new System.Windows.Forms.Button();
             this.groupBox1.SuspendLayout();
             this.groupBox2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.appDataGridView)).BeginInit();
@@ -443,7 +444,7 @@
             // manDayOff
             // 
             this.manDayOff.Font = new System.Drawing.Font("Verdana", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.manDayOff.Location = new System.Drawing.Point(538, 495);
+            this.manDayOff.Location = new System.Drawing.Point(611, 495);
             this.manDayOff.Margin = new System.Windows.Forms.Padding(2);
             this.manDayOff.Name = "manDayOff";
             this.manDayOff.Size = new System.Drawing.Size(130, 51);
@@ -467,7 +468,7 @@
             // button1
             // 
             this.button1.Font = new System.Drawing.Font("Verdana", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button1.Location = new System.Drawing.Point(737, 495);
+            this.button1.Location = new System.Drawing.Point(765, 495);
             this.button1.Margin = new System.Windows.Forms.Padding(2);
             this.button1.Name = "button1";
             this.button1.Size = new System.Drawing.Size(130, 51);
@@ -479,7 +480,7 @@
             // button2
             // 
             this.button2.Font = new System.Drawing.Font("Verdana", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button2.Location = new System.Drawing.Point(929, 495);
+            this.button2.Location = new System.Drawing.Point(920, 495);
             this.button2.Margin = new System.Windows.Forms.Padding(2);
             this.button2.Name = "button2";
             this.button2.Size = new System.Drawing.Size(130, 51);
@@ -502,11 +503,23 @@
             this.endDate.Value = new System.DateTime(2018, 6, 1, 0, 0, 0, 0);
             this.endDate.ValueChanged += new System.EventHandler(this.endDate_ValueChanged);
             // 
+            // button3
+            // 
+            this.button3.Font = new System.Drawing.Font("Verdana", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.button3.Location = new System.Drawing.Point(494, 495);
+            this.button3.Margin = new System.Windows.Forms.Padding(2);
+            this.button3.Name = "button3";
+            this.button3.Size = new System.Drawing.Size(88, 51);
+            this.button3.TabIndex = 60;
+            this.button3.Text = "Calendar ";
+            this.button3.UseVisualStyleBackColor = true;
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1070, 564);
+            this.Controls.Add(this.button3);
             this.Controls.Add(this.endDate);
             this.Controls.Add(this.button2);
             this.Controls.Add(this.button1);
@@ -580,6 +593,7 @@
         public System.Windows.Forms.DateTimePicker endDate;
         private System.Windows.Forms.TextBox detail_text;
         private System.Windows.Forms.Label label7;
+        private System.Windows.Forms.Button button3;
     }
 }
 
