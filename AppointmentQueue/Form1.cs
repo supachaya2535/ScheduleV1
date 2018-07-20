@@ -218,5 +218,11 @@ namespace AppointmentQueue
                 detail_text.Text = "";
             }
         }
+
+        private void button3_Click(object sender, EventArgs e)
+        {
+            CalendarForm cld_form = new CalendarForm();
+            cld_form.ShowDialog();
+        }
     }
 }
