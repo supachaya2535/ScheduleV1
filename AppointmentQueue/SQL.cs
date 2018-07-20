@@ -187,6 +187,32 @@ namespace AppointmentQueue
             return dt;
         }
 
+        public static DataTable GetDoctorWorks(String ped, String dr, string kid)
+        {
+            SqlConnection cn = new SqlConnection(global::AppointmentQueue.Properties.Settings.Default.Database1ConnectionString);
+            cn.Open();
+            SqlCommand command = new SqlCommand(
+                "SELECT *" +
+                "FROM DoctorWorks " +
+                "JOIN Doctors ON dr_Id = drw_dr " +
+                "AND dr_name LIKE '" + dr.Trim() + "%'" +
+                "AND drw_kid LIKE '" + kid.Trim() + "%'" +
+                "AND drw_period LIKE '" + ped.Trim() + "%'"
+                , cn);
+            SqlDataReader reader = command.ExecuteReader();
+
+            DataTable dt = new DataTable();
+            dt.Columns.Add("drw_Id", typeof(Int16));
+            dt.Columns.Add("drw_dr", typeof(String));
+            dt.Columns.Add("dr_name", typeof(String));
+            dt.Columns.Add("drw_period", typeof(String));
+            dt.Columns.Add("drw_kid", typeof(String));
+            dt.Columns.Add("drw_dayofweek", typeof(String));
+            dt.Load(reader);
+            cn.Close();
+            return dt;
+        }
+
         public static int getDof(String dayName)
         {
             dayName = dayName.Trim();
@@ -222,6 +248,7 @@ namespace AppointmentQueue
             cn.Close();
             return scan_CoBox;
         }
+
         public static ComboBox readRequest(ComboBox reqCob)
         {
             SqlConnection cn = new SqlConnection(global::AppointmentQueue.Properties.Settings.Default.Database1ConnectionString);
