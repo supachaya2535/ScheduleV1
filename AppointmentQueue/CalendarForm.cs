@@ -70,6 +70,13 @@ namespace AppointmentQueue
         // column 6 : Saturday
         private void GenarateCalendar(DateTime datetime)
         {
+            // set button 
+            month_btn.Text = datetime.Month.ToString();
+            year_btn.Text = datetime.Year.ToString();
+            today_date_btn.Text = datetime.ToString();
+            today_show_btn.Text = "";
+
+            // genarate day in month
             DateTime first_date = new DateTime(datetime.Year, datetime.Month, 1);
             DayOfWeek first_day_of_week = first_date.DayOfWeek;
             int count_of_month = DateTime.DaysInMonth(first_date.Year, first_date.Month);
@@ -78,6 +85,24 @@ namespace AppointmentQueue
             Point start_rc = AssignDayOfCalendar(start_row, (int)first_day_of_week, count_of_month);
             AssignDayOfPrevCalendar(first_date);
             AssignDayOfNextCalendar(start_rc.X, start_rc.Y);
+
+            // set today color
+            if (datetime.Month == DateTime.Today.Month && datetime.Year == DateTime.Today.Year)
+            {
+                // find button today
+                for (int i = 0; i < calendar_day_all_btn.GetLength(0); i++)
+                {
+                    for (int j = 0; j < calendar_day_all_btn.GetLength(1); j++)
+                    {
+                        if (datetime.Day.ToString().Trim() == calendar_day_all_btn[i, j].Text.Trim() &&
+                            calendar_day_all_btn[i, j].ForeColor == Color.Black)
+                        {
+                            calendar_day_all_btn[i, j].BackColor = Color.LightGray;
+
+                        }
+                    }
+                }
+            }
         }
 
         private Point AssignDayOfCalendar(int row, int col, int count_of_month)

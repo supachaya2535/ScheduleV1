@@ -45,38 +45,38 @@
             this.day_0_4_btn = new System.Windows.Forms.Button();
             this.day_0_5_btn = new System.Windows.Forms.Button();
             this.day_0_6_btn = new System.Windows.Forms.Button();
+            this.day_1_2_btn = new System.Windows.Forms.Button();
             this.day_1_0_btn = new System.Windows.Forms.Button();
             this.day_1_1_btn = new System.Windows.Forms.Button();
-            this.day_1_2_btn = new System.Windows.Forms.Button();
             this.day_1_3_btn = new System.Windows.Forms.Button();
             this.day_1_4_btn = new System.Windows.Forms.Button();
             this.day_1_5_btn = new System.Windows.Forms.Button();
             this.day_1_6_btn = new System.Windows.Forms.Button();
-            this.day_2_2_btn = new System.Windows.Forms.Button();
             this.day_2_0_btn = new System.Windows.Forms.Button();
             this.day_2_1_btn = new System.Windows.Forms.Button();
+            this.day_2_2_btn = new System.Windows.Forms.Button();
             this.day_2_3_btn = new System.Windows.Forms.Button();
             this.day_2_4_btn = new System.Windows.Forms.Button();
             this.day_2_5_btn = new System.Windows.Forms.Button();
             this.day_2_6_btn = new System.Windows.Forms.Button();
             this.day_3_0_btn = new System.Windows.Forms.Button();
-            this.day_3_1_btn = new System.Windows.Forms.Button();
-            this.day_3_2_btn = new System.Windows.Forms.Button();
             this.day_3_3_btn = new System.Windows.Forms.Button();
+            this.day_3_2_btn = new System.Windows.Forms.Button();
+            this.day_3_1_btn = new System.Windows.Forms.Button();
             this.day_3_4_btn = new System.Windows.Forms.Button();
             this.day_3_5_btn = new System.Windows.Forms.Button();
             this.day_3_6_btn = new System.Windows.Forms.Button();
             this.day_4_0_btn = new System.Windows.Forms.Button();
-            this.day_4_3_btn = new System.Windows.Forms.Button();
-            this.day_4_2_btn = new System.Windows.Forms.Button();
             this.day_4_1_btn = new System.Windows.Forms.Button();
+            this.day_4_2_btn = new System.Windows.Forms.Button();
             this.day_4_4_btn = new System.Windows.Forms.Button();
+            this.day_4_3_btn = new System.Windows.Forms.Button();
             this.day_4_5_btn = new System.Windows.Forms.Button();
             this.day_4_6_btn = new System.Windows.Forms.Button();
-            this.day_5_0_btn = new System.Windows.Forms.Button();
-            this.day_5_1_btn = new System.Windows.Forms.Button();
             this.day_5_2_btn = new System.Windows.Forms.Button();
             this.day_5_4_btn = new System.Windows.Forms.Button();
+            this.day_5_1_btn = new System.Windows.Forms.Button();
+            this.day_5_0_btn = new System.Windows.Forms.Button();
             this.day_5_3_btn = new System.Windows.Forms.Button();
             this.day_5_5_btn = new System.Windows.Forms.Button();
             this.day_5_6_btn = new System.Windows.Forms.Button();
@@ -304,8 +304,8 @@
             this.day_0_0_btn.BackColor = System.Drawing.Color.Transparent;
             this.day_0_0_btn.FlatAppearance.BorderColor = System.Drawing.SystemColors.Control;
             this.day_0_0_btn.FlatAppearance.BorderSize = 0;
-            this.day_0_0_btn.FlatAppearance.MouseDownBackColor = System.Drawing.Color.Transparent;
-            this.day_0_0_btn.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Transparent;
+            this.day_0_0_btn.FlatAppearance.MouseDownBackColor = System.Drawing.Color.Gray;
+            this.day_0_0_btn.FlatAppearance.MouseOverBackColor = System.Drawing.Color.DarkGray;
             this.day_0_0_btn.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.day_0_0_btn.Location = new System.Drawing.Point(3, 92);
             this.day_0_0_btn.Name = "day_0_0_btn";
@@ -320,8 +320,8 @@
             this.day_0_1_btn.BackColor = System.Drawing.Color.Transparent;
             this.day_0_1_btn.FlatAppearance.BorderColor = System.Drawing.SystemColors.Control;
             this.day_0_1_btn.FlatAppearance.BorderSize = 0;
-            this.day_0_1_btn.FlatAppearance.MouseDownBackColor = System.Drawing.Color.Transparent;
-            this.day_0_1_btn.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Transparent;
+            this.day_0_1_btn.FlatAppearance.MouseDownBackColor = System.Drawing.Color.Gray;
+            this.day_0_1_btn.FlatAppearance.MouseOverBackColor = System.Drawing.Color.DarkGray;
             this.day_0_1_btn.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.day_0_1_btn.Location = new System.Drawing.Point(116, 92);
             this.day_0_1_btn.Name = "day_0_1_btn";
@@ -336,8 +336,8 @@
             this.day_0_2_btn.BackColor = System.Drawing.Color.Transparent;
             this.day_0_2_btn.FlatAppearance.BorderColor = System.Drawing.SystemColors.Control;
             this.day_0_2_btn.FlatAppearance.BorderSize = 0;
-            this.day_0_2_btn.FlatAppearance.MouseDownBackColor = System.Drawing.Color.Transparent;
-            this.day_0_2_btn.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Transparent;
+            this.day_0_2_btn.FlatAppearance.MouseDownBackColor = System.Drawing.Color.Gray;
+            this.day_0_2_btn.FlatAppearance.MouseOverBackColor = System.Drawing.Color.DarkGray;
             this.day_0_2_btn.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.day_0_2_btn.Location = new System.Drawing.Point(229, 92);
             this.day_0_2_btn.Name = "day_0_2_btn";
@@ -352,8 +352,8 @@
             this.day_0_3_btn.BackColor = System.Drawing.Color.Transparent;
             this.day_0_3_btn.FlatAppearance.BorderColor = System.Drawing.SystemColors.Control;
             this.day_0_3_btn.FlatAppearance.BorderSize = 0;
-            this.day_0_3_btn.FlatAppearance.MouseDownBackColor = System.Drawing.Color.Transparent;
-            this.day_0_3_btn.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Transparent;
+            this.day_0_3_btn.FlatAppearance.MouseDownBackColor = System.Drawing.Color.Gray;
+            this.day_0_3_btn.FlatAppearance.MouseOverBackColor = System.Drawing.Color.DarkGray;
             this.day_0_3_btn.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.day_0_3_btn.Location = new System.Drawing.Point(342, 92);
             this.day_0_3_btn.Name = "day_0_3_btn";
@@ -368,8 +368,8 @@
             this.day_0_4_btn.BackColor = System.Drawing.Color.Transparent;
             this.day_0_4_btn.FlatAppearance.BorderColor = System.Drawing.SystemColors.Control;
             this.day_0_4_btn.FlatAppearance.BorderSize = 0;
-            this.day_0_4_btn.FlatAppearance.MouseDownBackColor = System.Drawing.Color.Transparent;
-            this.day_0_4_btn.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Transparent;
+            this.day_0_4_btn.FlatAppearance.MouseDownBackColor = System.Drawing.Color.Gray;
+            this.day_0_4_btn.FlatAppearance.MouseOverBackColor = System.Drawing.Color.DarkGray;
             this.day_0_4_btn.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.day_0_4_btn.Location = new System.Drawing.Point(455, 92);
             this.day_0_4_btn.Name = "day_0_4_btn";
@@ -384,8 +384,8 @@
             this.day_0_5_btn.BackColor = System.Drawing.Color.Transparent;
             this.day_0_5_btn.FlatAppearance.BorderColor = System.Drawing.SystemColors.Control;
             this.day_0_5_btn.FlatAppearance.BorderSize = 0;
-            this.day_0_5_btn.FlatAppearance.MouseDownBackColor = System.Drawing.Color.Transparent;
-            this.day_0_5_btn.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Transparent;
+            this.day_0_5_btn.FlatAppearance.MouseDownBackColor = System.Drawing.Color.Gray;
+            this.day_0_5_btn.FlatAppearance.MouseOverBackColor = System.Drawing.Color.DarkGray;
             this.day_0_5_btn.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.day_0_5_btn.Location = new System.Drawing.Point(568, 92);
             this.day_0_5_btn.Name = "day_0_5_btn";
@@ -400,8 +400,8 @@
             this.day_0_6_btn.BackColor = System.Drawing.Color.Transparent;
             this.day_0_6_btn.FlatAppearance.BorderColor = System.Drawing.SystemColors.Control;
             this.day_0_6_btn.FlatAppearance.BorderSize = 0;
-            this.day_0_6_btn.FlatAppearance.MouseDownBackColor = System.Drawing.Color.Transparent;
-            this.day_0_6_btn.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Transparent;
+            this.day_0_6_btn.FlatAppearance.MouseDownBackColor = System.Drawing.Color.Gray;
+            this.day_0_6_btn.FlatAppearance.MouseOverBackColor = System.Drawing.Color.DarkGray;
             this.day_0_6_btn.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.day_0_6_btn.Location = new System.Drawing.Point(681, 92);
             this.day_0_6_btn.Name = "day_0_6_btn";
@@ -411,13 +411,29 @@
             this.day_0_6_btn.UseVisualStyleBackColor = false;
             this.day_0_6_btn.Click += new System.EventHandler(this.DayClick);
             // 
+            // day_1_2_btn
+            // 
+            this.day_1_2_btn.BackColor = System.Drawing.Color.Transparent;
+            this.day_1_2_btn.FlatAppearance.BorderColor = System.Drawing.SystemColors.Control;
+            this.day_1_2_btn.FlatAppearance.BorderSize = 0;
+            this.day_1_2_btn.FlatAppearance.MouseDownBackColor = System.Drawing.Color.Gray;
+            this.day_1_2_btn.FlatAppearance.MouseOverBackColor = System.Drawing.Color.DarkGray;
+            this.day_1_2_btn.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.day_1_2_btn.Location = new System.Drawing.Point(229, 137);
+            this.day_1_2_btn.Name = "day_1_2_btn";
+            this.day_1_2_btn.Size = new System.Drawing.Size(107, 39);
+            this.day_1_2_btn.TabIndex = 16;
+            this.day_1_2_btn.Text = "r1c2";
+            this.day_1_2_btn.UseVisualStyleBackColor = false;
+            this.day_1_2_btn.Click += new System.EventHandler(this.DayClick);
+            // 
             // day_1_0_btn
             // 
             this.day_1_0_btn.BackColor = System.Drawing.Color.Transparent;
             this.day_1_0_btn.FlatAppearance.BorderColor = System.Drawing.SystemColors.Control;
             this.day_1_0_btn.FlatAppearance.BorderSize = 0;
-            this.day_1_0_btn.FlatAppearance.MouseDownBackColor = System.Drawing.Color.Transparent;
-            this.day_1_0_btn.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Transparent;
+            this.day_1_0_btn.FlatAppearance.MouseDownBackColor = System.Drawing.Color.Gray;
+            this.day_1_0_btn.FlatAppearance.MouseOverBackColor = System.Drawing.Color.DarkGray;
             this.day_1_0_btn.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.day_1_0_btn.Location = new System.Drawing.Point(3, 137);
             this.day_1_0_btn.Name = "day_1_0_btn";
@@ -432,8 +448,8 @@
             this.day_1_1_btn.BackColor = System.Drawing.Color.Transparent;
             this.day_1_1_btn.FlatAppearance.BorderColor = System.Drawing.SystemColors.Control;
             this.day_1_1_btn.FlatAppearance.BorderSize = 0;
-            this.day_1_1_btn.FlatAppearance.MouseDownBackColor = System.Drawing.Color.Transparent;
-            this.day_1_1_btn.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Transparent;
+            this.day_1_1_btn.FlatAppearance.MouseDownBackColor = System.Drawing.Color.Gray;
+            this.day_1_1_btn.FlatAppearance.MouseOverBackColor = System.Drawing.Color.DarkGray;
             this.day_1_1_btn.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.day_1_1_btn.Location = new System.Drawing.Point(116, 137);
             this.day_1_1_btn.Name = "day_1_1_btn";
@@ -443,29 +459,13 @@
             this.day_1_1_btn.UseVisualStyleBackColor = false;
             this.day_1_1_btn.Click += new System.EventHandler(this.DayClick);
             // 
-            // day_1_2_btn
-            // 
-            this.day_1_2_btn.BackColor = System.Drawing.Color.Transparent;
-            this.day_1_2_btn.FlatAppearance.BorderColor = System.Drawing.SystemColors.Control;
-            this.day_1_2_btn.FlatAppearance.BorderSize = 0;
-            this.day_1_2_btn.FlatAppearance.MouseDownBackColor = System.Drawing.Color.Transparent;
-            this.day_1_2_btn.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Transparent;
-            this.day_1_2_btn.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.day_1_2_btn.Location = new System.Drawing.Point(229, 137);
-            this.day_1_2_btn.Name = "day_1_2_btn";
-            this.day_1_2_btn.Size = new System.Drawing.Size(107, 39);
-            this.day_1_2_btn.TabIndex = 16;
-            this.day_1_2_btn.Text = "r1c2";
-            this.day_1_2_btn.UseVisualStyleBackColor = false;
-            this.day_1_2_btn.Click += new System.EventHandler(this.DayClick);
-            // 
             // day_1_3_btn
             // 
             this.day_1_3_btn.BackColor = System.Drawing.Color.Transparent;
             this.day_1_3_btn.FlatAppearance.BorderColor = System.Drawing.SystemColors.Control;
             this.day_1_3_btn.FlatAppearance.BorderSize = 0;
-            this.day_1_3_btn.FlatAppearance.MouseDownBackColor = System.Drawing.Color.Transparent;
-            this.day_1_3_btn.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Transparent;
+            this.day_1_3_btn.FlatAppearance.MouseDownBackColor = System.Drawing.Color.Gray;
+            this.day_1_3_btn.FlatAppearance.MouseOverBackColor = System.Drawing.Color.DarkGray;
             this.day_1_3_btn.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.day_1_3_btn.Location = new System.Drawing.Point(342, 137);
             this.day_1_3_btn.Name = "day_1_3_btn";
@@ -480,8 +480,8 @@
             this.day_1_4_btn.BackColor = System.Drawing.Color.Transparent;
             this.day_1_4_btn.FlatAppearance.BorderColor = System.Drawing.SystemColors.Control;
             this.day_1_4_btn.FlatAppearance.BorderSize = 0;
-            this.day_1_4_btn.FlatAppearance.MouseDownBackColor = System.Drawing.Color.Transparent;
-            this.day_1_4_btn.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Transparent;
+            this.day_1_4_btn.FlatAppearance.MouseDownBackColor = System.Drawing.Color.Gray;
+            this.day_1_4_btn.FlatAppearance.MouseOverBackColor = System.Drawing.Color.DarkGray;
             this.day_1_4_btn.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.day_1_4_btn.Location = new System.Drawing.Point(455, 137);
             this.day_1_4_btn.Name = "day_1_4_btn";
@@ -496,8 +496,8 @@
             this.day_1_5_btn.BackColor = System.Drawing.Color.Transparent;
             this.day_1_5_btn.FlatAppearance.BorderColor = System.Drawing.SystemColors.Control;
             this.day_1_5_btn.FlatAppearance.BorderSize = 0;
-            this.day_1_5_btn.FlatAppearance.MouseDownBackColor = System.Drawing.Color.Transparent;
-            this.day_1_5_btn.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Transparent;
+            this.day_1_5_btn.FlatAppearance.MouseDownBackColor = System.Drawing.Color.Gray;
+            this.day_1_5_btn.FlatAppearance.MouseOverBackColor = System.Drawing.Color.DarkGray;
             this.day_1_5_btn.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.day_1_5_btn.Location = new System.Drawing.Point(568, 137);
             this.day_1_5_btn.Name = "day_1_5_btn";
@@ -512,8 +512,8 @@
             this.day_1_6_btn.BackColor = System.Drawing.Color.Transparent;
             this.day_1_6_btn.FlatAppearance.BorderColor = System.Drawing.SystemColors.Control;
             this.day_1_6_btn.FlatAppearance.BorderSize = 0;
-            this.day_1_6_btn.FlatAppearance.MouseDownBackColor = System.Drawing.Color.Transparent;
-            this.day_1_6_btn.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Transparent;
+            this.day_1_6_btn.FlatAppearance.MouseDownBackColor = System.Drawing.Color.Gray;
+            this.day_1_6_btn.FlatAppearance.MouseOverBackColor = System.Drawing.Color.DarkGray;
             this.day_1_6_btn.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.day_1_6_btn.Location = new System.Drawing.Point(681, 137);
             this.day_1_6_btn.Name = "day_1_6_btn";
@@ -523,29 +523,13 @@
             this.day_1_6_btn.UseVisualStyleBackColor = false;
             this.day_1_6_btn.Click += new System.EventHandler(this.DayClick);
             // 
-            // day_2_2_btn
-            // 
-            this.day_2_2_btn.BackColor = System.Drawing.Color.Transparent;
-            this.day_2_2_btn.FlatAppearance.BorderColor = System.Drawing.SystemColors.Control;
-            this.day_2_2_btn.FlatAppearance.BorderSize = 0;
-            this.day_2_2_btn.FlatAppearance.MouseDownBackColor = System.Drawing.Color.Transparent;
-            this.day_2_2_btn.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Transparent;
-            this.day_2_2_btn.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.day_2_2_btn.Location = new System.Drawing.Point(229, 182);
-            this.day_2_2_btn.Name = "day_2_2_btn";
-            this.day_2_2_btn.Size = new System.Drawing.Size(107, 39);
-            this.day_2_2_btn.TabIndex = 23;
-            this.day_2_2_btn.Text = "r2c2";
-            this.day_2_2_btn.UseVisualStyleBackColor = false;
-            this.day_2_2_btn.Click += new System.EventHandler(this.DayClick);
-            // 
             // day_2_0_btn
             // 
             this.day_2_0_btn.BackColor = System.Drawing.Color.Transparent;
             this.day_2_0_btn.FlatAppearance.BorderColor = System.Drawing.SystemColors.Control;
             this.day_2_0_btn.FlatAppearance.BorderSize = 0;
-            this.day_2_0_btn.FlatAppearance.MouseDownBackColor = System.Drawing.Color.Transparent;
-            this.day_2_0_btn.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Transparent;
+            this.day_2_0_btn.FlatAppearance.MouseDownBackColor = System.Drawing.Color.Gray;
+            this.day_2_0_btn.FlatAppearance.MouseOverBackColor = System.Drawing.Color.DarkGray;
             this.day_2_0_btn.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.day_2_0_btn.Location = new System.Drawing.Point(3, 182);
             this.day_2_0_btn.Name = "day_2_0_btn";
@@ -560,8 +544,8 @@
             this.day_2_1_btn.BackColor = System.Drawing.Color.Transparent;
             this.day_2_1_btn.FlatAppearance.BorderColor = System.Drawing.SystemColors.Control;
             this.day_2_1_btn.FlatAppearance.BorderSize = 0;
-            this.day_2_1_btn.FlatAppearance.MouseDownBackColor = System.Drawing.Color.Transparent;
-            this.day_2_1_btn.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Transparent;
+            this.day_2_1_btn.FlatAppearance.MouseDownBackColor = System.Drawing.Color.Gray;
+            this.day_2_1_btn.FlatAppearance.MouseOverBackColor = System.Drawing.Color.DarkGray;
             this.day_2_1_btn.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.day_2_1_btn.Location = new System.Drawing.Point(116, 182);
             this.day_2_1_btn.Name = "day_2_1_btn";
@@ -571,13 +555,29 @@
             this.day_2_1_btn.UseVisualStyleBackColor = false;
             this.day_2_1_btn.Click += new System.EventHandler(this.DayClick);
             // 
+            // day_2_2_btn
+            // 
+            this.day_2_2_btn.BackColor = System.Drawing.Color.Transparent;
+            this.day_2_2_btn.FlatAppearance.BorderColor = System.Drawing.SystemColors.Control;
+            this.day_2_2_btn.FlatAppearance.BorderSize = 0;
+            this.day_2_2_btn.FlatAppearance.MouseDownBackColor = System.Drawing.Color.Gray;
+            this.day_2_2_btn.FlatAppearance.MouseOverBackColor = System.Drawing.Color.DarkGray;
+            this.day_2_2_btn.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.day_2_2_btn.Location = new System.Drawing.Point(229, 182);
+            this.day_2_2_btn.Name = "day_2_2_btn";
+            this.day_2_2_btn.Size = new System.Drawing.Size(107, 39);
+            this.day_2_2_btn.TabIndex = 23;
+            this.day_2_2_btn.Text = "r2c2";
+            this.day_2_2_btn.UseVisualStyleBackColor = false;
+            this.day_2_2_btn.Click += new System.EventHandler(this.DayClick);
+            // 
             // day_2_3_btn
             // 
             this.day_2_3_btn.BackColor = System.Drawing.Color.Transparent;
             this.day_2_3_btn.FlatAppearance.BorderColor = System.Drawing.SystemColors.Control;
             this.day_2_3_btn.FlatAppearance.BorderSize = 0;
-            this.day_2_3_btn.FlatAppearance.MouseDownBackColor = System.Drawing.Color.Transparent;
-            this.day_2_3_btn.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Transparent;
+            this.day_2_3_btn.FlatAppearance.MouseDownBackColor = System.Drawing.Color.Gray;
+            this.day_2_3_btn.FlatAppearance.MouseOverBackColor = System.Drawing.Color.DarkGray;
             this.day_2_3_btn.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.day_2_3_btn.Location = new System.Drawing.Point(342, 182);
             this.day_2_3_btn.Name = "day_2_3_btn";
@@ -592,8 +592,8 @@
             this.day_2_4_btn.BackColor = System.Drawing.Color.Transparent;
             this.day_2_4_btn.FlatAppearance.BorderColor = System.Drawing.SystemColors.Control;
             this.day_2_4_btn.FlatAppearance.BorderSize = 0;
-            this.day_2_4_btn.FlatAppearance.MouseDownBackColor = System.Drawing.Color.Transparent;
-            this.day_2_4_btn.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Transparent;
+            this.day_2_4_btn.FlatAppearance.MouseDownBackColor = System.Drawing.Color.Gray;
+            this.day_2_4_btn.FlatAppearance.MouseOverBackColor = System.Drawing.Color.DarkGray;
             this.day_2_4_btn.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.day_2_4_btn.Location = new System.Drawing.Point(455, 182);
             this.day_2_4_btn.Name = "day_2_4_btn";
@@ -608,8 +608,8 @@
             this.day_2_5_btn.BackColor = System.Drawing.Color.Transparent;
             this.day_2_5_btn.FlatAppearance.BorderColor = System.Drawing.SystemColors.Control;
             this.day_2_5_btn.FlatAppearance.BorderSize = 0;
-            this.day_2_5_btn.FlatAppearance.MouseDownBackColor = System.Drawing.Color.Transparent;
-            this.day_2_5_btn.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Transparent;
+            this.day_2_5_btn.FlatAppearance.MouseDownBackColor = System.Drawing.Color.Gray;
+            this.day_2_5_btn.FlatAppearance.MouseOverBackColor = System.Drawing.Color.DarkGray;
             this.day_2_5_btn.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.day_2_5_btn.Location = new System.Drawing.Point(568, 182);
             this.day_2_5_btn.Name = "day_2_5_btn";
@@ -624,8 +624,8 @@
             this.day_2_6_btn.BackColor = System.Drawing.Color.Transparent;
             this.day_2_6_btn.FlatAppearance.BorderColor = System.Drawing.SystemColors.Control;
             this.day_2_6_btn.FlatAppearance.BorderSize = 0;
-            this.day_2_6_btn.FlatAppearance.MouseDownBackColor = System.Drawing.Color.Transparent;
-            this.day_2_6_btn.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Transparent;
+            this.day_2_6_btn.FlatAppearance.MouseDownBackColor = System.Drawing.Color.Gray;
+            this.day_2_6_btn.FlatAppearance.MouseOverBackColor = System.Drawing.Color.DarkGray;
             this.day_2_6_btn.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.day_2_6_btn.Location = new System.Drawing.Point(681, 182);
             this.day_2_6_btn.Name = "day_2_6_btn";
@@ -640,8 +640,8 @@
             this.day_3_0_btn.BackColor = System.Drawing.Color.Transparent;
             this.day_3_0_btn.FlatAppearance.BorderColor = System.Drawing.SystemColors.Control;
             this.day_3_0_btn.FlatAppearance.BorderSize = 0;
-            this.day_3_0_btn.FlatAppearance.MouseDownBackColor = System.Drawing.Color.Transparent;
-            this.day_3_0_btn.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Transparent;
+            this.day_3_0_btn.FlatAppearance.MouseDownBackColor = System.Drawing.Color.Gray;
+            this.day_3_0_btn.FlatAppearance.MouseOverBackColor = System.Drawing.Color.DarkGray;
             this.day_3_0_btn.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.day_3_0_btn.Location = new System.Drawing.Point(3, 227);
             this.day_3_0_btn.Name = "day_3_0_btn";
@@ -651,45 +651,13 @@
             this.day_3_0_btn.UseVisualStyleBackColor = false;
             this.day_3_0_btn.Click += new System.EventHandler(this.DayClick);
             // 
-            // day_3_1_btn
-            // 
-            this.day_3_1_btn.BackColor = System.Drawing.Color.Transparent;
-            this.day_3_1_btn.FlatAppearance.BorderColor = System.Drawing.SystemColors.Control;
-            this.day_3_1_btn.FlatAppearance.BorderSize = 0;
-            this.day_3_1_btn.FlatAppearance.MouseDownBackColor = System.Drawing.Color.Transparent;
-            this.day_3_1_btn.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Transparent;
-            this.day_3_1_btn.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.day_3_1_btn.Location = new System.Drawing.Point(116, 227);
-            this.day_3_1_btn.Name = "day_3_1_btn";
-            this.day_3_1_btn.Size = new System.Drawing.Size(107, 39);
-            this.day_3_1_btn.TabIndex = 29;
-            this.day_3_1_btn.Text = "r3c1";
-            this.day_3_1_btn.UseVisualStyleBackColor = false;
-            this.day_3_1_btn.Click += new System.EventHandler(this.DayClick);
-            // 
-            // day_3_2_btn
-            // 
-            this.day_3_2_btn.BackColor = System.Drawing.Color.Transparent;
-            this.day_3_2_btn.FlatAppearance.BorderColor = System.Drawing.SystemColors.Control;
-            this.day_3_2_btn.FlatAppearance.BorderSize = 0;
-            this.day_3_2_btn.FlatAppearance.MouseDownBackColor = System.Drawing.Color.Transparent;
-            this.day_3_2_btn.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Transparent;
-            this.day_3_2_btn.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.day_3_2_btn.Location = new System.Drawing.Point(229, 227);
-            this.day_3_2_btn.Name = "day_3_2_btn";
-            this.day_3_2_btn.Size = new System.Drawing.Size(107, 39);
-            this.day_3_2_btn.TabIndex = 30;
-            this.day_3_2_btn.Text = "r3c2";
-            this.day_3_2_btn.UseVisualStyleBackColor = false;
-            this.day_3_2_btn.Click += new System.EventHandler(this.DayClick);
-            // 
             // day_3_3_btn
             // 
             this.day_3_3_btn.BackColor = System.Drawing.Color.Transparent;
             this.day_3_3_btn.FlatAppearance.BorderColor = System.Drawing.SystemColors.Control;
             this.day_3_3_btn.FlatAppearance.BorderSize = 0;
-            this.day_3_3_btn.FlatAppearance.MouseDownBackColor = System.Drawing.Color.Transparent;
-            this.day_3_3_btn.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Transparent;
+            this.day_3_3_btn.FlatAppearance.MouseDownBackColor = System.Drawing.Color.Gray;
+            this.day_3_3_btn.FlatAppearance.MouseOverBackColor = System.Drawing.Color.DarkGray;
             this.day_3_3_btn.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.day_3_3_btn.Location = new System.Drawing.Point(342, 227);
             this.day_3_3_btn.Name = "day_3_3_btn";
@@ -699,13 +667,45 @@
             this.day_3_3_btn.UseVisualStyleBackColor = false;
             this.day_3_3_btn.Click += new System.EventHandler(this.DayClick);
             // 
+            // day_3_2_btn
+            // 
+            this.day_3_2_btn.BackColor = System.Drawing.Color.Transparent;
+            this.day_3_2_btn.FlatAppearance.BorderColor = System.Drawing.SystemColors.Control;
+            this.day_3_2_btn.FlatAppearance.BorderSize = 0;
+            this.day_3_2_btn.FlatAppearance.MouseDownBackColor = System.Drawing.Color.Gray;
+            this.day_3_2_btn.FlatAppearance.MouseOverBackColor = System.Drawing.Color.DarkGray;
+            this.day_3_2_btn.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.day_3_2_btn.Location = new System.Drawing.Point(229, 227);
+            this.day_3_2_btn.Name = "day_3_2_btn";
+            this.day_3_2_btn.Size = new System.Drawing.Size(107, 39);
+            this.day_3_2_btn.TabIndex = 30;
+            this.day_3_2_btn.Text = "r3c2";
+            this.day_3_2_btn.UseVisualStyleBackColor = false;
+            this.day_3_2_btn.Click += new System.EventHandler(this.DayClick);
+            // 
+            // day_3_1_btn
+            // 
+            this.day_3_1_btn.BackColor = System.Drawing.Color.Transparent;
+            this.day_3_1_btn.FlatAppearance.BorderColor = System.Drawing.SystemColors.Control;
+            this.day_3_1_btn.FlatAppearance.BorderSize = 0;
+            this.day_3_1_btn.FlatAppearance.MouseDownBackColor = System.Drawing.Color.Gray;
+            this.day_3_1_btn.FlatAppearance.MouseOverBackColor = System.Drawing.Color.DarkGray;
+            this.day_3_1_btn.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.day_3_1_btn.Location = new System.Drawing.Point(116, 227);
+            this.day_3_1_btn.Name = "day_3_1_btn";
+            this.day_3_1_btn.Size = new System.Drawing.Size(107, 39);
+            this.day_3_1_btn.TabIndex = 29;
+            this.day_3_1_btn.Text = "r3c1";
+            this.day_3_1_btn.UseVisualStyleBackColor = false;
+            this.day_3_1_btn.Click += new System.EventHandler(this.DayClick);
+            // 
             // day_3_4_btn
             // 
             this.day_3_4_btn.BackColor = System.Drawing.Color.Transparent;
             this.day_3_4_btn.FlatAppearance.BorderColor = System.Drawing.SystemColors.Control;
             this.day_3_4_btn.FlatAppearance.BorderSize = 0;
-            this.day_3_4_btn.FlatAppearance.MouseDownBackColor = System.Drawing.Color.Transparent;
-            this.day_3_4_btn.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Transparent;
+            this.day_3_4_btn.FlatAppearance.MouseDownBackColor = System.Drawing.Color.Gray;
+            this.day_3_4_btn.FlatAppearance.MouseOverBackColor = System.Drawing.Color.DarkGray;
             this.day_3_4_btn.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.day_3_4_btn.Location = new System.Drawing.Point(455, 227);
             this.day_3_4_btn.Name = "day_3_4_btn";
@@ -720,8 +720,8 @@
             this.day_3_5_btn.BackColor = System.Drawing.Color.Transparent;
             this.day_3_5_btn.FlatAppearance.BorderColor = System.Drawing.SystemColors.Control;
             this.day_3_5_btn.FlatAppearance.BorderSize = 0;
-            this.day_3_5_btn.FlatAppearance.MouseDownBackColor = System.Drawing.Color.Transparent;
-            this.day_3_5_btn.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Transparent;
+            this.day_3_5_btn.FlatAppearance.MouseDownBackColor = System.Drawing.Color.Gray;
+            this.day_3_5_btn.FlatAppearance.MouseOverBackColor = System.Drawing.Color.DarkGray;
             this.day_3_5_btn.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.day_3_5_btn.Location = new System.Drawing.Point(568, 227);
             this.day_3_5_btn.Name = "day_3_5_btn";
@@ -736,8 +736,8 @@
             this.day_3_6_btn.BackColor = System.Drawing.Color.Transparent;
             this.day_3_6_btn.FlatAppearance.BorderColor = System.Drawing.SystemColors.Control;
             this.day_3_6_btn.FlatAppearance.BorderSize = 0;
-            this.day_3_6_btn.FlatAppearance.MouseDownBackColor = System.Drawing.Color.Transparent;
-            this.day_3_6_btn.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Transparent;
+            this.day_3_6_btn.FlatAppearance.MouseDownBackColor = System.Drawing.Color.Gray;
+            this.day_3_6_btn.FlatAppearance.MouseOverBackColor = System.Drawing.Color.DarkGray;
             this.day_3_6_btn.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.day_3_6_btn.Location = new System.Drawing.Point(681, 227);
             this.day_3_6_btn.Name = "day_3_6_btn";
@@ -752,8 +752,8 @@
             this.day_4_0_btn.BackColor = System.Drawing.Color.Transparent;
             this.day_4_0_btn.FlatAppearance.BorderColor = System.Drawing.SystemColors.Control;
             this.day_4_0_btn.FlatAppearance.BorderSize = 0;
-            this.day_4_0_btn.FlatAppearance.MouseDownBackColor = System.Drawing.Color.Transparent;
-            this.day_4_0_btn.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Transparent;
+            this.day_4_0_btn.FlatAppearance.MouseDownBackColor = System.Drawing.Color.Gray;
+            this.day_4_0_btn.FlatAppearance.MouseOverBackColor = System.Drawing.Color.DarkGray;
             this.day_4_0_btn.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.day_4_0_btn.Location = new System.Drawing.Point(3, 272);
             this.day_4_0_btn.Name = "day_4_0_btn";
@@ -763,45 +763,13 @@
             this.day_4_0_btn.UseVisualStyleBackColor = false;
             this.day_4_0_btn.Click += new System.EventHandler(this.DayClick);
             // 
-            // day_4_3_btn
-            // 
-            this.day_4_3_btn.BackColor = System.Drawing.Color.Transparent;
-            this.day_4_3_btn.FlatAppearance.BorderColor = System.Drawing.SystemColors.Control;
-            this.day_4_3_btn.FlatAppearance.BorderSize = 0;
-            this.day_4_3_btn.FlatAppearance.MouseDownBackColor = System.Drawing.Color.Transparent;
-            this.day_4_3_btn.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Transparent;
-            this.day_4_3_btn.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.day_4_3_btn.Location = new System.Drawing.Point(342, 272);
-            this.day_4_3_btn.Name = "day_4_3_btn";
-            this.day_4_3_btn.Size = new System.Drawing.Size(107, 39);
-            this.day_4_3_btn.TabIndex = 38;
-            this.day_4_3_btn.Text = "r4c3";
-            this.day_4_3_btn.UseVisualStyleBackColor = false;
-            this.day_4_3_btn.Click += new System.EventHandler(this.DayClick);
-            // 
-            // day_4_2_btn
-            // 
-            this.day_4_2_btn.BackColor = System.Drawing.Color.Transparent;
-            this.day_4_2_btn.FlatAppearance.BorderColor = System.Drawing.SystemColors.Control;
-            this.day_4_2_btn.FlatAppearance.BorderSize = 0;
-            this.day_4_2_btn.FlatAppearance.MouseDownBackColor = System.Drawing.Color.Transparent;
-            this.day_4_2_btn.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Transparent;
-            this.day_4_2_btn.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.day_4_2_btn.Location = new System.Drawing.Point(229, 272);
-            this.day_4_2_btn.Name = "day_4_2_btn";
-            this.day_4_2_btn.Size = new System.Drawing.Size(107, 39);
-            this.day_4_2_btn.TabIndex = 37;
-            this.day_4_2_btn.Text = "r4c2";
-            this.day_4_2_btn.UseVisualStyleBackColor = false;
-            this.day_4_2_btn.Click += new System.EventHandler(this.DayClick);
-            // 
             // day_4_1_btn
             // 
             this.day_4_1_btn.BackColor = System.Drawing.Color.Transparent;
             this.day_4_1_btn.FlatAppearance.BorderColor = System.Drawing.SystemColors.Control;
             this.day_4_1_btn.FlatAppearance.BorderSize = 0;
-            this.day_4_1_btn.FlatAppearance.MouseDownBackColor = System.Drawing.Color.Transparent;
-            this.day_4_1_btn.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Transparent;
+            this.day_4_1_btn.FlatAppearance.MouseDownBackColor = System.Drawing.Color.Gray;
+            this.day_4_1_btn.FlatAppearance.MouseOverBackColor = System.Drawing.Color.DarkGray;
             this.day_4_1_btn.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.day_4_1_btn.Location = new System.Drawing.Point(116, 272);
             this.day_4_1_btn.Name = "day_4_1_btn";
@@ -811,13 +779,29 @@
             this.day_4_1_btn.UseVisualStyleBackColor = false;
             this.day_4_1_btn.Click += new System.EventHandler(this.DayClick);
             // 
+            // day_4_2_btn
+            // 
+            this.day_4_2_btn.BackColor = System.Drawing.Color.Transparent;
+            this.day_4_2_btn.FlatAppearance.BorderColor = System.Drawing.SystemColors.Control;
+            this.day_4_2_btn.FlatAppearance.BorderSize = 0;
+            this.day_4_2_btn.FlatAppearance.MouseDownBackColor = System.Drawing.Color.Gray;
+            this.day_4_2_btn.FlatAppearance.MouseOverBackColor = System.Drawing.Color.DarkGray;
+            this.day_4_2_btn.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.day_4_2_btn.Location = new System.Drawing.Point(229, 272);
+            this.day_4_2_btn.Name = "day_4_2_btn";
+            this.day_4_2_btn.Size = new System.Drawing.Size(107, 39);
+            this.day_4_2_btn.TabIndex = 37;
+            this.day_4_2_btn.Text = "r4c2";
+            this.day_4_2_btn.UseVisualStyleBackColor = false;
+            this.day_4_2_btn.Click += new System.EventHandler(this.DayClick);
+            // 
             // day_4_4_btn
             // 
             this.day_4_4_btn.BackColor = System.Drawing.Color.Transparent;
             this.day_4_4_btn.FlatAppearance.BorderColor = System.Drawing.SystemColors.Control;
             this.day_4_4_btn.FlatAppearance.BorderSize = 0;
-            this.day_4_4_btn.FlatAppearance.MouseDownBackColor = System.Drawing.Color.Transparent;
-            this.day_4_4_btn.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Transparent;
+            this.day_4_4_btn.FlatAppearance.MouseDownBackColor = System.Drawing.Color.Gray;
+            this.day_4_4_btn.FlatAppearance.MouseOverBackColor = System.Drawing.Color.DarkGray;
             this.day_4_4_btn.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.day_4_4_btn.Location = new System.Drawing.Point(455, 272);
             this.day_4_4_btn.Name = "day_4_4_btn";
@@ -827,13 +811,29 @@
             this.day_4_4_btn.UseVisualStyleBackColor = false;
             this.day_4_4_btn.Click += new System.EventHandler(this.DayClick);
             // 
+            // day_4_3_btn
+            // 
+            this.day_4_3_btn.BackColor = System.Drawing.Color.Transparent;
+            this.day_4_3_btn.FlatAppearance.BorderColor = System.Drawing.SystemColors.Control;
+            this.day_4_3_btn.FlatAppearance.BorderSize = 0;
+            this.day_4_3_btn.FlatAppearance.MouseDownBackColor = System.Drawing.Color.Gray;
+            this.day_4_3_btn.FlatAppearance.MouseOverBackColor = System.Drawing.Color.DarkGray;
+            this.day_4_3_btn.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.day_4_3_btn.Location = new System.Drawing.Point(342, 272);
+            this.day_4_3_btn.Name = "day_4_3_btn";
+            this.day_4_3_btn.Size = new System.Drawing.Size(107, 39);
+            this.day_4_3_btn.TabIndex = 38;
+            this.day_4_3_btn.Text = "r4c3";
+            this.day_4_3_btn.UseVisualStyleBackColor = false;
+            this.day_4_3_btn.Click += new System.EventHandler(this.DayClick);
+            // 
             // day_4_5_btn
             // 
             this.day_4_5_btn.BackColor = System.Drawing.Color.Transparent;
             this.day_4_5_btn.FlatAppearance.BorderColor = System.Drawing.SystemColors.Control;
             this.day_4_5_btn.FlatAppearance.BorderSize = 0;
-            this.day_4_5_btn.FlatAppearance.MouseDownBackColor = System.Drawing.Color.Transparent;
-            this.day_4_5_btn.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Transparent;
+            this.day_4_5_btn.FlatAppearance.MouseDownBackColor = System.Drawing.Color.Gray;
+            this.day_4_5_btn.FlatAppearance.MouseOverBackColor = System.Drawing.Color.DarkGray;
             this.day_4_5_btn.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.day_4_5_btn.Location = new System.Drawing.Point(568, 272);
             this.day_4_5_btn.Name = "day_4_5_btn";
@@ -848,8 +848,8 @@
             this.day_4_6_btn.BackColor = System.Drawing.Color.Transparent;
             this.day_4_6_btn.FlatAppearance.BorderColor = System.Drawing.SystemColors.Control;
             this.day_4_6_btn.FlatAppearance.BorderSize = 0;
-            this.day_4_6_btn.FlatAppearance.MouseDownBackColor = System.Drawing.Color.Transparent;
-            this.day_4_6_btn.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Transparent;
+            this.day_4_6_btn.FlatAppearance.MouseDownBackColor = System.Drawing.Color.Gray;
+            this.day_4_6_btn.FlatAppearance.MouseOverBackColor = System.Drawing.Color.DarkGray;
             this.day_4_6_btn.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.day_4_6_btn.Location = new System.Drawing.Point(681, 272);
             this.day_4_6_btn.Name = "day_4_6_btn";
@@ -859,45 +859,13 @@
             this.day_4_6_btn.UseVisualStyleBackColor = false;
             this.day_4_6_btn.Click += new System.EventHandler(this.DayClick);
             // 
-            // day_5_0_btn
-            // 
-            this.day_5_0_btn.BackColor = System.Drawing.Color.Transparent;
-            this.day_5_0_btn.FlatAppearance.BorderColor = System.Drawing.SystemColors.Control;
-            this.day_5_0_btn.FlatAppearance.BorderSize = 0;
-            this.day_5_0_btn.FlatAppearance.MouseDownBackColor = System.Drawing.Color.Transparent;
-            this.day_5_0_btn.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Transparent;
-            this.day_5_0_btn.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.day_5_0_btn.Location = new System.Drawing.Point(3, 317);
-            this.day_5_0_btn.Name = "day_5_0_btn";
-            this.day_5_0_btn.Size = new System.Drawing.Size(107, 39);
-            this.day_5_0_btn.TabIndex = 42;
-            this.day_5_0_btn.Text = "r5c0";
-            this.day_5_0_btn.UseVisualStyleBackColor = false;
-            this.day_5_0_btn.Click += new System.EventHandler(this.DayClick);
-            // 
-            // day_5_1_btn
-            // 
-            this.day_5_1_btn.BackColor = System.Drawing.Color.Transparent;
-            this.day_5_1_btn.FlatAppearance.BorderColor = System.Drawing.SystemColors.Control;
-            this.day_5_1_btn.FlatAppearance.BorderSize = 0;
-            this.day_5_1_btn.FlatAppearance.MouseDownBackColor = System.Drawing.Color.Transparent;
-            this.day_5_1_btn.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Transparent;
-            this.day_5_1_btn.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.day_5_1_btn.Location = new System.Drawing.Point(116, 317);
-            this.day_5_1_btn.Name = "day_5_1_btn";
-            this.day_5_1_btn.Size = new System.Drawing.Size(107, 39);
-            this.day_5_1_btn.TabIndex = 43;
-            this.day_5_1_btn.Text = "r5c1";
-            this.day_5_1_btn.UseVisualStyleBackColor = false;
-            this.day_5_1_btn.Click += new System.EventHandler(this.DayClick);
-            // 
             // day_5_2_btn
             // 
             this.day_5_2_btn.BackColor = System.Drawing.Color.Transparent;
             this.day_5_2_btn.FlatAppearance.BorderColor = System.Drawing.SystemColors.Control;
             this.day_5_2_btn.FlatAppearance.BorderSize = 0;
-            this.day_5_2_btn.FlatAppearance.MouseDownBackColor = System.Drawing.Color.Transparent;
-            this.day_5_2_btn.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Transparent;
+            this.day_5_2_btn.FlatAppearance.MouseDownBackColor = System.Drawing.Color.Gray;
+            this.day_5_2_btn.FlatAppearance.MouseOverBackColor = System.Drawing.Color.DarkGray;
             this.day_5_2_btn.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.day_5_2_btn.Location = new System.Drawing.Point(229, 317);
             this.day_5_2_btn.Name = "day_5_2_btn";
@@ -912,8 +880,8 @@
             this.day_5_4_btn.BackColor = System.Drawing.Color.Transparent;
             this.day_5_4_btn.FlatAppearance.BorderColor = System.Drawing.SystemColors.Control;
             this.day_5_4_btn.FlatAppearance.BorderSize = 0;
-            this.day_5_4_btn.FlatAppearance.MouseDownBackColor = System.Drawing.Color.Transparent;
-            this.day_5_4_btn.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Transparent;
+            this.day_5_4_btn.FlatAppearance.MouseDownBackColor = System.Drawing.Color.Gray;
+            this.day_5_4_btn.FlatAppearance.MouseOverBackColor = System.Drawing.Color.DarkGray;
             this.day_5_4_btn.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.day_5_4_btn.Location = new System.Drawing.Point(455, 317);
             this.day_5_4_btn.Name = "day_5_4_btn";
@@ -923,13 +891,45 @@
             this.day_5_4_btn.UseVisualStyleBackColor = false;
             this.day_5_4_btn.Click += new System.EventHandler(this.DayClick);
             // 
+            // day_5_1_btn
+            // 
+            this.day_5_1_btn.BackColor = System.Drawing.Color.Transparent;
+            this.day_5_1_btn.FlatAppearance.BorderColor = System.Drawing.SystemColors.Control;
+            this.day_5_1_btn.FlatAppearance.BorderSize = 0;
+            this.day_5_1_btn.FlatAppearance.MouseDownBackColor = System.Drawing.Color.Gray;
+            this.day_5_1_btn.FlatAppearance.MouseOverBackColor = System.Drawing.Color.DarkGray;
+            this.day_5_1_btn.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.day_5_1_btn.Location = new System.Drawing.Point(116, 317);
+            this.day_5_1_btn.Name = "day_5_1_btn";
+            this.day_5_1_btn.Size = new System.Drawing.Size(107, 39);
+            this.day_5_1_btn.TabIndex = 43;
+            this.day_5_1_btn.Text = "r5c1";
+            this.day_5_1_btn.UseVisualStyleBackColor = false;
+            this.day_5_1_btn.Click += new System.EventHandler(this.DayClick);
+            // 
+            // day_5_0_btn
+            // 
+            this.day_5_0_btn.BackColor = System.Drawing.Color.Transparent;
+            this.day_5_0_btn.FlatAppearance.BorderColor = System.Drawing.SystemColors.Control;
+            this.day_5_0_btn.FlatAppearance.BorderSize = 0;
+            this.day_5_0_btn.FlatAppearance.MouseDownBackColor = System.Drawing.Color.Gray;
+            this.day_5_0_btn.FlatAppearance.MouseOverBackColor = System.Drawing.Color.DarkGray;
+            this.day_5_0_btn.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.day_5_0_btn.Location = new System.Drawing.Point(3, 317);
+            this.day_5_0_btn.Name = "day_5_0_btn";
+            this.day_5_0_btn.Size = new System.Drawing.Size(107, 39);
+            this.day_5_0_btn.TabIndex = 42;
+            this.day_5_0_btn.Text = "r5c0";
+            this.day_5_0_btn.UseVisualStyleBackColor = false;
+            this.day_5_0_btn.Click += new System.EventHandler(this.DayClick);
+            // 
             // day_5_3_btn
             // 
             this.day_5_3_btn.BackColor = System.Drawing.Color.Transparent;
             this.day_5_3_btn.FlatAppearance.BorderColor = System.Drawing.SystemColors.Control;
             this.day_5_3_btn.FlatAppearance.BorderSize = 0;
-            this.day_5_3_btn.FlatAppearance.MouseDownBackColor = System.Drawing.Color.Transparent;
-            this.day_5_3_btn.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Transparent;
+            this.day_5_3_btn.FlatAppearance.MouseDownBackColor = System.Drawing.Color.Gray;
+            this.day_5_3_btn.FlatAppearance.MouseOverBackColor = System.Drawing.Color.DarkGray;
             this.day_5_3_btn.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.day_5_3_btn.Location = new System.Drawing.Point(342, 317);
             this.day_5_3_btn.Name = "day_5_3_btn";
@@ -944,8 +944,8 @@
             this.day_5_5_btn.BackColor = System.Drawing.Color.Transparent;
             this.day_5_5_btn.FlatAppearance.BorderColor = System.Drawing.SystemColors.Control;
             this.day_5_5_btn.FlatAppearance.BorderSize = 0;
-            this.day_5_5_btn.FlatAppearance.MouseDownBackColor = System.Drawing.Color.Transparent;
-            this.day_5_5_btn.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Transparent;
+            this.day_5_5_btn.FlatAppearance.MouseDownBackColor = System.Drawing.Color.Gray;
+            this.day_5_5_btn.FlatAppearance.MouseOverBackColor = System.Drawing.Color.DarkGray;
             this.day_5_5_btn.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.day_5_5_btn.Location = new System.Drawing.Point(568, 317);
             this.day_5_5_btn.Name = "day_5_5_btn";
@@ -960,8 +960,8 @@
             this.day_5_6_btn.BackColor = System.Drawing.Color.Transparent;
             this.day_5_6_btn.FlatAppearance.BorderColor = System.Drawing.SystemColors.Control;
             this.day_5_6_btn.FlatAppearance.BorderSize = 0;
-            this.day_5_6_btn.FlatAppearance.MouseDownBackColor = System.Drawing.Color.Transparent;
-            this.day_5_6_btn.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Transparent;
+            this.day_5_6_btn.FlatAppearance.MouseDownBackColor = System.Drawing.Color.Gray;
+            this.day_5_6_btn.FlatAppearance.MouseOverBackColor = System.Drawing.Color.DarkGray;
             this.day_5_6_btn.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.day_5_6_btn.Location = new System.Drawing.Point(681, 317);
             this.day_5_6_btn.Name = "day_5_6_btn";
@@ -973,12 +973,13 @@
             // 
             // next_month_btn
             // 
-            this.next_month_btn.BackColor = System.Drawing.Color.Transparent;
+            this.next_month_btn.BackColor = System.Drawing.Color.Green;
             this.next_month_btn.FlatAppearance.BorderColor = System.Drawing.SystemColors.Control;
             this.next_month_btn.FlatAppearance.BorderSize = 0;
-            this.next_month_btn.FlatAppearance.MouseDownBackColor = System.Drawing.Color.Transparent;
-            this.next_month_btn.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Transparent;
+            this.next_month_btn.FlatAppearance.MouseDownBackColor = System.Drawing.Color.DarkGreen;
+            this.next_month_btn.FlatAppearance.MouseOverBackColor = System.Drawing.Color.DarkOliveGreen;
             this.next_month_btn.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.next_month_btn.ForeColor = System.Drawing.Color.White;
             this.next_month_btn.Location = new System.Drawing.Point(681, 3);
             this.next_month_btn.Name = "next_month_btn";
             this.next_month_btn.Size = new System.Drawing.Size(107, 34);
@@ -988,12 +989,13 @@
             // 
             // prev_month_btn
             // 
-            this.prev_month_btn.BackColor = System.Drawing.Color.Transparent;
+            this.prev_month_btn.BackColor = System.Drawing.Color.Red;
             this.prev_month_btn.FlatAppearance.BorderColor = System.Drawing.SystemColors.Control;
             this.prev_month_btn.FlatAppearance.BorderSize = 0;
-            this.prev_month_btn.FlatAppearance.MouseDownBackColor = System.Drawing.Color.Transparent;
-            this.prev_month_btn.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Transparent;
+            this.prev_month_btn.FlatAppearance.MouseDownBackColor = System.Drawing.Color.DarkRed;
+            this.prev_month_btn.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Brown;
             this.prev_month_btn.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.prev_month_btn.ForeColor = System.Drawing.Color.White;
             this.prev_month_btn.Location = new System.Drawing.Point(3, 3);
             this.prev_month_btn.Name = "prev_month_btn";
             this.prev_month_btn.Size = new System.Drawing.Size(107, 34);
@@ -1033,15 +1035,15 @@
             // 
             // today_show_btn
             // 
-            this.today_show_btn.BackColor = System.Drawing.Color.Transparent;
+            this.today_show_btn.BackColor = System.Drawing.Color.LightGray;
             this.today_show_btn.FlatAppearance.BorderColor = System.Drawing.SystemColors.Control;
             this.today_show_btn.FlatAppearance.BorderSize = 0;
-            this.today_show_btn.FlatAppearance.MouseDownBackColor = System.Drawing.Color.Transparent;
-            this.today_show_btn.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Transparent;
+            this.today_show_btn.FlatAppearance.MouseDownBackColor = System.Drawing.Color.LightGray;
+            this.today_show_btn.FlatAppearance.MouseOverBackColor = System.Drawing.Color.LightGray;
             this.today_show_btn.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.today_show_btn.Location = new System.Drawing.Point(229, 362);
             this.today_show_btn.Name = "today_show_btn";
-            this.today_show_btn.Size = new System.Drawing.Size(107, 34);
+            this.today_show_btn.Size = new System.Drawing.Size(107, 43);
             this.today_show_btn.TabIndex = 53;
             this.today_show_btn.Text = "show";
             this.today_show_btn.UseVisualStyleBackColor = false;
