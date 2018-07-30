@@ -161,6 +161,7 @@ namespace AppointmentQueue
                 {
                     calendar_day_all_btn[i, j].BackColor = Color.Transparent;
                     calendar_day_all_btn[i, j].ForeColor = Color.Black;
+                    calendar_day_all_btn[i, j].Text = "";
                 }
             }
         }
@@ -177,6 +178,7 @@ namespace AppointmentQueue
 
             row++;
             Point end_rc = new Point(1, 1);
+            bool is_break_assign = false;
             // another row assign
             for (int i = row; i < 6; i++)
             {
@@ -186,11 +188,21 @@ namespace AppointmentQueue
                     count_day++;
                     if (count_day > count_of_month)
                     {
+                        j++;
+                        if (j == 7)
+                        {
+                            j = 0;
+                            i++;
+                        }
+
                         end_rc = new Point(i, j);
+                        is_break_assign = true;
                         break;
                     }
                 }
                 row++;
+                if (is_break_assign)
+                    break;
             }
 
             return end_rc;
