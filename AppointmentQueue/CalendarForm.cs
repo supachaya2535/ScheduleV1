@@ -13,6 +13,23 @@ namespace AppointmentQueue
 {
     public partial class CalendarForm : Form
     {
+
+        public enum MonthName
+        {
+            January = 1,
+            February,
+            March,
+            April,
+            May,
+            June,
+            July,
+            August,
+            September,
+            October,
+            November,
+            December
+        }
+
         private Button[,] calendar_day_all_btn;
 
         public CalendarForm()
@@ -49,7 +66,7 @@ namespace AppointmentQueue
                 }
             }
 
-            GenarateCalendar(DateTime.Today);
+            GenarateCalendar(DateTime.Today.Month, DateTime.Today.Year);
         }
 
         private void DayClick(object sender, EventArgs e)
@@ -68,16 +85,19 @@ namespace AppointmentQueue
         // column 4 : Thrusday
         // column 5 : Friday
         // column 6 : Saturday
-        private void GenarateCalendar(DateTime datetime)
+        private void GenarateCalendar(int month, int year)
         {
+            // let's set button to begin
+            SetButtonToBegin();
+
             // set button 
-            month_btn.Text = datetime.Month.ToString();
-            year_btn.Text = datetime.Year.ToString();
-            today_date_btn.Text = datetime.ToString();
+            month_btn.Text = ((MonthName)month).ToString();
+            year_btn.Text = year.ToString();
+            today_date_btn.Text = DateTime.Today.ToString();
             today_show_btn.Text = "";
 
             // genarate day in month
-            DateTime first_date = new DateTime(datetime.Year, datetime.Month, 1);
+            DateTime first_date = new DateTime(year, month, 1);
             DayOfWeek first_day_of_week = first_date.DayOfWeek;
             int count_of_month = DateTime.DaysInMonth(first_date.Year, first_date.Month);
             int start_row = first_day_of_week == DayOfWeek.Sunday ? 1 : 0;
@@ -87,20 +107,60 @@ namespace AppointmentQueue
             AssignDayOfNextCalendar(start_rc.X, start_rc.Y);
 
             // set today color
-            if (datetime.Month == DateTime.Today.Month && datetime.Year == DateTime.Today.Year)
+            // find button today
+            for (int i = 0; i < calendar_day_all_btn.GetLength(0); i++)
             {
-                // find button today
-                for (int i = 0; i < calendar_day_all_btn.GetLength(0); i++)
+                for (int j = 0; j < calendar_day_all_btn.GetLength(1); j++)
                 {
-                    for (int j = 0; j < calendar_day_all_btn.GetLength(1); j++)
+                    if (DateTime.Today.Day.ToString().Trim() == calendar_day_all_btn[i, j].Text.Trim())
                     {
-                        if (datetime.Day.ToString().Trim() == calendar_day_all_btn[i, j].Text.Trim() &&
-                            calendar_day_all_btn[i, j].ForeColor == Color.Black)
+                        if (calendar_day_all_btn[i, j].ForeColor == Color.Black &&
+                            month == DateTime.Today.Month && year == DateTime.Today.Year)
                         {
                             calendar_day_all_btn[i, j].BackColor = Color.LightGray;
-
                         }
+                        else if (calendar_day_all_btn[i, j].ForeColor == Color.Red)
+                        {
+                            int month_prev = month - 1;
+                            int year_prev = year;
+                            if (month < 1)
+                            {
+                                month_prev = 12;
+                                year_prev--;
+                            }
+                            if (month_prev == DateTime.Today.Month && year_prev == DateTime.Today.Year)
+                            {
+                                calendar_day_all_btn[i, j].BackColor = Color.LightGray;
+                            }
+                        }
+                        else if (calendar_day_all_btn[i, j].ForeColor == Color.Green)
+                        {
+                            int month_next = month + 1;
+                            int year_next = year;
+                            if (month > 12)
+                            {
+                                month_next = 1;
+                                year_next++;
+                            }
+                            if (month_next == DateTime.Today.Month && year_next == DateTime.Today.Year)
+                            {
+                                calendar_day_all_btn[i, j].BackColor = Color.LightGray;
+                            }
+                        }
+
                     }
+                }
+            }
+        }
+
+        private void SetButtonToBegin()
+        {
+            for (int i = 0; i < calendar_day_all_btn.GetLength(0); i++)
+            {
+                for (int j = 0; j < calendar_day_all_btn.GetLength(1); j++)
+                {
+                    calendar_day_all_btn[i, j].BackColor = Color.Transparent;
+                    calendar_day_all_btn[i, j].ForeColor = Color.Black;
                 }
             }
         }
@@ -205,6 +265,36 @@ namespace AppointmentQueue
                 count_of_month--;
             }
 
+        }
+
+        private void prev_month_btn_Click(object sender, EventArgs e)
+        {
+            int cur_year = Convert.ToInt32(year_btn.Text);
+            int cur_month = Convert.ToInt32(Enum.Parse(typeof(MonthName), month_btn.Text));
+            // decrease month 
+            cur_month--;
+            if (cur_month < 1)
+            {
+                cur_year--;
+                cur_month = 12;
+            }
+
+            GenarateCalendar(cur_month, cur_year);
+        }
+
+        private void next_month_btn_Click(object sender, EventArgs e)
+        {
+            int cur_year = Convert.ToInt32(year_btn.Text);
+            int cur_month = Convert.ToInt32(Enum.Parse(typeof(MonthName), month_btn.Text));
+            // increase month
+            cur_month++;
+            if (cur_month > 12)
+            {
+                cur_month = 1;
+                cur_year++;
+            }
+
+            GenarateCalendar(cur_month, cur_year);
         }
     }
 }

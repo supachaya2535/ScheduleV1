@@ -986,6 +986,7 @@
             this.next_month_btn.TabIndex = 49;
             this.next_month_btn.Text = "next month";
             this.next_month_btn.UseVisualStyleBackColor = false;
+            this.next_month_btn.Click += new System.EventHandler(this.next_month_btn_Click);
             // 
             // prev_month_btn
             // 
@@ -1002,6 +1003,7 @@
             this.prev_month_btn.TabIndex = 50;
             this.prev_month_btn.Text = "previous month";
             this.prev_month_btn.UseVisualStyleBackColor = false;
+            this.prev_month_btn.Click += new System.EventHandler(this.prev_month_btn_Click);
             // 
             // month_btn
             // 
