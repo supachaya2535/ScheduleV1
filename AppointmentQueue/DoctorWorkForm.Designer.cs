@@ -32,7 +32,7 @@
             this.week4CheckBox = new System.Windows.Forms.CheckBox();
             this.week3CheckBox = new System.Windows.Forms.CheckBox();
             this.week2CheckBox = new System.Windows.Forms.CheckBox();
-            this.week1ChkBox = new System.Windows.Forms.CheckBox();
+            this.week1CheckBox = new System.Windows.Forms.CheckBox();
             this.kidCheckBox = new System.Windows.Forms.CheckBox();
             this.label3 = new System.Windows.Forms.Label();
             this.drName2 = new System.Windows.Forms.TextBox();
@@ -54,6 +54,12 @@
             this.label15 = new System.Windows.Forms.Label();
             this.drNameTxt2 = new System.Windows.Forms.TextBox();
             this.label16 = new System.Windows.Forms.Label();
+            this.label13 = new System.Windows.Forms.Label();
+            this.startDate = new System.Windows.Forms.DateTimePicker();
+            this.label1 = new System.Windows.Forms.Label();
+            this.endDate = new System.Windows.Forms.DateTimePicker();
+            this.label4 = new System.Windows.Forms.Label();
+            this.detailTxt = new System.Windows.Forms.TextBox();
             this.groupBox7.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.drWorkGidView)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.drDataGridView2)).BeginInit();
@@ -63,10 +69,16 @@
             // groupBox7
             // 
             this.groupBox7.BackColor = System.Drawing.SystemColors.GradientActiveCaption;
+            this.groupBox7.Controls.Add(this.label4);
+            this.groupBox7.Controls.Add(this.detailTxt);
+            this.groupBox7.Controls.Add(this.label1);
+            this.groupBox7.Controls.Add(this.endDate);
+            this.groupBox7.Controls.Add(this.label13);
+            this.groupBox7.Controls.Add(this.startDate);
             this.groupBox7.Controls.Add(this.week4CheckBox);
             this.groupBox7.Controls.Add(this.week3CheckBox);
             this.groupBox7.Controls.Add(this.week2CheckBox);
-            this.groupBox7.Controls.Add(this.week1ChkBox);
+            this.groupBox7.Controls.Add(this.week1CheckBox);
             this.groupBox7.Controls.Add(this.kidCheckBox);
             this.groupBox7.Controls.Add(this.label3);
             this.groupBox7.Controls.Add(this.drName2);
@@ -82,7 +94,7 @@
             this.groupBox7.Font = new System.Drawing.Font("Verdana", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.groupBox7.Location = new System.Drawing.Point(356, 0);
             this.groupBox7.Name = "groupBox7";
-            this.groupBox7.Size = new System.Drawing.Size(485, 216);
+            this.groupBox7.Size = new System.Drawing.Size(485, 255);
             this.groupBox7.TabIndex = 58;
             this.groupBox7.TabStop = false;
             this.groupBox7.Text = "Doctor Work Information";
@@ -91,7 +103,7 @@
             // 
             this.week4CheckBox.AutoSize = true;
             this.week4CheckBox.Font = new System.Drawing.Font("Verdana", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.week4CheckBox.Location = new System.Drawing.Point(338, 121);
+            this.week4CheckBox.Location = new System.Drawing.Point(369, 122);
             this.week4CheckBox.Name = "week4CheckBox";
             this.week4CheckBox.Size = new System.Drawing.Size(69, 20);
             this.week4CheckBox.TabIndex = 76;
@@ -102,7 +114,7 @@
             // 
             this.week3CheckBox.AutoSize = true;
             this.week3CheckBox.Font = new System.Drawing.Font("Verdana", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.week3CheckBox.Location = new System.Drawing.Point(255, 121);
+            this.week3CheckBox.Location = new System.Drawing.Point(281, 122);
             this.week3CheckBox.Name = "week3CheckBox";
             this.week3CheckBox.Size = new System.Drawing.Size(69, 20);
             this.week3CheckBox.TabIndex = 75;
@@ -113,29 +125,29 @@
             // 
             this.week2CheckBox.AutoSize = true;
             this.week2CheckBox.Font = new System.Drawing.Font("Verdana", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.week2CheckBox.Location = new System.Drawing.Point(165, 121);
+            this.week2CheckBox.Location = new System.Drawing.Point(191, 122);
             this.week2CheckBox.Name = "week2CheckBox";
             this.week2CheckBox.Size = new System.Drawing.Size(69, 20);
             this.week2CheckBox.TabIndex = 74;
             this.week2CheckBox.Text = "week2";
             this.week2CheckBox.UseVisualStyleBackColor = true;
             // 
-            // week1ChkBox
+            // week1CheckBox
             // 
-            this.week1ChkBox.AutoSize = true;
-            this.week1ChkBox.Font = new System.Drawing.Font("Verdana", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.week1ChkBox.Location = new System.Drawing.Point(79, 121);
-            this.week1ChkBox.Name = "week1ChkBox";
-            this.week1ChkBox.Size = new System.Drawing.Size(69, 20);
-            this.week1ChkBox.TabIndex = 73;
-            this.week1ChkBox.Text = "week1";
-            this.week1ChkBox.UseVisualStyleBackColor = true;
+            this.week1CheckBox.AutoSize = true;
+            this.week1CheckBox.Font = new System.Drawing.Font("Verdana", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.week1CheckBox.Location = new System.Drawing.Point(103, 122);
+            this.week1CheckBox.Name = "week1CheckBox";
+            this.week1CheckBox.Size = new System.Drawing.Size(69, 20);
+            this.week1CheckBox.TabIndex = 73;
+            this.week1CheckBox.Text = "week1";
+            this.week1CheckBox.UseVisualStyleBackColor = true;
             // 
             // kidCheckBox
             // 
             this.kidCheckBox.AutoSize = true;
             this.kidCheckBox.Font = new System.Drawing.Font("Verdana", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.kidCheckBox.Location = new System.Drawing.Point(317, 26);
+            this.kidCheckBox.Location = new System.Drawing.Point(276, 26);
             this.kidCheckBox.Name = "kidCheckBox";
             this.kidCheckBox.Size = new System.Drawing.Size(143, 20);
             this.kidCheckBox.TabIndex = 72;
@@ -146,7 +158,7 @@
             // 
             this.label3.AutoSize = true;
             this.label3.Font = new System.Drawing.Font("Verdana", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label3.Location = new System.Drawing.Point(67, 61);
+            this.label3.Location = new System.Drawing.Point(26, 61);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(61, 16);
             this.label3.TabIndex = 71;
@@ -155,7 +167,7 @@
             // drName2
             // 
             this.drName2.Font = new System.Drawing.Font("Verdana", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.drName2.Location = new System.Drawing.Point(144, 58);
+            this.drName2.Location = new System.Drawing.Point(103, 58);
             this.drName2.Name = "drName2";
             this.drName2.Size = new System.Drawing.Size(188, 23);
             this.drName2.TabIndex = 69;
@@ -163,7 +175,7 @@
             // seachDrWork
             // 
             this.seachDrWork.Font = new System.Drawing.Font("Verdana", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.seachDrWork.Location = new System.Drawing.Point(338, 58);
+            this.seachDrWork.Location = new System.Drawing.Point(297, 58);
             this.seachDrWork.Margin = new System.Windows.Forms.Padding(2);
             this.seachDrWork.Name = "seachDrWork";
             this.seachDrWork.Size = new System.Drawing.Size(62, 30);
@@ -177,7 +189,7 @@
             this.drReqId.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.drReqId.Enabled = false;
             this.drReqId.Font = new System.Drawing.Font("Verdana", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.drReqId.Location = new System.Drawing.Point(144, 30);
+            this.drReqId.Location = new System.Drawing.Point(103, 30);
             this.drReqId.Name = "drReqId";
             this.drReqId.Size = new System.Drawing.Size(135, 16);
             this.drReqId.TabIndex = 67;
@@ -186,7 +198,7 @@
             // 
             this.label2.AutoSize = true;
             this.label2.Font = new System.Drawing.Font("Verdana", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label2.Location = new System.Drawing.Point(60, 33);
+            this.label2.Location = new System.Drawing.Point(19, 33);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(76, 16);
             this.label2.TabIndex = 66;
@@ -196,7 +208,7 @@
             // 
             this.label19.AutoSize = true;
             this.label19.Font = new System.Drawing.Font("Verdana", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label19.Location = new System.Drawing.Point(47, 94);
+            this.label19.Location = new System.Drawing.Point(6, 94);
             this.label19.Name = "label19";
             this.label19.Size = new System.Drawing.Size(91, 16);
             this.label19.TabIndex = 49;
@@ -214,9 +226,9 @@
             "Friday",
             "Saturday",
             "Sunday"});
-            this.dofComb.Location = new System.Drawing.Point(144, 91);
+            this.dofComb.Location = new System.Drawing.Point(103, 91);
             this.dofComb.Name = "dofComb";
-            this.dofComb.Size = new System.Drawing.Size(188, 24);
+            this.dofComb.Size = new System.Drawing.Size(135, 24);
             this.dofComb.TabIndex = 48;
             // 
             // pedComb
@@ -227,16 +239,16 @@
             "Morning",
             "Afternoon",
             "Evening"});
-            this.pedComb.Location = new System.Drawing.Point(144, 147);
+            this.pedComb.Location = new System.Drawing.Point(311, 91);
             this.pedComb.Name = "pedComb";
-            this.pedComb.Size = new System.Drawing.Size(188, 24);
+            this.pedComb.Size = new System.Drawing.Size(143, 24);
             this.pedComb.TabIndex = 47;
             // 
             // label17
             // 
             this.label17.AutoSize = true;
             this.label17.Font = new System.Drawing.Font("Verdana", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label17.Location = new System.Drawing.Point(66, 150);
+            this.label17.Location = new System.Drawing.Point(257, 94);
             this.label17.Name = "label17";
             this.label17.Size = new System.Drawing.Size(48, 16);
             this.label17.TabIndex = 46;
@@ -245,7 +257,7 @@
             // drWorkDelBtn
             // 
             this.drWorkDelBtn.Font = new System.Drawing.Font("Verdana", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.drWorkDelBtn.Location = new System.Drawing.Point(285, 177);
+            this.drWorkDelBtn.Location = new System.Drawing.Point(290, 219);
             this.drWorkDelBtn.Name = "drWorkDelBtn";
             this.drWorkDelBtn.Size = new System.Drawing.Size(189, 30);
             this.drWorkDelBtn.TabIndex = 36;
@@ -255,21 +267,22 @@
             // drWorkAddBtn
             // 
             this.drWorkAddBtn.Font = new System.Drawing.Font("Verdana", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.drWorkAddBtn.Location = new System.Drawing.Point(6, 177);
+            this.drWorkAddBtn.Location = new System.Drawing.Point(11, 219);
             this.drWorkAddBtn.Name = "drWorkAddBtn";
             this.drWorkAddBtn.Size = new System.Drawing.Size(195, 30);
             this.drWorkAddBtn.TabIndex = 35;
             this.drWorkAddBtn.Text = "Insert a new doctor work";
             this.drWorkAddBtn.UseVisualStyleBackColor = true;
+            this.drWorkAddBtn.Click += new System.EventHandler(this.drWorkAddBtn_Click);
             // 
             // drWorkGidView
             // 
             this.drWorkGidView.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
             this.drWorkGidView.BackgroundColor = System.Drawing.SystemColors.ActiveBorder;
             this.drWorkGidView.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.drWorkGidView.Location = new System.Drawing.Point(356, 222);
+            this.drWorkGidView.Location = new System.Drawing.Point(356, 261);
             this.drWorkGidView.Name = "drWorkGidView";
-            this.drWorkGidView.Size = new System.Drawing.Size(485, 273);
+            this.drWorkGidView.Size = new System.Drawing.Size(485, 234);
             this.drWorkGidView.TabIndex = 60;
             // 
             // drDataGridView2
@@ -356,6 +369,71 @@
             this.label16.TabIndex = 31;
             this.label16.Text = "Dr. ID";
             // 
+            // label13
+            // 
+            this.label13.AutoSize = true;
+            this.label13.Font = new System.Drawing.Font("Verdana", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label13.Location = new System.Drawing.Point(12, 150);
+            this.label13.Name = "label13";
+            this.label13.Size = new System.Drawing.Size(78, 16);
+            this.label13.TabIndex = 78;
+            this.label13.Text = "Start Date";
+            // 
+            // startDate
+            // 
+            this.startDate.CalendarFont = new System.Drawing.Font("Verdana", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.startDate.Font = new System.Drawing.Font("Verdana", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.startDate.Format = System.Windows.Forms.DateTimePickerFormat.Short;
+            this.startDate.Location = new System.Drawing.Point(103, 148);
+            this.startDate.MaxDate = new System.DateTime(2019, 12, 31, 0, 0, 0, 0);
+            this.startDate.MinDate = new System.DateTime(2018, 5, 18, 0, 0, 0, 0);
+            this.startDate.Name = "startDate";
+            this.startDate.Size = new System.Drawing.Size(141, 23);
+            this.startDate.TabIndex = 77;
+            this.startDate.Value = new System.DateTime(2018, 5, 18, 0, 0, 0, 0);
+            // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.Font = new System.Drawing.Font("Verdana", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label1.Location = new System.Drawing.Point(263, 150);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(22, 16);
+            this.label1.TabIndex = 80;
+            this.label1.Text = "to";
+            // 
+            // endDate
+            // 
+            this.endDate.CalendarFont = new System.Drawing.Font("Verdana", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.endDate.Font = new System.Drawing.Font("Verdana", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.endDate.Format = System.Windows.Forms.DateTimePickerFormat.Short;
+            this.endDate.Location = new System.Drawing.Point(313, 148);
+            this.endDate.MaxDate = new System.DateTime(2019, 12, 31, 0, 0, 0, 0);
+            this.endDate.MinDate = new System.DateTime(2018, 5, 18, 0, 0, 0, 0);
+            this.endDate.Name = "endDate";
+            this.endDate.Size = new System.Drawing.Size(141, 23);
+            this.endDate.TabIndex = 79;
+            this.endDate.Value = new System.DateTime(2018, 5, 18, 0, 0, 0, 0);
+            // 
+            // label4
+            // 
+            this.label4.AutoSize = true;
+            this.label4.Font = new System.Drawing.Font("Verdana", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label4.Location = new System.Drawing.Point(26, 178);
+            this.label4.Name = "label4";
+            this.label4.Size = new System.Drawing.Size(45, 16);
+            this.label4.TabIndex = 82;
+            this.label4.Text = "Detail";
+            // 
+            // detailTxt
+            // 
+            this.detailTxt.Font = new System.Drawing.Font("Verdana", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.detailTxt.Location = new System.Drawing.Point(103, 178);
+            this.detailTxt.Multiline = true;
+            this.detailTxt.Name = "detailTxt";
+            this.detailTxt.Size = new System.Drawing.Size(351, 35);
+            this.detailTxt.TabIndex = 81;
+            // 
             // DoctorWorkForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -404,6 +482,12 @@
         private System.Windows.Forms.CheckBox week4CheckBox;
         private System.Windows.Forms.CheckBox week3CheckBox;
         private System.Windows.Forms.CheckBox week2CheckBox;
-        private System.Windows.Forms.CheckBox week1ChkBox;
+        private System.Windows.Forms.CheckBox week1CheckBox;
+        private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.DateTimePicker endDate;
+        private System.Windows.Forms.Label label13;
+        private System.Windows.Forms.DateTimePicker startDate;
+        private System.Windows.Forms.Label label4;
+        private System.Windows.Forms.TextBox detailTxt;
     }
 }

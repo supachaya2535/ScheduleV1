@@ -158,7 +158,7 @@ namespace AppointmentQueue
             return dt;
         }
 
-        public static DataTable GetDoctorRequests(String ped,String req, String dr, string kid)
+        public static DataTable GetDoctorRequests(String req, String dr)
         {
             SqlConnection cn = new SqlConnection(global::AppointmentQueue.Properties.Settings.Default.Database1ConnectionString);
             cn.Open();
@@ -168,20 +168,15 @@ namespace AppointmentQueue
                 "JOIN Doctors ON dr_Id = drreq_dr " +
                 "JOIN Requests ON req_Id = drreq_req " +
                 "WHERE req_bodypart LIKE '" + req.Trim() + "%' " +
-                "AND dr_name LIKE '" + dr.Trim() + "%'" +
-                "AND drreq_kid LIKE '" + kid.Trim() + "%'" +
-                "AND drreq_period LIKE '" + ped.Trim() + "%'" 
+                "AND dr_name LIKE '" + dr.Trim() + "%'" 
                 , cn);
             SqlDataReader reader = command.ExecuteReader();
 
             DataTable dt = new DataTable();
-            dt.Columns.Add("drreq_Id", typeof(Int16));
+            dt.Columns.Add("drreq_Id", typeof(String));
+            dt.Columns.Add("dr_Id", typeof(Int16));
             dt.Columns.Add("req_bodypart", typeof(String));
             dt.Columns.Add("dr_name", typeof(String));
-            dt.Columns.Add("drreq_period", typeof(String));
-            dt.Columns.Add("drreq_kid", typeof(String));
-            dt.Columns.Add("drreq_dayofweek", typeof(String));
-            dt.Columns.Add("dr_Id", typeof(Int16));
             dt.Load(reader);
             cn.Close();
             return dt;
@@ -192,7 +187,8 @@ namespace AppointmentQueue
             SqlConnection cn = new SqlConnection(global::AppointmentQueue.Properties.Settings.Default.Database1ConnectionString);
             cn.Open();
             SqlCommand command = new SqlCommand(
-                "SELECT *" +
+                "SELECT drw_id,drw_dr,drw_sdate,drw_edate,drw_dow,drw_period," +
+                        "drw_kid,drw_w1,drw_w2,drw_w3,drw_w4,drw_status"+
                 "FROM DoctorWorks " +
                 "JOIN Doctors ON dr_Id = drw_dr " +
                 "AND dr_name LIKE '" + dr.Trim() + "%'" +
@@ -204,15 +200,53 @@ namespace AppointmentQueue
             DataTable dt = new DataTable();
             dt.Columns.Add("drw_Id", typeof(Int16));
             dt.Columns.Add("drw_dr", typeof(String));
+            dt.Columns.Add("drw_sdate", typeof(String));
+            dt.Columns.Add("drw_edate", typeof(String));
             dt.Columns.Add("dr_name", typeof(String));
             dt.Columns.Add("drw_period", typeof(String));
             dt.Columns.Add("drw_kid", typeof(String));
             dt.Columns.Add("drw_dayofweek", typeof(String));
+            dt.Columns.Add("drw_w1", typeof(String));
+            dt.Columns.Add("drw_w2", typeof(String));
+            dt.Columns.Add("drw_w3", typeof(String));
+            dt.Columns.Add("drw_w4", typeof(String));
+            dt.Columns.Add("drw_status", typeof(String));
+
             dt.Load(reader);
             cn.Close();
             return dt;
         }
 
+        public static DataTable GetDoctorCalendars(DateTime dateT, String req)
+        {
+            SqlConnection cn = new SqlConnection(global::AppointmentQueue.Properties.Settings.Default.Database1ConnectionString);
+            cn.Open();
+            DateTime endT = dateT.AddDays(1).AddTicks(-1);
+            SqlCommand command = new SqlCommand(
+                "SELECT *" +
+                "FROM DoctorCalendars "+
+                "JOIN DoctorWorks ON drw_id = drc_drw " +
+                "JOIN DoctorRequests ON drw_dr = drreq_dr " +
+                "WHERE drc_date BETWEEN @StartT AND  @EndT " +
+                "AND drreq_req LIKE '%" + req + "%'"
+                , cn);
+            command.Parameters.AddWithValue("@StartT", dateT);
+            command.Parameters.AddWithValue("@EndT", endT);
+            
+            SqlDataReader reader = command.ExecuteReader();
+
+            DataTable dt = new DataTable();
+            dt.Columns.Add("drc_id", typeof(Int16));
+            dt.Columns.Add("drc_date", typeof(String));
+            dt.Columns.Add("drc_drw", typeof(String));
+            dt.Columns.Add("drc_time", typeof(Int16));
+            dt.Columns.Add("drw_status", typeof(String));
+
+            dt.Load(reader);
+            cn.Close();
+            return dt;
+        }
+        
         public static int getDof(String dayName)
         {
             dayName = dayName.Trim();

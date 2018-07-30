@@ -218,5 +218,17 @@ namespace AppointmentQueue
                 detail_text.Text = "";
             }
         }
+
+        private void manDrBtn_Click(object sender, EventArgs e)
+        {
+            DoctorForm sForm = new DoctorForm();
+            sForm.ShowDialog();
+        }
+
+        private void manDrWorkBtn_Click(object sender, EventArgs e)
+        {
+            DoctorWorkForm sForm = new DoctorWorkForm();
+            sForm.ShowDialog();
+        }
     }
 }

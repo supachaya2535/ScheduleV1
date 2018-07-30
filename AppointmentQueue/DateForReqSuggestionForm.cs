@@ -61,8 +61,8 @@ namespace AppointmentQueue
         public DataTable getSuggestionDate()
         {
            //1.Find possible day of week of req in the range time
-            DataTable dtPossibleDrReq = SQL.GetDoctorRequests(comboBox1.SelectedItem.ToString().Trim(), reqCob.SelectedItem.ToString().Trim(),"",Convert.ToInt16(kidCheckBox.Checked).ToString().Trim());
-            dataGridView2.DataSource = dtPossibleDrReq;
+            DataTable dtPossibleDrReq = SQL.GetDoctorRequests(reqCob.SelectedItem.ToString().Trim(),"");
+            req_dataGridView.DataSource = dtPossibleDrReq;
 
             //2.Find Day off of req in the range time
             //df_id ,df_date ,df_dr ,dr_name ,df_period ,df_detail

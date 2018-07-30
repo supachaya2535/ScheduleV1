@@ -66,6 +66,8 @@
             this.button2 = new System.Windows.Forms.Button();
             this.endDate = new System.Windows.Forms.DateTimePicker();
             this.button3 = new System.Windows.Forms.Button();
+            this.manDrWorkBtn = new System.Windows.Forms.Button();
+            this.manDrBtn = new System.Windows.Forms.Button();
             this.groupBox1.SuspendLayout();
             this.groupBox2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.appDataGridView)).BeginInit();
@@ -383,9 +385,9 @@
             // 
             this.addBtn.Enabled = false;
             this.addBtn.Font = new System.Drawing.Font("Verdana", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.addBtn.Location = new System.Drawing.Point(81, 495);
+            this.addBtn.Location = new System.Drawing.Point(12, 483);
             this.addBtn.Name = "addBtn";
-            this.addBtn.Size = new System.Drawing.Size(200, 51);
+            this.addBtn.Size = new System.Drawing.Size(102, 51);
             this.addBtn.TabIndex = 32;
             this.addBtn.Text = "Add New Appointment";
             this.addBtn.UseVisualStyleBackColor = true;
@@ -444,10 +446,10 @@
             // manDayOff
             // 
             this.manDayOff.Font = new System.Drawing.Font("Verdana", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.manDayOff.Location = new System.Drawing.Point(611, 495);
+            this.manDayOff.Location = new System.Drawing.Point(665, 483);
             this.manDayOff.Margin = new System.Windows.Forms.Padding(2);
             this.manDayOff.Name = "manDayOff";
-            this.manDayOff.Size = new System.Drawing.Size(130, 51);
+            this.manDayOff.Size = new System.Drawing.Size(104, 51);
             this.manDayOff.TabIndex = 56;
             this.manDayOff.Text = "Manage Day-Off";
             this.manDayOff.UseVisualStyleBackColor = true;
@@ -456,22 +458,22 @@
             // manReq
             // 
             this.manReq.Font = new System.Drawing.Font("Verdana", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.manReq.Location = new System.Drawing.Point(333, 495);
+            this.manReq.Location = new System.Drawing.Point(445, 483);
             this.manReq.Margin = new System.Windows.Forms.Padding(2);
             this.manReq.Name = "manReq";
-            this.manReq.Size = new System.Drawing.Size(134, 51);
+            this.manReq.Size = new System.Drawing.Size(108, 51);
             this.manReq.TabIndex = 55;
-            this.manReq.Text = "Manage Request of Doctor ";
+            this.manReq.Text = "Manage DoctorRequest";
             this.manReq.UseVisualStyleBackColor = true;
             this.manReq.Click += new System.EventHandler(this.manReq_Click);
             // 
             // button1
             // 
             this.button1.Font = new System.Drawing.Font("Verdana", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button1.Location = new System.Drawing.Point(765, 495);
+            this.button1.Location = new System.Drawing.Point(557, 483);
             this.button1.Margin = new System.Windows.Forms.Padding(2);
             this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(130, 51);
+            this.button1.Size = new System.Drawing.Size(104, 51);
             this.button1.TabIndex = 57;
             this.button1.Text = "Manage Request";
             this.button1.UseVisualStyleBackColor = true;
@@ -480,10 +482,10 @@
             // button2
             // 
             this.button2.Font = new System.Drawing.Font("Verdana", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button2.Location = new System.Drawing.Point(920, 495);
+            this.button2.Location = new System.Drawing.Point(773, 483);
             this.button2.Margin = new System.Windows.Forms.Padding(2);
             this.button2.Name = "button2";
-            this.button2.Size = new System.Drawing.Size(130, 51);
+            this.button2.Size = new System.Drawing.Size(104, 51);
             this.button2.TabIndex = 58;
             this.button2.Text = "Manage Scanner";
             this.button2.UseVisualStyleBackColor = true;
@@ -506,19 +508,45 @@
             // button3
             // 
             this.button3.Font = new System.Drawing.Font("Verdana", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button3.Location = new System.Drawing.Point(494, 495);
+            this.button3.Location = new System.Drawing.Point(119, 483);
             this.button3.Margin = new System.Windows.Forms.Padding(2);
             this.button3.Name = "button3";
             this.button3.Size = new System.Drawing.Size(88, 51);
             this.button3.TabIndex = 60;
-            this.button3.Text = "Calendar ";
+            this.button3.Text = "Show Calendar ";
             this.button3.UseVisualStyleBackColor = true;
+            // 
+            // manDrWorkBtn
+            // 
+            this.manDrWorkBtn.Font = new System.Drawing.Font("Verdana", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.manDrWorkBtn.Location = new System.Drawing.Point(333, 483);
+            this.manDrWorkBtn.Margin = new System.Windows.Forms.Padding(2);
+            this.manDrWorkBtn.Name = "manDrWorkBtn";
+            this.manDrWorkBtn.Size = new System.Drawing.Size(108, 51);
+            this.manDrWorkBtn.TabIndex = 61;
+            this.manDrWorkBtn.Text = "Manage DoctorWork";
+            this.manDrWorkBtn.UseVisualStyleBackColor = true;
+            this.manDrWorkBtn.Click += new System.EventHandler(this.manDrWorkBtn_Click);
+            // 
+            // manDrBtn
+            // 
+            this.manDrBtn.Font = new System.Drawing.Font("Verdana", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.manDrBtn.Location = new System.Drawing.Point(881, 483);
+            this.manDrBtn.Margin = new System.Windows.Forms.Padding(2);
+            this.manDrBtn.Name = "manDrBtn";
+            this.manDrBtn.Size = new System.Drawing.Size(104, 51);
+            this.manDrBtn.TabIndex = 62;
+            this.manDrBtn.Text = "Manage Doctor";
+            this.manDrBtn.UseVisualStyleBackColor = true;
+            this.manDrBtn.Click += new System.EventHandler(this.manDrBtn_Click);
             // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1070, 564);
+            this.ClientSize = new System.Drawing.Size(1070, 540);
+            this.Controls.Add(this.manDrBtn);
+            this.Controls.Add(this.manDrWorkBtn);
             this.Controls.Add(this.button3);
             this.Controls.Add(this.endDate);
             this.Controls.Add(this.button2);
@@ -594,6 +622,8 @@
         private System.Windows.Forms.TextBox detail_text;
         private System.Windows.Forms.Label label7;
         private System.Windows.Forms.Button button3;
+        private System.Windows.Forms.Button manDrWorkBtn;
+        private System.Windows.Forms.Button manDrBtn;
     }
 }
 
