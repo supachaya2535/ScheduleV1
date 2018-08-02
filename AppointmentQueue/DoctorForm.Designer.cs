@@ -108,6 +108,7 @@
             this.Idtxt.Name = "Idtxt";
             this.Idtxt.Size = new System.Drawing.Size(275, 23);
             this.Idtxt.TabIndex = 32;
+            this.Idtxt.TextChanged += new System.EventHandler(this.Idtxt_TextChanged);
             // 
             // label9
             // 

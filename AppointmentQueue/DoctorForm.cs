@@ -16,5 +16,10 @@ namespace AppointmentQueue
         {
             InitializeComponent();
         }
+
+        private void Idtxt_TextChanged(object sender, EventArgs e)
+        {
+
+        }
     }
 }

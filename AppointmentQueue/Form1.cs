@@ -21,7 +21,7 @@ namespace AppointmentQueue
             reqCob = SQL.readRequest(reqCob);
             scan_CoBox.SelectedIndex = 0;
             paidCob.SelectedIndex = 0;
-            reqCob.SelectedIndex = 28;
+            reqCob.SelectedIndex = 31;
 
             todayDatePicker.Value = DateTime.Today;
             todayDay.Value = DateTime.Today;
@@ -219,11 +219,16 @@ namespace AppointmentQueue
             }
         }
 
-        private void button3_Click(object sender, EventArgs e)
+        private void manDrBtn_Click(object sender, EventArgs e)
         {
-            CalendarForm cld_form = new CalendarForm();
-            cld_form.ShowDialog();
+            DoctorForm sForm = new DoctorForm();
+            sForm.ShowDialog();
         }
-        
+
+        private void manDrWorkBtn_Click(object sender, EventArgs e)
+        {
+            DoctorWorkForm sForm = new DoctorWorkForm();
+            sForm.ShowDialog();
+        }
     }
 }

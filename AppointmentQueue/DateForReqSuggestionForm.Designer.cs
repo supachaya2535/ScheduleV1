@@ -33,9 +33,12 @@
             this.label1 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
-            this.dataGridView2 = new System.Windows.Forms.DataGridView();
+            this.req_dataGridView = new System.Windows.Forms.DataGridView();
             this.label5 = new System.Windows.Forms.Label();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
+            this.label6 = new System.Windows.Forms.Label();
+            this.selectedDate = new System.Windows.Forms.DateTimePicker();
+            this.acceptDateForReq = new System.Windows.Forms.Button();
             this.kidCheckBox = new System.Windows.Forms.CheckBox();
             this.label3 = new System.Windows.Forms.Label();
             this.seachDateForReq = new System.Windows.Forms.Button();
@@ -52,13 +55,10 @@
             this.label10 = new System.Windows.Forms.Label();
             this.label11 = new System.Windows.Forms.Label();
             this.label12 = new System.Windows.Forms.Label();
-            this.label6 = new System.Windows.Forms.Label();
-            this.selectedDate = new System.Windows.Forms.DateTimePicker();
-            this.acceptDateForReq = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.suggDataGridView)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dayNumericUpDown)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView2)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.req_dataGridView)).BeginInit();
             this.groupBox1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView3)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView4)).BeginInit();
@@ -77,7 +77,7 @@
             // dayNumericUpDown
             // 
             this.dayNumericUpDown.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.dayNumericUpDown.Location = new System.Drawing.Point(274, 29);
+            this.dayNumericUpDown.Location = new System.Drawing.Point(314, 29);
             this.dayNumericUpDown.Maximum = new decimal(new int[] {
             365,
             0,
@@ -89,7 +89,7 @@
             0,
             0});
             this.dayNumericUpDown.Name = "dayNumericUpDown";
-            this.dayNumericUpDown.Size = new System.Drawing.Size(62, 22);
+            this.dayNumericUpDown.Size = new System.Drawing.Size(66, 22);
             this.dayNumericUpDown.TabIndex = 39;
             this.dayNumericUpDown.Value = new decimal(new int[] {
             30,
@@ -102,7 +102,7 @@
             // 
             this.label1.AutoSize = true;
             this.label1.Font = new System.Drawing.Font("Verdana", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.Location = new System.Drawing.Point(247, 30);
+            this.label1.Location = new System.Drawing.Point(288, 30);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(21, 16);
             this.label1.TabIndex = 40;
@@ -112,7 +112,7 @@
             // 
             this.label2.AutoSize = true;
             this.label2.Font = new System.Drawing.Font("Verdana", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label2.Location = new System.Drawing.Point(342, 31);
+            this.label2.Location = new System.Drawing.Point(395, 30);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(39, 16);
             this.label2.TabIndex = 41;
@@ -129,16 +129,16 @@
             this.dataGridView1.Size = new System.Drawing.Size(388, 162);
             this.dataGridView1.TabIndex = 42;
             // 
-            // dataGridView2
+            // req_dataGridView
             // 
-            this.dataGridView2.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
-            this.dataGridView2.BackgroundColor = System.Drawing.SystemColors.ControlLight;
-            this.dataGridView2.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.dataGridView2.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridView2.Location = new System.Drawing.Point(494, 23);
-            this.dataGridView2.Name = "dataGridView2";
-            this.dataGridView2.Size = new System.Drawing.Size(368, 162);
-            this.dataGridView2.TabIndex = 43;
+            this.req_dataGridView.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
+            this.req_dataGridView.BackgroundColor = System.Drawing.SystemColors.ControlLight;
+            this.req_dataGridView.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.req_dataGridView.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.req_dataGridView.Location = new System.Drawing.Point(494, 23);
+            this.req_dataGridView.Name = "req_dataGridView";
+            this.req_dataGridView.Size = new System.Drawing.Size(368, 162);
+            this.req_dataGridView.TabIndex = 43;
             // 
             // label5
             // 
@@ -178,6 +178,41 @@
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Request Information";
             // 
+            // label6
+            // 
+            this.label6.AutoSize = true;
+            this.label6.Font = new System.Drawing.Font("Verdana", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label6.Location = new System.Drawing.Point(11, 195);
+            this.label6.Name = "label6";
+            this.label6.Size = new System.Drawing.Size(102, 16);
+            this.label6.TabIndex = 75;
+            this.label6.Text = "Selected Date";
+            // 
+            // selectedDate
+            // 
+            this.selectedDate.CalendarFont = new System.Drawing.Font("Verdana", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.selectedDate.Font = new System.Drawing.Font("Verdana", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.selectedDate.Format = System.Windows.Forms.DateTimePickerFormat.Short;
+            this.selectedDate.Location = new System.Drawing.Point(128, 190);
+            this.selectedDate.MaxDate = new System.DateTime(2019, 12, 31, 0, 0, 0, 0);
+            this.selectedDate.MinDate = new System.DateTime(1909, 11, 24, 0, 0, 0, 0);
+            this.selectedDate.Name = "selectedDate";
+            this.selectedDate.Size = new System.Drawing.Size(200, 23);
+            this.selectedDate.TabIndex = 76;
+            this.selectedDate.Value = new System.DateTime(2018, 5, 22, 0, 0, 0, 0);
+            // 
+            // acceptDateForReq
+            // 
+            this.acceptDateForReq.Font = new System.Drawing.Font("Verdana", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.acceptDateForReq.Location = new System.Drawing.Point(358, 186);
+            this.acceptDateForReq.Margin = new System.Windows.Forms.Padding(2);
+            this.acceptDateForReq.Name = "acceptDateForReq";
+            this.acceptDateForReq.Size = new System.Drawing.Size(89, 30);
+            this.acceptDateForReq.TabIndex = 74;
+            this.acceptDateForReq.Text = "Accept";
+            this.acceptDateForReq.UseVisualStyleBackColor = true;
+            this.acceptDateForReq.Click += new System.EventHandler(this.acceptDateForReq_Click);
+            // 
             // kidCheckBox
             // 
             this.kidCheckBox.AutoSize = true;
@@ -202,7 +237,7 @@
             // seachDateForReq
             // 
             this.seachDateForReq.Font = new System.Drawing.Font("Verdana", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.seachDateForReq.Location = new System.Drawing.Point(320, 104);
+            this.seachDateForReq.Location = new System.Drawing.Point(291, 108);
             this.seachDateForReq.Margin = new System.Windows.Forms.Padding(2);
             this.seachDateForReq.Name = "seachDateForReq";
             this.seachDateForReq.Size = new System.Drawing.Size(89, 30);
@@ -352,40 +387,6 @@
             this.label12.TabIndex = 57;
             this.label12.Text = "List of Appointments in Entrie Day";
             // 
-            // label6
-            // 
-            this.label6.AutoSize = true;
-            this.label6.Font = new System.Drawing.Font("Verdana", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label6.Location = new System.Drawing.Point(63, 195);
-            this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(102, 16);
-            this.label6.TabIndex = 75;
-            this.label6.Text = "Selected Date";
-            // 
-            // selectedDate
-            // 
-            this.selectedDate.CalendarFont = new System.Drawing.Font("Verdana", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.selectedDate.Font = new System.Drawing.Font("Verdana", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.selectedDate.Format = System.Windows.Forms.DateTimePickerFormat.Short;
-            this.selectedDate.Location = new System.Drawing.Point(173, 190);
-            this.selectedDate.MaxDate = new System.DateTime(2019, 12, 31, 0, 0, 0, 0);
-            this.selectedDate.MinDate = new System.DateTime(1909, 11, 24, 0, 0, 0, 0);
-            this.selectedDate.Name = "selectedDate";
-            this.selectedDate.Size = new System.Drawing.Size(163, 23);
-            this.selectedDate.TabIndex = 76;
-            this.selectedDate.Value = new System.DateTime(2018, 5, 22, 0, 0, 0, 0);
-            // 
-            // acceptDateForReq
-            // 
-            this.acceptDateForReq.Font = new System.Drawing.Font("Verdana", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.acceptDateForReq.Location = new System.Drawing.Point(345, 187);
-            this.acceptDateForReq.Margin = new System.Windows.Forms.Padding(2);
-            this.acceptDateForReq.Name = "acceptDateForReq";
-            this.acceptDateForReq.Size = new System.Drawing.Size(98, 27);
-            this.acceptDateForReq.TabIndex = 74;
-            this.acceptDateForReq.Text = "Accept";
-            this.acceptDateForReq.UseVisualStyleBackColor = true;
-            // 
             // DateForReqSuggestionForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -399,7 +400,7 @@
             this.Controls.Add(this.dataGridView4);
             this.Controls.Add(this.dataGridView3);
             this.Controls.Add(this.groupBox1);
-            this.Controls.Add(this.dataGridView2);
+            this.Controls.Add(this.req_dataGridView);
             this.Controls.Add(this.dataGridView1);
             this.Controls.Add(this.suggDataGridView);
             this.Name = "DateForReqSuggestionForm";
@@ -407,7 +408,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.suggDataGridView)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.dayNumericUpDown)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView2)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.req_dataGridView)).EndInit();
             this.groupBox1.ResumeLayout(false);
             this.groupBox1.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView3)).EndInit();
@@ -424,7 +425,7 @@
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.DataGridView dataGridView1;
-        private System.Windows.Forms.DataGridView dataGridView2;
+        private System.Windows.Forms.DataGridView req_dataGridView;
         private System.Windows.Forms.Label label5;
         private System.Windows.Forms.GroupBox groupBox1;
         private System.Windows.Forms.Label label3;
