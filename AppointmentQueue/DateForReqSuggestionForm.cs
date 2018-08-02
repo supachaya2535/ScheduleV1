@@ -72,62 +72,8 @@ namespace AppointmentQueue
             DataTable dtDayOff = SQL.GetDayOffs(startT,endT,"");
             dataGridView1.DataSource = dtDayOff;
 
-            DataTable suggestDate = new DataTable();
-            suggestDate.Columns.Add("Date", typeof(String));
-            suggestDate.Columns.Add("Dof", typeof(String));
-            suggestDate.Columns.Add("Doctor", typeof(String));
-            suggestDate.Columns.Add("UsedTime", typeof(Int16));
-            suggestDate.Columns.Add("Scanner", typeof(String));
-            suggestDate.Columns.Add("Period", typeof(String));
-            suggestDate.Columns.Add("Kid", typeof(String));
-            for (int r = 0; r < dtPossibleDrReq.Rows.Count; r++)
-            {
-                //3.Select req to insert into a suggestion table
-                //drreq_Id ,req_bodypart ,dr_name ,drreq_period ,drreq_time ,drreq_dayofweek
-                DataRow req = dtPossibleDrReq.Rows[r];
-                String strDof = req[5].ToString().Trim();
-                int dof = getDof(req[5].ToString());
-                DateTime sT = startT.AddDays(7 - getDof(startT.DayOfWeek.ToString()) + dof);
-                while (sT <= endT)
-                {
-                    //4.
-                    DataRow[] sTDayOff = dtDayOff.Select("df_date LIKE '%" + sT.Date + 
-                        "%' AND dr_name LIKE '%" + req["dr_name"].ToString().Trim() + "%'");
-                    
-                    //5.Select
-                    DataTable dt = SQL.GetAppointment(sT, sT, " ",comboBox1.SelectedItem.ToString().Trim(), "");
-                    
-                    int usedTime = 0;
-                    for (int i = 0; i < dt.Rows.Count; i++)
-                    {
-                        usedTime += Convert.ToInt16(dt.Rows[i]["req_time"].ToString());
-                    }
-
-                    if (sTDayOff.Length==0)
-                    {
-                        DataRow dr = suggestDate.NewRow();
-                        dr[0] = sT;
-                        dr[1] = strDof;
-                        dr[2] = req["dr_name"].ToString().Trim();
-                        dr[3] = usedTime;
-                        dr[4] = scan_CoBox.SelectedItem.ToString().Trim();
-                        dr[5] = comboBox1.SelectedItem.ToString().Trim();
-                        dr[6] = req["drreq_kid"];
-                        suggestDate.Rows.Add(dr);
-                        
-                        suggDataGridView.DataSource = suggestDate;
-                    }
-                    sT = sT.AddDays(7);
-                }
-            }
-
-            /*/ fix show only suggest date -> not show time
-            foreach (DataRow item in suggestDate.Rows)
-            {
-                string date = item["Suggest_date"].ToString();
-                string new_format_date = date.Split(' ')[0];
-                item["Suggest_date"] = new_format_date;
-            }*/
+            DataTable suggestDate = SQL.GetDoctorCalendars(startT, endT, reqCob.SelectedItem.ToString().Trim(), Convert.ToInt16(kidCheckBox.Checked).ToString().Trim());
+            suggDataGridView.DataSource = suggestDate;
             
             return suggestDate;
         }

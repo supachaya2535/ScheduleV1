@@ -18,6 +18,11 @@ namespace AppointmentQueue
         {
             InitializeComponent();
         }
+        private void seachDrWork_Click(object sender, EventArgs e)
+        {
+            DataTable dt = SQL.GetDoctorWorks("", drNameTxt2.Text, Convert.ToInt16(kidCheckBox.Checked).ToString().Trim());
+            drWorkGidView.DataSource = dt;
+        }
 
         private void drNameTxt2_TextChanged(object sender, EventArgs e)
         {
@@ -42,14 +47,14 @@ namespace AppointmentQueue
                         "INSERT INTO DoctorWorks (drw_id,drw_dr,drw_sdate,drw_edate,drw_dow,drw_period,"+
                         "drw_kid,drw_w1,drw_w2,drw_w3,drw_w4,drw_status) " +
                         "VALUES (@drw_id,@drw_dr,@drw_sdate,@drw_edate,@drw_dow,@drw_period," +
-                        "@drw_kid,@drw_w1,@drw_w2,@drw_w3,@drw_w4,@drw_status", cn);
+                        "@drw_kid,@drw_w1,@drw_w2,@drw_w3,@drw_w4,@drw_status)", cn);
 
                     command.Parameters.AddWithValue("@drw_id", drIdTxt.Text.Trim());
                     command.Parameters.AddWithValue("@drw_dr", drIdTxt.Text.Trim());
                     command.Parameters.AddWithValue("@drw_sdate", startDate.Value.Date);
                     command.Parameters.AddWithValue("@drw_edate", startDate.Value.Date);
                     command.Parameters.AddWithValue("@drw_dow", dofComb.SelectedItem.ToString().Trim());
-                    command.Parameters.AddWithValue("@drw_peroid", pedComb.SelectedItem.ToString().Trim());
+                    command.Parameters.AddWithValue("@drw_period", pedComb.SelectedItem.ToString().Trim());
                     command.Parameters.AddWithValue("@drw_kid", Convert.ToInt16(kidCheckBox.Checked).ToString().Trim());
                     command.Parameters.AddWithValue("@drw_w1", Convert.ToInt16(week1CheckBox.Checked).ToString().Trim());
                     command.Parameters.AddWithValue("@drw_w2", Convert.ToInt16(week2CheckBox.Checked).ToString().Trim());
@@ -63,7 +68,8 @@ namespace AppointmentQueue
                     cn.Open();
                     command.ExecuteNonQuery();
                     cn.Close();
-                    
+
+                    seachDrWork_Click(sender, e);
                 }
 
             }
@@ -71,6 +77,25 @@ namespace AppointmentQueue
             {
                 MessageBox.Show(string.Format("Couldn't insert a new record : An error occurred: {0}", ex.Message));
             }
+        }
+    
+        private void drDataGridView2_CellMouseDoubleClick(object sender, DataGridViewCellMouseEventArgs e)
+        {
+            int ID = drDataGridView2.CurrentCell.RowIndex;
+
+            String tempdrIdTxt = drDataGridView2.Rows[ID].Cells[0].Value.ToString().Trim();
+            String tempdrNameTxt = drDataGridView2.Rows[ID].Cells[1].Value.ToString().Trim();
+            String tempdrLnameTxt = drDataGridView2.Rows[ID].Cells[2].Value.ToString().Trim();
+
+            drName2.Text = tempdrNameTxt;
+            drIdTxt.Text = tempdrIdTxt;
+            drNameTxt2.Text = tempdrNameTxt;
+            drLnameTxt2.Text = tempdrLnameTxt;
+        }
+
+        private void seachDrWork_Click_1(object sender, EventArgs e)
+        {
+            seachDrWork_Click(sender, e);
         }
     }
 }

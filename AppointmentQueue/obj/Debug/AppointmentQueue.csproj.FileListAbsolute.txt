@@ -70,7 +70,6 @@ E:\GitHub\MRI_Scheduling\ScheduleV1\AppointmentQueue\bin\Debug\EntityFramework.S
 E:\GitHub\MRI_Scheduling\ScheduleV1\AppointmentQueue\bin\Debug\EntityFramework.SqlServerCompact.xml
 E:\GitHub\MRI_Scheduling\ScheduleV1\AppointmentQueue\bin\Debug\System.Data.SqlLocalDb.xml
 E:\GitHub\MRI_Scheduling\ScheduleV1\AppointmentQueue\bin\Debug\en-GB\System.Data.SqlLocalDb.resources.dll
-E:\GitHub\MRI_Scheduling\ScheduleV1\AppointmentQueue\obj\Debug\AppointmentQueue.csprojResolveAssemblyReference.cache
 E:\GitHub\MRI_Scheduling\ScheduleV1\AppointmentQueue\obj\Debug\AppointmentQueue.AppointmentForm.resources
 E:\GitHub\MRI_Scheduling\ScheduleV1\AppointmentQueue\obj\Debug\AppointmentQueue.DateForReqSuggestionForm.resources
 E:\GitHub\MRI_Scheduling\ScheduleV1\AppointmentQueue\obj\Debug\AppointmentQueue.DayOffForm.resources
@@ -85,3 +84,6 @@ E:\GitHub\MRI_Scheduling\ScheduleV1\AppointmentQueue\obj\Debug\AppointmentQueue.
 E:\GitHub\MRI_Scheduling\ScheduleV1\AppointmentQueue\obj\Debug\AppointmentQueue.csproj.CoreCompileInputs.cache
 E:\GitHub\MRI_Scheduling\ScheduleV1\AppointmentQueue\obj\Debug\AppointmentQueue.exe
 E:\GitHub\MRI_Scheduling\ScheduleV1\AppointmentQueue\obj\Debug\AppointmentQueue.pdb
+E:\GitHub\MRI_Scheduling\ScheduleV1\AppointmentQueue\obj\Debug\AppointmentQueue.csprojAssemblyReference.cache
+E:\GitHub\MRI_Scheduling\ScheduleV1\AppointmentQueue\obj\Debug\AppointmentQueue.DoctorWorkForm.resources
+E:\GitHub\MRI_Scheduling\ScheduleV1\AppointmentQueue\obj\Debug\AppointmentQueue.csproj.CopyComplete

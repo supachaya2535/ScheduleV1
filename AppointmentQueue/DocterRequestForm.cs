@@ -77,7 +77,7 @@ namespace AppointmentQueue
         
         private void seachDrReq_Click(object sender, EventArgs e)
         {
-            DataTable dt = SQL.GetDoctorRequests("", "", drNameTxt2.Text,"");
+            DataTable dt = SQL.GetDoctorRequests( "", drNameTxt2.Text);
             drReqGidView.DataSource = dt;
         }
 
@@ -89,14 +89,12 @@ namespace AppointmentQueue
                 {
                     SqlConnection cn = new SqlConnection(global::AppointmentQueue.Properties.Settings.Default.Database1ConnectionString);
                     SqlCommand command = new SqlCommand(
-                        "INSERT INTO DoctorRequests (drreq_req,drreq_dr,drreq_period,drreq_kid,drreq_dayofweek) " +
-                        "VALUES (@drreq_req,@drreq_dr,@drreq_period,@drreq_kid,@drreq_dayofweek)", cn);
+                        "INSERT INTO DoctorRequests (drreq_Id,drreq_req,drreq_dr) " +
+                        "VALUES (@drreq_Id,@drreq_req,@drreq_dr)", cn);
 
-                    command.Parameters.AddWithValue("@drreq_req", Convert.ToString(pkReq));
+                    command.Parameters.AddWithValue("@drreq_Id", Convert.ToString(drIdTxt.Text.Trim())+"00"+Convert.ToString(pkReq).Trim());
+                    command.Parameters.AddWithValue("@drreq_req", Convert.ToString(pkReq).Trim());
                     command.Parameters.AddWithValue("@drreq_dr", Convert.ToString(drIdTxt.Text.Trim()));
-                    command.Parameters.AddWithValue("@drreq_period", pedComb.SelectedItem.ToString().Trim());
-                    command.Parameters.AddWithValue("@drreq_kid", Convert.ToInt16(kidCheckBox.Checked).ToString().Trim());
-                    command.Parameters.AddWithValue("@drreq_dayofweek", dofComb.SelectedItem.ToString().Trim());
                     command.Connection = cn;
 
                     cn.Open();

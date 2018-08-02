@@ -21,7 +21,7 @@ namespace AppointmentQueue
             reqCob = SQL.readRequest(reqCob);
             scan_CoBox.SelectedIndex = 0;
             paidCob.SelectedIndex = 0;
-            reqCob.SelectedIndex = 28;
+            reqCob.SelectedIndex = 31;
 
             todayDatePicker.Value = DateTime.Today;
             todayDay.Value = DateTime.Today;

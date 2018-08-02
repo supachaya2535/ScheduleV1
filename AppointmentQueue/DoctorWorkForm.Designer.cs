@@ -29,6 +29,12 @@
         private void InitializeComponent()
         {
             this.groupBox7 = new System.Windows.Forms.GroupBox();
+            this.label4 = new System.Windows.Forms.Label();
+            this.detailTxt = new System.Windows.Forms.TextBox();
+            this.label1 = new System.Windows.Forms.Label();
+            this.endDate = new System.Windows.Forms.DateTimePicker();
+            this.label13 = new System.Windows.Forms.Label();
+            this.startDate = new System.Windows.Forms.DateTimePicker();
             this.week4CheckBox = new System.Windows.Forms.CheckBox();
             this.week3CheckBox = new System.Windows.Forms.CheckBox();
             this.week2CheckBox = new System.Windows.Forms.CheckBox();
@@ -54,12 +60,6 @@
             this.label15 = new System.Windows.Forms.Label();
             this.drNameTxt2 = new System.Windows.Forms.TextBox();
             this.label16 = new System.Windows.Forms.Label();
-            this.label13 = new System.Windows.Forms.Label();
-            this.startDate = new System.Windows.Forms.DateTimePicker();
-            this.label1 = new System.Windows.Forms.Label();
-            this.endDate = new System.Windows.Forms.DateTimePicker();
-            this.label4 = new System.Windows.Forms.Label();
-            this.detailTxt = new System.Windows.Forms.TextBox();
             this.groupBox7.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.drWorkGidView)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.drDataGridView2)).BeginInit();
@@ -94,10 +94,75 @@
             this.groupBox7.Font = new System.Drawing.Font("Verdana", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.groupBox7.Location = new System.Drawing.Point(356, 0);
             this.groupBox7.Name = "groupBox7";
-            this.groupBox7.Size = new System.Drawing.Size(485, 255);
+            this.groupBox7.Size = new System.Drawing.Size(683, 255);
             this.groupBox7.TabIndex = 58;
             this.groupBox7.TabStop = false;
             this.groupBox7.Text = "Doctor Work Information";
+            // 
+            // label4
+            // 
+            this.label4.AutoSize = true;
+            this.label4.Font = new System.Drawing.Font("Verdana", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label4.Location = new System.Drawing.Point(26, 178);
+            this.label4.Name = "label4";
+            this.label4.Size = new System.Drawing.Size(45, 16);
+            this.label4.TabIndex = 82;
+            this.label4.Text = "Detail";
+            // 
+            // detailTxt
+            // 
+            this.detailTxt.Font = new System.Drawing.Font("Verdana", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.detailTxt.Location = new System.Drawing.Point(103, 178);
+            this.detailTxt.Multiline = true;
+            this.detailTxt.Name = "detailTxt";
+            this.detailTxt.Size = new System.Drawing.Size(351, 35);
+            this.detailTxt.TabIndex = 81;
+            // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.Font = new System.Drawing.Font("Verdana", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label1.Location = new System.Drawing.Point(263, 150);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(22, 16);
+            this.label1.TabIndex = 80;
+            this.label1.Text = "to";
+            // 
+            // endDate
+            // 
+            this.endDate.CalendarFont = new System.Drawing.Font("Verdana", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.endDate.Font = new System.Drawing.Font("Verdana", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.endDate.Format = System.Windows.Forms.DateTimePickerFormat.Short;
+            this.endDate.Location = new System.Drawing.Point(313, 148);
+            this.endDate.MaxDate = new System.DateTime(2019, 12, 31, 0, 0, 0, 0);
+            this.endDate.MinDate = new System.DateTime(2018, 5, 18, 0, 0, 0, 0);
+            this.endDate.Name = "endDate";
+            this.endDate.Size = new System.Drawing.Size(141, 23);
+            this.endDate.TabIndex = 79;
+            this.endDate.Value = new System.DateTime(2018, 5, 18, 0, 0, 0, 0);
+            // 
+            // label13
+            // 
+            this.label13.AutoSize = true;
+            this.label13.Font = new System.Drawing.Font("Verdana", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label13.Location = new System.Drawing.Point(12, 150);
+            this.label13.Name = "label13";
+            this.label13.Size = new System.Drawing.Size(78, 16);
+            this.label13.TabIndex = 78;
+            this.label13.Text = "Start Date";
+            // 
+            // startDate
+            // 
+            this.startDate.CalendarFont = new System.Drawing.Font("Verdana", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.startDate.Font = new System.Drawing.Font("Verdana", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.startDate.Format = System.Windows.Forms.DateTimePickerFormat.Short;
+            this.startDate.Location = new System.Drawing.Point(103, 148);
+            this.startDate.MaxDate = new System.DateTime(2019, 12, 31, 0, 0, 0, 0);
+            this.startDate.MinDate = new System.DateTime(2018, 5, 18, 0, 0, 0, 0);
+            this.startDate.Name = "startDate";
+            this.startDate.Size = new System.Drawing.Size(141, 23);
+            this.startDate.TabIndex = 77;
+            this.startDate.Value = new System.DateTime(2018, 5, 18, 0, 0, 0, 0);
             // 
             // week4CheckBox
             // 
@@ -182,6 +247,7 @@
             this.seachDrWork.TabIndex = 68;
             this.seachDrWork.Text = "Search";
             this.seachDrWork.UseVisualStyleBackColor = true;
+            this.seachDrWork.Click += new System.EventHandler(this.seachDrWork_Click_1);
             // 
             // drReqId
             // 
@@ -282,7 +348,7 @@
             this.drWorkGidView.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.drWorkGidView.Location = new System.Drawing.Point(356, 261);
             this.drWorkGidView.Name = "drWorkGidView";
-            this.drWorkGidView.Size = new System.Drawing.Size(485, 234);
+            this.drWorkGidView.Size = new System.Drawing.Size(683, 234);
             this.drWorkGidView.TabIndex = 60;
             // 
             // drDataGridView2
@@ -294,6 +360,7 @@
             this.drDataGridView2.Name = "drDataGridView2";
             this.drDataGridView2.Size = new System.Drawing.Size(349, 363);
             this.drDataGridView2.TabIndex = 59;
+            this.drDataGridView2.CellMouseDoubleClick += new System.Windows.Forms.DataGridViewCellMouseEventHandler(this.drDataGridView2_CellMouseDoubleClick);
             // 
             // groupBox4
             // 
@@ -369,76 +436,11 @@
             this.label16.TabIndex = 31;
             this.label16.Text = "Dr. ID";
             // 
-            // label13
-            // 
-            this.label13.AutoSize = true;
-            this.label13.Font = new System.Drawing.Font("Verdana", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label13.Location = new System.Drawing.Point(12, 150);
-            this.label13.Name = "label13";
-            this.label13.Size = new System.Drawing.Size(78, 16);
-            this.label13.TabIndex = 78;
-            this.label13.Text = "Start Date";
-            // 
-            // startDate
-            // 
-            this.startDate.CalendarFont = new System.Drawing.Font("Verdana", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.startDate.Font = new System.Drawing.Font("Verdana", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.startDate.Format = System.Windows.Forms.DateTimePickerFormat.Short;
-            this.startDate.Location = new System.Drawing.Point(103, 148);
-            this.startDate.MaxDate = new System.DateTime(2019, 12, 31, 0, 0, 0, 0);
-            this.startDate.MinDate = new System.DateTime(2018, 5, 18, 0, 0, 0, 0);
-            this.startDate.Name = "startDate";
-            this.startDate.Size = new System.Drawing.Size(141, 23);
-            this.startDate.TabIndex = 77;
-            this.startDate.Value = new System.DateTime(2018, 5, 18, 0, 0, 0, 0);
-            // 
-            // label1
-            // 
-            this.label1.AutoSize = true;
-            this.label1.Font = new System.Drawing.Font("Verdana", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.Location = new System.Drawing.Point(263, 150);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(22, 16);
-            this.label1.TabIndex = 80;
-            this.label1.Text = "to";
-            // 
-            // endDate
-            // 
-            this.endDate.CalendarFont = new System.Drawing.Font("Verdana", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.endDate.Font = new System.Drawing.Font("Verdana", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.endDate.Format = System.Windows.Forms.DateTimePickerFormat.Short;
-            this.endDate.Location = new System.Drawing.Point(313, 148);
-            this.endDate.MaxDate = new System.DateTime(2019, 12, 31, 0, 0, 0, 0);
-            this.endDate.MinDate = new System.DateTime(2018, 5, 18, 0, 0, 0, 0);
-            this.endDate.Name = "endDate";
-            this.endDate.Size = new System.Drawing.Size(141, 23);
-            this.endDate.TabIndex = 79;
-            this.endDate.Value = new System.DateTime(2018, 5, 18, 0, 0, 0, 0);
-            // 
-            // label4
-            // 
-            this.label4.AutoSize = true;
-            this.label4.Font = new System.Drawing.Font("Verdana", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label4.Location = new System.Drawing.Point(26, 178);
-            this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(45, 16);
-            this.label4.TabIndex = 82;
-            this.label4.Text = "Detail";
-            // 
-            // detailTxt
-            // 
-            this.detailTxt.Font = new System.Drawing.Font("Verdana", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.detailTxt.Location = new System.Drawing.Point(103, 178);
-            this.detailTxt.Multiline = true;
-            this.detailTxt.Name = "detailTxt";
-            this.detailTxt.Size = new System.Drawing.Size(351, 35);
-            this.detailTxt.TabIndex = 81;
-            // 
             // DoctorWorkForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(842, 497);
+            this.ClientSize = new System.Drawing.Size(1051, 497);
             this.Controls.Add(this.groupBox7);
             this.Controls.Add(this.drWorkGidView);
             this.Controls.Add(this.drDataGridView2);

@@ -204,13 +204,14 @@
             // acceptDateForReq
             // 
             this.acceptDateForReq.Font = new System.Drawing.Font("Verdana", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.acceptDateForReq.Location = new System.Drawing.Point(358, 183);
+            this.acceptDateForReq.Location = new System.Drawing.Point(358, 186);
             this.acceptDateForReq.Margin = new System.Windows.Forms.Padding(2);
             this.acceptDateForReq.Name = "acceptDateForReq";
             this.acceptDateForReq.Size = new System.Drawing.Size(89, 30);
             this.acceptDateForReq.TabIndex = 74;
             this.acceptDateForReq.Text = "Accept";
             this.acceptDateForReq.UseVisualStyleBackColor = true;
+            this.acceptDateForReq.Click += new System.EventHandler(this.acceptDateForReq_Click);
             // 
             // kidCheckBox
             // 
