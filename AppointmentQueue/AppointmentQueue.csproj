@@ -161,6 +161,12 @@
     <Compile Include="SeachPaForm.Designer.cs">
       <DependentUpon>SeachPaForm.cs</DependentUpon>
     </Compile>
+    <Compile Include="ShowDetailOfCalendar.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ShowDetailOfCalendar.Designer.cs">
+      <DependentUpon>ShowDetailOfCalendar.cs</DependentUpon>
+    </Compile>
     <Compile Include="SQL.cs" />
     <EmbeddedResource Include="AppointmentForm.resx">
       <DependentUpon>AppointmentForm.cs</DependentUpon>
@@ -203,6 +209,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="SeachPaForm.resx">
       <DependentUpon>SeachPaForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ShowDetailOfCalendar.resx">
+      <DependentUpon>ShowDetailOfCalendar.cs</DependentUpon>
     </EmbeddedResource>
     <None Include="Database1DataSet.xsc">
       <DependentUpon>Database1DataSet.xsd</DependentUpon>

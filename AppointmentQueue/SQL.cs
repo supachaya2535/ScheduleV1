@@ -167,7 +167,7 @@ namespace AppointmentQueue
             SqlConnection cn = new SqlConnection(global::AppointmentQueue.Properties.Settings.Default.Database1ConnectionString);
             cn.Open();
             SqlCommand command = new SqlCommand(
-               "SELECT drc_id, drc_date, drc_drw, drc_status " +
+               "SELECT drc_id, drc_date, drc_drw, drc_time, drc_status " +
                "FROM DoctorCalendars "
                , cn);
             SqlDataReader reader = command.ExecuteReader();
@@ -175,9 +175,68 @@ namespace AppointmentQueue
             dt.Columns.Add("drc_id", typeof(Int16));
             dt.Columns.Add("drc_date", typeof(String));
             dt.Columns.Add("drc_drw", typeof(String));
+            dt.Columns.Add("drc_time", typeof(Int16));
             dt.Columns.Add("drc_status", typeof(String));
             dt.Load(reader);
             cn.Close();
+
+            foreach (DataRow item in dt.Rows)
+            {
+                string display = "";
+                display += item["drc_id"].ToString() + "\n";
+                display += item["drc_date"].ToString() + "\n";
+                display += item["drc_drw"].ToString() + "\n";
+                display += item["drc_time"].ToString() + "\n";
+                display += item["drc_status"].ToString() + "\n";
+                MessageBox.Show(display);
+            }
+
+            return dt;
+        }
+
+        public static DataTable GetDoctorCalendars(DateTime start_date, DateTime end_date)
+        {
+            SqlConnection cn = new SqlConnection(global::AppointmentQueue.Properties.Settings.Default.Database1ConnectionString);
+            cn.Open();
+            SqlCommand command = new SqlCommand(
+               "SELECT * " +
+               "FROM DoctorCalendars " +
+               "JOIN DoctorWorks ON drc_drw = drw_id " +
+               "JOIN Doctors ON dr_Id = drw_dr " +
+               "WHERE drc_date BETWEEN @StartT AND @EndT"
+               , cn);
+
+            command.Parameters.AddWithValue("@StartT", start_date);
+            command.Parameters.AddWithValue("@EndT", end_date);
+
+            SqlDataReader reader = command.ExecuteReader();
+            DataTable dt = new DataTable();
+            dt.Columns.Add("drc_id", typeof(Int16));
+            dt.Columns.Add("drc_date", typeof(DateTime));
+            dt.Columns.Add("drc_drw", typeof(String));
+            dt.Columns.Add("drc_time", typeof(Int16));
+            dt.Columns.Add("drc_status", typeof(String));
+            dt.Columns.Add("drw_dow", typeof(String));
+            dt.Columns.Add("drw_period", typeof(String));
+            dt.Columns.Add("dr_name", typeof(String));
+            dt.Columns.Add("dr_lname", typeof(String));
+
+            dt.Load(reader);
+            cn.Close();
+
+            //foreach (DataRow item in dt.Rows)
+            //{
+            //    string display = "";
+            //    display += item["drc_id"].ToString() + "\n";
+            //    display += item["drc_date"].ToString() + "\n";
+            //    display += item["drc_drw"].ToString() + "\n";
+            //    display += item["drc_time"].ToString() + "\n";
+            //    display += item["drc_status"].ToString() + "\n";
+            //    display += item["drw_dow"].ToString() + "\n";
+            //    display += item["drw_period"].ToString() + "\n";
+            //    display += item["dr_name"].ToString() + " " + item["dr_lname"].ToString();
+            //    MessageBox.Show(display);
+            //}
 
             return dt;
         }
