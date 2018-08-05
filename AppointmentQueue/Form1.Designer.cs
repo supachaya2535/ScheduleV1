@@ -68,6 +68,11 @@
             this.button3 = new System.Windows.Forms.Button();
             this.manDrWorkBtn = new System.Windows.Forms.Button();
             this.manDrBtn = new System.Windows.Forms.Button();
+            this.Doctor = new System.Windows.Forms.Label();
+            this.drTxt = new System.Windows.Forms.TextBox();
+            this.textBox1 = new System.Windows.Forms.TextBox();
+            this.label9 = new System.Windows.Forms.Label();
+            this.kidCheckBox = new System.Windows.Forms.CheckBox();
             this.groupBox1.SuspendLayout();
             this.groupBox2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.appDataGridView)).BeginInit();
@@ -101,6 +106,11 @@
             // groupBox1
             // 
             this.groupBox1.BackColor = System.Drawing.SystemColors.GradientActiveCaption;
+            this.groupBox1.Controls.Add(this.kidCheckBox);
+            this.groupBox1.Controls.Add(this.textBox1);
+            this.groupBox1.Controls.Add(this.label9);
+            this.groupBox1.Controls.Add(this.drTxt);
+            this.groupBox1.Controls.Add(this.Doctor);
             this.groupBox1.Controls.Add(this.detail_text);
             this.groupBox1.Controls.Add(this.label7);
             this.groupBox1.Controls.Add(this.label6);
@@ -113,9 +123,9 @@
             this.groupBox1.Controls.Add(this.label5);
             this.groupBox1.Controls.Add(this.Scanner);
             this.groupBox1.Font = new System.Drawing.Font("Verdana", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.groupBox1.Location = new System.Drawing.Point(3, 227);
+            this.groupBox1.Location = new System.Drawing.Point(3, 191);
             this.groupBox1.Name = "groupBox1";
-            this.groupBox1.Size = new System.Drawing.Size(327, 250);
+            this.groupBox1.Size = new System.Drawing.Size(327, 286);
             this.groupBox1.TabIndex = 31;
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Request Information";
@@ -123,7 +133,7 @@
             // detail_text
             // 
             this.detail_text.Font = new System.Drawing.Font("Verdana", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.detail_text.Location = new System.Drawing.Point(78, 148);
+            this.detail_text.Location = new System.Drawing.Point(78, 201);
             this.detail_text.Multiline = true;
             this.detail_text.Name = "detail_text";
             this.detail_text.Size = new System.Drawing.Size(231, 52);
@@ -133,7 +143,7 @@
             // 
             this.label7.AutoSize = true;
             this.label7.Font = new System.Drawing.Font("Verdana", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label7.Location = new System.Drawing.Point(10, 148);
+            this.label7.Location = new System.Drawing.Point(10, 204);
             this.label7.Name = "label7";
             this.label7.Size = new System.Drawing.Size(45, 16);
             this.label7.TabIndex = 21;
@@ -179,7 +189,7 @@
             // 
             this.reqCob.Font = new System.Drawing.Font("Verdana", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.reqCob.FormattingEnabled = true;
-            this.reqCob.Location = new System.Drawing.Point(78, 107);
+            this.reqCob.Location = new System.Drawing.Point(78, 141);
             this.reqCob.Name = "reqCob";
             this.reqCob.Size = new System.Drawing.Size(231, 24);
             this.reqCob.TabIndex = 8;
@@ -189,7 +199,7 @@
             // 
             this.label3.AutoSize = true;
             this.label3.Font = new System.Drawing.Font("Verdana", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label3.Location = new System.Drawing.Point(10, 110);
+            this.label3.Location = new System.Drawing.Point(10, 144);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(61, 16);
             this.label3.TabIndex = 7;
@@ -199,7 +209,7 @@
             // 
             this.scan_CoBox.Font = new System.Drawing.Font("Verdana", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.scan_CoBox.FormattingEnabled = true;
-            this.scan_CoBox.Location = new System.Drawing.Point(78, 67);
+            this.scan_CoBox.Location = new System.Drawing.Point(78, 112);
             this.scan_CoBox.Name = "scan_CoBox";
             this.scan_CoBox.Size = new System.Drawing.Size(231, 24);
             this.scan_CoBox.TabIndex = 1;
@@ -212,7 +222,7 @@
             "Morning",
             "Afternoon",
             "Evening"});
-            this.paidCob.Location = new System.Drawing.Point(78, 214);
+            this.paidCob.Location = new System.Drawing.Point(78, 171);
             this.paidCob.Name = "paidCob";
             this.paidCob.Size = new System.Drawing.Size(231, 24);
             this.paidCob.TabIndex = 12;
@@ -222,7 +232,7 @@
             this.label5.AutoSize = true;
             this.label5.Enabled = false;
             this.label5.Font = new System.Drawing.Font("Verdana", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label5.Location = new System.Drawing.Point(10, 214);
+            this.label5.Location = new System.Drawing.Point(10, 171);
             this.label5.Name = "label5";
             this.label5.Size = new System.Drawing.Size(48, 16);
             this.label5.TabIndex = 11;
@@ -232,7 +242,7 @@
             // 
             this.Scanner.AutoSize = true;
             this.Scanner.Font = new System.Drawing.Font("Verdana", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.Scanner.Location = new System.Drawing.Point(10, 70);
+            this.Scanner.Location = new System.Drawing.Point(10, 115);
             this.Scanner.Name = "Scanner";
             this.Scanner.Size = new System.Drawing.Size(62, 16);
             this.Scanner.TabIndex = 0;
@@ -255,7 +265,7 @@
             this.groupBox2.Font = new System.Drawing.Font("Verdana", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.groupBox2.Location = new System.Drawing.Point(3, 5);
             this.groupBox2.Name = "groupBox2";
-            this.groupBox2.Size = new System.Drawing.Size(327, 216);
+            this.groupBox2.Size = new System.Drawing.Size(327, 182);
             this.groupBox2.TabIndex = 33;
             this.groupBox2.TabStop = false;
             this.groupBox2.Text = "Patient Information";
@@ -264,7 +274,7 @@
             // 
             this.label18.AutoSize = true;
             this.label18.Font = new System.Drawing.Font("Verdana", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label18.Location = new System.Drawing.Point(6, 109);
+            this.label18.Location = new System.Drawing.Point(6, 92);
             this.label18.Name = "label18";
             this.label18.Size = new System.Drawing.Size(72, 16);
             this.label18.TabIndex = 23;
@@ -285,7 +295,7 @@
             // 
             this.label2.AutoSize = true;
             this.label2.Font = new System.Drawing.Font("Verdana", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label2.Location = new System.Drawing.Point(6, 145);
+            this.label2.Location = new System.Drawing.Point(6, 120);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(38, 16);
             this.label2.TabIndex = 22;
@@ -297,7 +307,7 @@
             this.birthDatePicker.Enabled = false;
             this.birthDatePicker.Font = new System.Drawing.Font("Verdana", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.birthDatePicker.Format = System.Windows.Forms.DateTimePickerFormat.Short;
-            this.birthDatePicker.Location = new System.Drawing.Point(78, 145);
+            this.birthDatePicker.Location = new System.Drawing.Point(78, 120);
             this.birthDatePicker.MaxDate = new System.DateTime(2019, 12, 31, 0, 0, 0, 0);
             this.birthDatePicker.MinDate = new System.DateTime(1900, 12, 31, 0, 0, 0, 0);
             this.birthDatePicker.Name = "birthDatePicker";
@@ -309,7 +319,7 @@
             // 
             this.lnameTxt.Enabled = false;
             this.lnameTxt.Font = new System.Drawing.Font("Verdana", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lnameTxt.Location = new System.Drawing.Point(78, 106);
+            this.lnameTxt.Location = new System.Drawing.Point(78, 89);
             this.lnameTxt.Name = "lnameTxt";
             this.lnameTxt.Size = new System.Drawing.Size(231, 23);
             this.lnameTxt.TabIndex = 17;
@@ -318,7 +328,7 @@
             // 
             this.ageTxt.Enabled = false;
             this.ageTxt.Font = new System.Drawing.Font("Verdana", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.ageTxt.Location = new System.Drawing.Point(78, 183);
+            this.ageTxt.Location = new System.Drawing.Point(78, 151);
             this.ageTxt.Name = "ageTxt";
             this.ageTxt.Size = new System.Drawing.Size(231, 23);
             this.ageTxt.TabIndex = 16;
@@ -327,7 +337,7 @@
             // 
             this.label8.AutoSize = true;
             this.label8.Font = new System.Drawing.Font("Verdana", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label8.Location = new System.Drawing.Point(10, 183);
+            this.label8.Location = new System.Drawing.Point(10, 151);
             this.label8.Name = "label8";
             this.label8.Size = new System.Drawing.Size(33, 16);
             this.label8.TabIndex = 15;
@@ -337,7 +347,7 @@
             // 
             this.nameTxt.Enabled = false;
             this.nameTxt.Font = new System.Drawing.Font("Verdana", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.nameTxt.Location = new System.Drawing.Point(78, 67);
+            this.nameTxt.Location = new System.Drawing.Point(78, 59);
             this.nameTxt.Name = "nameTxt";
             this.nameTxt.Size = new System.Drawing.Size(231, 23);
             this.nameTxt.TabIndex = 5;
@@ -346,7 +356,7 @@
             // 
             this.label12.AutoSize = true;
             this.label12.Font = new System.Drawing.Font("Verdana", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label12.Location = new System.Drawing.Point(6, 70);
+            this.label12.Location = new System.Drawing.Point(6, 62);
             this.label12.Name = "label12";
             this.label12.Size = new System.Drawing.Size(44, 16);
             this.label12.TabIndex = 2;
@@ -540,6 +550,55 @@
             this.manDrBtn.UseVisualStyleBackColor = true;
             this.manDrBtn.Click += new System.EventHandler(this.manDrBtn_Click);
             // 
+            // Doctor
+            // 
+            this.Doctor.AutoSize = true;
+            this.Doctor.Font = new System.Drawing.Font("Verdana", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.Doctor.Location = new System.Drawing.Point(9, 62);
+            this.Doctor.Name = "Doctor";
+            this.Doctor.Size = new System.Drawing.Size(52, 16);
+            this.Doctor.TabIndex = 25;
+            this.Doctor.Text = "Doctor";
+            // 
+            // drTxt
+            // 
+            this.drTxt.Enabled = false;
+            this.drTxt.Font = new System.Drawing.Font("Verdana", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.drTxt.Location = new System.Drawing.Point(79, 59);
+            this.drTxt.Name = "drTxt";
+            this.drTxt.Size = new System.Drawing.Size(231, 23);
+            this.drTxt.TabIndex = 26;
+            // 
+            // textBox1
+            // 
+            this.textBox1.Enabled = false;
+            this.textBox1.Font = new System.Drawing.Font("Verdana", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.textBox1.Location = new System.Drawing.Point(78, 85);
+            this.textBox1.Name = "textBox1";
+            this.textBox1.Size = new System.Drawing.Size(231, 23);
+            this.textBox1.TabIndex = 28;
+            // 
+            // label9
+            // 
+            this.label9.AutoSize = true;
+            this.label9.Font = new System.Drawing.Font("Verdana", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label9.Location = new System.Drawing.Point(13, 88);
+            this.label9.Name = "label9";
+            this.label9.Size = new System.Drawing.Size(46, 16);
+            this.label9.TabIndex = 27;
+            this.label9.Text = "label9";
+            // 
+            // kidCheckBox
+            // 
+            this.kidCheckBox.AutoSize = true;
+            this.kidCheckBox.Font = new System.Drawing.Font("Verdana", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.kidCheckBox.Location = new System.Drawing.Point(12, 259);
+            this.kidCheckBox.Name = "kidCheckBox";
+            this.kidCheckBox.Size = new System.Drawing.Size(143, 20);
+            this.kidCheckBox.TabIndex = 74;
+            this.kidCheckBox.Text = "Pediatric Patients";
+            this.kidCheckBox.UseVisualStyleBackColor = true;
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -624,6 +683,11 @@
         private System.Windows.Forms.Button button3;
         private System.Windows.Forms.Button manDrWorkBtn;
         private System.Windows.Forms.Button manDrBtn;
+        private System.Windows.Forms.TextBox textBox1;
+        private System.Windows.Forms.Label label9;
+        private System.Windows.Forms.TextBox drTxt;
+        private System.Windows.Forms.Label Doctor;
+        private System.Windows.Forms.CheckBox kidCheckBox;
     }
 }
 

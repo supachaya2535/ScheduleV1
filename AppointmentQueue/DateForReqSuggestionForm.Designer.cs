@@ -223,6 +223,7 @@
             this.kidCheckBox.TabIndex = 73;
             this.kidCheckBox.Text = "Pediatric Patients";
             this.kidCheckBox.UseVisualStyleBackColor = true;
+            this.kidCheckBox.CheckedChanged += new System.EventHandler(this.kidCheckBox_CheckedChanged);
             // 
             // label3
             // 

@@ -29,6 +29,7 @@
         private void InitializeComponent()
         {
             this.groupBox7 = new System.Windows.Forms.GroupBox();
+            this.kidCheckBox = new System.Windows.Forms.CheckBox();
             this.label4 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
             this.reqComb = new System.Windows.Forms.ComboBox();
@@ -36,10 +37,6 @@
             this.seachDrReq = new System.Windows.Forms.Button();
             this.drReqId = new System.Windows.Forms.TextBox();
             this.label2 = new System.Windows.Forms.Label();
-            this.label19 = new System.Windows.Forms.Label();
-            this.dofComb = new System.Windows.Forms.ComboBox();
-            this.pedComb = new System.Windows.Forms.ComboBox();
-            this.label17 = new System.Windows.Forms.Label();
             this.drReqDelBtn = new System.Windows.Forms.Button();
             this.drReqAddBtn = new System.Windows.Forms.Button();
             this.drReqGidView = new System.Windows.Forms.DataGridView();
@@ -51,7 +48,6 @@
             this.label15 = new System.Windows.Forms.Label();
             this.drNameTxt2 = new System.Windows.Forms.TextBox();
             this.label16 = new System.Windows.Forms.Label();
-            this.kidCheckBox = new System.Windows.Forms.CheckBox();
             this.groupBox7.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.drReqGidView)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.drDataGridView2)).BeginInit();
@@ -69,25 +65,32 @@
             this.groupBox7.Controls.Add(this.seachDrReq);
             this.groupBox7.Controls.Add(this.drReqId);
             this.groupBox7.Controls.Add(this.label2);
-            this.groupBox7.Controls.Add(this.label19);
-            this.groupBox7.Controls.Add(this.dofComb);
-            this.groupBox7.Controls.Add(this.pedComb);
-            this.groupBox7.Controls.Add(this.label17);
             this.groupBox7.Controls.Add(this.drReqDelBtn);
             this.groupBox7.Controls.Add(this.drReqAddBtn);
             this.groupBox7.Font = new System.Drawing.Font("Verdana", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.groupBox7.Location = new System.Drawing.Point(357, 2);
             this.groupBox7.Name = "groupBox7";
-            this.groupBox7.Size = new System.Drawing.Size(485, 260);
+            this.groupBox7.Size = new System.Drawing.Size(485, 169);
             this.groupBox7.TabIndex = 53;
             this.groupBox7.TabStop = false;
             this.groupBox7.Text = "Doctor Request Information";
+            // 
+            // kidCheckBox
+            // 
+            this.kidCheckBox.AutoSize = true;
+            this.kidCheckBox.Font = new System.Drawing.Font("Verdana", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.kidCheckBox.Location = new System.Drawing.Point(288, 29);
+            this.kidCheckBox.Name = "kidCheckBox";
+            this.kidCheckBox.Size = new System.Drawing.Size(143, 20);
+            this.kidCheckBox.TabIndex = 72;
+            this.kidCheckBox.Text = "Pediatric Patients";
+            this.kidCheckBox.UseVisualStyleBackColor = true;
             // 
             // label4
             // 
             this.label4.AutoSize = true;
             this.label4.Font = new System.Drawing.Font("Verdana", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label4.Location = new System.Drawing.Point(60, 103);
+            this.label4.Location = new System.Drawing.Point(60, 95);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(61, 16);
             this.label4.TabIndex = 66;
@@ -97,7 +100,7 @@
             // 
             this.label3.AutoSize = true;
             this.label3.Font = new System.Drawing.Font("Verdana", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label3.Location = new System.Drawing.Point(67, 69);
+            this.label3.Location = new System.Drawing.Point(67, 61);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(61, 16);
             this.label3.TabIndex = 71;
@@ -107,7 +110,7 @@
             // 
             this.reqComb.Font = new System.Drawing.Font("Verdana", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.reqComb.FormattingEnabled = true;
-            this.reqComb.Location = new System.Drawing.Point(145, 103);
+            this.reqComb.Location = new System.Drawing.Point(145, 95);
             this.reqComb.Name = "reqComb";
             this.reqComb.Size = new System.Drawing.Size(255, 24);
             this.reqComb.TabIndex = 42;
@@ -116,7 +119,7 @@
             // drName2
             // 
             this.drName2.Font = new System.Drawing.Font("Verdana", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.drName2.Location = new System.Drawing.Point(144, 66);
+            this.drName2.Location = new System.Drawing.Point(144, 58);
             this.drName2.Name = "drName2";
             this.drName2.Size = new System.Drawing.Size(188, 23);
             this.drName2.TabIndex = 69;
@@ -124,7 +127,7 @@
             // seachDrReq
             // 
             this.seachDrReq.Font = new System.Drawing.Font("Verdana", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.seachDrReq.Location = new System.Drawing.Point(338, 62);
+            this.seachDrReq.Location = new System.Drawing.Point(338, 54);
             this.seachDrReq.Margin = new System.Windows.Forms.Padding(2);
             this.seachDrReq.Name = "seachDrReq";
             this.seachDrReq.Size = new System.Drawing.Size(62, 30);
@@ -154,60 +157,10 @@
             this.label2.TabIndex = 66;
             this.label2.Text = "Dr. Req. ID";
             // 
-            // label19
-            // 
-            this.label19.AutoSize = true;
-            this.label19.Font = new System.Drawing.Font("Verdana", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label19.Location = new System.Drawing.Point(47, 144);
-            this.label19.Name = "label19";
-            this.label19.Size = new System.Drawing.Size(91, 16);
-            this.label19.TabIndex = 49;
-            this.label19.Text = "Day of Week";
-            // 
-            // dofComb
-            // 
-            this.dofComb.Font = new System.Drawing.Font("Verdana", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.dofComb.FormattingEnabled = true;
-            this.dofComb.Items.AddRange(new object[] {
-            "Monday",
-            "Tuesday",
-            "Wednesday",
-            "Thursday",
-            "Friday",
-            "Saturday",
-            "Sunday"});
-            this.dofComb.Location = new System.Drawing.Point(144, 141);
-            this.dofComb.Name = "dofComb";
-            this.dofComb.Size = new System.Drawing.Size(256, 24);
-            this.dofComb.TabIndex = 48;
-            // 
-            // pedComb
-            // 
-            this.pedComb.Font = new System.Drawing.Font("Verdana", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.pedComb.FormattingEnabled = true;
-            this.pedComb.Items.AddRange(new object[] {
-            "Morning",
-            "Afternoon",
-            "Evening"});
-            this.pedComb.Location = new System.Drawing.Point(144, 183);
-            this.pedComb.Name = "pedComb";
-            this.pedComb.Size = new System.Drawing.Size(256, 24);
-            this.pedComb.TabIndex = 47;
-            // 
-            // label17
-            // 
-            this.label17.AutoSize = true;
-            this.label17.Font = new System.Drawing.Font("Verdana", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label17.Location = new System.Drawing.Point(67, 183);
-            this.label17.Name = "label17";
-            this.label17.Size = new System.Drawing.Size(48, 16);
-            this.label17.TabIndex = 46;
-            this.label17.Text = "Period";
-            // 
             // drReqDelBtn
             // 
             this.drReqDelBtn.Font = new System.Drawing.Font("Verdana", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.drReqDelBtn.Location = new System.Drawing.Point(286, 224);
+            this.drReqDelBtn.Location = new System.Drawing.Point(286, 126);
             this.drReqDelBtn.Name = "drReqDelBtn";
             this.drReqDelBtn.Size = new System.Drawing.Size(189, 30);
             this.drReqDelBtn.TabIndex = 36;
@@ -218,7 +171,7 @@
             // drReqAddBtn
             // 
             this.drReqAddBtn.Font = new System.Drawing.Font("Verdana", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.drReqAddBtn.Location = new System.Drawing.Point(6, 224);
+            this.drReqAddBtn.Location = new System.Drawing.Point(6, 126);
             this.drReqAddBtn.Name = "drReqAddBtn";
             this.drReqAddBtn.Size = new System.Drawing.Size(195, 30);
             this.drReqAddBtn.TabIndex = 35;
@@ -231,9 +184,9 @@
             this.drReqGidView.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
             this.drReqGidView.BackgroundColor = System.Drawing.SystemColors.ActiveBorder;
             this.drReqGidView.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.drReqGidView.Location = new System.Drawing.Point(357, 268);
+            this.drReqGidView.Location = new System.Drawing.Point(357, 177);
             this.drReqGidView.Name = "drReqGidView";
-            this.drReqGidView.Size = new System.Drawing.Size(485, 229);
+            this.drReqGidView.Size = new System.Drawing.Size(485, 320);
             this.drReqGidView.TabIndex = 56;
             this.drReqGidView.RowHeaderMouseDoubleClick += new System.Windows.Forms.DataGridViewCellMouseEventHandler(this.drReqGidView_RowHeaderMouseDoubleClick);
             // 
@@ -324,17 +277,6 @@
             this.label16.TabIndex = 31;
             this.label16.Text = "Dr. ID";
             // 
-            // kidCheckBox
-            // 
-            this.kidCheckBox.AutoSize = true;
-            this.kidCheckBox.Font = new System.Drawing.Font("Verdana", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.kidCheckBox.Location = new System.Drawing.Point(288, 29);
-            this.kidCheckBox.Name = "kidCheckBox";
-            this.kidCheckBox.Size = new System.Drawing.Size(143, 20);
-            this.kidCheckBox.TabIndex = 72;
-            this.kidCheckBox.Text = "Pediatric Patients";
-            this.kidCheckBox.UseVisualStyleBackColor = true;
-            // 
             // DocterRequestForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -359,9 +301,6 @@
         #endregion
 
         private System.Windows.Forms.GroupBox groupBox7;
-        private System.Windows.Forms.ComboBox dofComb;
-        private System.Windows.Forms.ComboBox pedComb;
-        private System.Windows.Forms.Label label17;
         private System.Windows.Forms.Button drReqDelBtn;
         private System.Windows.Forms.Button drReqAddBtn;
         private System.Windows.Forms.DataGridView drReqGidView;
@@ -376,7 +315,6 @@
         private System.Windows.Forms.Label label16;
         private System.Windows.Forms.TextBox drReqId;
         private System.Windows.Forms.Label label2;
-        private System.Windows.Forms.Label label19;
         private System.Windows.Forms.Button seachDrReq;
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.Label label3;

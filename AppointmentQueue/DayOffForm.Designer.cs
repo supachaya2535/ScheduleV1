@@ -28,7 +28,6 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.button1 = new System.Windows.Forms.Button();
             this.button2 = new System.Windows.Forms.Button();
             this.label4 = new System.Windows.Forms.Label();
             this.detailTxt = new System.Windows.Forms.TextBox();
@@ -49,25 +48,16 @@
             this.label3 = new System.Windows.Forms.Label();
             this.drName2 = new System.Windows.Forms.TextBox();
             this.seachDrReq = new System.Windows.Forms.Button();
+            this.drLname2 = new System.Windows.Forms.TextBox();
             ((System.ComponentModel.ISupportInitialize)(this.dayOffGridView)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.drDataGridView2)).BeginInit();
             this.groupBox4.SuspendLayout();
             this.SuspendLayout();
             // 
-            // button1
-            // 
-            this.button1.Font = new System.Drawing.Font("Verdana", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button1.Location = new System.Drawing.Point(547, 112);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(158, 25);
-            this.button1.TabIndex = 61;
-            this.button1.Text = "Update a day off";
-            this.button1.UseVisualStyleBackColor = true;
-            // 
             // button2
             // 
             this.button2.Font = new System.Drawing.Font("Verdana", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button2.Location = new System.Drawing.Point(715, 112);
+            this.button2.Location = new System.Drawing.Point(682, 112);
             this.button2.Name = "button2";
             this.button2.Size = new System.Drawing.Size(158, 25);
             this.button2.TabIndex = 60;
@@ -79,7 +69,7 @@
             // 
             this.label4.AutoSize = true;
             this.label4.Font = new System.Drawing.Font("Verdana", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label4.Location = new System.Drawing.Point(389, 68);
+            this.label4.Location = new System.Drawing.Point(395, 75);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(45, 16);
             this.label4.TabIndex = 58;
@@ -91,7 +81,7 @@
             this.detailTxt.Location = new System.Drawing.Point(463, 68);
             this.detailTxt.Multiline = true;
             this.detailTxt.Name = "detailTxt";
-            this.detailTxt.Size = new System.Drawing.Size(410, 35);
+            this.detailTxt.Size = new System.Drawing.Size(402, 35);
             this.detailTxt.TabIndex = 53;
             // 
             // pedCob
@@ -101,7 +91,7 @@
             this.pedCob.Items.AddRange(new object[] {
             "Morning",
             "Afternoon"});
-            this.pedCob.Location = new System.Drawing.Point(728, 3);
+            this.pedCob.Location = new System.Drawing.Point(685, 4);
             this.pedCob.Name = "pedCob";
             this.pedCob.Size = new System.Drawing.Size(145, 24);
             this.pedCob.TabIndex = 57;
@@ -110,7 +100,7 @@
             // 
             this.label7.AutoSize = true;
             this.label7.Font = new System.Drawing.Font("Verdana", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label7.Location = new System.Drawing.Point(671, 3);
+            this.label7.Location = new System.Drawing.Point(622, 7);
             this.label7.Name = "label7";
             this.label7.Size = new System.Drawing.Size(48, 16);
             this.label7.TabIndex = 56;
@@ -119,7 +109,7 @@
             // addDayOffBtn
             // 
             this.addDayOffBtn.Font = new System.Drawing.Font("Verdana", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.addDayOffBtn.Location = new System.Drawing.Point(383, 112);
+            this.addDayOffBtn.Location = new System.Drawing.Point(423, 112);
             this.addDayOffBtn.Name = "addDayOffBtn";
             this.addDayOffBtn.Size = new System.Drawing.Size(158, 25);
             this.addDayOffBtn.TabIndex = 54;
@@ -259,17 +249,18 @@
             // 
             // drName2
             // 
+            this.drName2.Enabled = false;
             this.drName2.Font = new System.Drawing.Font("Verdana", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.drName2.Location = new System.Drawing.Point(463, 36);
             this.drName2.Name = "drName2";
-            this.drName2.Size = new System.Drawing.Size(188, 23);
+            this.drName2.Size = new System.Drawing.Size(162, 23);
             this.drName2.TabIndex = 73;
             // 
             // seachDrReq
             // 
             this.seachDrReq.Font = new System.Drawing.Font("Verdana", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.seachDrReq.Location = new System.Drawing.Point(657, 32);
-            this.seachDrReq.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.seachDrReq.Location = new System.Drawing.Point(803, 32);
+            this.seachDrReq.Margin = new System.Windows.Forms.Padding(2);
             this.seachDrReq.Name = "seachDrReq";
             this.seachDrReq.Size = new System.Drawing.Size(62, 30);
             this.seachDrReq.TabIndex = 72;
@@ -277,17 +268,26 @@
             this.seachDrReq.UseVisualStyleBackColor = true;
             this.seachDrReq.Click += new System.EventHandler(this.seachDrReq_Click);
             // 
+            // drLname2
+            // 
+            this.drLname2.Enabled = false;
+            this.drLname2.Font = new System.Drawing.Font("Verdana", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.drLname2.Location = new System.Drawing.Point(635, 36);
+            this.drLname2.Name = "drLname2";
+            this.drLname2.Size = new System.Drawing.Size(162, 23);
+            this.drLname2.TabIndex = 75;
+            // 
             // DayOffForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(875, 460);
+            this.Controls.Add(this.drLname2);
             this.Controls.Add(this.drDataGridView2);
             this.Controls.Add(this.label3);
             this.Controls.Add(this.drName2);
             this.Controls.Add(this.seachDrReq);
             this.Controls.Add(this.groupBox4);
-            this.Controls.Add(this.button1);
             this.Controls.Add(this.button2);
             this.Controls.Add(this.label4);
             this.Controls.Add(this.detailTxt);
@@ -309,8 +309,6 @@
         }
 
         #endregion
-
-        private System.Windows.Forms.Button button1;
         private System.Windows.Forms.Button button2;
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.TextBox detailTxt;
@@ -331,5 +329,6 @@
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.TextBox drName2;
         private System.Windows.Forms.Button seachDrReq;
+        private System.Windows.Forms.TextBox drLname2;
     }
 }
