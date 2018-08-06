@@ -156,7 +156,119 @@ namespace AppointmentQueue
 
             return dt;
         }
+        
+        /// <summary>
+        /// fully return doctor calendars (all of data)
+        /// </summary>
+        /// <returns></returns>
+        public static DataTable GetDoctorCalendars()
+        {
+            SqlConnection cn = new SqlConnection(global::AppointmentQueue.Properties.Settings.Default.Database1ConnectionString);
+            cn.Open();
+            SqlCommand command = new SqlCommand(
+               "SELECT drc_id, drc_date, drc_drw, drc_time, drc_status " +
+               "FROM DoctorCalendars "
+               , cn);
+            SqlDataReader reader = command.ExecuteReader();
+            DataTable dt = new DataTable();
+            dt.Columns.Add("drc_id", typeof(Int16));
+            dt.Columns.Add("drc_date", typeof(String));
+            dt.Columns.Add("drc_drw", typeof(String));
+            dt.Columns.Add("drc_time", typeof(Int16));
+            dt.Columns.Add("drc_status", typeof(String));
+            dt.Load(reader);
+            cn.Close();
 
+            foreach (DataRow item in dt.Rows)
+            {
+                string display = "";
+                display += item["drc_id"].ToString() + "\n";
+                display += item["drc_date"].ToString() + "\n";
+                display += item["drc_drw"].ToString() + "\n";
+                display += item["drc_time"].ToString() + "\n";
+                display += item["drc_status"].ToString() + "\n";
+                MessageBox.Show(display);
+            }
+
+            return dt;
+        }
+
+        public static DataTable GetDoctorCalendars(DateTime start_date, DateTime end_date)
+        {
+            SqlConnection cn = new SqlConnection(global::AppointmentQueue.Properties.Settings.Default.Database1ConnectionString);
+            cn.Open();
+            SqlCommand command = new SqlCommand(
+               "SELECT * " +
+               "FROM DoctorCalendars " +
+               "JOIN DoctorWorks ON drc_drw = drw_id " +
+               "JOIN Doctors ON dr_Id = drw_dr " +
+               "WHERE drc_date BETWEEN @StartT AND @EndT"
+               , cn);
+
+            command.Parameters.AddWithValue("@StartT", start_date);
+            command.Parameters.AddWithValue("@EndT", end_date);
+
+            SqlDataReader reader = command.ExecuteReader();
+            DataTable dt = new DataTable();
+            dt.Columns.Add("drc_id", typeof(Int16));
+            dt.Columns.Add("drc_date", typeof(DateTime));
+            dt.Columns.Add("drc_drw", typeof(String));
+            dt.Columns.Add("drc_time", typeof(Int16));
+            dt.Columns.Add("drc_status", typeof(String));
+            dt.Columns.Add("drw_dow", typeof(String));
+            dt.Columns.Add("drw_period", typeof(String));
+            dt.Columns.Add("dr_name", typeof(String));
+            dt.Columns.Add("dr_lname", typeof(String));
+
+            dt.Load(reader);
+            cn.Close();
+
+            //foreach (DataRow item in dt.Rows)
+            //{
+            //    string display = "";
+            //    display += item["drc_id"].ToString() + "\n";
+            //    display += item["drc_date"].ToString() + "\n";
+            //    display += item["drc_drw"].ToString() + "\n";
+            //    display += item["drc_time"].ToString() + "\n";
+            //    display += item["drc_status"].ToString() + "\n";
+            //    display += item["drw_dow"].ToString() + "\n";
+            //    display += item["drw_period"].ToString() + "\n";
+            //    display += item["dr_name"].ToString() + " " + item["dr_lname"].ToString();
+            //    MessageBox.Show(display);
+            //}
+
+            return dt;
+        }
+
+        /// <summary>
+        /// get fully of data of DoctorRequests database (join with doctor and request database)
+        /// </summary>
+        /// <returns></returns>
+        public static DataTable GetDoctorRequests()
+        {
+            SqlConnection cn = new SqlConnection(global::AppointmentQueue.Properties.Settings.Default.Database1ConnectionString);
+            cn.Open();
+            SqlCommand command = new SqlCommand(
+                "SELECT drreq_Id,req_bodypart,dr_name,drreq_period,drreq_kid,drreq_dayofweek,dr_Id " +
+                "FROM DoctorRequests " +
+                "JOIN Doctors ON dr_Id = drreq_dr " +
+                "JOIN Requests ON req_Id = drreq_req "
+                , cn);
+            SqlDataReader reader = command.ExecuteReader();
+
+            DataTable dt = new DataTable();
+            dt.Columns.Add("drreq_Id", typeof(Int16));
+            dt.Columns.Add("req_bodypart", typeof(String));
+            dt.Columns.Add("dr_name", typeof(String));
+            dt.Columns.Add("drreq_period", typeof(String));
+            dt.Columns.Add("drreq_kid", typeof(String));
+            dt.Columns.Add("drreq_dayofweek", typeof(String));
+            dt.Columns.Add("dr_Id", typeof(Int16));
+            dt.Load(reader);
+            cn.Close();
+            return dt;
+        }
+        
         public static DataTable GetDoctorRequests(String req, String dr)
         {
             SqlConnection cn = new SqlConnection(global::AppointmentQueue.Properties.Settings.Default.Database1ConnectionString);
@@ -179,6 +291,33 @@ namespace AppointmentQueue
             dt.Columns.Add("drreq_dr", typeof(String));
             dt.Columns.Add("dr_name", typeof(String));
 
+            dt.Load(reader);
+            cn.Close();
+            return dt;
+        }
+
+        /// <summary>
+        ///  fully get data of GetDoctorWorks database (join with Doctors database)
+        /// </summary>
+        /// <returns></returns>
+        public static DataTable GetDoctorWorks()
+        {
+            SqlConnection cn = new SqlConnection(global::AppointmentQueue.Properties.Settings.Default.Database1ConnectionString);
+            cn.Open();
+            SqlCommand command = new SqlCommand(
+                "SELECT *" +
+                "FROM DoctorWorks " +
+                "JOIN Doctors ON dr_Id = drw_dr "
+                , cn);
+            SqlDataReader reader = command.ExecuteReader();
+
+            DataTable dt = new DataTable();
+            dt.Columns.Add("drw_Id", typeof(Int16));
+            dt.Columns.Add("drw_dr", typeof(String));
+            dt.Columns.Add("dr_name", typeof(String));
+            dt.Columns.Add("drw_period", typeof(String));
+            dt.Columns.Add("drw_kid", typeof(String));
+            dt.Columns.Add("drw_dayofweek", typeof(String));
             dt.Load(reader);
             cn.Close();
             return dt;

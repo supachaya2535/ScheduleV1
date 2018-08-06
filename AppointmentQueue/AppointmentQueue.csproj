@@ -91,6 +91,12 @@
     <Compile Include="AppointmentForm.Designer.cs">
       <DependentUpon>AppointmentForm.cs</DependentUpon>
     </Compile>
+    <Compile Include="CalendarForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="CalendarForm.Designer.cs">
+      <DependentUpon>CalendarForm.cs</DependentUpon>
+    </Compile>
     <Compile Include="Database1DataSet.cs">
       <DependentUpon>Database1DataSet.xsd</DependentUpon>
     </Compile>
@@ -155,9 +161,18 @@
     <Compile Include="SeachPaForm.Designer.cs">
       <DependentUpon>SeachPaForm.cs</DependentUpon>
     </Compile>
+    <Compile Include="ShowDetailOfCalendar.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ShowDetailOfCalendar.Designer.cs">
+      <DependentUpon>ShowDetailOfCalendar.cs</DependentUpon>
+    </Compile>
     <Compile Include="SQL.cs" />
     <EmbeddedResource Include="AppointmentForm.resx">
       <DependentUpon>AppointmentForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="CalendarForm.resx">
+      <DependentUpon>CalendarForm.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="DateForReqSuggestionForm.resx">
       <DependentUpon>DateForReqSuggestionForm.cs</DependentUpon>
@@ -194,6 +209,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="SeachPaForm.resx">
       <DependentUpon>SeachPaForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ShowDetailOfCalendar.resx">
+      <DependentUpon>ShowDetailOfCalendar.cs</DependentUpon>
     </EmbeddedResource>
     <None Include="Database1DataSet.xsc">
       <DependentUpon>Database1DataSet.xsd</DependentUpon>

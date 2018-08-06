@@ -235,5 +235,11 @@ namespace AppointmentQueue
             DoctorWorkForm sForm = new DoctorWorkForm();
             sForm.ShowDialog();
         }
+
+        private void show_calendar_btn_Click(object sender, EventArgs e)
+        {
+            CalendarForm clf_form = new CalendarForm();
+            clf_form.ShowDialog();
+        }
     }
 }
