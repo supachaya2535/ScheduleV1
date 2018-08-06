@@ -29,6 +29,7 @@
         private void InitializeComponent()
         {
             this.CalendarPanel = new System.Windows.Forms.TableLayoutPanel();
+            this.only_morning_btn = new System.Windows.Forms.Button();
             this.sunday_btn = new System.Windows.Forms.Button();
             this.monday_btn = new System.Windows.Forms.Button();
             this.tuesday_btn = new System.Windows.Forms.Button();
@@ -85,9 +86,8 @@
             this.today_date_btn = new System.Windows.Forms.Button();
             this.today_text_btn = new System.Windows.Forms.Button();
             this.today_show_btn = new System.Windows.Forms.Button();
-            this.only_morning_btn = new System.Windows.Forms.Button();
+            this.full_btn = new System.Windows.Forms.Button();
             this.button1 = new System.Windows.Forms.Button();
-            this.button2 = new System.Windows.Forms.Button();
             this.CalendarPanel.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -102,6 +102,7 @@
             this.CalendarPanel.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 14.28531F));
             this.CalendarPanel.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 14.28531F));
             this.CalendarPanel.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 14.28816F));
+            this.CalendarPanel.Controls.Add(this.button1, 0, 8);
             this.CalendarPanel.Controls.Add(this.only_morning_btn, 0, 8);
             this.CalendarPanel.Controls.Add(this.sunday_btn, 0, 1);
             this.CalendarPanel.Controls.Add(this.monday_btn, 1, 1);
@@ -159,8 +160,7 @@
             this.CalendarPanel.Controls.Add(this.today_date_btn, 6, 8);
             this.CalendarPanel.Controls.Add(this.today_text_btn, 5, 8);
             this.CalendarPanel.Controls.Add(this.today_show_btn, 4, 8);
-            this.CalendarPanel.Controls.Add(this.button1, 1, 8);
-            this.CalendarPanel.Controls.Add(this.button2, 2, 8);
+            this.CalendarPanel.Controls.Add(this.full_btn, 1, 8);
             this.CalendarPanel.ForeColor = System.Drawing.Color.Black;
             this.CalendarPanel.Location = new System.Drawing.Point(12, 12);
             this.CalendarPanel.Name = "CalendarPanel";
@@ -176,6 +176,21 @@
             this.CalendarPanel.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 5.330533F));
             this.CalendarPanel.Size = new System.Drawing.Size(1204, 709);
             this.CalendarPanel.TabIndex = 2;
+            // 
+            // only_morning_btn
+            // 
+            this.only_morning_btn.BackColor = System.Drawing.Color.AntiqueWhite;
+            this.only_morning_btn.FlatAppearance.BorderColor = System.Drawing.SystemColors.Control;
+            this.only_morning_btn.FlatAppearance.BorderSize = 0;
+            this.only_morning_btn.FlatAppearance.MouseDownBackColor = System.Drawing.Color.LightGray;
+            this.only_morning_btn.FlatAppearance.MouseOverBackColor = System.Drawing.Color.LightGray;
+            this.only_morning_btn.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.only_morning_btn.Location = new System.Drawing.Point(3, 671);
+            this.only_morning_btn.Name = "only_morning_btn";
+            this.only_morning_btn.Size = new System.Drawing.Size(165, 34);
+            this.only_morning_btn.TabIndex = 56;
+            this.only_morning_btn.Text = "No Kid";
+            this.only_morning_btn.UseVisualStyleBackColor = false;
             // 
             // sunday_btn
             // 
@@ -1105,24 +1120,24 @@
             this.today_show_btn.Text = "show";
             this.today_show_btn.UseVisualStyleBackColor = false;
             // 
-            // only_morning_btn
+            // full_btn
             // 
-            this.only_morning_btn.BackColor = System.Drawing.Color.AntiqueWhite;
-            this.only_morning_btn.FlatAppearance.BorderColor = System.Drawing.SystemColors.Control;
-            this.only_morning_btn.FlatAppearance.BorderSize = 0;
-            this.only_morning_btn.FlatAppearance.MouseDownBackColor = System.Drawing.Color.LightGray;
-            this.only_morning_btn.FlatAppearance.MouseOverBackColor = System.Drawing.Color.LightGray;
-            this.only_morning_btn.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.only_morning_btn.Location = new System.Drawing.Point(3, 671);
-            this.only_morning_btn.Name = "only_morning_btn";
-            this.only_morning_btn.Size = new System.Drawing.Size(165, 34);
-            this.only_morning_btn.TabIndex = 56;
-            this.only_morning_btn.Text = "Only Morning Color";
-            this.only_morning_btn.UseVisualStyleBackColor = false;
+            this.full_btn.BackColor = System.Drawing.Color.Pink;
+            this.full_btn.FlatAppearance.BorderColor = System.Drawing.SystemColors.Control;
+            this.full_btn.FlatAppearance.BorderSize = 0;
+            this.full_btn.FlatAppearance.MouseDownBackColor = System.Drawing.Color.LightGray;
+            this.full_btn.FlatAppearance.MouseOverBackColor = System.Drawing.Color.LightGray;
+            this.full_btn.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.full_btn.Location = new System.Drawing.Point(345, 671);
+            this.full_btn.Name = "full_btn";
+            this.full_btn.Size = new System.Drawing.Size(165, 34);
+            this.full_btn.TabIndex = 59;
+            this.full_btn.Text = "Limit";
+            this.full_btn.UseVisualStyleBackColor = false;
             // 
             // button1
             // 
-            this.button1.BackColor = System.Drawing.Color.Azure;
+            this.button1.BackColor = System.Drawing.Color.Gold;
             this.button1.FlatAppearance.BorderColor = System.Drawing.SystemColors.Control;
             this.button1.FlatAppearance.BorderSize = 0;
             this.button1.FlatAppearance.MouseDownBackColor = System.Drawing.Color.LightGray;
@@ -1131,24 +1146,9 @@
             this.button1.Location = new System.Drawing.Point(174, 671);
             this.button1.Name = "button1";
             this.button1.Size = new System.Drawing.Size(165, 34);
-            this.button1.TabIndex = 57;
-            this.button1.Text = "Only Evening Color";
+            this.button1.TabIndex = 60;
+            this.button1.Text = "Kid";
             this.button1.UseVisualStyleBackColor = false;
-            // 
-            // button2
-            // 
-            this.button2.BackColor = System.Drawing.Color.Aqua;
-            this.button2.FlatAppearance.BorderColor = System.Drawing.SystemColors.Control;
-            this.button2.FlatAppearance.BorderSize = 0;
-            this.button2.FlatAppearance.MouseDownBackColor = System.Drawing.Color.LightGray;
-            this.button2.FlatAppearance.MouseOverBackColor = System.Drawing.Color.LightGray;
-            this.button2.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button2.Location = new System.Drawing.Point(345, 671);
-            this.button2.Name = "button2";
-            this.button2.Size = new System.Drawing.Size(165, 34);
-            this.button2.TabIndex = 58;
-            this.button2.Text = "Both Color";
-            this.button2.UseVisualStyleBackColor = false;
             // 
             // CalendarForm
             // 
@@ -1223,7 +1223,7 @@
         private System.Windows.Forms.Button today_text_btn;
         private System.Windows.Forms.Button today_date_btn;
         private System.Windows.Forms.Button only_morning_btn;
+        private System.Windows.Forms.Button full_btn;
         private System.Windows.Forms.Button button1;
-        private System.Windows.Forms.Button button2;
     }
 }

@@ -32,8 +32,8 @@ namespace AppointmentQueue
 
         private Button[,] calendar_day_all_btn;
         private DateTime[,] calendar_day_all_date;
-        private List<DataRow>[,] morning_works_all_btn;
-        private List<DataRow>[,] evening_works_all_btn;
+        private List<DataRow>[,] morning_all_btn;
+        private List<DataRow>[,] evening_all_btn;
 
         public CalendarForm()
         {
@@ -42,14 +42,14 @@ namespace AppointmentQueue
 
         private void SetDoctorWorkDataButtonToBasic()
         {
-            morning_works_all_btn = new List<DataRow>[6, 7];
-            evening_works_all_btn = new List<DataRow>[6, 7];
-            for (int i = 0; i < morning_works_all_btn.GetLength(0); i++)
+            morning_all_btn = new List<DataRow>[6, 7];
+            evening_all_btn = new List<DataRow>[6, 7];
+            for (int i = 0; i < morning_all_btn.GetLength(0); i++)
             {
-                for (int j = 0; j < morning_works_all_btn.GetLength(1); j++)
+                for (int j = 0; j < morning_all_btn.GetLength(1); j++)
                 {
-                    morning_works_all_btn[i, j] = new List<DataRow>();
-                    evening_works_all_btn[i, j] = new List<DataRow>();
+                    morning_all_btn[i, j] = new List<DataRow>();
+                    evening_all_btn[i, j] = new List<DataRow>();
                 }
             }
         }
@@ -81,12 +81,12 @@ namespace AppointmentQueue
             int row_bt = Convert.ToInt32(bt.Name.Split('_')[1]);
             int col_bt = Convert.ToInt32(bt.Name.Split('_')[2]);
 
-            if (morning_works_all_btn[row_bt, col_bt].Count > 0 ||
-                evening_works_all_btn[row_bt, col_bt].Count > 0)
+            if (morning_all_btn[row_bt, col_bt].Count > 0 ||
+                evening_all_btn[row_bt, col_bt].Count > 0)
             {
                 ShowDetailOfCalendar detail_form = new ShowDetailOfCalendar();
-                detail_form.morning_data = morning_works_all_btn[row_bt, col_bt];
-                detail_form.evening_data = evening_works_all_btn[row_bt, col_bt];
+                detail_form.morning_data = morning_all_btn[row_bt, col_bt];
+                detail_form.evening_data = evening_all_btn[row_bt, col_bt];
                 detail_form.date = calendar_day_all_date[row_bt, col_bt];
 
                 detail_form.ShowDialog();
@@ -159,9 +159,9 @@ namespace AppointmentQueue
                         {
                             deletedIndex = k;
                             if (drw_period == "Morning")
-                                morning_works_all_btn[i, j].Add(data_by_row[k]);
+                                morning_all_btn[i, j].Add(data_by_row[k]);
                             else
-                                evening_works_all_btn[i, j].Add(data_by_row[k]);
+                                evening_all_btn[i, j].Add(data_by_row[k]);
 
                             break;
                         }
@@ -186,52 +186,106 @@ namespace AppointmentQueue
                 for (int j = 0; j < calendar_day_all_btn.GetLength(1); j++)
                 {
                     string display_on_btn = "";
-                    if (morning_works_all_btn[i, j].Count > 0)
+                    if (morning_all_btn[i, j].Count > 0)
                     {
                         display_on_btn += "Morning : \n";
-                        for (int k = 0; k < morning_works_all_btn[i, j].Count; k++)
+                        for (int k = 0; k < morning_all_btn[i, j].Count; k++)
                         {
-                            string dr_name_lname = morning_works_all_btn[i, j][k]["dr_name"].ToString().Trim() + " " +
-                                                   morning_works_all_btn[i, j][k]["dr_lname"].ToString().Trim();
+                            string dr_name_lname = morning_all_btn[i, j][k]["dr_name"].ToString().Trim() + " " +
+                                                   morning_all_btn[i, j][k]["dr_lname"].ToString().Trim();
                             display_on_btn += (k + 1).ToString() + ": " + dr_name_lname + "\n";
                         }
                     }
-                    if (evening_works_all_btn[i, j].Count > 0)
+                    if (evening_all_btn[i, j].Count > 0)
                     {
                         display_on_btn += "Evening : \n";
-                        for (int k = 0; k < evening_works_all_btn[i, j].Count; k++)
+                        for (int k = 0; k < evening_all_btn[i, j].Count; k++)
                         {
-                            string dr_name_lname = evening_works_all_btn[i, j][k]["dr_name"].ToString().Trim() + " " +
-                                                   evening_works_all_btn[i, j][k]["dr_lname"].ToString().Trim();
+                            string dr_name_lname = evening_all_btn[i, j][k]["dr_name"].ToString().Trim() + " " +
+                                                   evening_all_btn[i, j][k]["dr_lname"].ToString().Trim();
                             display_on_btn += (k + 1).ToString() + ": " + dr_name_lname + "\n";
                         }
                     }
                     calendar_day_all_btn[i, j].Text += "\n" + display_on_btn;
 
-                    // set color follow by doctor work properties
-                    // 1. only have morning work
-                    // AntiqueWhite background color button
-                    if (morning_works_all_btn[i, j].Count > 0 &&
-                        evening_works_all_btn[i, j].Count <= 0)
+                    // kid and no kid checking
+                    bool is_have_kid = CheckKidOrNoKid(i, j);
+                    bool is_limit_day = CheckLimitDay(i, j);
+
+                    if (morning_all_btn[i, j].Count > 0 ||
+                        evening_all_btn[i, j].Count > 0)
                     {
-                        calendar_day_all_btn[i, j].BackColor = Color.AntiqueWhite;
-                    }
-                    // 2. only have evening work
-                    // Azure background color button
-                    else if (morning_works_all_btn[i, j].Count <= 0 &&
-                        evening_works_all_btn[i, j].Count > 0)
-                    {
-                        calendar_day_all_btn[i, j].BackColor = Color.Azure;
-                    }
-                    // 3. have both of morning and evening work
-                    // Aqua background color button
-                    else if (morning_works_all_btn[i, j].Count > 0 &&
-                        evening_works_all_btn[i, j].Count > 0)
-                    {
-                        calendar_day_all_btn[i, j].BackColor = Color.Aqua;
+                        // set color follow by doctor work properties
+                        // 1. limit
+                        // Aqua background color button
+                        if (is_limit_day)
+                        {
+                            calendar_day_all_btn[i, j].BackColor = Color.Pink;
+                        }
+                        // 2. no kid
+                        // AntiqueWhite background color button
+                        else if (!is_have_kid)
+                        {
+                            calendar_day_all_btn[i, j].BackColor = Color.AntiqueWhite;
+                        }
+                        // 3. have kid
+                        // Azure background color button
+                        else if (is_have_kid)
+                        {
+                            calendar_day_all_btn[i, j].BackColor = Color.Gold;
+                        }
                     }
                 }
             }
+        }
+
+        private bool CheckLimitDay(int i, int j)
+        {
+            bool is_limit_morning = true;
+            bool is_limit_evening = true;
+            // morning
+            foreach (DataRow row in morning_all_btn[i, j])
+            {
+                if (Convert.ToInt32(row["drc_time"]) < 100)
+                    is_limit_morning = false;
+            }
+            // evening
+            foreach (DataRow row in evening_all_btn[i, j])
+            {
+                if (Convert.ToInt32(row["drc_time"]) < 100)
+                    is_limit_evening = false;
+            }
+
+            if (is_limit_evening && is_limit_morning)
+                return true;
+            else
+                return false;
+        }
+
+        private bool CheckKidOrNoKid(int i, int j)
+        {
+            bool is_kid = false;
+            // morning checking
+            foreach (DataRow row in morning_all_btn[i, j])
+            {
+                if (row["drw_kid"].ToString().Trim() == "1")
+                {
+                    is_kid = true;
+                    break;
+                }
+            }
+
+            // evening checking
+            foreach (DataRow row in evening_all_btn[i, j])
+            {
+                if (row["drw_kid"].ToString().Trim() == "1")
+                {
+                    is_kid = true;
+                    break;
+                }
+            }
+
+            return is_kid;
         }
 
         private void AssignDoctorWorkOnCalendar(DataTable data)

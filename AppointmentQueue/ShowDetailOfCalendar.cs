@@ -24,7 +24,7 @@ namespace AppointmentQueue
         private void ShowDetailOfCalendar_Load(object sender, EventArgs e)
         {
             // set the detail of text box
-            detail_tb.AppendText("Detail of date : " + date.ToString());
+            detail_tb.AppendText("Detail of date : " + date.Day + "/" + date.Month + "/" + date.Year);
             detail_tb.AppendText(Environment.NewLine);
 
             // set morning data
@@ -36,10 +36,16 @@ namespace AppointmentQueue
                 {
                     string dr_name = morning_data[i]["dr_name"].ToString().Trim() + " " +
                                      morning_data[i]["dr_lname"].ToString().Trim();
+                    string use_time = morning_data[i]["drc_time"].ToString().Trim();
 
                     detail_tb.AppendText("(" + (i + 1).ToString() + ")");
+                    if (morning_data[i]["drw_kid"].ToString().Trim() == "1")
+                        detail_tb.AppendText(" (KID) ");
+
                     detail_tb.AppendText(Environment.NewLine);
-                    detail_tb.AppendText("Name Of Doctor : " + dr_name);
+                    detail_tb.AppendText("Doctor : " + dr_name);
+                    detail_tb.AppendText(Environment.NewLine);
+                    detail_tb.AppendText("Usage Time : " + use_time);
                     detail_tb.AppendText(Environment.NewLine);
                 }
             }
@@ -53,10 +59,16 @@ namespace AppointmentQueue
                 {
                     string dr_name = evening_data[i]["dr_name"].ToString().Trim() + " " +
                                      evening_data[i]["dr_lname"].ToString().Trim();
+                    string use_time = evening_data[i]["drc_time"].ToString().Trim();
 
                     detail_tb.AppendText("(" + (i + 1).ToString() + ")");
+                    if (evening_data[i]["drw_kid"].ToString().Trim() == "1")
+                        detail_tb.AppendText(" (KID) ");
+
                     detail_tb.AppendText(Environment.NewLine);
-                    detail_tb.AppendText("Name Of Doctor : " + dr_name);
+                    detail_tb.AppendText("Doctor : " + dr_name);
+                    detail_tb.AppendText(Environment.NewLine);
+                    detail_tb.AppendText("Usage Time : " + use_time);
                     detail_tb.AppendText(Environment.NewLine);
                 }
             }
