@@ -126,10 +126,11 @@ namespace AppointmentQueue
 
             chosenT = Convert.ToDateTime(suggDataGridView.Rows[ID].Cells[1].Value.ToString().Trim());
             selectedDate.Value = chosenT.Date;
-            DataTable dt = SQL.GetAppointment(selectedDate.Value.Date, selectedDate.Value.Date, "", comboBox1.SelectedItem.ToString().Trim(), "");
-            dataGridView3.DataSource = dt;
-            DataTable dt2 = SQL.GetAppointment(selectedDate.Value.Date, selectedDate.Value.Date, "", "", "");
-            dataGridView4.DataSource = dt2;
+            //DataTable dt = SQL.GetAppointment(selectedDate.Value.Date, selectedDate.Value.Date, "", comboBox1.SelectedItem.ToString().Trim(), "");
+            //dataGridView3.DataSource = dt;
+
+            //DataTable dt2 = SQL.GetAppointment(selectedDate.Value.Date, selectedDate.Value.Date, "", "", "");
+            //dataGridView4.DataSource = dt2;
         }
 
         private void dayNumericUpDown_ValueChanged_1(object sender, EventArgs e)
@@ -140,6 +141,11 @@ namespace AppointmentQueue
         private void kidCheckBox_CheckedChanged(object sender, EventArgs e)
         {
             kidInx = Convert.ToInt16(kidCheckBox.Checked);
+        }
+
+        private void groupBox1_Enter(object sender, EventArgs e)
+        {
+
         }
     }
 }

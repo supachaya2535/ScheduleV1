@@ -88,7 +88,7 @@ namespace AppointmentQueue
         {
             SqlConnection cn = new SqlConnection(global::AppointmentQueue.Properties.Settings.Default.Database1ConnectionString);
             cn.Open();
-            SqlCommand command = new SqlCommand("SELECT scan_Id, scan_name, scan_quantity FROM Scanners "+
+            SqlCommand command = new SqlCommand("SELECT scan_Id, scan_name FROM Scanners "+
                 "WHERE scan_name LIKE '%" + scanname + "%'", cn);
             
             SqlDataReader reader = command.ExecuteReader();
@@ -96,8 +96,6 @@ namespace AppointmentQueue
             DataTable dt = new DataTable();
             dt.Columns.Add("scan_Id", typeof(Int16));
             dt.Columns.Add("scan_name", typeof(string));
-            dt.Columns.Add("scan_quantity", typeof(Int16));
-
             dt.Load(reader);
             cn.Close();
             return dt;
@@ -333,6 +331,13 @@ namespace AppointmentQueue
             return reqCob;
         }
 
+        public static DataTable suggestionDate(DateTime startT, DateTime endT, String req, String kid, String ped)
+        {
+            DataTable suggestDate = SQL.GetDoctorCalendars(startT, endT, req.Trim(),
+                Convert.ToInt16(kid).ToString().Trim(),
+                ped.Trim());
+            return suggestDate;
+        }
 
     }
 }

@@ -155,7 +155,6 @@ namespace AppointmentQueue
                     command.Parameters.AddWithValue("@ap_scan", scan_CoBox.SelectedIndex + 1);
                     command.Parameters.AddWithValue("@ap_kid", Convert.ToInt16(kidCheckBox.Checked).ToString().Trim());
                     command.Parameters.AddWithValue("@ap_period", paidCob.Text.Trim());
-
                     command.Connection = cn;
 
                     cn.Open();
