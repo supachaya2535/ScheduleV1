@@ -70,9 +70,7 @@ namespace AppointmentQueue
             drReqId.Text = drReqGidView.Rows[ID].Cells[0].Value.ToString().Trim();
             drName2.Text = drReqGidView.Rows[ID].Cells[2].Value.ToString().Trim();
             reqComb.Text = drReqGidView.Rows[ID].Cells[1].Value.ToString().Trim();
-            dofComb.SelectedIndex = Convert.ToInt16(SQL.getDof(drReqGidView.Rows[ID].Cells[5].Value.ToString().Trim())) - 1;
-            pedComb.Text = drReqGidView.Rows[ID].Cells[3].Value.ToString().Trim();
-
+            
         }
         
         private void seachDrReq_Click(object sender, EventArgs e)
@@ -87,14 +85,15 @@ namespace AppointmentQueue
             {
                 if (MessageBox.Show("Do you want to insert a new doctor request?", "Insert new appointment", MessageBoxButtons.YesNo) == DialogResult.Yes)
                 {
+                    ////SqlConnection cn = new SqlConnection(@"Data Source = (LocalDB)\MSSQLLocalDB; AttachDbFilename = E:\GitHub\MRI_Scheduling\ScheduleV1\AppointmentQueue\Database1.mdf; Integrated Security = True");
                     SqlConnection cn = new SqlConnection(global::AppointmentQueue.Properties.Settings.Default.Database1ConnectionString);
                     SqlCommand command = new SqlCommand(
                         "INSERT INTO DoctorRequests (drreq_Id,drreq_req,drreq_dr) " +
                         "VALUES (@drreq_Id,@drreq_req,@drreq_dr)", cn);
-
-                    command.Parameters.AddWithValue("@drreq_Id", Convert.ToString(drIdTxt.Text.Trim())+"00"+Convert.ToString(pkReq).Trim());
+                    
+                    command.Parameters.AddWithValue("@drreq_Id", Convert.ToString(SQL.getIdReq(pkDr)+SQL.getIdReq(pkReq)));
                     command.Parameters.AddWithValue("@drreq_req", Convert.ToString(pkReq).Trim());
-                    command.Parameters.AddWithValue("@drreq_dr", Convert.ToString(drIdTxt.Text.Trim()));
+                    command.Parameters.AddWithValue("@drreq_dr", Convert.ToString(pkDr));
                     command.Connection = cn;
 
                     cn.Open();

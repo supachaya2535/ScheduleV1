@@ -92,9 +92,9 @@
             this.groupBox7.Controls.Add(this.drWorkDelBtn);
             this.groupBox7.Controls.Add(this.drWorkAddBtn);
             this.groupBox7.Font = new System.Drawing.Font("Verdana", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.groupBox7.Location = new System.Drawing.Point(356, 0);
+            this.groupBox7.Location = new System.Drawing.Point(355, 2);
             this.groupBox7.Name = "groupBox7";
-            this.groupBox7.Size = new System.Drawing.Size(683, 255);
+            this.groupBox7.Size = new System.Drawing.Size(683, 223);
             this.groupBox7.TabIndex = 58;
             this.groupBox7.TabStop = false;
             this.groupBox7.Text = "Doctor Work Information";
@@ -323,7 +323,7 @@
             // drWorkDelBtn
             // 
             this.drWorkDelBtn.Font = new System.Drawing.Font("Verdana", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.drWorkDelBtn.Location = new System.Drawing.Point(290, 219);
+            this.drWorkDelBtn.Location = new System.Drawing.Point(471, 183);
             this.drWorkDelBtn.Name = "drWorkDelBtn";
             this.drWorkDelBtn.Size = new System.Drawing.Size(189, 30);
             this.drWorkDelBtn.TabIndex = 36;
@@ -333,9 +333,9 @@
             // drWorkAddBtn
             // 
             this.drWorkAddBtn.Font = new System.Drawing.Font("Verdana", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.drWorkAddBtn.Location = new System.Drawing.Point(11, 219);
+            this.drWorkAddBtn.Location = new System.Drawing.Point(471, 130);
             this.drWorkAddBtn.Name = "drWorkAddBtn";
-            this.drWorkAddBtn.Size = new System.Drawing.Size(195, 30);
+            this.drWorkAddBtn.Size = new System.Drawing.Size(189, 30);
             this.drWorkAddBtn.TabIndex = 35;
             this.drWorkAddBtn.Text = "Insert a new doctor work";
             this.drWorkAddBtn.UseVisualStyleBackColor = true;
@@ -346,9 +346,9 @@
             this.drWorkGidView.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
             this.drWorkGidView.BackgroundColor = System.Drawing.SystemColors.ActiveBorder;
             this.drWorkGidView.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.drWorkGidView.Location = new System.Drawing.Point(356, 261);
+            this.drWorkGidView.Location = new System.Drawing.Point(356, 231);
             this.drWorkGidView.Name = "drWorkGidView";
-            this.drWorkGidView.Size = new System.Drawing.Size(683, 234);
+            this.drWorkGidView.Size = new System.Drawing.Size(683, 264);
             this.drWorkGidView.TabIndex = 60;
             // 
             // drDataGridView2
@@ -372,7 +372,7 @@
             this.groupBox4.Controls.Add(this.drNameTxt2);
             this.groupBox4.Controls.Add(this.label16);
             this.groupBox4.Font = new System.Drawing.Font("Verdana", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.groupBox4.Location = new System.Drawing.Point(1, 0);
+            this.groupBox4.Location = new System.Drawing.Point(1, 3);
             this.groupBox4.Name = "groupBox4";
             this.groupBox4.Size = new System.Drawing.Size(349, 126);
             this.groupBox4.TabIndex = 57;

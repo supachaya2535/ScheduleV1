@@ -29,11 +29,10 @@ namespace AppointmentQueue
                 {
                     SqlConnection cn = new SqlConnection(global::AppointmentQueue.Properties.Settings.Default.Database1ConnectionString);
                     SqlCommand command = new SqlCommand(
-                        "INSERT INTO Scanners (scan_name,scan_detail) " +
-                        "VALUES (@scan_name,@scan_detail)", cn);
+                        "INSERT INTO Scanners (scan_name) " +
+                        "VALUES (@scan_name)", cn);
 
                    command.Parameters.AddWithValue("@scan_name", scanName.Text);
-                   command.Parameters.AddWithValue("@scan_detail", drDetail.Text);
                     command.Connection = cn;
 
                     cn.Open();

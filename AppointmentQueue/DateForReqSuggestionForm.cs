@@ -16,16 +16,20 @@ namespace AppointmentQueue
         public int scannerInx;
         public int periodInx;
         public int requestInx;
+        public string drInx;
+        public int kidInx;
+        public string drwInx;
         public DateTime startT;
         public DateTime chosenT;
         public bool exist = false;
 
-        public DateForReqSuggestionForm(int scan, int ped, int req, DateTime sT)
+        public DateForReqSuggestionForm(int scan, int ped, int req, DateTime sT, int kid)
         {
             InitializeComponent();
             scannerInx = scan;
             periodInx = ped;
             requestInx = req;
+            kidInx = kid;
             scan_CoBox = SQL.readScanner(scan_CoBox);
             reqCob = SQL.readRequest(reqCob);
             scan_CoBox.SelectedIndex = scannerInx;
@@ -65,14 +69,15 @@ namespace AppointmentQueue
             req_dataGridView.DataSource = dtPossibleDrReq;
 
             //2.Find Day off of req in the range time
-            //df_id ,df_date ,df_dr ,dr_name ,df_period ,df_detail
             startT = startT.Date;
             int offSet = Convert.ToInt16(dayNumericUpDown.Value);
             DateTime endT = startT.AddDays(offSet);
             DataTable dtDayOff = SQL.GetDayOffs(startT,endT,"");
             dataGridView1.DataSource = dtDayOff;
 
-            DataTable suggestDate = SQL.GetDoctorCalendars(startT, endT, reqCob.SelectedItem.ToString().Trim(), Convert.ToInt16(kidCheckBox.Checked).ToString().Trim());
+            DataTable suggestDate = SQL.GetDoctorCalendars(startT, endT, reqCob.SelectedItem.ToString().Trim(),
+                Convert.ToInt16(kidCheckBox.Checked).ToString().Trim(), 
+                comboBox1.SelectedItem.ToString().Trim());
             suggDataGridView.DataSource = suggestDate;
             
             return suggestDate;
@@ -115,18 +120,32 @@ namespace AppointmentQueue
             scan_CoBox.SelectedIndex = scannerInx;
             reqCob.SelectedIndex = requestInx;
             comboBox1.SelectedIndex = periodInx;
-            chosenT = Convert.ToDateTime(suggDataGridView.Rows[ID].Cells[0].Value.ToString().Trim());
+            kidCheckBox.Checked = Convert.ToBoolean(kidInx);
+            drInx = suggDataGridView.Rows[ID].Cells[5].Value.ToString().Trim();
+            drwInx = suggDataGridView.Rows[ID].Cells[0].Value.ToString().Trim();
+
+            chosenT = Convert.ToDateTime(suggDataGridView.Rows[ID].Cells[1].Value.ToString().Trim());
             selectedDate.Value = chosenT.Date;
-            DataTable dt = SQL.GetAppointment(selectedDate.Value.Date, selectedDate.Value.Date, "", comboBox1.SelectedItem.ToString().Trim(), "");
-            dataGridView3.DataSource = dt;
-            DataTable dt2 = SQL.GetAppointment(selectedDate.Value.Date, selectedDate.Value.Date, "", "", "");
-            dataGridView4.DataSource = dt2;
+            //DataTable dt = SQL.GetAppointment(selectedDate.Value.Date, selectedDate.Value.Date, "", comboBox1.SelectedItem.ToString().Trim(), "");
+            //dataGridView3.DataSource = dt;
+
+            //DataTable dt2 = SQL.GetAppointment(selectedDate.Value.Date, selectedDate.Value.Date, "", "", "");
+            //dataGridView4.DataSource = dt2;
         }
 
         private void dayNumericUpDown_ValueChanged_1(object sender, EventArgs e)
         {
             suggDataGridView.DataSource = getSuggestionDate();
         }
-        
+
+        private void kidCheckBox_CheckedChanged(object sender, EventArgs e)
+        {
+            kidInx = Convert.ToInt16(kidCheckBox.Checked);
+        }
+
+        private void groupBox1_Enter(object sender, EventArgs e)
+        {
+
+        }
     }
 }

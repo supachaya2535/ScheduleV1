@@ -44,12 +44,11 @@ namespace AppointmentQueue
                 {
                     SqlConnection cn = new SqlConnection(global::AppointmentQueue.Properties.Settings.Default.Database1ConnectionString);
                     SqlCommand command = new SqlCommand(
-                        "INSERT INTO DoctorWorks (drw_id,drw_dr,drw_sdate,drw_edate,drw_dow,drw_period,"+
+                        "INSERT INTO DoctorWorks (drw_dr,drw_sdate,drw_edate,drw_dow,drw_period,"+
                         "drw_kid,drw_w1,drw_w2,drw_w3,drw_w4,drw_status) " +
-                        "VALUES (@drw_id,@drw_dr,@drw_sdate,@drw_edate,@drw_dow,@drw_period," +
+                        "VALUES (@drw_dr,@drw_sdate,@drw_edate,@drw_dow,@drw_period," +
                         "@drw_kid,@drw_w1,@drw_w2,@drw_w3,@drw_w4,@drw_status)", cn);
 
-                    command.Parameters.AddWithValue("@drw_id", drIdTxt.Text.Trim());
                     command.Parameters.AddWithValue("@drw_dr", drIdTxt.Text.Trim());
                     command.Parameters.AddWithValue("@drw_sdate", startDate.Value.Date);
                     command.Parameters.AddWithValue("@drw_edate", startDate.Value.Date);

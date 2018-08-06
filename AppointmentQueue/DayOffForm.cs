@@ -13,10 +13,13 @@ namespace AppointmentQueue
 {
     public partial class DayOffForm : Form
     {
-        int pkDr;
+        String pkDr;
         public DayOffForm()
         {
             InitializeComponent();
+            dayOffDate.Value = DateTime.Today;
+            pedCob.SelectedIndex = 0;
+
         }
 
         private void addDayOffBtn_Click(object sender, EventArgs e)
@@ -33,7 +36,7 @@ namespace AppointmentQueue
                     command.Parameters.AddWithValue("@df_date", dayOffDate.Value.Date);
                     command.Parameters.AddWithValue("@df_dr", pkDr);
                     command.Parameters.AddWithValue("@df_period", pedCob.SelectedItem.ToString().Trim());
-                    command.Parameters.AddWithValue("@df_detail", detailTxt.Text);
+                    command.Parameters.AddWithValue("@df_detail", detailTxt.Text.Trim());
                     command.Connection = cn;
 
                     cn.Open();
@@ -77,8 +80,9 @@ namespace AppointmentQueue
             String tempdrNameTxt = drDataGridView2.Rows[ID].Cells[1].Value.ToString().Trim();
             String tempdrLnameTxt = drDataGridView2.Rows[ID].Cells[2].Value.ToString().Trim();
 
-            pkDr = Convert.ToInt16(drDataGridView2.Rows[ID].Cells[0].Value.ToString());
+            pkDr = tempdrIdTxt;
             drName2.Text = tempdrNameTxt;
+            drLname2.Text = tempdrLnameTxt;
 
             drIdTxt.Text = tempdrIdTxt;
             drNameTxt2.Text = tempdrNameTxt;
@@ -87,7 +91,7 @@ namespace AppointmentQueue
 
         private void seachDrReq_Click(object sender, EventArgs e)
         {
-            DataTable dt = SQL.GetDayOffs(dayOffDate.Value, dayOffDate.Value.Date.AddMonths(1), drNameTxt2.Text);
+            DataTable dt = SQL.GetDayOffs(dayOffDate.Value, dayOffDate.Value.Date.AddYears(1), drNameTxt2.Text);
             dayOffGridView.DataSource = dt;
         }
 
@@ -95,7 +99,7 @@ namespace AppointmentQueue
         {
             if (id_df != -1)
             {
-                if (MessageBox.Show("Do you want to delete a day off?", "Delete day off", MessageBoxButtons.YesNo) == DialogResult.Yes)
+                if (MessageBox.Show("Do you want to delete a Day off record?", "Delete Day-off", MessageBoxButtons.YesNo) == DialogResult.Yes)
                 {
                     SqlConnection cn = new SqlConnection(global::AppointmentQueue.Properties.Settings.Default.Database1ConnectionString);
                     SqlCommand command = new SqlCommand("DELETE FROM DayOffs WHERE df_id = '" + id_df + "'", cn);
@@ -105,12 +109,12 @@ namespace AppointmentQueue
                     cn.Close();
                     seachDrReq_Click(sender, e);
                     id_df = -1;
-                    MessageBox.Show("Delete Dayoff Success");
+                    MessageBox.Show("Delete Day-off Successful");
                 }
             }
             else
             {
-                MessageBox.Show("Please Choose Your Dayoff that want to delete");
+                MessageBox.Show("Please Choose a Day-off record to delete");
             }
         }
 

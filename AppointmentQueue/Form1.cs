@@ -66,7 +66,8 @@ namespace AppointmentQueue
 
         private void seachDateForReq_Click(object sender, EventArgs e)
         {
-            DateForReqSuggestionForm sForm = new DateForReqSuggestionForm(scan_CoBox.SelectedIndex,paidCob.SelectedIndex, reqCob.SelectedIndex, todayDatePicker.Value.Date);
+            DateForReqSuggestionForm sForm = new DateForReqSuggestionForm(scan_CoBox.SelectedIndex,paidCob.SelectedIndex, reqCob.SelectedIndex,
+                todayDatePicker.Value.Date, Convert.ToInt16(kidCheckBox.Checked));
             sForm.exist = false;
             sForm.ShowDialog();
             if ((sForm.exist == true))
@@ -75,6 +76,8 @@ namespace AppointmentQueue
                 scan_CoBox.SelectedIndex = sForm.scannerInx;
                 reqCob.SelectedIndex = sForm.requestInx;
                 paidCob.SelectedIndex = sForm.periodInx;
+                drTxt.Text = sForm.drInx;
+
             }
             
         }
@@ -140,16 +143,18 @@ namespace AppointmentQueue
                 {
                     SqlConnection cn = new SqlConnection(global::AppointmentQueue.Properties.Settings.Default.Database1ConnectionString);
                     SqlCommand command = new SqlCommand(
-                        "INSERT INTO Appointments (ap_startT,ap_patient,ap_request,ap_detail,ap_period,ap_appstatus,ap_scan) " +
-                        "VALUES (@ap_startT,@ap_patient,@ap_request,@ap_detail,@ap_period,@ap_appstatus,@ap_scan)", cn);
+                        "INSERT INTO Appointments (ap_date,ap_patient,ap_request,ap_dr,ap_appstatus,ap_detail,ap_scan,ap_kid,ap_period) " +
+                        "VALUES (@ap_date,@ap_patient,@ap_request,@ap_dr,@ap_appstatus,@ap_detail,@ap_scan,@ap_kid,@ap_period)", cn);
 
-                    command.Parameters.AddWithValue("@ap_startT", todayDatePicker.Value.Date.ToString().Trim());
+                    command.Parameters.AddWithValue("@ap_date", todayDatePicker.Value.Date.ToString().Trim());
                     command.Parameters.AddWithValue("@ap_patient", HNtxt.Text.Trim());
-                    command.Parameters.AddWithValue("@ap_request", reqCob.SelectedIndex + 1);
+                    command.Parameters.AddWithValue("@ap_request", reqCob.SelectedIndex);
+                    command.Parameters.AddWithValue("@ap_dr", drTxt.Text.Trim());
                     command.Parameters.AddWithValue("@ap_detail", detail_text.Text.Trim());
-                    command.Parameters.AddWithValue("@ap_period", paidCob.SelectedItem.ToString().Trim());
                     command.Parameters.AddWithValue("@ap_appstatus", "Waiting");
                     command.Parameters.AddWithValue("@ap_scan", scan_CoBox.SelectedIndex + 1);
+                    command.Parameters.AddWithValue("@ap_kid", Convert.ToInt16(kidCheckBox.Checked).ToString().Trim());
+                    command.Parameters.AddWithValue("@ap_period", paidCob.Text.Trim());
                     command.Connection = cn;
 
                     cn.Open();
