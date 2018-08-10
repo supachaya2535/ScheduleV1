@@ -13,6 +13,18 @@ namespace AppointmentQueue
 {
     public partial class CalendarForm : Form
     {
+        /// <Additional parameter>
+        public int usageTime;
+        public int scannerInx;
+        public int periodInx;
+        public int requestInx;
+        public string drInx;
+        public int kidInx;
+        public string drcInx;
+        public DateTime startT;
+        public DateTime chosenT;
+        public bool exist = false;
+        /// </summary>
 
         public enum MonthName
         {
@@ -35,9 +47,25 @@ namespace AppointmentQueue
         private List<DataRow>[,] morning_all_btn;
         private List<DataRow>[,] evening_all_btn;
 
-        public CalendarForm()
+        public CalendarForm(int scan, int ped, int req, DateTime sT, int kid)
         {
             InitializeComponent();
+            
+            scannerInx = scan;
+            periodInx = ped;
+            requestInx = req;
+            kidInx = kid;
+            scan_CoBox = SQL.readScanner(scan_CoBox);
+            reqCob = SQL.readRequest(reqCob);
+            scan_CoBox.SelectedIndex = scannerInx;
+            reqCob.SelectedIndex = requestInx;
+            comboBox1.SelectedIndex = periodInx;
+            dateTimePicker1.Value = sT;
+            selectedDate.Value = sT;
+            startT = sT;
+            chosenT = sT;
+
+            usageTime = SQL.getTimeReq(reqCob.SelectedItem.ToString().Trim());
         }
 
         private void SetDoctorWorkDataButtonToBasic()
@@ -84,12 +112,17 @@ namespace AppointmentQueue
             if (morning_all_btn[row_bt, col_bt].Count > 0 ||
                 evening_all_btn[row_bt, col_bt].Count > 0)
             {
-                ShowDetailOfCalendar detail_form = new ShowDetailOfCalendar();
-                detail_form.morning_data = morning_all_btn[row_bt, col_bt];
-                detail_form.evening_data = evening_all_btn[row_bt, col_bt];
-                detail_form.date = calendar_day_all_date[row_bt, col_bt];
+                
+                //ShowDetailOfCalendar detail_form = new ShowDetailOfCalendar();
+                //detail_form.morning_data = morning_all_btn[row_bt, col_bt];
+                //detail_form.evening_data = evening_all_btn[row_bt, col_bt];
+                //detail_form.date = calendar_day_all_date[row_bt, col_bt];
 
-                detail_form.ShowDialog();
+                startT = calendar_day_all_date[row_bt, col_bt]; 
+                DataTable suggestDate = SQL.GetDoctorCalendars(startT, startT, "", "", "");
+                suggDataGridView.DataSource = suggestDate;
+
+                //detail_form.ShowDialog();
             }
             //MessageBox.Show("row:" + row_bt + "|col:" + col_bt);
         }
@@ -577,6 +610,51 @@ namespace AppointmentQueue
             }
 
             GenarateCalendar(cur_month, cur_year);
+        }
+
+        private void seachDateForReq_Click(object sender, EventArgs e)
+        {
+            startT = startT.Date;
+            int offSet = Convert.ToInt16(dayNumericUpDown.Value);
+            DateTime endT = startT.AddDays(offSet);
+
+            DataTable suggestDate = SQL.GetDoctorCalendars(startT, 
+                endT, 
+                reqCob.SelectedItem.ToString().Trim(),
+                Convert.ToInt16(kidCheckBox.Checked).ToString().Trim(), 
+                comboBox1.SelectedItem.ToString().Trim());
+            suggDataGridView.DataSource = suggestDate;
+            
+        }
+
+        private void acceptDateForReq_Click(object sender, EventArgs e)
+        {
+            exist = true;
+            Close();
+        }
+
+        private void suggDataGridView_RowHeaderMouseDoubleClick(object sender, DataGridViewCellMouseEventArgs e)
+        {
+            int ID = suggDataGridView.CurrentRow.Index;
+            scan_CoBox.SelectedIndex = scannerInx;
+            reqCob.SelectedIndex = requestInx;
+            comboBox1.SelectedIndex = periodInx;
+            kidCheckBox.Checked = Convert.ToBoolean(kidInx);
+            drInx = suggDataGridView.Rows[ID].Cells["drw_dr"].Value.ToString().Trim();
+            drcInx = suggDataGridView.Rows[ID].Cells["drc_id"].Value.ToString().Trim();
+
+            chosenT = Convert.ToDateTime(suggDataGridView.Rows[ID].Cells["drc_date"].Value.ToString().Trim());
+            selectedDate.Value = chosenT.Date;
+        }
+
+        private void suggDataGridView_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
+
+        }
+
+        private void reqCob_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            usageTime = SQL.getTimeReq(reqCob.SelectedItem.ToString().Trim());
         }
     }
 }

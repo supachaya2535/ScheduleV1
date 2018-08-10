@@ -90,3 +90,5 @@ E:\GitHub\MRI_Scheduling\ScheduleV1\AppointmentQueue\obj\Debug\AppointmentQueue.
 C:\Users\Toon\Documents\GitDoc\ScheduleHospital\AppointmentQueue\obj\Debug\AppointmentQueue.CalendarForm.resources
 C:\Users\Toon\Documents\GitDoc\ScheduleHospital\AppointmentQueue\obj\Debug\AppointmentQueue.DoctorWorkForm.resources
 C:\Users\Toon\Documents\GitDoc\ScheduleHospital\AppointmentQueue\obj\Debug\AppointmentQueue.ShowDetailOfCalendar.resources
+E:\GitHub\MRI_Scheduling\ScheduleV1\AppointmentQueue\obj\Debug\AppointmentQueue.CalendarForm.resources
+E:\GitHub\MRI_Scheduling\ScheduleV1\AppointmentQueue\obj\Debug\AppointmentQueue.ShowDetailOfCalendar.resources

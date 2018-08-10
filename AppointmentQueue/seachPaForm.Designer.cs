@@ -48,9 +48,9 @@
             // drGridView
             // 
             this.drGridView.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.drGridView.Location = new System.Drawing.Point(6, 93);
+            this.drGridView.Location = new System.Drawing.Point(6, 74);
             this.drGridView.Name = "drGridView";
-            this.drGridView.Size = new System.Drawing.Size(482, 182);
+            this.drGridView.Size = new System.Drawing.Size(482, 204);
             this.drGridView.TabIndex = 0;
             this.drGridView.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.drGridView_CellContentClick);
             this.drGridView.RowHeaderMouseDoubleClick += new System.Windows.Forms.DataGridViewCellMouseEventHandler(this.patGridView_RowHeaderMouseDoubleClick);
@@ -91,7 +91,7 @@
             // HNtxt
             // 
             this.HNtxt.Font = new System.Drawing.Font("Verdana", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.HNtxt.Location = new System.Drawing.Point(49, 55);
+            this.HNtxt.Location = new System.Drawing.Point(49, 42);
             this.HNtxt.Name = "HNtxt";
             this.HNtxt.Size = new System.Drawing.Size(175, 23);
             this.HNtxt.TabIndex = 9;
@@ -101,7 +101,7 @@
             // 
             this.label2.AutoSize = true;
             this.label2.Font = new System.Drawing.Font("Verdana", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label2.Location = new System.Drawing.Point(9, 58);
+            this.label2.Location = new System.Drawing.Point(9, 45);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(26, 16);
             this.label2.TabIndex = 8;
@@ -130,7 +130,7 @@
             // 
             this.acceptBtn.Enabled = false;
             this.acceptBtn.Font = new System.Drawing.Font("Verdana", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.acceptBtn.Location = new System.Drawing.Point(313, 48);
+            this.acceptBtn.Location = new System.Drawing.Point(234, 38);
             this.acceptBtn.Name = "acceptBtn";
             this.acceptBtn.Size = new System.Drawing.Size(73, 30);
             this.acceptBtn.TabIndex = 21;
@@ -138,7 +138,7 @@
             this.acceptBtn.UseVisualStyleBackColor = true;
             this.acceptBtn.Click += new System.EventHandler(this.acceptBtn_Click);
             // 
-            // seachPaForm
+            // SeachPaForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
@@ -151,7 +151,7 @@
             this.Controls.Add(this.nametxt);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.drGridView);
-            this.Name = "seachPaForm";
+            this.Name = "SeachPaForm";
             this.Text = "Seach Patient";
             this.Load += new System.EventHandler(this.seachPaForm_Load);
             ((System.ComponentModel.ISupportInitialize)(this.drGridView)).EndInit();

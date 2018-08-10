@@ -30,11 +30,13 @@
         {
             this.todayDay = new System.Windows.Forms.DateTimePicker();
             this.label23 = new System.Windows.Forms.Label();
-            this.groupBox1 = new System.Windows.Forms.GroupBox();
+            this.reqGroupBox = new System.Windows.Forms.GroupBox();
+            this.kidCheckBox = new System.Windows.Forms.CheckBox();
+            this.drTxt = new System.Windows.Forms.TextBox();
+            this.Doctor = new System.Windows.Forms.Label();
             this.detail_text = new System.Windows.Forms.TextBox();
             this.label7 = new System.Windows.Forms.Label();
             this.label6 = new System.Windows.Forms.Label();
-            this.seachDateForReq = new System.Windows.Forms.Button();
             this.todayDatePicker = new System.Windows.Forms.DateTimePicker();
             this.reqCob = new System.Windows.Forms.ComboBox();
             this.label3 = new System.Windows.Forms.Label();
@@ -65,15 +67,10 @@
             this.button1 = new System.Windows.Forms.Button();
             this.button2 = new System.Windows.Forms.Button();
             this.endDate = new System.Windows.Forms.DateTimePicker();
-            this.button3 = new System.Windows.Forms.Button();
+            this.calendarBtn = new System.Windows.Forms.Button();
             this.manDrWorkBtn = new System.Windows.Forms.Button();
             this.manDrBtn = new System.Windows.Forms.Button();
-            this.Doctor = new System.Windows.Forms.Label();
-            this.drTxt = new System.Windows.Forms.TextBox();
-            this.textBox1 = new System.Windows.Forms.TextBox();
-            this.label9 = new System.Windows.Forms.Label();
-            this.kidCheckBox = new System.Windows.Forms.CheckBox();
-            this.groupBox1.SuspendLayout();
+            this.reqGroupBox.SuspendLayout();
             this.groupBox2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.appDataGridView)).BeginInit();
             this.SuspendLayout();
@@ -103,32 +100,60 @@
             this.label23.TabIndex = 36;
             this.label23.Text = "List of Appointments";
             // 
-            // groupBox1
+            // reqGroupBox
             // 
-            this.groupBox1.BackColor = System.Drawing.SystemColors.GradientActiveCaption;
-            this.groupBox1.Controls.Add(this.kidCheckBox);
-            this.groupBox1.Controls.Add(this.textBox1);
-            this.groupBox1.Controls.Add(this.label9);
-            this.groupBox1.Controls.Add(this.drTxt);
-            this.groupBox1.Controls.Add(this.Doctor);
-            this.groupBox1.Controls.Add(this.detail_text);
-            this.groupBox1.Controls.Add(this.label7);
-            this.groupBox1.Controls.Add(this.label6);
-            this.groupBox1.Controls.Add(this.seachDateForReq);
-            this.groupBox1.Controls.Add(this.todayDatePicker);
-            this.groupBox1.Controls.Add(this.reqCob);
-            this.groupBox1.Controls.Add(this.label3);
-            this.groupBox1.Controls.Add(this.scan_CoBox);
-            this.groupBox1.Controls.Add(this.paidCob);
-            this.groupBox1.Controls.Add(this.label5);
-            this.groupBox1.Controls.Add(this.Scanner);
-            this.groupBox1.Font = new System.Drawing.Font("Verdana", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.groupBox1.Location = new System.Drawing.Point(3, 191);
-            this.groupBox1.Name = "groupBox1";
-            this.groupBox1.Size = new System.Drawing.Size(327, 286);
-            this.groupBox1.TabIndex = 31;
-            this.groupBox1.TabStop = false;
-            this.groupBox1.Text = "Request Information";
+            this.reqGroupBox.BackColor = System.Drawing.SystemColors.GradientActiveCaption;
+            this.reqGroupBox.Controls.Add(this.kidCheckBox);
+            this.reqGroupBox.Controls.Add(this.drTxt);
+            this.reqGroupBox.Controls.Add(this.Doctor);
+            this.reqGroupBox.Controls.Add(this.detail_text);
+            this.reqGroupBox.Controls.Add(this.label7);
+            this.reqGroupBox.Controls.Add(this.label6);
+            this.reqGroupBox.Controls.Add(this.todayDatePicker);
+            this.reqGroupBox.Controls.Add(this.reqCob);
+            this.reqGroupBox.Controls.Add(this.label3);
+            this.reqGroupBox.Controls.Add(this.scan_CoBox);
+            this.reqGroupBox.Controls.Add(this.paidCob);
+            this.reqGroupBox.Controls.Add(this.label5);
+            this.reqGroupBox.Controls.Add(this.Scanner);
+            this.reqGroupBox.Font = new System.Drawing.Font("Verdana", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.reqGroupBox.Location = new System.Drawing.Point(3, 205);
+            this.reqGroupBox.Name = "reqGroupBox";
+            this.reqGroupBox.Size = new System.Drawing.Size(327, 272);
+            this.reqGroupBox.TabIndex = 31;
+            this.reqGroupBox.TabStop = false;
+            this.reqGroupBox.Text = "Request Information";
+            // 
+            // kidCheckBox
+            // 
+            this.kidCheckBox.AutoSize = true;
+            this.kidCheckBox.Enabled = false;
+            this.kidCheckBox.Font = new System.Drawing.Font("Verdana", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.kidCheckBox.Location = new System.Drawing.Point(79, 86);
+            this.kidCheckBox.Name = "kidCheckBox";
+            this.kidCheckBox.Size = new System.Drawing.Size(143, 20);
+            this.kidCheckBox.TabIndex = 74;
+            this.kidCheckBox.Text = "Pediatric Patients";
+            this.kidCheckBox.UseVisualStyleBackColor = true;
+            // 
+            // drTxt
+            // 
+            this.drTxt.Enabled = false;
+            this.drTxt.Font = new System.Drawing.Font("Verdana", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.drTxt.Location = new System.Drawing.Point(79, 59);
+            this.drTxt.Name = "drTxt";
+            this.drTxt.Size = new System.Drawing.Size(231, 23);
+            this.drTxt.TabIndex = 26;
+            // 
+            // Doctor
+            // 
+            this.Doctor.AutoSize = true;
+            this.Doctor.Font = new System.Drawing.Font("Verdana", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.Doctor.Location = new System.Drawing.Point(9, 62);
+            this.Doctor.Name = "Doctor";
+            this.Doctor.Size = new System.Drawing.Size(66, 16);
+            this.Doctor.TabIndex = 25;
+            this.Doctor.Text = "DoctorID";
             // 
             // detail_text
             // 
@@ -143,7 +168,7 @@
             // 
             this.label7.AutoSize = true;
             this.label7.Font = new System.Drawing.Font("Verdana", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label7.Location = new System.Drawing.Point(10, 204);
+            this.label7.Location = new System.Drawing.Point(10, 219);
             this.label7.Name = "label7";
             this.label7.Size = new System.Drawing.Size(45, 16);
             this.label7.TabIndex = 21;
@@ -159,34 +184,24 @@
             this.label6.TabIndex = 20;
             this.label6.Text = "Date";
             // 
-            // seachDateForReq
-            // 
-            this.seachDateForReq.Font = new System.Drawing.Font("Verdana", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.seachDateForReq.Location = new System.Drawing.Point(247, 23);
-            this.seachDateForReq.Margin = new System.Windows.Forms.Padding(2);
-            this.seachDateForReq.Name = "seachDateForReq";
-            this.seachDateForReq.Size = new System.Drawing.Size(62, 30);
-            this.seachDateForReq.TabIndex = 19;
-            this.seachDateForReq.Text = "Search";
-            this.seachDateForReq.UseVisualStyleBackColor = true;
-            this.seachDateForReq.Click += new System.EventHandler(this.seachDateForReq_Click);
-            // 
             // todayDatePicker
             // 
             this.todayDatePicker.CalendarFont = new System.Drawing.Font("Verdana", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.todayDatePicker.Enabled = false;
             this.todayDatePicker.Font = new System.Drawing.Font("Verdana", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.todayDatePicker.Format = System.Windows.Forms.DateTimePickerFormat.Short;
-            this.todayDatePicker.Location = new System.Drawing.Point(78, 28);
+            this.todayDatePicker.Location = new System.Drawing.Point(79, 26);
             this.todayDatePicker.MaxDate = new System.DateTime(2019, 12, 31, 0, 0, 0, 0);
             this.todayDatePicker.MinDate = new System.DateTime(1909, 11, 24, 0, 0, 0, 0);
             this.todayDatePicker.Name = "todayDatePicker";
-            this.todayDatePicker.Size = new System.Drawing.Size(163, 23);
+            this.todayDatePicker.Size = new System.Drawing.Size(230, 23);
             this.todayDatePicker.TabIndex = 18;
             this.todayDatePicker.Value = new System.DateTime(2018, 5, 22, 0, 0, 0, 0);
             this.todayDatePicker.ValueChanged += new System.EventHandler(this.todayDatePicker_ValueChanged);
             // 
             // reqCob
             // 
+            this.reqCob.Enabled = false;
             this.reqCob.Font = new System.Drawing.Font("Verdana", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.reqCob.FormattingEnabled = true;
             this.reqCob.Location = new System.Drawing.Point(78, 141);
@@ -207,6 +222,7 @@
             // 
             // scan_CoBox
             // 
+            this.scan_CoBox.Enabled = false;
             this.scan_CoBox.Font = new System.Drawing.Font("Verdana", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.scan_CoBox.FormattingEnabled = true;
             this.scan_CoBox.Location = new System.Drawing.Point(78, 112);
@@ -216,6 +232,7 @@
             // 
             // paidCob
             // 
+            this.paidCob.Enabled = false;
             this.paidCob.Font = new System.Drawing.Font("Verdana", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.paidCob.FormattingEnabled = true;
             this.paidCob.Items.AddRange(new object[] {
@@ -230,7 +247,6 @@
             // label5
             // 
             this.label5.AutoSize = true;
-            this.label5.Enabled = false;
             this.label5.Font = new System.Drawing.Font("Verdana", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label5.Location = new System.Drawing.Point(10, 171);
             this.label5.Name = "label5";
@@ -263,7 +279,7 @@
             this.groupBox2.Controls.Add(this.label1);
             this.groupBox2.Controls.Add(this.HNtxt);
             this.groupBox2.Font = new System.Drawing.Font("Verdana", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.groupBox2.Location = new System.Drawing.Point(3, 5);
+            this.groupBox2.Location = new System.Drawing.Point(3, 7);
             this.groupBox2.Name = "groupBox2";
             this.groupBox2.Size = new System.Drawing.Size(327, 182);
             this.groupBox2.TabIndex = 33;
@@ -395,9 +411,9 @@
             // 
             this.addBtn.Enabled = false;
             this.addBtn.Font = new System.Drawing.Font("Verdana", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.addBtn.Location = new System.Drawing.Point(12, 483);
+            this.addBtn.Location = new System.Drawing.Point(98, 483);
             this.addBtn.Name = "addBtn";
-            this.addBtn.Size = new System.Drawing.Size(102, 51);
+            this.addBtn.Size = new System.Drawing.Size(100, 51);
             this.addBtn.TabIndex = 32;
             this.addBtn.Text = "Add New Appointment";
             this.addBtn.UseVisualStyleBackColor = true;
@@ -515,16 +531,18 @@
             this.endDate.Value = new System.DateTime(2018, 6, 1, 0, 0, 0, 0);
             this.endDate.ValueChanged += new System.EventHandler(this.endDate_ValueChanged);
             // 
-            // button3
+            // calendarBtn
             // 
-            this.button3.Font = new System.Drawing.Font("Verdana", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button3.Location = new System.Drawing.Point(119, 483);
-            this.button3.Margin = new System.Windows.Forms.Padding(2);
-            this.button3.Name = "button3";
-            this.button3.Size = new System.Drawing.Size(88, 51);
-            this.button3.TabIndex = 60;
-            this.button3.Text = "Show Calendar ";
-            this.button3.UseVisualStyleBackColor = true;
+            this.calendarBtn.Enabled = false;
+            this.calendarBtn.Font = new System.Drawing.Font("Verdana", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.calendarBtn.Location = new System.Drawing.Point(3, 483);
+            this.calendarBtn.Margin = new System.Windows.Forms.Padding(2);
+            this.calendarBtn.Name = "calendarBtn";
+            this.calendarBtn.Size = new System.Drawing.Size(90, 51);
+            this.calendarBtn.TabIndex = 60;
+            this.calendarBtn.Text = "Calendar ";
+            this.calendarBtn.UseVisualStyleBackColor = true;
+            this.calendarBtn.Click += new System.EventHandler(this.show_calendar_btn_Click);
             // 
             // manDrWorkBtn
             // 
@@ -550,55 +568,6 @@
             this.manDrBtn.UseVisualStyleBackColor = true;
             this.manDrBtn.Click += new System.EventHandler(this.manDrBtn_Click);
             // 
-            // Doctor
-            // 
-            this.Doctor.AutoSize = true;
-            this.Doctor.Font = new System.Drawing.Font("Verdana", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.Doctor.Location = new System.Drawing.Point(9, 62);
-            this.Doctor.Name = "Doctor";
-            this.Doctor.Size = new System.Drawing.Size(52, 16);
-            this.Doctor.TabIndex = 25;
-            this.Doctor.Text = "Doctor";
-            // 
-            // drTxt
-            // 
-            this.drTxt.Enabled = false;
-            this.drTxt.Font = new System.Drawing.Font("Verdana", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.drTxt.Location = new System.Drawing.Point(79, 59);
-            this.drTxt.Name = "drTxt";
-            this.drTxt.Size = new System.Drawing.Size(231, 23);
-            this.drTxt.TabIndex = 26;
-            // 
-            // textBox1
-            // 
-            this.textBox1.Enabled = false;
-            this.textBox1.Font = new System.Drawing.Font("Verdana", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.textBox1.Location = new System.Drawing.Point(78, 85);
-            this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(231, 23);
-            this.textBox1.TabIndex = 28;
-            // 
-            // label9
-            // 
-            this.label9.AutoSize = true;
-            this.label9.Font = new System.Drawing.Font("Verdana", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label9.Location = new System.Drawing.Point(13, 88);
-            this.label9.Name = "label9";
-            this.label9.Size = new System.Drawing.Size(46, 16);
-            this.label9.TabIndex = 27;
-            this.label9.Text = "label9";
-            // 
-            // kidCheckBox
-            // 
-            this.kidCheckBox.AutoSize = true;
-            this.kidCheckBox.Font = new System.Drawing.Font("Verdana", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.kidCheckBox.Location = new System.Drawing.Point(12, 259);
-            this.kidCheckBox.Name = "kidCheckBox";
-            this.kidCheckBox.Size = new System.Drawing.Size(143, 20);
-            this.kidCheckBox.TabIndex = 74;
-            this.kidCheckBox.Text = "Pediatric Patients";
-            this.kidCheckBox.UseVisualStyleBackColor = true;
-            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -606,7 +575,7 @@
             this.ClientSize = new System.Drawing.Size(1070, 540);
             this.Controls.Add(this.manDrBtn);
             this.Controls.Add(this.manDrWorkBtn);
-            this.Controls.Add(this.button3);
+            this.Controls.Add(this.calendarBtn);
             this.Controls.Add(this.endDate);
             this.Controls.Add(this.button2);
             this.Controls.Add(this.button1);
@@ -618,17 +587,17 @@
             this.Controls.Add(this.todayCheckBox);
             this.Controls.Add(this.todayDay);
             this.Controls.Add(this.label23);
-            this.Controls.Add(this.groupBox1);
+            this.Controls.Add(this.reqGroupBox);
+            this.Controls.Add(this.addBtn);
             this.Controls.Add(this.groupBox2);
             this.Controls.Add(this.appDataGridView);
-            this.Controls.Add(this.addBtn);
             this.MaximizeBox = false;
             this.MinimizeBox = false;
             this.Name = "Form1";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Form1";
-            this.groupBox1.ResumeLayout(false);
-            this.groupBox1.PerformLayout();
+            this.reqGroupBox.ResumeLayout(false);
+            this.reqGroupBox.PerformLayout();
             this.groupBox2.ResumeLayout(false);
             this.groupBox2.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.appDataGridView)).EndInit();
@@ -645,9 +614,8 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn appatientstatusDataGridViewTextBoxColumn;
         private System.Windows.Forms.DateTimePicker todayDay;
         private System.Windows.Forms.Label label23;
-        private System.Windows.Forms.GroupBox groupBox1;
+        private System.Windows.Forms.GroupBox reqGroupBox;
         private System.Windows.Forms.Label label6;
-        private System.Windows.Forms.Button seachDateForReq;
         private System.Windows.Forms.DateTimePicker todayDatePicker;
         private System.Windows.Forms.ComboBox reqCob;
         private System.Windows.Forms.Label label3;
@@ -680,11 +648,9 @@
         public System.Windows.Forms.DateTimePicker endDate;
         private System.Windows.Forms.TextBox detail_text;
         private System.Windows.Forms.Label label7;
-        private System.Windows.Forms.Button button3;
+        private System.Windows.Forms.Button calendarBtn;
         private System.Windows.Forms.Button manDrWorkBtn;
         private System.Windows.Forms.Button manDrBtn;
-        private System.Windows.Forms.TextBox textBox1;
-        private System.Windows.Forms.Label label9;
         private System.Windows.Forms.TextBox drTxt;
         private System.Windows.Forms.Label Doctor;
         private System.Windows.Forms.CheckBox kidCheckBox;

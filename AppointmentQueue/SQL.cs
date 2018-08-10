@@ -17,32 +17,33 @@ namespace AppointmentQueue
         {
             SqlConnection cn = new SqlConnection(global::AppointmentQueue.Properties.Settings.Default.Database1ConnectionString);
             cn.Open();
-
-            //startT = new DateTime(startT.Year, startT.Month, startT.Day, 1, 0, 0);
-            //startT = startT.AddTicks(+1);
             endT = endT.AddDays(1).AddTicks(-1);
-            SqlCommand command = new SqlCommand(
-                "SELECT ap_Id,ap_date,ap_patient,ap_dr,dr_name,ap_request,req_bodypart,ap_detail,ap_appstatus,ap_scan, ap_kid,ap_period " +
-                "FROM Appointments " +
-                "JOIN Requests ON ap_request = req_Id " +
-                "JOIN Doctors ON ap_dr = dr_Id " +
-                "WHERE ap_period LIKE '" + period.Trim() + "%' " +
-                "AND ap_date BETWEEN @StartT AND @EndT "+
-                "AND ap_patient LIKE '%" + patient.Trim() + "%' "+
-                "AND req_bodypart LIKE '%" + request.Trim() + "%' " +
-                "ORDER BY ap_date", cn);
             
+            SqlCommand command = new SqlCommand(
+               "SELECT ap_Id,drc_date,ap_patient,drw_dr,dr_name,ap_request," +
+               "req_bodypart,ap_detail,ap_appstatus,ap_scan, drw_kid,drw_period " +
+               "FROM Appointments " +
+               "JOIN DoctorCalendars ON drc_id = ap_drc " +
+               "JOIN DoctorWorks ON drw_id = drc_drw " +
+               "JOIN Requests ON ap_request = req_Id " +
+                "JOIN Doctors ON drw_dr = dr_Id " +
+               "WHERE drw_period LIKE '" + period.Trim() + "%' " +
+               "AND drc_date BETWEEN @StartT AND @EndT " +
+               "AND ap_patient LIKE '%" + patient.Trim() + "%' " +
+               "AND req_bodypart LIKE '%" + request.Trim() + "%' " +
+               "ORDER BY drc_date", cn);
+
             command.Parameters.AddWithValue("@StartT", startT);
             command.Parameters.AddWithValue("@EndT", endT);
 
             SqlDataReader reader = command.ExecuteReader();
             DataTable dt = new DataTable();
             dt.Columns.Add("ap_id", typeof(Int16));
-            dt.Columns.Add("ap_date", typeof(String));
+            dt.Columns.Add("drc_date", typeof(String));
             dt.Columns.Add("ap_patient", typeof(String));
-            dt.Columns.Add("ap_dr", typeof(String));
+            dt.Columns.Add("drw_dr", typeof(String));
             dt.Columns.Add("dr_name", typeof(String));
-            dt.Columns.Add("ap_period", typeof(String));
+            dt.Columns.Add("drw_period", typeof(String));
             dt.Columns.Add("ap_request", typeof(Int16));
             dt.Columns.Add("req_bodypart", typeof(String));
             dt.Columns.Add("ap_detail", typeof(String));
@@ -50,15 +51,7 @@ namespace AppointmentQueue
             dt.Columns.Add("ap_scan", typeof(Int16));
 
             dt.Load(reader);
-
-            /*// cut out time from column ap_startT
-            foreach (DataRow item in dt.Rows)
-            {
-                string date = item["ap_startT"].ToString();
-                string new_format_date = date.Split(' ')[0];
-                item["ap_startT"] = new_format_date;
-            }*/
-
+            
             cn.Close();
             return dt;
         }
@@ -157,10 +150,6 @@ namespace AppointmentQueue
             return dt;
         }
         
-        /// <summary>
-        /// fully return doctor calendars (all of data)
-        /// </summary>
-        /// <returns></returns>
         public static DataTable GetDoctorCalendars()
         {
             SqlConnection cn = new SqlConnection(global::AppointmentQueue.Properties.Settings.Default.Database1ConnectionString);
@@ -222,28 +211,10 @@ namespace AppointmentQueue
 
             dt.Load(reader);
             cn.Close();
-
-            //foreach (DataRow item in dt.Rows)
-            //{
-            //    string display = "";
-            //    display += item["drc_id"].ToString() + "\n";
-            //    display += item["drc_date"].ToString() + "\n";
-            //    display += item["drc_drw"].ToString() + "\n";
-            //    display += item["drc_time"].ToString() + "\n";
-            //    display += item["drc_status"].ToString() + "\n";
-            //    display += item["drw_dow"].ToString() + "\n";
-            //    display += item["drw_period"].ToString() + "\n";
-            //    display += item["dr_name"].ToString() + " " + item["dr_lname"].ToString();
-            //    MessageBox.Show(display);
-            //}
-
+            
             return dt;
         }
-
-        /// <summary>
-        /// get fully of data of DoctorRequests database (join with doctor and request database)
-        /// </summary>
-        /// <returns></returns>
+        
         public static DataTable GetDoctorRequests()
         {
             SqlConnection cn = new SqlConnection(global::AppointmentQueue.Properties.Settings.Default.Database1ConnectionString);
@@ -295,11 +266,7 @@ namespace AppointmentQueue
             cn.Close();
             return dt;
         }
-
-        /// <summary>
-        ///  fully get data of GetDoctorWorks database (join with Doctors database)
-        /// </summary>
-        /// <returns></returns>
+        
         public static DataTable GetDoctorWorks()
         {
             SqlConnection cn = new SqlConnection(global::AppointmentQueue.Properties.Settings.Default.Database1ConnectionString);
@@ -323,7 +290,7 @@ namespace AppointmentQueue
             return dt;
         }
 
-        public static DataTable GetDoctorWorks(String ped, String dr, string kid)
+        public static DataTable GetDoctorWorks(String ped, String dr, string kid, String status, String dow)
         {
             SqlConnection cn = new SqlConnection(global::AppointmentQueue.Properties.Settings.Default.Database1ConnectionString);
             cn.Open();
@@ -332,8 +299,10 @@ namespace AppointmentQueue
                         "drw_kid,drw_w1,drw_w2,drw_w3,drw_w4,drw_status "+
                 "FROM DoctorWorks " +
                 "JOIN Doctors ON dr_Id = drw_dr " +
-                "AND dr_name LIKE '" + dr.Trim() + "%'" +
+                "AND drw_dow LIKE '" + dow.Trim() + "%'" +
+                "AND drw_dr LIKE '" + dr.Trim() + "%'" +
                 "AND drw_kid LIKE '" + kid.Trim() + "%'" +
+                "AND drw_status LIKE '" + status.Trim() + "%'" +
                 "AND drw_period LIKE '" + ped.Trim() + "%'"
                 , cn);
             SqlDataReader reader = command.ExecuteReader();
@@ -362,16 +331,6 @@ namespace AppointmentQueue
             SqlConnection cn = new SqlConnection(global::AppointmentQueue.Properties.Settings.Default.Database1ConnectionString);
             cn.Open();
             
-            /*SqlCommand command = new SqlCommand(
-                "SELECT drc_id,drc_date,drc_drw,drc_time,drw_status" +
-                "FROM DoctorCalendars "+
-                "JOIN DoctorWorks ON drw_id = drc_drw " +
-                "JOIN DoctorRequests ON drw_dr = drreq_dr " +
-                "WHERE drc_date BETWEEN @StartT AND  @EndT " +
-                "AND drw_kid LIKE '" + kid.Trim() + "%'" +
-                "AND drreq_req LIKE '%" + req + "%'"
-                , cn);*/
-
             SqlCommand command = new SqlCommand(
             "SELECT drc_id,drc_date,drc_drw,drc_time,drc_status,drw_dr,dr_name,drw_period " +
             "FROM DoctorCalendars "+
@@ -393,20 +352,137 @@ namespace AppointmentQueue
             SqlDataReader reader = command.ExecuteReader();
 
             DataTable dt = new DataTable();
-            dt.Columns.Add("drc_id", typeof(Int16));
-            dt.Columns.Add("drc_date", typeof(String));
-            dt.Columns.Add("drc_drw", typeof(String));
             dt.Columns.Add("drc_time", typeof(Int16));
-            dt.Columns.Add("drc_status", typeof(String));
-            dt.Columns.Add("drw_dr", typeof(Int16));
+            dt.Columns.Add("drc_date", typeof(String));
             dt.Columns.Add("dr_name", typeof(String));
             dt.Columns.Add("drw_period", typeof(String));
+            dt.Columns.Add("drc_id", typeof(Int16));
+            dt.Columns.Add("drc_status", typeof(String));
+            dt.Columns.Add("drw_dr", typeof(Int16));
+            dt.Columns.Add("drc_drw", typeof(String));
 
             dt.Load(reader);
             cn.Close();
             return dt;
         }
-        
+
+        public static void InsertDoctorWorks(String drw_dr, DateTime drw_sdate, DateTime drw_edate, String drw_dow,
+            String drw_period, bool drw_kid,bool drw_w1, bool drw_w2, bool drw_w3,bool drw_w4, String drw_status)
+        {
+            SqlConnection cn = new SqlConnection(global::AppointmentQueue.Properties.Settings.Default.Database1ConnectionString);
+            SqlCommand command = new SqlCommand(
+                "INSERT INTO DoctorWorks (drw_dr,drw_sdate,drw_edate,drw_dow,drw_period," +
+                "drw_kid,drw_w1,drw_w2,drw_w3,drw_w4,drw_status) " +
+                "VALUES (@drw_dr,@drw_sdate,@drw_edate,@drw_dow,@drw_period," +
+                "@drw_kid,@drw_w1,@drw_w2,@drw_w3,@drw_w4,@drw_status)", cn);
+
+            command.Parameters.AddWithValue("@drw_dr", drw_dr.Trim());
+            command.Parameters.AddWithValue("@drw_sdate", drw_sdate.Date);
+            command.Parameters.AddWithValue("@drw_edate", drw_edate.Date);
+            command.Parameters.AddWithValue("@drw_dow", drw_dow.Trim());
+            command.Parameters.AddWithValue("@drw_period", drw_period.Trim());
+            command.Parameters.AddWithValue("@drw_kid", Convert.ToInt16(drw_kid).ToString().Trim());
+            command.Parameters.AddWithValue("@drw_w1", Convert.ToInt16(drw_w1).ToString().Trim());
+            command.Parameters.AddWithValue("@drw_w2", Convert.ToInt16(drw_w2).ToString().Trim());
+            command.Parameters.AddWithValue("@drw_w3", Convert.ToInt16(drw_w3).ToString().Trim());
+            command.Parameters.AddWithValue("@drw_w4", Convert.ToInt16(drw_w4).ToString().Trim());
+            command.Parameters.AddWithValue("@drw_status", drw_status.Trim());
+
+            command.Connection = cn;
+
+            cn.Open();
+            command.ExecuteNonQuery();
+            cn.Close();
+        }
+
+        public static void UpDateDoctorWorks(String drw_id, String drw_status)
+        {
+            SqlConnection cn = new SqlConnection(global::AppointmentQueue.Properties.Settings.Default.Database1ConnectionString);
+            SqlCommand command = new SqlCommand(
+                "UPDATE DoctorWorks SET drw_status = @drw_status " +
+                "WHERE drw_id = @drw_id ", cn);
+
+            command.Parameters.AddWithValue("@drw_id", drw_id.Trim());
+            command.Parameters.AddWithValue("@drw_status", drw_status.Trim());
+
+            command.Connection = cn;
+
+            cn.Open();
+            command.ExecuteNonQuery();
+            cn.Close();
+        }
+
+        public static void InsertDoctorCalendars(DateTime drc_date, String drc_drw, int drc_time, String drc_status)
+        {
+            SqlConnection cn = new SqlConnection(global::AppointmentQueue.Properties.Settings.Default.Database1ConnectionString);
+            SqlCommand command = new SqlCommand(
+                "INSERT INTO DoctorCalendars (drc_date,drc_drw,drc_time,drc_status) " +
+                "VALUES (@drc_date,@drc_drw,@drc_time,@drc_status)", cn);
+
+            command.Parameters.AddWithValue("@drc_date", drc_date.Date);
+            command.Parameters.AddWithValue("@drc_drw", drc_drw.Trim());
+            command.Parameters.AddWithValue("@drc_time", drc_time);
+            command.Parameters.AddWithValue("@drc_status", drc_status.Trim());
+
+            command.Connection = cn;
+
+            cn.Open();
+            command.ExecuteNonQuery();
+            cn.Close();
+        }
+
+        public static void CreateDoctorCalendarsList(String ped, String dr_id, bool kid, String status, String dow)
+        {
+            //Create Doctor Calender
+            DataTable dt = SQL.GetDoctorWorks(ped.Trim(), dr_id.Trim(),Convert.ToInt16(kid).ToString().Trim(), status, dow.Trim());
+
+            int drw_id = Convert.ToInt16(dt.Rows[0]["drw_id"]);
+            DateTime drw_sdate = Convert.ToDateTime(dt.Rows[0]["drw_sdate"].ToString().Trim());
+            DateTime drw_edate = Convert.ToDateTime(dt.Rows[0]["drw_edate"].ToString().Trim());
+            int drw_w1 = Convert.ToInt16(dt.Rows[0]["drw_w1"]);
+            int drw_w2 = Convert.ToInt16(dt.Rows[0]["drw_w2"]);
+            int drw_w3 = Convert.ToInt16(dt.Rows[0]["drw_w3"]);
+            int drw_w4 = Convert.ToInt16(dt.Rows[0]["drw_w4"]);
+            int drw_dow = SQL.getDof(dt.Rows[0]["drw_dow"].ToString().Trim());
+            DateTime drc_date = drw_sdate;
+            int w = SQL.getDof(drc_date.DayOfWeek.ToString());
+            if (drw_dow - w > 0)
+                drc_date = drc_date.AddDays(drw_dow - w);
+            else
+                drc_date = drc_date.AddDays(7 + (drw_dow - w));
+
+            while (drc_date <= drw_edate)
+            {
+                if (drw_w1 == 1 && drc_date.Day >= 1 && drc_date.Day <= 7)
+                {
+                    SQL.InsertDoctorCalendars(drc_date, drw_id.ToString().Trim(), 0, "Available");
+
+                }
+
+                if (drw_w2 == 1 && drc_date.Day >= 8 && drc_date.Day <= 14)
+                {
+                    SQL.InsertDoctorCalendars(drc_date, drw_id.ToString().Trim(), 0, "Available");
+
+                }
+
+                if (drw_w3 == 1 && drc_date.Day >= 15 && drc_date.Day <= 21)
+                {
+                    SQL.InsertDoctorCalendars(drc_date, drw_id.ToString().Trim(), 0, "Available");
+
+                }
+
+                if (drw_w4 == 1 && drc_date.Day >= 22 && drc_date.Day <= 31)
+                {
+                    SQL.InsertDoctorCalendars(drc_date, drw_id.ToString().Trim(), 0, "Available");
+
+                }
+                drc_date = drc_date.AddDays(7);
+            }
+            SQL.UpDateDoctorWorks(drw_id.ToString().Trim(), "Active");
+
+        }
+
+
         public static int getDof(String dayName)
         {
             dayName = dayName.Trim();
@@ -478,5 +554,10 @@ namespace AppointmentQueue
             return suggestDate;
         }
 
+        public static int getTimeReq(String req)
+        {
+            DataTable dt = SQL.GetRequests(req);
+            return Convert.ToInt16(dt.Rows[0]["req_time"]);
+        }
     }
 }

@@ -14,29 +14,22 @@ namespace AppointmentQueue
 {
     public partial class DoctorForm : Form
     {
+        public int drId;
+        public String drName;
+        public String drLname;
+        public bool exist = false;
+
         public DoctorForm()
         {
             InitializeComponent();
         }
         
-        private void drDataGridView_ColumnHeaderMouseDoubleClick(object sender, DataGridViewCellMouseEventArgs e)
-        {
-            int ID = drDataGridView.CurrentCell.RowIndex;
-            Idtxt.Text = drDataGridView.Rows[ID].Cells[0].Value.ToString().Trim();
-            drNameTxt.Text = drDataGridView.Rows[ID].Cells[1].Value.ToString().Trim();
-            drLnameTxt.Text = drDataGridView.Rows[ID].Cells[2].Value.ToString().Trim();
-            
-        }
-
-        private void drSeachBtn_Click(object sender, EventArgs e)
-        {
-            DataTable dt = SQL.GetDoctors(drNameTxt.Text, drLnameTxt.Text);
-            drDataGridView.DataSource = dt;
-        }
 
         private void drInsertBtn_Click(object sender, EventArgs e)
         {
-            try
+            DataTable dt = SQL.GetDoctors(drNameTxt.Text.Trim(), drLnameTxt.Text.Trim());
+            int numrow = Convert.ToInt16(dt.Rows.Count);
+            if (drNameTxt.Text.Trim() !="" && drLnameTxt.Text.Trim() != ""&& numrow == 0)
             {
                 if (MessageBox.Show("Do you want to insert a new day off?", "Insert new day off", MessageBoxButtons.YesNo) == DialogResult.Yes)
                 {
@@ -53,7 +46,35 @@ namespace AppointmentQueue
                     command.ExecuteNonQuery();
                     cn.Close();
 
-                    drSeachBtn_Click(sender, e);
+                    drNameTxt_TextChanged(sender, e);
+                }
+
+            }
+            else 
+            {
+                if(numrow>0)
+                    MessageBox.Show("Couldn't insert a new record : this record already exists ");
+                else
+                    MessageBox.Show("Couldn't insert a new record : Dr.Name or Last Name can not be empty");
+                
+            }
+        }
+
+        private void drDelBtn_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                if (MessageBox.Show("Do you want to delete this record?", "Detete this record", MessageBoxButtons.YesNo) == DialogResult.Yes)
+                {
+                    SqlConnection cn = new SqlConnection(global::AppointmentQueue.Properties.Settings.Default.Database1ConnectionString);
+                    SqlCommand command = new SqlCommand("DELETE FROM Doctors WHERE dr_Id = '" + drId + "'", cn);
+                    command.Connection = cn;
+
+                    cn.Open();
+                    command.ExecuteNonQuery();
+                    cn.Close();
+
+                    drNameTxt_TextChanged(sender, e);
                 }
 
             }
@@ -61,6 +82,39 @@ namespace AppointmentQueue
             {
                 MessageBox.Show(string.Format("Couldn't insert a new record : An error occurred: {0}", ex.Message));
             }
+        }
+
+        private void acceptBtn_Click(object sender, EventArgs e)
+        {
+            exist = true;
+            Close();
+        }
+
+        private void drNameTxt_TextChanged(object sender, EventArgs e)
+        {
+            DataTable dt = SQL.GetDoctors(drNameTxt.Text, drLnameTxt.Text);
+            drDataGridView.DataSource = dt;
+        }
+
+        private void drLnameTxt_TextChanged(object sender, EventArgs e)
+        {
+            DataTable dt = SQL.GetDoctors(drNameTxt.Text, drLnameTxt.Text);
+            drDataGridView.DataSource = dt;
+        }
+
+        private void drDataGridView_RowHeaderMouseDoubleClick(object sender, DataGridViewCellMouseEventArgs e)
+        {
+            int ID = drDataGridView.CurrentCell.RowIndex;
+            drId = Convert.ToInt16(drDataGridView.Rows[ID].Cells[0].Value.ToString().Trim());
+            drName = drDataGridView.Rows[ID].Cells[1].Value.ToString().Trim();
+            drLname = drDataGridView.Rows[ID].Cells[2].Value.ToString().Trim();
+
+            Idtxt.Text = drId.ToString().Trim();
+            drNameTxt.Text = drName;
+            drLnameTxt.Text = drLname;
+
+            acceptBtn.Enabled = true;
+            drDelBtn.Enabled = true;
         }
     }
 }

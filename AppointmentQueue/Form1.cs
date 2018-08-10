@@ -14,6 +14,7 @@ namespace AppointmentQueue
 {
     public partial class Form1 : Form
     {
+        public string drc_id;
         public Form1()
         {
             InitializeComponent();
@@ -59,7 +60,7 @@ namespace AppointmentQueue
                 this.lnameTxt.Text = sForm.PatLName;
                 this.birthDatePicker.Value = Convert.ToDateTime(sForm.PatBD);
                 this.ageTxt.Text = Convert.ToString(getAge(this.birthDatePicker.Value.Date));
-                addBtn.Enabled = true;
+                calendarBtn.Enabled = true;
             }
             
         }
@@ -77,7 +78,7 @@ namespace AppointmentQueue
                 reqCob.SelectedIndex = sForm.requestInx;
                 paidCob.SelectedIndex = sForm.periodInx;
                 drTxt.Text = sForm.drInx;
-
+                addBtn.Enabled = true;
             }
             
         }
@@ -124,9 +125,9 @@ namespace AppointmentQueue
         private void HNtxt_TextChanged(object sender, EventArgs e)
         {
             if(HNtxt.Text == null)
-                seachDateForReq.Enabled = false;
+                calendarBtn.Enabled = false;
             else
-                seachDateForReq.Enabled = true;
+                calendarBtn.Enabled = true;
         }
 
         private void todayDatePicker_ValueChanged(object sender, EventArgs e)
@@ -143,18 +144,16 @@ namespace AppointmentQueue
                 {
                     SqlConnection cn = new SqlConnection(global::AppointmentQueue.Properties.Settings.Default.Database1ConnectionString);
                     SqlCommand command = new SqlCommand(
-                        "INSERT INTO Appointments (ap_date,ap_patient,ap_request,ap_dr,ap_appstatus,ap_detail,ap_scan,ap_kid,ap_period) " +
-                        "VALUES (@ap_date,@ap_patient,@ap_request,@ap_dr,@ap_appstatus,@ap_detail,@ap_scan,@ap_kid,@ap_period)", cn);
+                        "INSERT INTO Appointments (ap_date,ap_patient,ap_request,ap_appstatus,ap_drc,ap_detail,ap_scan) " +
+                        "VALUES (@ap_date,@ap_patient,@ap_request,@ap_appstatus,@ap_drc,@ap_detail,@ap_scan)", cn);
 
                     command.Parameters.AddWithValue("@ap_date", todayDatePicker.Value.Date.ToString().Trim());
                     command.Parameters.AddWithValue("@ap_patient", HNtxt.Text.Trim());
                     command.Parameters.AddWithValue("@ap_request", reqCob.SelectedIndex);
-                    command.Parameters.AddWithValue("@ap_dr", drTxt.Text.Trim());
-                    command.Parameters.AddWithValue("@ap_detail", detail_text.Text.Trim());
                     command.Parameters.AddWithValue("@ap_appstatus", "Waiting");
+                    command.Parameters.AddWithValue("@ap_drc", drc_id);
                     command.Parameters.AddWithValue("@ap_scan", scan_CoBox.SelectedIndex + 1);
-                    command.Parameters.AddWithValue("@ap_kid", Convert.ToInt16(kidCheckBox.Checked).ToString().Trim());
-                    command.Parameters.AddWithValue("@ap_period", paidCob.Text.Trim());
+                    command.Parameters.AddWithValue("@ap_detail", detail_text.Text.Trim());
                     command.Connection = cn;
 
                     cn.Open();
@@ -162,8 +161,21 @@ namespace AppointmentQueue
                     MessageBox.Show("Row inserted !! ");
                     cn.Close();
 
+                    int usageTime = SQL.getTimeReq(reqCob.SelectedItem.ToString().Trim());
+                    cn = new SqlConnection(global::AppointmentQueue.Properties.Settings.Default.Database1ConnectionString);
+                    command = cn.CreateCommand();
+                    command.CommandText = "UPDATE DoctorCalendars SET drc_time = drc_time+@stat Where drc_id = @id";
+                    command.Parameters.AddWithValue("@stat", usageTime);
+                    command.Parameters.AddWithValue("@id", drc_id.Trim());
+
+                    cn.Open();
+                    command.ExecuteNonQuery();
+                    cn.Close();
+                    
+
+
                 }
-                
+
             }
             catch (SystemException ex)
             {
@@ -238,8 +250,22 @@ namespace AppointmentQueue
 
         private void show_calendar_btn_Click(object sender, EventArgs e)
         {
-            CalendarForm clf_form = new CalendarForm();
+            CalendarForm clf_form = new CalendarForm(scan_CoBox.SelectedIndex, paidCob.SelectedIndex, reqCob.SelectedIndex,
+                todayDatePicker.Value.Date, Convert.ToInt16(kidCheckBox.Checked));
+           
+            clf_form.exist = false;
             clf_form.ShowDialog();
+            if ((clf_form.exist == true))
+            {
+                todayDatePicker.Value = clf_form.chosenT;
+                scan_CoBox.SelectedIndex = clf_form.scannerInx;
+                reqCob.SelectedIndex = clf_form.requestInx;
+                paidCob.SelectedIndex = clf_form.periodInx;
+                drTxt.Text = clf_form.drInx;
+                kidCheckBox.Checked = Convert.ToBoolean(clf_form.kidInx);
+                drc_id = clf_form.drcInx;
+                addBtn.Enabled = true;
+            }
         }
     }
 }
