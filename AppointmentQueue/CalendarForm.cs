@@ -109,6 +109,7 @@ namespace AppointmentQueue
             int row_bt = Convert.ToInt32(bt.Name.Split('_')[1]);
             int col_bt = Convert.ToInt32(bt.Name.Split('_')[2]);
 
+            startT = calendar_day_all_date[row_bt, col_bt];
             if (morning_all_btn[row_bt, col_bt].Count > 0 ||
                 evening_all_btn[row_bt, col_bt].Count > 0)
             {
@@ -118,7 +119,6 @@ namespace AppointmentQueue
                 //detail_form.evening_data = evening_all_btn[row_bt, col_bt];
                 //detail_form.date = calendar_day_all_date[row_bt, col_bt];
 
-                startT = calendar_day_all_date[row_bt, col_bt]; 
                 DataTable suggestDate = SQL.GetDoctorCalendars(startT, startT, "", "", "");
                 suggDataGridView.DataSource = suggestDate;
 
@@ -614,6 +614,12 @@ namespace AppointmentQueue
 
         private void seachDateForReq_Click(object sender, EventArgs e)
         {
+            // new genarate calendar 
+            // clear color
+            int year = Convert.ToInt32(year_btn.Text);
+            int month = Convert.ToInt32(Enum.Parse(typeof(MonthName), month_btn.Text));
+            GenarateCalendar(month, year);
+
             startT = startT.Date;
             int offSet = Convert.ToInt16(dayNumericUpDown.Value);
             DateTime endT = startT.AddDays(offSet);
@@ -624,7 +630,30 @@ namespace AppointmentQueue
                 Convert.ToInt16(kidCheckBox.Checked).ToString().Trim(), 
                 comboBox1.SelectedItem.ToString().Trim());
             suggDataGridView.DataSource = suggestDate;
+
+            // change back color of suggrst date
+            foreach (DataRow row in suggestDate.Rows)
+            {
+                DateTime date_row = Convert.ToDateTime(row["drc_date"].ToString());
+                FindSuggestDateAndChangeBackColorOfButton(date_row);
+            }
             
+        }
+
+        private void FindSuggestDateAndChangeBackColorOfButton(DateTime date)
+        {
+            for (int i = 0; i < calendar_day_all_date.GetLength(0); i++)
+            {
+                for (int j = 0; j < calendar_day_all_date.GetLength(1); j++)
+                {
+                    if (calendar_day_all_date[i, j].Day == date.Day &&
+                        calendar_day_all_date[i, j].Month == date.Month &&
+                        calendar_day_all_date[i, j].Year == date.Year)
+                    {
+                        calendar_day_all_btn[i, j].BackColor = Color.LightGreen;
+                    }
+                }
+            }
         }
 
         private void acceptDateForReq_Click(object sender, EventArgs e)
