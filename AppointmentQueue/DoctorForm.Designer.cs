@@ -30,13 +30,13 @@
         {
             this.drDataGridView = new System.Windows.Forms.DataGridView();
             this.groupBox3 = new System.Windows.Forms.GroupBox();
-            this.acceptBtn = new System.Windows.Forms.Button();
             this.drLnameTxt = new System.Windows.Forms.TextBox();
             this.Idtxt = new System.Windows.Forms.TextBox();
             this.label9 = new System.Windows.Forms.Label();
             this.label10 = new System.Windows.Forms.Label();
             this.drNameTxt = new System.Windows.Forms.TextBox();
             this.label11 = new System.Windows.Forms.Label();
+            this.acceptBtn = new System.Windows.Forms.Button();
             this.drDelBtn = new System.Windows.Forms.Button();
             this.drInsertBtn = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.drDataGridView)).BeginInit();
@@ -50,7 +50,7 @@
             this.drDataGridView.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.drDataGridView.Location = new System.Drawing.Point(1, 166);
             this.drDataGridView.Name = "drDataGridView";
-            this.drDataGridView.Size = new System.Drawing.Size(448, 375);
+            this.drDataGridView.Size = new System.Drawing.Size(384, 375);
             this.drDataGridView.TabIndex = 61;
             this.drDataGridView.RowHeaderMouseDoubleClick += new System.Windows.Forms.DataGridViewCellMouseEventHandler(this.drDataGridView_RowHeaderMouseDoubleClick);
             // 
@@ -66,29 +66,17 @@
             this.groupBox3.Font = new System.Drawing.Font("Verdana", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.groupBox3.Location = new System.Drawing.Point(4, 7);
             this.groupBox3.Name = "groupBox3";
-            this.groupBox3.Size = new System.Drawing.Size(445, 119);
+            this.groupBox3.Size = new System.Drawing.Size(381, 119);
             this.groupBox3.TabIndex = 60;
             this.groupBox3.TabStop = false;
             this.groupBox3.Text = "Seach Doctor";
-            // 
-            // acceptBtn
-            // 
-            this.acceptBtn.Enabled = false;
-            this.acceptBtn.Font = new System.Drawing.Font("Verdana", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.acceptBtn.Location = new System.Drawing.Point(269, 132);
-            this.acceptBtn.Name = "acceptBtn";
-            this.acceptBtn.Size = new System.Drawing.Size(108, 30);
-            this.acceptBtn.TabIndex = 63;
-            this.acceptBtn.Text = "Accept";
-            this.acceptBtn.UseVisualStyleBackColor = true;
-            this.acceptBtn.Click += new System.EventHandler(this.acceptBtn_Click);
             // 
             // drLnameTxt
             // 
             this.drLnameTxt.Font = new System.Drawing.Font("Verdana", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.drLnameTxt.Location = new System.Drawing.Point(86, 88);
             this.drLnameTxt.Name = "drLnameTxt";
-            this.drLnameTxt.Size = new System.Drawing.Size(343, 23);
+            this.drLnameTxt.Size = new System.Drawing.Size(287, 23);
             this.drLnameTxt.TabIndex = 34;
             this.drLnameTxt.TextChanged += new System.EventHandler(this.drLnameTxt_TextChanged);
             // 
@@ -98,7 +86,7 @@
             this.Idtxt.Font = new System.Drawing.Font("Verdana", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.Idtxt.Location = new System.Drawing.Point(86, 33);
             this.Idtxt.Name = "Idtxt";
-            this.Idtxt.Size = new System.Drawing.Size(343, 23);
+            this.Idtxt.Size = new System.Drawing.Size(287, 23);
             this.Idtxt.TabIndex = 32;
             // 
             // label9
@@ -126,7 +114,7 @@
             this.drNameTxt.Font = new System.Drawing.Font("Verdana", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.drNameTxt.Location = new System.Drawing.Point(86, 60);
             this.drNameTxt.Name = "drNameTxt";
-            this.drNameTxt.Size = new System.Drawing.Size(343, 23);
+            this.drNameTxt.Size = new System.Drawing.Size(287, 23);
             this.drNameTxt.TabIndex = 30;
             this.drNameTxt.TextChanged += new System.EventHandler(this.drNameTxt_TextChanged);
             // 
@@ -139,6 +127,18 @@
             this.label11.Size = new System.Drawing.Size(44, 16);
             this.label11.TabIndex = 31;
             this.label11.Text = "Dr. ID";
+            // 
+            // acceptBtn
+            // 
+            this.acceptBtn.Enabled = false;
+            this.acceptBtn.Font = new System.Drawing.Font("Verdana", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.acceptBtn.Location = new System.Drawing.Point(269, 132);
+            this.acceptBtn.Name = "acceptBtn";
+            this.acceptBtn.Size = new System.Drawing.Size(108, 30);
+            this.acceptBtn.TabIndex = 63;
+            this.acceptBtn.Text = "Accept";
+            this.acceptBtn.UseVisualStyleBackColor = true;
+            this.acceptBtn.Click += new System.EventHandler(this.acceptBtn_Click);
             // 
             // drDelBtn
             // 
@@ -167,7 +167,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(451, 544);
+            this.ClientSize = new System.Drawing.Size(387, 544);
             this.Controls.Add(this.acceptBtn);
             this.Controls.Add(this.drDataGridView);
             this.Controls.Add(this.drDelBtn);

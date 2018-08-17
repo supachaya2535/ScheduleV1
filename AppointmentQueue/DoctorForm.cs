@@ -23,7 +23,6 @@ namespace AppointmentQueue
         {
             InitializeComponent();
         }
-        
 
         private void drInsertBtn_Click(object sender, EventArgs e)
         {

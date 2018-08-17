@@ -18,9 +18,8 @@ namespace AppointmentQueue
         public Form1()
         {
             InitializeComponent();
-            scan_CoBox = SQL.readScanner(scan_CoBox);
+            //scan_CoBox = SQL.readScanner(scan_CoBox);
             reqCob = SQL.readRequest(reqCob);
-            scan_CoBox.SelectedIndex = 0;
             paidCob.SelectedIndex = 0;
             reqCob.SelectedIndex = 31;
 
@@ -65,29 +64,14 @@ namespace AppointmentQueue
             
         }
 
-        private void seachDateForReq_Click(object sender, EventArgs e)
-        {
-            DateForReqSuggestionForm sForm = new DateForReqSuggestionForm(scan_CoBox.SelectedIndex,paidCob.SelectedIndex, reqCob.SelectedIndex,
-                todayDatePicker.Value.Date, Convert.ToInt16(kidCheckBox.Checked));
-            sForm.exist = false;
-            sForm.ShowDialog();
-            if ((sForm.exist == true))
-            {
-                todayDatePicker.Value = sForm.chosenT;
-                scan_CoBox.SelectedIndex = sForm.scannerInx;
-                reqCob.SelectedIndex = sForm.requestInx;
-                paidCob.SelectedIndex = sForm.periodInx;
-                drTxt.Text = sForm.drInx;
-                addBtn.Enabled = true;
-            }
-            
-        }
+       
 
         private void betweenCheckBox_CheckedChanged(object sender, EventArgs e)
         {
             if (betweenCheckBox.Checked == true)
             {
                 todayCheckBox.Checked = false;
+                waitCheckBox.Checked = false;
                 DataTable dt = SQL.GetAppointment(startDate.Value, endDate.Value, "", "", "");
                 appDataGridView.DataSource = dt;
             }
@@ -97,6 +81,7 @@ namespace AppointmentQueue
         {
             if(todayCheckBox.Checked == true)
             {
+                waitCheckBox.Checked = false;
                 betweenCheckBox.Checked = false;
                 DataTable dt = SQL.GetAppointment(todayDay.Value, todayDay.Value, "", "", "");
                 appDataGridView.DataSource = dt;
@@ -144,15 +129,14 @@ namespace AppointmentQueue
                 {
                     SqlConnection cn = new SqlConnection(global::AppointmentQueue.Properties.Settings.Default.Database1ConnectionString);
                     SqlCommand command = new SqlCommand(
-                        "INSERT INTO Appointments (ap_date,ap_patient,ap_request,ap_appstatus,ap_drc,ap_detail,ap_scan) " +
-                        "VALUES (@ap_date,@ap_patient,@ap_request,@ap_appstatus,@ap_drc,@ap_detail,@ap_scan)", cn);
+                        "INSERT INTO Appointments (ap_date,ap_patient,ap_request,ap_appstatus,ap_drc,ap_detail) " +
+                        "VALUES (@ap_date,@ap_patient,@ap_request,@ap_appstatus,@ap_drc,@ap_detail)", cn);
 
                     command.Parameters.AddWithValue("@ap_date", todayDatePicker.Value.Date.ToString().Trim());
                     command.Parameters.AddWithValue("@ap_patient", HNtxt.Text.Trim());
                     command.Parameters.AddWithValue("@ap_request", reqCob.SelectedIndex);
                     command.Parameters.AddWithValue("@ap_appstatus", "Waiting");
                     command.Parameters.AddWithValue("@ap_drc", drc_id);
-                    command.Parameters.AddWithValue("@ap_scan", scan_CoBox.SelectedIndex + 1);
                     command.Parameters.AddWithValue("@ap_detail", detail_text.Text.Trim());
                     command.Connection = cn;
 
@@ -250,7 +234,7 @@ namespace AppointmentQueue
 
         private void show_calendar_btn_Click(object sender, EventArgs e)
         {
-            CalendarForm clf_form = new CalendarForm(scan_CoBox.SelectedIndex, paidCob.SelectedIndex, reqCob.SelectedIndex,
+            CalendarForm clf_form = new CalendarForm(paidCob.SelectedIndex, reqCob.SelectedIndex,
                 todayDatePicker.Value.Date, Convert.ToInt16(kidCheckBox.Checked));
            
             clf_form.exist = false;
@@ -258,13 +242,25 @@ namespace AppointmentQueue
             if ((clf_form.exist == true))
             {
                 todayDatePicker.Value = clf_form.chosenT;
-                scan_CoBox.SelectedIndex = clf_form.scannerInx;
                 reqCob.SelectedIndex = clf_form.requestInx;
                 paidCob.SelectedIndex = clf_form.periodInx;
                 drTxt.Text = clf_form.drInx;
                 kidCheckBox.Checked = Convert.ToBoolean(clf_form.kidInx);
                 drc_id = clf_form.drcInx;
                 addBtn.Enabled = true;
+            }
+        }
+
+        private void waitCheckBox_CheckedChanged(object sender, EventArgs e)
+        {
+            if (waitCheckBox.Checked == true)
+            {
+                todayCheckBox.Checked = false;
+                betweenCheckBox.Checked = false;
+            
+                betweenCheckBox.Checked = false;
+                DataTable dt = SQL.GetAppointment("Waiting");
+                appDataGridView.DataSource = dt;
             }
         }
     }

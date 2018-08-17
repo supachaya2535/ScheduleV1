@@ -15,7 +15,6 @@ namespace AppointmentQueue
     {
         /// <Additional parameter>
         public int usageTime;
-        public int scannerInx;
         public int periodInx;
         public int requestInx;
         public string drInx;
@@ -47,17 +46,14 @@ namespace AppointmentQueue
         private List<DataRow>[,] morning_all_btn;
         private List<DataRow>[,] evening_all_btn;
 
-        public CalendarForm(int scan, int ped, int req, DateTime sT, int kid)
+        public CalendarForm(int ped, int req, DateTime sT, int kid)
         {
             InitializeComponent();
             
-            scannerInx = scan;
             periodInx = ped;
             requestInx = req;
             kidInx = kid;
-            scan_CoBox = SQL.readScanner(scan_CoBox);
             reqCob = SQL.readRequest(reqCob);
-            scan_CoBox.SelectedIndex = scannerInx;
             reqCob.SelectedIndex = requestInx;
             comboBox1.SelectedIndex = periodInx;
             dateTimePicker1.Value = sT;
@@ -662,10 +658,10 @@ namespace AppointmentQueue
             Close();
         }
 
-        private void suggDataGridView_RowHeaderMouseDoubleClick(object sender, DataGridViewCellMouseEventArgs e)
+        
+        private void suggDataGridView_CellContentClick(object sender, DataGridViewCellEventArgs e)
         {
             int ID = suggDataGridView.CurrentRow.Index;
-            scan_CoBox.SelectedIndex = scannerInx;
             reqCob.SelectedIndex = requestInx;
             comboBox1.SelectedIndex = periodInx;
             kidCheckBox.Checked = Convert.ToBoolean(kidInx);
@@ -676,14 +672,29 @@ namespace AppointmentQueue
             selectedDate.Value = chosenT.Date;
         }
 
-        private void suggDataGridView_CellContentClick(object sender, DataGridViewCellEventArgs e)
-        {
-
-        }
-
         private void reqCob_SelectedIndexChanged(object sender, EventArgs e)
         {
             usageTime = SQL.getTimeReq(reqCob.SelectedItem.ToString().Trim());
+            requestInx = reqCob.SelectedIndex;
+        }
+
+        private void comboBox1_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            periodInx = comboBox1.SelectedIndex;
+        }
+
+        private void suggDataGridView_RowHeaderMouseDoubleClick(object sender, DataGridViewCellMouseEventArgs e)
+        {
+            int ID = suggDataGridView.CurrentRow.Index;
+            reqCob.SelectedIndex = requestInx;
+            comboBox1.SelectedIndex = periodInx;
+            kidCheckBox.Checked = Convert.ToBoolean(kidInx);
+            drInx = suggDataGridView.Rows[ID].Cells["drw_dr"].Value.ToString().Trim();
+            drcInx = suggDataGridView.Rows[ID].Cells["drc_id"].Value.ToString().Trim();
+
+            chosenT = Convert.ToDateTime(suggDataGridView.Rows[ID].Cells["drc_date"].Value.ToString().Trim());
+            selectedDate.Value = chosenT.Date;
+
         }
     }
 }
