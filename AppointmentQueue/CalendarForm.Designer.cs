@@ -92,7 +92,6 @@
             this.groupBox1 = new System.Windows.Forms.GroupBox();
             this.kidCheckBox = new System.Windows.Forms.CheckBox();
             this.label3 = new System.Windows.Forms.Label();
-            this.label5 = new System.Windows.Forms.Label();
             this.seachDateForReq = new System.Windows.Forms.Button();
             this.label2 = new System.Windows.Forms.Label();
             this.dateTimePicker1 = new System.Windows.Forms.DateTimePicker();
@@ -100,7 +99,6 @@
             this.reqCob = new System.Windows.Forms.ComboBox();
             this.dayNumericUpDown = new System.Windows.Forms.NumericUpDown();
             this.label4 = new System.Windows.Forms.Label();
-            this.scan_CoBox = new System.Windows.Forms.ComboBox();
             this.comboBox1 = new System.Windows.Forms.ComboBox();
             this.label7 = new System.Windows.Forms.Label();
             this.label6 = new System.Windows.Forms.Label();
@@ -1255,7 +1253,6 @@
             this.groupBox1.BackColor = System.Drawing.SystemColors.GradientActiveCaption;
             this.groupBox1.Controls.Add(this.kidCheckBox);
             this.groupBox1.Controls.Add(this.label3);
-            this.groupBox1.Controls.Add(this.label5);
             this.groupBox1.Controls.Add(this.seachDateForReq);
             this.groupBox1.Controls.Add(this.label2);
             this.groupBox1.Controls.Add(this.dateTimePicker1);
@@ -1263,7 +1260,6 @@
             this.groupBox1.Controls.Add(this.reqCob);
             this.groupBox1.Controls.Add(this.dayNumericUpDown);
             this.groupBox1.Controls.Add(this.label4);
-            this.groupBox1.Controls.Add(this.scan_CoBox);
             this.groupBox1.Controls.Add(this.comboBox1);
             this.groupBox1.Controls.Add(this.label7);
             this.groupBox1.Font = new System.Drawing.Font("Verdana", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
@@ -1278,7 +1274,7 @@
             // 
             this.kidCheckBox.AutoSize = true;
             this.kidCheckBox.Font = new System.Drawing.Font("Verdana", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.kidCheckBox.Location = new System.Drawing.Point(78, 168);
+            this.kidCheckBox.Location = new System.Drawing.Point(79, 159);
             this.kidCheckBox.Name = "kidCheckBox";
             this.kidCheckBox.Size = new System.Drawing.Size(143, 20);
             this.kidCheckBox.TabIndex = 73;
@@ -1295,25 +1291,15 @@
             this.label3.TabIndex = 20;
             this.label3.Text = "From";
             // 
-            // label5
-            // 
-            this.label5.AutoSize = true;
-            this.label5.Font = new System.Drawing.Font("Verdana", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label5.Location = new System.Drawing.Point(10, 84);
-            this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(62, 16);
-            this.label5.TabIndex = 46;
-            this.label5.Text = "Scanner";
-            // 
             // seachDateForReq
             // 
             this.seachDateForReq.Font = new System.Drawing.Font("Verdana", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.seachDateForReq.Location = new System.Drawing.Point(149, 193);
+            this.seachDateForReq.Location = new System.Drawing.Point(78, 193);
             this.seachDateForReq.Margin = new System.Windows.Forms.Padding(2);
             this.seachDateForReq.Name = "seachDateForReq";
-            this.seachDateForReq.Size = new System.Drawing.Size(89, 30);
+            this.seachDateForReq.Size = new System.Drawing.Size(224, 30);
             this.seachDateForReq.TabIndex = 19;
-            this.seachDateForReq.Text = "Search";
+            this.seachDateForReq.Text = "Search Suggestion Date";
             this.seachDateForReq.UseVisualStyleBackColor = true;
             this.seachDateForReq.Click += new System.EventHandler(this.seachDateForReq_Click);
             // 
@@ -1354,7 +1340,7 @@
             // 
             this.reqCob.Font = new System.Drawing.Font("Verdana", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.reqCob.FormattingEnabled = true;
-            this.reqCob.Location = new System.Drawing.Point(78, 140);
+            this.reqCob.Location = new System.Drawing.Point(78, 124);
             this.reqCob.Name = "reqCob";
             this.reqCob.Size = new System.Drawing.Size(224, 24);
             this.reqCob.TabIndex = 8;
@@ -1387,20 +1373,11 @@
             // 
             this.label4.AutoSize = true;
             this.label4.Font = new System.Drawing.Font("Verdana", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label4.Location = new System.Drawing.Point(11, 143);
+            this.label4.Location = new System.Drawing.Point(11, 127);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(61, 16);
             this.label4.TabIndex = 7;
             this.label4.Text = "Request";
-            // 
-            // scan_CoBox
-            // 
-            this.scan_CoBox.Font = new System.Drawing.Font("Verdana", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.scan_CoBox.FormattingEnabled = true;
-            this.scan_CoBox.Location = new System.Drawing.Point(78, 81);
-            this.scan_CoBox.Name = "scan_CoBox";
-            this.scan_CoBox.Size = new System.Drawing.Size(224, 24);
-            this.scan_CoBox.TabIndex = 1;
             // 
             // comboBox1
             // 
@@ -1410,16 +1387,17 @@
             "Morning",
             "Afternoon",
             "Evening"});
-            this.comboBox1.Location = new System.Drawing.Point(78, 111);
+            this.comboBox1.Location = new System.Drawing.Point(78, 95);
             this.comboBox1.Name = "comboBox1";
             this.comboBox1.Size = new System.Drawing.Size(224, 24);
             this.comboBox1.TabIndex = 12;
+            this.comboBox1.SelectedIndexChanged += new System.EventHandler(this.comboBox1_SelectedIndexChanged);
             // 
             // label7
             // 
             this.label7.AutoSize = true;
             this.label7.Font = new System.Drawing.Font("Verdana", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label7.Location = new System.Drawing.Point(20, 114);
+            this.label7.Location = new System.Drawing.Point(20, 98);
             this.label7.Name = "label7";
             this.label7.Size = new System.Drawing.Size(48, 16);
             this.label7.TabIndex = 11;
@@ -1571,7 +1549,6 @@
         private System.Windows.Forms.GroupBox groupBox1;
         private System.Windows.Forms.CheckBox kidCheckBox;
         private System.Windows.Forms.Label label3;
-        private System.Windows.Forms.Label label5;
         private System.Windows.Forms.Button seachDateForReq;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.DateTimePicker dateTimePicker1;
@@ -1579,7 +1556,6 @@
         private System.Windows.Forms.ComboBox reqCob;
         private System.Windows.Forms.NumericUpDown dayNumericUpDown;
         private System.Windows.Forms.Label label4;
-        private System.Windows.Forms.ComboBox scan_CoBox;
         private System.Windows.Forms.ComboBox comboBox1;
         private System.Windows.Forms.Label label7;
         private System.Windows.Forms.Label label6;

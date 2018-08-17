@@ -29,6 +29,8 @@
         private void InitializeComponent()
         {
             this.groupBox7 = new System.Windows.Forms.GroupBox();
+            this.label3 = new System.Windows.Forms.Label();
+            this.scanComb = new System.Windows.Forms.ComboBox();
             this.label1 = new System.Windows.Forms.Label();
             this.week4CheckBox = new System.Windows.Forms.CheckBox();
             this.week3CheckBox = new System.Windows.Forms.CheckBox();
@@ -55,6 +57,11 @@
             this.drWorkDeleteBtn = new System.Windows.Forms.Button();
             this.drWorkId = new System.Windows.Forms.TextBox();
             this.label2 = new System.Windows.Forms.Label();
+            this.label4 = new System.Windows.Forms.Label();
+            this.startDateEdit = new System.Windows.Forms.DateTimePicker();
+            this.label5 = new System.Windows.Forms.Label();
+            this.endDateEdit = new System.Windows.Forms.DateTimePicker();
+            this.drWorkSaveBtn = new System.Windows.Forms.Button();
             this.groupBox7.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.drWorkGidView)).BeginInit();
             this.groupBox4.SuspendLayout();
@@ -63,6 +70,8 @@
             // groupBox7
             // 
             this.groupBox7.BackColor = System.Drawing.SystemColors.GradientActiveCaption;
+            this.groupBox7.Controls.Add(this.label3);
+            this.groupBox7.Controls.Add(this.scanComb);
             this.groupBox7.Controls.Add(this.label1);
             this.groupBox7.Controls.Add(this.week4CheckBox);
             this.groupBox7.Controls.Add(this.week3CheckBox);
@@ -85,6 +94,25 @@
             this.groupBox7.TabStop = false;
             this.groupBox7.Text = "Doctor Work ";
             // 
+            // label3
+            // 
+            this.label3.AutoSize = true;
+            this.label3.Font = new System.Drawing.Font("Verdana", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label3.Location = new System.Drawing.Point(19, 30);
+            this.label3.Name = "label3";
+            this.label3.Size = new System.Drawing.Size(62, 16);
+            this.label3.TabIndex = 82;
+            this.label3.Text = "Machine";
+            // 
+            // scanComb
+            // 
+            this.scanComb.Font = new System.Drawing.Font("Verdana", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.scanComb.FormattingEnabled = true;
+            this.scanComb.Location = new System.Drawing.Point(102, 27);
+            this.scanComb.Name = "scanComb";
+            this.scanComb.Size = new System.Drawing.Size(141, 24);
+            this.scanComb.TabIndex = 81;
+            // 
             // label1
             // 
             this.label1.AutoSize = true;
@@ -99,7 +127,7 @@
             // 
             this.week4CheckBox.AutoSize = true;
             this.week4CheckBox.Font = new System.Drawing.Font("Verdana", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.week4CheckBox.Location = new System.Drawing.Point(175, 105);
+            this.week4CheckBox.Location = new System.Drawing.Point(175, 114);
             this.week4CheckBox.Name = "week4CheckBox";
             this.week4CheckBox.Size = new System.Drawing.Size(69, 20);
             this.week4CheckBox.TabIndex = 76;
@@ -110,7 +138,7 @@
             // 
             this.week3CheckBox.AutoSize = true;
             this.week3CheckBox.Font = new System.Drawing.Font("Verdana", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.week3CheckBox.Location = new System.Drawing.Point(77, 105);
+            this.week3CheckBox.Location = new System.Drawing.Point(77, 114);
             this.week3CheckBox.Name = "week3CheckBox";
             this.week3CheckBox.Size = new System.Drawing.Size(69, 20);
             this.week3CheckBox.TabIndex = 75;
@@ -147,7 +175,7 @@
             // 
             this.week2CheckBox.AutoSize = true;
             this.week2CheckBox.Font = new System.Drawing.Font("Verdana", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.week2CheckBox.Location = new System.Drawing.Point(175, 69);
+            this.week2CheckBox.Location = new System.Drawing.Point(175, 92);
             this.week2CheckBox.Name = "week2CheckBox";
             this.week2CheckBox.Size = new System.Drawing.Size(69, 20);
             this.week2CheckBox.TabIndex = 74;
@@ -158,7 +186,7 @@
             // 
             this.week1CheckBox.AutoSize = true;
             this.week1CheckBox.Font = new System.Drawing.Font("Verdana", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.week1CheckBox.Location = new System.Drawing.Point(77, 69);
+            this.week1CheckBox.Location = new System.Drawing.Point(77, 92);
             this.week1CheckBox.Name = "week1CheckBox";
             this.week1CheckBox.Size = new System.Drawing.Size(69, 20);
             this.week1CheckBox.TabIndex = 73;
@@ -190,7 +218,7 @@
             // 
             this.label19.AutoSize = true;
             this.label19.Font = new System.Drawing.Font("Verdana", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label19.Location = new System.Drawing.Point(6, 34);
+            this.label19.Location = new System.Drawing.Point(6, 61);
             this.label19.Name = "label19";
             this.label19.Size = new System.Drawing.Size(91, 16);
             this.label19.TabIndex = 49;
@@ -208,7 +236,7 @@
             "Friday",
             "Saturday",
             "Sunday"});
-            this.dofComb.Location = new System.Drawing.Point(103, 34);
+            this.dofComb.Location = new System.Drawing.Point(103, 61);
             this.dofComb.Name = "dofComb";
             this.dofComb.Size = new System.Drawing.Size(141, 24);
             this.dofComb.TabIndex = 48;
@@ -352,11 +380,11 @@
             // 
             this.drWorkDeleteBtn.Enabled = false;
             this.drWorkDeleteBtn.Font = new System.Drawing.Font("Verdana", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.drWorkDeleteBtn.Location = new System.Drawing.Point(606, 1);
+            this.drWorkDeleteBtn.Location = new System.Drawing.Point(520, 3);
             this.drWorkDeleteBtn.Name = "drWorkDeleteBtn";
-            this.drWorkDeleteBtn.Size = new System.Drawing.Size(128, 30);
+            this.drWorkDeleteBtn.Size = new System.Drawing.Size(76, 30);
             this.drWorkDeleteBtn.TabIndex = 62;
-            this.drWorkDeleteBtn.Text = "Delete";
+            this.drWorkDeleteBtn.Text = "Cancle";
             this.drWorkDeleteBtn.UseVisualStyleBackColor = true;
             this.drWorkDeleteBtn.Click += new System.EventHandler(this.drWorkDeleteBtn_Click);
             // 
@@ -364,26 +392,91 @@
             // 
             this.drWorkId.Enabled = false;
             this.drWorkId.Font = new System.Drawing.Font("Verdana", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.drWorkId.Location = new System.Drawing.Point(408, 5);
+            this.drWorkId.Location = new System.Drawing.Point(385, 6);
             this.drWorkId.Name = "drWorkId";
-            this.drWorkId.Size = new System.Drawing.Size(192, 23);
+            this.drWorkId.Size = new System.Drawing.Size(129, 23);
             this.drWorkId.TabIndex = 70;
             // 
             // label2
             // 
             this.label2.AutoSize = true;
             this.label2.Font = new System.Drawing.Font("Verdana", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label2.Location = new System.Drawing.Point(308, 12);
+            this.label2.Location = new System.Drawing.Point(298, 9);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(81, 16);
             this.label2.TabIndex = 71;
             this.label2.Text = "Dr. Work ID";
+            // 
+            // label4
+            // 
+            this.label4.AutoSize = true;
+            this.label4.Font = new System.Drawing.Font("Verdana", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label4.Location = new System.Drawing.Point(626, 7);
+            this.label4.Name = "label4";
+            this.label4.Size = new System.Drawing.Size(42, 16);
+            this.label4.TabIndex = 80;
+            this.label4.Text = "Start";
+            // 
+            // startDateEdit
+            // 
+            this.startDateEdit.CalendarFont = new System.Drawing.Font("Verdana", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.startDateEdit.Font = new System.Drawing.Font("Verdana", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.startDateEdit.Format = System.Windows.Forms.DateTimePickerFormat.Short;
+            this.startDateEdit.Location = new System.Drawing.Point(674, 6);
+            this.startDateEdit.MaxDate = new System.DateTime(2019, 12, 31, 0, 0, 0, 0);
+            this.startDateEdit.MinDate = new System.DateTime(2018, 5, 18, 0, 0, 0, 0);
+            this.startDateEdit.Name = "startDateEdit";
+            this.startDateEdit.Size = new System.Drawing.Size(113, 23);
+            this.startDateEdit.TabIndex = 79;
+            this.startDateEdit.Value = new System.DateTime(2018, 5, 18, 0, 0, 0, 0);
+            this.startDateEdit.ValueChanged += new System.EventHandler(this.startDateEdit_ValueChanged);
+            // 
+            // label5
+            // 
+            this.label5.AutoSize = true;
+            this.label5.Font = new System.Drawing.Font("Verdana", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label5.Location = new System.Drawing.Point(793, 9);
+            this.label5.Name = "label5";
+            this.label5.Size = new System.Drawing.Size(32, 16);
+            this.label5.TabIndex = 82;
+            this.label5.Text = "End";
+            // 
+            // endDateEdit
+            // 
+            this.endDateEdit.CalendarFont = new System.Drawing.Font("Verdana", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.endDateEdit.Font = new System.Drawing.Font("Verdana", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.endDateEdit.Format = System.Windows.Forms.DateTimePickerFormat.Short;
+            this.endDateEdit.Location = new System.Drawing.Point(831, 7);
+            this.endDateEdit.MaxDate = new System.DateTime(2019, 12, 31, 0, 0, 0, 0);
+            this.endDateEdit.MinDate = new System.DateTime(2018, 5, 18, 0, 0, 0, 0);
+            this.endDateEdit.Name = "endDateEdit";
+            this.endDateEdit.Size = new System.Drawing.Size(113, 23);
+            this.endDateEdit.TabIndex = 81;
+            this.endDateEdit.Value = new System.DateTime(2018, 5, 18, 0, 0, 0, 0);
+            this.endDateEdit.ValueChanged += new System.EventHandler(this.endDateEdit_ValueChanged);
+            // 
+            // drWorkSaveBtn
+            // 
+            this.drWorkSaveBtn.Enabled = false;
+            this.drWorkSaveBtn.Font = new System.Drawing.Font("Verdana", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.drWorkSaveBtn.Location = new System.Drawing.Point(950, 3);
+            this.drWorkSaveBtn.Name = "drWorkSaveBtn";
+            this.drWorkSaveBtn.Size = new System.Drawing.Size(76, 30);
+            this.drWorkSaveBtn.TabIndex = 83;
+            this.drWorkSaveBtn.Text = "Save";
+            this.drWorkSaveBtn.UseVisualStyleBackColor = true;
+            this.drWorkSaveBtn.Click += new System.EventHandler(this.drWorkSaveBtn_Click);
             // 
             // DoctorWorkForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1028, 497);
+            this.Controls.Add(this.drWorkSaveBtn);
+            this.Controls.Add(this.label5);
+            this.Controls.Add(this.endDateEdit);
+            this.Controls.Add(this.label4);
+            this.Controls.Add(this.startDateEdit);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.drWorkId);
             this.Controls.Add(this.drWorkDeleteBtn);
@@ -431,5 +524,12 @@
         private System.Windows.Forms.Button drWorkDeleteBtn;
         private System.Windows.Forms.TextBox drWorkId;
         private System.Windows.Forms.Label label2;
+        private System.Windows.Forms.Label label3;
+        private System.Windows.Forms.ComboBox scanComb;
+        private System.Windows.Forms.Label label4;
+        private System.Windows.Forms.DateTimePicker startDateEdit;
+        private System.Windows.Forms.Label label5;
+        private System.Windows.Forms.DateTimePicker endDateEdit;
+        private System.Windows.Forms.Button drWorkSaveBtn;
     }
 }

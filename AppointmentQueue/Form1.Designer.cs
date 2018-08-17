@@ -40,10 +40,8 @@
             this.todayDatePicker = new System.Windows.Forms.DateTimePicker();
             this.reqCob = new System.Windows.Forms.ComboBox();
             this.label3 = new System.Windows.Forms.Label();
-            this.scan_CoBox = new System.Windows.Forms.ComboBox();
             this.paidCob = new System.Windows.Forms.ComboBox();
             this.label5 = new System.Windows.Forms.Label();
-            this.Scanner = new System.Windows.Forms.Label();
             this.groupBox2 = new System.Windows.Forms.GroupBox();
             this.label18 = new System.Windows.Forms.Label();
             this.seachPaBtn = new System.Windows.Forms.Button();
@@ -70,6 +68,7 @@
             this.calendarBtn = new System.Windows.Forms.Button();
             this.manDrWorkBtn = new System.Windows.Forms.Button();
             this.manDrBtn = new System.Windows.Forms.Button();
+            this.waitCheckBox = new System.Windows.Forms.CheckBox();
             this.reqGroupBox.SuspendLayout();
             this.groupBox2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.appDataGridView)).BeginInit();
@@ -94,7 +93,7 @@
             // 
             this.label23.AutoSize = true;
             this.label23.Font = new System.Drawing.Font("Verdana", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label23.Location = new System.Drawing.Point(629, 5);
+            this.label23.Location = new System.Drawing.Point(336, 7);
             this.label23.Name = "label23";
             this.label23.Size = new System.Drawing.Size(180, 18);
             this.label23.TabIndex = 36;
@@ -112,10 +111,8 @@
             this.reqGroupBox.Controls.Add(this.todayDatePicker);
             this.reqGroupBox.Controls.Add(this.reqCob);
             this.reqGroupBox.Controls.Add(this.label3);
-            this.reqGroupBox.Controls.Add(this.scan_CoBox);
             this.reqGroupBox.Controls.Add(this.paidCob);
             this.reqGroupBox.Controls.Add(this.label5);
-            this.reqGroupBox.Controls.Add(this.Scanner);
             this.reqGroupBox.Font = new System.Drawing.Font("Verdana", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.reqGroupBox.Location = new System.Drawing.Point(3, 205);
             this.reqGroupBox.Name = "reqGroupBox";
@@ -158,7 +155,7 @@
             // detail_text
             // 
             this.detail_text.Font = new System.Drawing.Font("Verdana", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.detail_text.Location = new System.Drawing.Point(78, 201);
+            this.detail_text.Location = new System.Drawing.Point(78, 172);
             this.detail_text.Multiline = true;
             this.detail_text.Name = "detail_text";
             this.detail_text.Size = new System.Drawing.Size(231, 52);
@@ -168,7 +165,7 @@
             // 
             this.label7.AutoSize = true;
             this.label7.Font = new System.Drawing.Font("Verdana", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label7.Location = new System.Drawing.Point(10, 219);
+            this.label7.Location = new System.Drawing.Point(10, 190);
             this.label7.Name = "label7";
             this.label7.Size = new System.Drawing.Size(45, 16);
             this.label7.TabIndex = 21;
@@ -204,7 +201,7 @@
             this.reqCob.Enabled = false;
             this.reqCob.Font = new System.Drawing.Font("Verdana", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.reqCob.FormattingEnabled = true;
-            this.reqCob.Location = new System.Drawing.Point(78, 141);
+            this.reqCob.Location = new System.Drawing.Point(78, 112);
             this.reqCob.Name = "reqCob";
             this.reqCob.Size = new System.Drawing.Size(231, 24);
             this.reqCob.TabIndex = 8;
@@ -214,21 +211,11 @@
             // 
             this.label3.AutoSize = true;
             this.label3.Font = new System.Drawing.Font("Verdana", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label3.Location = new System.Drawing.Point(10, 144);
+            this.label3.Location = new System.Drawing.Point(10, 115);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(61, 16);
             this.label3.TabIndex = 7;
             this.label3.Text = "Request";
-            // 
-            // scan_CoBox
-            // 
-            this.scan_CoBox.Enabled = false;
-            this.scan_CoBox.Font = new System.Drawing.Font("Verdana", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.scan_CoBox.FormattingEnabled = true;
-            this.scan_CoBox.Location = new System.Drawing.Point(78, 112);
-            this.scan_CoBox.Name = "scan_CoBox";
-            this.scan_CoBox.Size = new System.Drawing.Size(231, 24);
-            this.scan_CoBox.TabIndex = 1;
             // 
             // paidCob
             // 
@@ -239,7 +226,7 @@
             "Morning",
             "Afternoon",
             "Evening"});
-            this.paidCob.Location = new System.Drawing.Point(78, 171);
+            this.paidCob.Location = new System.Drawing.Point(78, 142);
             this.paidCob.Name = "paidCob";
             this.paidCob.Size = new System.Drawing.Size(231, 24);
             this.paidCob.TabIndex = 12;
@@ -248,21 +235,11 @@
             // 
             this.label5.AutoSize = true;
             this.label5.Font = new System.Drawing.Font("Verdana", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label5.Location = new System.Drawing.Point(10, 171);
+            this.label5.Location = new System.Drawing.Point(10, 142);
             this.label5.Name = "label5";
             this.label5.Size = new System.Drawing.Size(48, 16);
             this.label5.TabIndex = 11;
             this.label5.Text = "Period";
-            // 
-            // Scanner
-            // 
-            this.Scanner.AutoSize = true;
-            this.Scanner.Font = new System.Drawing.Font("Verdana", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.Scanner.Location = new System.Drawing.Point(10, 115);
-            this.Scanner.Name = "Scanner";
-            this.Scanner.Size = new System.Drawing.Size(62, 16);
-            this.Scanner.TabIndex = 0;
-            this.Scanner.Text = "Scanner";
             // 
             // groupBox2
             // 
@@ -438,7 +415,7 @@
             this.startDate.CalendarFont = new System.Drawing.Font("Verdana", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.startDate.Font = new System.Drawing.Font("Verdana", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.startDate.Format = System.Windows.Forms.DateTimePickerFormat.Short;
-            this.startDate.Location = new System.Drawing.Point(717, 35);
+            this.startDate.Location = new System.Drawing.Point(734, 36);
             this.startDate.MaxDate = new System.DateTime(2019, 12, 31, 0, 0, 0, 0);
             this.startDate.MinDate = new System.DateTime(1909, 11, 24, 0, 0, 0, 0);
             this.startDate.Name = "startDate";
@@ -451,7 +428,7 @@
             // 
             this.betweenCheckBox.AutoSize = true;
             this.betweenCheckBox.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.betweenCheckBox.Location = new System.Drawing.Point(629, 36);
+            this.betweenCheckBox.Location = new System.Drawing.Point(646, 37);
             this.betweenCheckBox.Name = "betweenCheckBox";
             this.betweenCheckBox.Size = new System.Drawing.Size(79, 20);
             this.betweenCheckBox.TabIndex = 44;
@@ -463,7 +440,7 @@
             // 
             this.label4.AutoSize = true;
             this.label4.Font = new System.Drawing.Font("Verdana", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label4.Location = new System.Drawing.Point(863, 36);
+            this.label4.Location = new System.Drawing.Point(880, 37);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(32, 16);
             this.label4.TabIndex = 45;
@@ -522,7 +499,7 @@
             this.endDate.CalendarFont = new System.Drawing.Font("Verdana", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.endDate.Font = new System.Drawing.Font("Verdana", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.endDate.Format = System.Windows.Forms.DateTimePickerFormat.Short;
-            this.endDate.Location = new System.Drawing.Point(901, 34);
+            this.endDate.Location = new System.Drawing.Point(918, 35);
             this.endDate.MaxDate = new System.DateTime(2029, 12, 31, 0, 0, 0, 0);
             this.endDate.MinDate = new System.DateTime(2018, 6, 1, 0, 0, 0, 0);
             this.endDate.Name = "endDate";
@@ -568,11 +545,26 @@
             this.manDrBtn.UseVisualStyleBackColor = true;
             this.manDrBtn.Click += new System.EventHandler(this.manDrBtn_Click);
             // 
+            // waitCheckBox
+            // 
+            this.waitCheckBox.AutoSize = true;
+            this.waitCheckBox.Checked = true;
+            this.waitCheckBox.CheckState = System.Windows.Forms.CheckState.Checked;
+            this.waitCheckBox.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.waitCheckBox.Location = new System.Drawing.Point(646, 10);
+            this.waitCheckBox.Name = "waitCheckBox";
+            this.waitCheckBox.Size = new System.Drawing.Size(282, 20);
+            this.waitCheckBox.TabIndex = 63;
+            this.waitCheckBox.Text = "Appointments are \"Waiting\" to change date";
+            this.waitCheckBox.UseVisualStyleBackColor = true;
+            this.waitCheckBox.CheckedChanged += new System.EventHandler(this.waitCheckBox_CheckedChanged);
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1070, 540);
+            this.Controls.Add(this.waitCheckBox);
             this.Controls.Add(this.manDrBtn);
             this.Controls.Add(this.manDrWorkBtn);
             this.Controls.Add(this.calendarBtn);
@@ -619,10 +611,8 @@
         private System.Windows.Forms.DateTimePicker todayDatePicker;
         private System.Windows.Forms.ComboBox reqCob;
         private System.Windows.Forms.Label label3;
-        private System.Windows.Forms.ComboBox scan_CoBox;
         private System.Windows.Forms.ComboBox paidCob;
         private System.Windows.Forms.Label label5;
-        private System.Windows.Forms.Label Scanner;
         private System.Windows.Forms.GroupBox groupBox2;
         private System.Windows.Forms.Label label18;
         private System.Windows.Forms.Button seachPaBtn;
@@ -654,6 +644,7 @@
         private System.Windows.Forms.TextBox drTxt;
         private System.Windows.Forms.Label Doctor;
         private System.Windows.Forms.CheckBox kidCheckBox;
+        private System.Windows.Forms.CheckBox waitCheckBox;
     }
 }
 

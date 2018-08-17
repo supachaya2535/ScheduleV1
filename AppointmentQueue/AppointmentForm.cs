@@ -14,40 +14,57 @@ namespace AppointmentQueue
 {
     public partial class AppointmentForm : Form
     {
-
+        int ap_Id;
+        int drc_id;
         public AppointmentForm(DataGridViewRow App)
-        {//ap_id,ap_startT,ap_patient,ap_period,ap_request,req_bodypart,ap_appstatus,ap_scan,scan_name,req_time 
+        {
             InitializeComponent();
-            appId.Text = App.Cells[0].Value.ToString().Trim();
-            dateSelected.Value = Convert.ToDateTime(App.Cells[1].Value.ToString());
-            HNtxt.Text = App.Cells[2].Value.ToString().Trim();
-            dateSelected.Value = Convert.ToDateTime(App.Cells[1].Value);
-            scanTxt.Text = App.Cells[8].Value.ToString().Trim();
-            reqTxt.Text = App.Cells[5].Value.ToString().Trim();
-            pedTxt.Text = App.Cells[3].Value.ToString().Trim();
-            statusComb.Text = App.Cells[6].Value.ToString().Trim();
 
+            reqCob = SQL.readRequest(reqCob);
 
-            //todayDay.Value = Convert.ToDateTime(appDataGridView.Rows[ID].Cells[2].ToString().Trim());
-            //scan_CoBox.SelectedIndex = Convert.ToInt16(appDataGridView.Rows[ID].Cells[7].ToString().Trim()) - 1;
-
+            ap_Id = Convert.ToInt16(App.Cells["ap_Id"].Value.ToString().Trim());
+            drc_id = Convert.ToInt16(App.Cells["ap_drc"].Value.ToString().Trim());
+            todayDatePicker.Value = Convert.ToDateTime(App.Cells["drc_date"].Value.ToString());
+            HNtxt.Text = App.Cells["ap_patient"].Value.ToString().Trim();
+            drTxt.Text = App.Cells["drw_dr"].Value.ToString().Trim();
+            reqCob.SelectedIndex = Convert.ToInt16(App.Cells["ap_request"].Value.ToString().Trim());
+            paidCob.SelectedIndex = SQL.getPeriod(App.Cells["drw_period"].Value.ToString().Trim());
+            detail_text.Text = App.Cells["ap_detail"].Value.ToString().Trim();
         }
 
         private void saveBtn_Click(object sender, EventArgs e)
         {
             SqlConnection cn = new SqlConnection(global::AppointmentQueue.Properties.Settings.Default.Database1ConnectionString);
             SqlCommand command = cn.CreateCommand();
-            command.CommandText = "UPDATE Appointments SET ap_appstatus = @stat Where ap_Id = @id";
-            command.Parameters.AddWithValue("@stat", statusComb.Text);
-            command.Parameters.AddWithValue("@id", appId.Text.Trim());
+            command.CommandText = "UPDATE Appointments SET ap_appstatus = @stat,ap_drc = @ap_drc WHERE ap_Id = @id";
+            command.Parameters.AddWithValue("@stat", "InQeue");
+            command.Parameters.AddWithValue("@id", ap_Id.ToString().Trim());
+            command.Parameters.AddWithValue("@ap_drc", drc_id.ToString().Trim());
 
             cn.Open();
             command.ExecuteNonQuery();
             cn.Close();
-
-
-
+           
             this.Close();
+        }
+
+        private void calendarBtn_Click(object sender, EventArgs e)
+        {
+            CalendarForm clf_form = new CalendarForm(paidCob.SelectedIndex, reqCob.SelectedIndex,
+                todayDatePicker.Value.Date, Convert.ToInt16(kidCheckBox.Checked));
+
+            clf_form.exist = false;
+            clf_form.ShowDialog();
+            if ((clf_form.exist == true))
+            {
+                drc_id = Convert.ToInt16(clf_form.drcInx);
+                todayDatePicker.Value = clf_form.chosenT;
+                reqCob.SelectedIndex = clf_form.requestInx;
+                paidCob.SelectedIndex = clf_form.periodInx;
+                drTxt.Text = clf_form.drInx;
+                kidCheckBox.Checked = Convert.ToBoolean(clf_form.kidInx);
+                saveBtn.Enabled = true;
+            }
         }
     }
 }
