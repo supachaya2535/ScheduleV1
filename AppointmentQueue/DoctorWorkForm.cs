@@ -29,8 +29,9 @@ namespace AppointmentQueue
             pedComb.SelectedIndex = 0;
             scanComb.SelectedIndex = 0;
 
-            endDate.Value = startDate.Value.AddDays(1);
+            endDate.Value = DateTime.Today;
             startDate.Value = DateTime.Today;
+            endDate.Value = startDate.Value.AddDays(1);
             
             startDateEdit.MaxDate = DateTime.Today.AddYears(5);
             startDateEdit.MinDate = DateTime.Today.AddYears(-5);
@@ -190,12 +191,7 @@ namespace AppointmentQueue
 
         private void endDate_ValueChanged(object sender, EventArgs e)
         {
-            if (startDate.Value < DateTime.Today)
-            {
-                MessageBox.Show("Can not assign The Date in past");
-                endDate.Value = startDate.Value;
-            }
-            else if (endDate.Value < startDate.Value)
+            if (endDate.Value < startDate.Value)
             {
                 MessageBox.Show("EndDate can not be lesser than StartDate");
                 endDate.Value = startDate.Value;
