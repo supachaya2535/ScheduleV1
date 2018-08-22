@@ -45,6 +45,9 @@ namespace AppointmentQueue
 
                     seachDrReq_Click(sender, e);
                     detailTxt.Text = "";
+
+
+
                 }
 
             }

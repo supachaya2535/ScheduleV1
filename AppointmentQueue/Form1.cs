@@ -63,9 +63,6 @@ namespace AppointmentQueue
             }
             
         }
-
-       
-
         private void betweenCheckBox_CheckedChanged(object sender, EventArgs e)
         {
             if (betweenCheckBox.Checked == true)

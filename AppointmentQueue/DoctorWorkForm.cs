@@ -37,6 +37,7 @@ namespace AppointmentQueue
             endDateEdit.MaxDate = DateTime.Today.AddYears(5);
             endDateEdit.MaxDate = DateTime.Today.AddYears(5);
         }
+
         private void seachDrWork_Click(object sender, EventArgs e)
         {
             DataTable dt = SQL.GetDoctorWorks("", drIdTxt.Text.Trim(),"","","");
@@ -91,6 +92,7 @@ namespace AppointmentQueue
                 }
                 if (MessageBox.Show("This doctor work already exists in overlapping date, Do you want to replace a new doctor work in the difference time ?", "Replace a new doctor work time", MessageBoxButtons.YesNo) == DialogResult.Yes)
                 {
+                   
                     SQL.UpDateDoctorWorks(drWorkId.Text.Trim(),"Inactive");
 
                     SQL.UpDateDoctorCalendarsList(drWorkId.Text.Trim(), "Canceled");
