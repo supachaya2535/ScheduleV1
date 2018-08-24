@@ -48,12 +48,13 @@ namespace AppointmentQueue
         {
             DataTable dt = SQL.GetDoctorWorks(pedComb.SelectedItem.ToString().Trim(),
                 drIdTxt.Text.Trim(),
-                Convert.ToInt16(kidCheckBox.Checked).ToString().Trim(),"Active",
+                Convert.ToInt16(kidCheckBox.Checked).ToString().Trim(),
+                "Active",
                 dofComb.SelectedItem.ToString().Trim(),
                 scanComb.SelectedItem.ToString().Trim());
 
             int numrow = Convert.ToInt16(dt.Rows.Count);
-            if(numrow==0)
+            if (numrow == 0)
             {
                 if (MessageBox.Show("Do you want to insert a new doctor work?", "Insert a new doctor work", MessageBoxButtons.YesNo) == DialogResult.Yes)
                 {
@@ -67,62 +68,78 @@ namespace AppointmentQueue
                         week2CheckBox.Checked,
                         week3CheckBox.Checked,
                         week4CheckBox.Checked,
-                        "Waiting");
-                    
+                        "Waiting",
+                        scanComb.SelectedItem.ToString().Trim());
+
                     //Create Doctor Calender
                     SQL.CreateDoctorCalendarsList(pedComb.SelectedItem.ToString().Trim(), drIdTxt.Text.Trim(),
-                        kidCheckBox.Checked, "Waiting", dofComb.SelectedItem.ToString().Trim());
+                        kidCheckBox.Checked, "Waiting", dofComb.SelectedItem.ToString().Trim(),scanComb.SelectedItem.ToString().Trim());
 
                     seachDrWork_Click(sender, e);
                 }
             }
-            else
+            else if (numrow == 1)
             {
-                 drWorkId.Text = dt.Rows[0][0].ToString().Trim();
+                drWorkId.Text = dt.Rows[0][0].ToString().Trim();
                 DateTime sdate = Convert.ToDateTime(dt.Rows[0]["drw_sdate"].ToString().Trim());
                 DateTime edate = Convert.ToDateTime(dt.Rows[0]["drw_edate"].ToString().Trim());
                 ///Check overappling date
-                if (startDate.Value < edate)
+
+                if (MessageBox.Show("This doctor working slot already exists, Do you want to combine them together ", "Combine a new doctor work time", MessageBoxButtons.YesNo) == DialogResult.Yes)
                 {
-                    MessageBox.Show("This date range of work overlap another date of work that already exists by the same doctor in the same period\n" +
-                        "Suggestion!!!"+
-                        "1.Edit the range of old work \n"+
-                        "2.Insert the new range of work");
-  
-                }
-                if (MessageBox.Show("This doctor work already exists in overlapping date, Do you want to replace a new doctor work in the difference time ?", "Replace a new doctor work time", MessageBoxButtons.YesNo) == DialogResult.Yes)
-                {
-                   
-                    SQL.UpDateDoctorWorks(drWorkId.Text.Trim(),"Inactive");
+                    if (startDate.Value <= sdate && endDate.Value >= sdate && endDate.Value <= edate)//Left
+                    {
+                        SQL.UpDateDoctorWorks(drWorkId.Text.Trim(), startDate.Value, edate);
+                        SQL.UpdateAddDoctorCalendarsList(drWorkId.Text.Trim(), "Available", startDate.Value, sdate.AddDays(-1));
+                    }
+                    else if (startDate.Value <= sdate && endDate.Value >= sdate && endDate.Value >= edate)//Cover
+                    {
+                        SQL.UpDateDoctorWorks(drWorkId.Text.Trim(), startDate.Value, endDate.Value);
+                        SQL.UpdateAddDoctorCalendarsList(drWorkId.Text.Trim(), "Available", startDate.Value, sdate.AddDays(-1));
+                        SQL.UpdateAddDoctorCalendarsList(drWorkId.Text.Trim(), "Available", edate.AddDays(1), endDate.Value);
+                    }
+                    else if (startDate.Value >= sdate && endDate.Value <= edate)//Midle
+                    {
+                        MessageBox.Show("This doctor work is already exist in the same time, Do not do anything");
+                    }
+                    else if (startDate.Value >= sdate && startDate.Value <= edate && endDate.Value >= edate)//Right
+                    {
+                        SQL.UpDateDoctorWorks(drWorkId.Text.Trim(), startDate.Value, edate);
+                        SQL.UpdateAddDoctorCalendarsList(drWorkId.Text.Trim(), "Available", edate.AddDays(1), endDate.Value);
+                    }
+                    else
+                    {
+                        MessageBox.Show("This doctor work is already exist but in the differrence time");
+                        if (MessageBox.Show("Do you want to insert a new doctor work time", "Insertion successful", MessageBoxButtons.YesNo) == DialogResult.Yes)
+                        {
+                            SQL.InsertDoctorWorks(drIdTxt.Text.Trim(),
+                            startDate.Value,
+                            endDate.Value,
+                            dofComb.SelectedItem.ToString().Trim(),
+                            pedComb.SelectedItem.ToString().Trim(),
+                            kidCheckBox.Checked,
+                            week1CheckBox.Checked,
+                            week2CheckBox.Checked,
+                            week3CheckBox.Checked,
+                            week4CheckBox.Checked,
+                            "Waiting",
+                            scanComb.SelectedItem.ToString().Trim());
 
-                    SQL.UpDateDoctorCalendarsList(drWorkId.Text.Trim(), "Canceled");
-
-                    SQL.UpDateAppointmentsWhenCalendarListWereCanceled("Canceled", "Waiting");
-                    MessageBox.Show("All related calender records were calcled!."+
-                        " It will effect to change status 'InQueue' of some appointment records become 'Waiting'"+
-                        "(Waiting for you change the appointment date");
-                    
-                    SQL.InsertDoctorWorks(drIdTxt.Text.Trim(),
-                        startDate.Value,
-                        endDate.Value,
-                        dofComb.SelectedItem.ToString().Trim(),
-                        pedComb.SelectedItem.ToString().Trim(),
-                        kidCheckBox.Checked,
-                        week1CheckBox.Checked,
-                        week2CheckBox.Checked,
-                        week3CheckBox.Checked,
-                        week4CheckBox.Checked,
-                        "Waiting");
-                    
-                    //Create Doctor Calender
-                    SQL.CreateDoctorCalendarsList(pedComb.SelectedItem.ToString().Trim(), drIdTxt.Text.Trim(),
-                        kidCheckBox.Checked, "Waiting", dofComb.SelectedItem.ToString().Trim());
-
+                            //Create Doctor Calender
+                            SQL.CreateDoctorCalendarsList(pedComb.SelectedItem.ToString().Trim(), drIdTxt.Text.Trim(),
+                                kidCheckBox.Checked, "Waiting", dofComb.SelectedItem.ToString().Trim(), scanComb.SelectedItem.ToString().Trim());
+                            
+                        }
+                    }
                     seachDrWork_Click(sender, e);
                 }
 
             }
-        }
+            else if (numrow >1)
+            {
+                MessageBox.Show("There are conflict more than one record please check!!!");
+            }
+         }
     
         private void button1_Click(object sender, EventArgs e)
         {
@@ -173,6 +190,7 @@ namespace AppointmentQueue
                 }
 
             }
+            seachDrWork_Click(sender, e);
         }
 
         private void startDate_ValueChanged(object sender, EventArgs e)
