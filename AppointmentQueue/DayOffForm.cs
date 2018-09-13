@@ -24,37 +24,21 @@ namespace AppointmentQueue
 
         private void addDayOffBtn_Click(object sender, EventArgs e)
         {
-            try
+
+            if (MessageBox.Show("Do you want to insert a new day off?", "Insert new day off", MessageBoxButtons.YesNo) == DialogResult.Yes)
             {
-                if (MessageBox.Show("Do you want to insert a new day off?", "Insert new day off", MessageBoxButtons.YesNo) == DialogResult.Yes)
+                SQL.InsertDayOffs(dayOffDate.Value, pkDr, pedCob.SelectedItem.ToString(), detailTxt.Text);
+                seachDrReq_Click(sender, e);
+                detailTxt.Text = "";
+                DataTable dt = SQL.GetDoctorCalendars(pkDr, dayOffDate.Value);
+                int numrow = Convert.ToInt16(dt.Rows.Count);
+                if (numrow > 0)
                 {
-                    SqlConnection cn = new SqlConnection(global::AppointmentQueue.Properties.Settings.Default.Database1ConnectionString);
-                    SqlCommand command = new SqlCommand(
-                        "INSERT INTO DayOffs (df_date,df_dr,df_period,df_detail) " +
-                        "VALUES (@df_date,@df_dr,@df_period,@df_detail)", cn);
-
-                    command.Parameters.AddWithValue("@df_date", dayOffDate.Value.Date);
-                    command.Parameters.AddWithValue("@df_dr", pkDr);
-                    command.Parameters.AddWithValue("@df_period", pedCob.SelectedItem.ToString().Trim());
-                    command.Parameters.AddWithValue("@df_detail", detailTxt.Text.Trim());
-                    command.Connection = cn;
-
-                    cn.Open();
-                    command.ExecuteNonQuery();
-                    cn.Close();
-
-                    seachDrReq_Click(sender, e);
-                    detailTxt.Text = "";
-
-
-
+                    SQL.UpDateDoctorCalendars(dt.Rows[0]["drc_id"].ToString().Trim(), "Canceled");
+                    SQL.UpDateAppointmentsWhenCalendarListWereCanceled("Canceled", "Waiting");
                 }
-
             }
-            catch (SystemException ex)
-            {
-                MessageBox.Show(string.Format("Couldn't insert a new record : An error occurred: {0}", ex.Message));
-            }
+            
         }
 
         private void drIdTxt_TextChanged(object sender, EventArgs e)
@@ -94,7 +78,7 @@ namespace AppointmentQueue
 
         private void seachDrReq_Click(object sender, EventArgs e)
         {
-            DataTable dt = SQL.GetDayOffs(dayOffDate.Value, dayOffDate.Value.Date.AddYears(1), drNameTxt2.Text);
+            DataTable dt = SQL.GetDayOffs(drNameTxt2.Text);
             dayOffGridView.DataSource = dt;
         }
 

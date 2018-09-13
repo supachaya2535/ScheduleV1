@@ -32,7 +32,7 @@ namespace AppointmentQueue
             {
                 if (MessageBox.Show("Do you want to insert a new day off?", "Insert new day off", MessageBoxButtons.YesNo) == DialogResult.Yes)
                 {
-                    SqlConnection cn = new SqlConnection(global::AppointmentQueue.Properties.Settings.Default.Database1ConnectionString);
+                    SqlConnection cn = new SqlConnection("Data Source=(LocalDB)\\MSSQLLocalDB;AttachDbFilename=E:\\GitHub\\MRI_Scheduling\\ScheduleV1\\AppointmentQueue\\Database1.mdf;Integrated Security=True");
                     SqlCommand command = new SqlCommand(
                         "INSERT INTO Doctors (dr_name,dr_lname) " +
                         "VALUES (@dr_name,@dr_lname)", cn);
@@ -65,7 +65,7 @@ namespace AppointmentQueue
             {
                 if (MessageBox.Show("Do you want to delete this record?", "Detete this record", MessageBoxButtons.YesNo) == DialogResult.Yes)
                 {
-                    SqlConnection cn = new SqlConnection(global::AppointmentQueue.Properties.Settings.Default.Database1ConnectionString);
+                    SqlConnection cn = new SqlConnection("Data Source=(LocalDB)\\MSSQLLocalDB;AttachDbFilename=E:\\GitHub\\MRI_Scheduling\\ScheduleV1\\AppointmentQueue\\Database1.mdf;Integrated Security=True");
                     SqlCommand command = new SqlCommand("DELETE FROM Doctors WHERE dr_Id = '" + drId + "'", cn);
                     command.Connection = cn;
 
