@@ -15,10 +15,10 @@ namespace AppointmentQueue
 {
     class SQL
     {
-
+        public static String ConnectionStr = "Data Source=(LocalDB)\\MSSQLLocalDB;AttachDbFilename=E:\\GitHub\\MRI_Scheduling\\ScheduleV1\\AppointmentQueue\\Database1.mdf;Integrated Security=True";
         public static DataTable GetAppointment(DateTime startT, DateTime endT, String patient, String period, String request)
         {
-            SqlConnection cn = new SqlConnection(global::AppointmentQueue.Properties.Settings.Default.Database1ConnectionString);
+            SqlConnection cn = new SqlConnection(ConnectionStr);
             cn.Open();
             endT = endT.AddDays(1).AddTicks(-1);
 
@@ -62,7 +62,7 @@ namespace AppointmentQueue
 
         public static DataTable GetAppointment(String status)
         {
-            SqlConnection cn = new SqlConnection(global::AppointmentQueue.Properties.Settings.Default.Database1ConnectionString);
+            SqlConnection cn = new SqlConnection(ConnectionStr);
             cn.Open();
 
             SqlCommand command = new SqlCommand(
@@ -100,7 +100,7 @@ namespace AppointmentQueue
 
         public static DataTable GetRequests(String request)
         {
-            SqlConnection cn = new SqlConnection(global::AppointmentQueue.Properties.Settings.Default.Database1ConnectionString);
+            SqlConnection cn = new SqlConnection(ConnectionStr);
             cn.Open();
             SqlCommand command = new SqlCommand("SELECT req_Id, req_bodypart, req_time " +
                 "FROM Requests " +
@@ -121,7 +121,7 @@ namespace AppointmentQueue
 
         public static DataTable GetScanner(String scanname)
         {
-            SqlConnection cn = new SqlConnection(global::AppointmentQueue.Properties.Settings.Default.Database1ConnectionString);
+            SqlConnection cn = new SqlConnection(ConnectionStr);
             cn.Open();
             SqlCommand command = new SqlCommand("SELECT scan_Id, scan_name FROM Scanners " +
                 "WHERE scan_name LIKE '%" + scanname + "%'", cn);
@@ -138,7 +138,7 @@ namespace AppointmentQueue
 
         public static DataTable GetDoctors(String name, String lname)
         {
-            SqlConnection cn = new SqlConnection(global::AppointmentQueue.Properties.Settings.Default.Database1ConnectionString);
+            SqlConnection cn = new SqlConnection(ConnectionStr);
             cn.Open();
             SqlCommand command = new SqlCommand(
                 "SELECT dr_id,dr_name,dr_lname " +
@@ -158,7 +158,7 @@ namespace AppointmentQueue
 
         public static DataTable GetDayOffs(DateTime startT, DateTime endT, String drName)
         {
-            SqlConnection cn = new SqlConnection(global::AppointmentQueue.Properties.Settings.Default.Database1ConnectionString);
+            SqlConnection cn = new SqlConnection(ConnectionStr);
             cn.Open();
             endT = endT.AddDays(1).AddTicks(-1);
             SqlCommand command = new SqlCommand(
@@ -194,7 +194,7 @@ namespace AppointmentQueue
 
         public static DataTable GetDayOffs(String drName)
         {
-            SqlConnection cn = new SqlConnection(global::AppointmentQueue.Properties.Settings.Default.Database1ConnectionString);
+            SqlConnection cn = new SqlConnection(ConnectionStr);
             cn.Open();
             
             SqlCommand command = new SqlCommand(
@@ -228,7 +228,7 @@ namespace AppointmentQueue
 
         public static void InsertDayOffs(DateTime date, String dr_id, String ped, String detail)
         {
-            SqlConnection cn = new SqlConnection(global::AppointmentQueue.Properties.Settings.Default.Database1ConnectionString);
+            SqlConnection cn = new SqlConnection(ConnectionStr);
             SqlCommand command = new SqlCommand(
                 "INSERT INTO DayOffs (df_date,df_dr,df_period,df_detail) " +
                 "VALUES (@df_date,@df_dr,@df_period,@df_detail)", cn);
@@ -248,7 +248,7 @@ namespace AppointmentQueue
 
         public static DataTable GetDoctorCalendars()
         {
-            SqlConnection cn = new SqlConnection(global::AppointmentQueue.Properties.Settings.Default.Database1ConnectionString);
+            SqlConnection cn = new SqlConnection(ConnectionStr);
             cn.Open();
             SqlCommand command = new SqlCommand(
                "SELECT drc_id, drc_date, drc_drw, drc_time, drc_status " +
@@ -280,7 +280,7 @@ namespace AppointmentQueue
 
         public static DataTable GetDoctorCalendars(DateTime start_date, DateTime end_date)
         {
-            SqlConnection cn = new SqlConnection(global::AppointmentQueue.Properties.Settings.Default.Database1ConnectionString);
+            SqlConnection cn = new SqlConnection(ConnectionStr);
             cn.Open();
             SqlCommand command = new SqlCommand(
                "SELECT * " +
@@ -313,7 +313,7 @@ namespace AppointmentQueue
 
         public static DataTable GetDoctorCalendars(String dr_id, DateTime date)
         {
-            SqlConnection cn = new SqlConnection(global::AppointmentQueue.Properties.Settings.Default.Database1ConnectionString);
+            SqlConnection cn = new SqlConnection(ConnectionStr);
             cn.Open();
             SqlCommand command = new SqlCommand(
                "SELECT * " +
@@ -346,7 +346,7 @@ namespace AppointmentQueue
 
         public static void UpDateDoctorCalendars(String drc_id, String drc_status)
         {
-            SqlConnection cn = new SqlConnection(global::AppointmentQueue.Properties.Settings.Default.Database1ConnectionString);
+            SqlConnection cn = new SqlConnection(ConnectionStr);
             SqlCommand command = new SqlCommand(
                 "UPDATE DoctorCalendars SET drc_status = @drc_status " +
                 "WHERE drc_id = @drc_id ", cn);
@@ -364,7 +364,7 @@ namespace AppointmentQueue
 
         public static DataTable GetDoctorRequests()
         {
-            SqlConnection cn = new SqlConnection(global::AppointmentQueue.Properties.Settings.Default.Database1ConnectionString);
+            SqlConnection cn = new SqlConnection(ConnectionStr);
             cn.Open();
             SqlCommand command = new SqlCommand(
                 "SELECT drreq_Id,req_bodypart,dr_name,drreq_period,drreq_kid,drreq_dayofweek,dr_Id " +
@@ -389,7 +389,7 @@ namespace AppointmentQueue
         
         public static DataTable GetDoctorRequests(String req, String dr)
         {
-            SqlConnection cn = new SqlConnection(global::AppointmentQueue.Properties.Settings.Default.Database1ConnectionString);
+            SqlConnection cn = new SqlConnection(ConnectionStr);
             cn.Open();
             SqlCommand command = new SqlCommand(
                 "SELECT drreq_Id,drreq_req,req_bodypart,drreq_dr,dr_name " +
@@ -416,7 +416,7 @@ namespace AppointmentQueue
         
         public static DataTable GetDoctorWorks(String drw_id)
         {
-            SqlConnection cn = new SqlConnection(global::AppointmentQueue.Properties.Settings.Default.Database1ConnectionString);
+            SqlConnection cn = new SqlConnection(ConnectionStr);
             cn.Open();
             SqlCommand command = new SqlCommand(
                 "SELECT *" +
@@ -449,7 +449,7 @@ namespace AppointmentQueue
 
         public static DataTable GetDoctorWorks(String ped, String dr, string kid, String status, String dow, String scan)
         {
-            SqlConnection cn = new SqlConnection(global::AppointmentQueue.Properties.Settings.Default.Database1ConnectionString);
+            SqlConnection cn = new SqlConnection(ConnectionStr);
             cn.Open();
             SqlCommand command = new SqlCommand(
                 "SELECT drw_id,drw_dr,drw_sdate,drw_edate,drw_dow,drw_period," +
@@ -487,7 +487,7 @@ namespace AppointmentQueue
 
         public static DataTable GetDoctorWorks(String ped, String dr, string kid, String status, String dow)
         {
-            SqlConnection cn = new SqlConnection(global::AppointmentQueue.Properties.Settings.Default.Database1ConnectionString);
+            SqlConnection cn = new SqlConnection(ConnectionStr);
             cn.Open();
             SqlCommand command = new SqlCommand(
                 "SELECT drw_id,drw_dr,drw_sdate,drw_edate,drw_dow,drw_period," +
@@ -524,7 +524,7 @@ namespace AppointmentQueue
 
         public static DataTable GetDoctorCalendars(DateTime startT, DateTime endT, String req, String kid, String ped)
         {
-            SqlConnection cn = new SqlConnection(global::AppointmentQueue.Properties.Settings.Default.Database1ConnectionString);
+            SqlConnection cn = new SqlConnection(ConnectionStr);
             cn.Open();
             
             SqlCommand command = new SqlCommand(
@@ -565,7 +565,8 @@ namespace AppointmentQueue
         public static void InsertDoctorWorks(String drw_dr, DateTime drw_sdate, DateTime drw_edate, String drw_dow,
             String drw_period, bool drw_kid,bool drw_w1, bool drw_w2, bool drw_w3,bool drw_w4, String drw_status, String drw_scan)
         {
-            SqlConnection cn = new SqlConnection(global::AppointmentQueue.Properties.Settings.Default.Database1ConnectionString);
+            SqlConnection cn = new SqlConnection(ConnectionStr);
+
             SqlCommand command = new SqlCommand(
                 "INSERT INTO DoctorWorks (drw_dr,drw_sdate,drw_edate,drw_dow,drw_period," +
                 "drw_kid,drw_w1,drw_w2,drw_w3,drw_w4,drw_status,drw_scan) " +
@@ -593,7 +594,7 @@ namespace AppointmentQueue
 
         public static void UpDateDoctorWorks(String drw_id, String drw_status)
         {
-            SqlConnection cn = new SqlConnection(global::AppointmentQueue.Properties.Settings.Default.Database1ConnectionString);
+            SqlConnection cn = new SqlConnection(ConnectionStr);
             SqlCommand command = new SqlCommand(
                 "UPDATE DoctorWorks SET drw_status = @drw_status " +
                 "WHERE drw_id = @drw_id ", cn);
@@ -610,7 +611,7 @@ namespace AppointmentQueue
 
         public static void UpDateDoctorWorks(String drw_id, DateTime drw_sdate, DateTime drw_edate)
         {
-            SqlConnection cn = new SqlConnection(global::AppointmentQueue.Properties.Settings.Default.Database1ConnectionString);
+            SqlConnection cn = new SqlConnection(ConnectionStr);
             SqlCommand command = new SqlCommand(
                 "UPDATE DoctorWorks SET drw_sdate = @drw_sdate, drw_edate = @drw_edate " +
                 "WHERE drw_id = @drw_id ", cn);
@@ -628,7 +629,7 @@ namespace AppointmentQueue
 
         public static void DropDoctorWorks(String drw_id)
         {
-            SqlConnection cn = new SqlConnection(global::AppointmentQueue.Properties.Settings.Default.Database1ConnectionString);
+            SqlConnection cn = new SqlConnection(ConnectionStr);
             SqlCommand command = new SqlCommand("DELETE FROM DoctorWorks WHERE drw_id = '" + drw_id.Trim() + "'", cn);
             cn.Open();
             command.ExecuteNonQuery();
@@ -637,7 +638,7 @@ namespace AppointmentQueue
 
         public static void InsertDoctorCalendars(DateTime drc_date, String drc_drw, int drc_time, String drc_status)
         {
-            SqlConnection cn = new SqlConnection(global::AppointmentQueue.Properties.Settings.Default.Database1ConnectionString);
+            SqlConnection cn = new SqlConnection(ConnectionStr);
             SqlCommand command = new SqlCommand(
                 "INSERT INTO DoctorCalendars (drc_date,drc_drw,drc_time,drc_status) " +
                 "VALUES (@drc_date,@drc_drw,@drc_time,@drc_status)", cn);
@@ -756,7 +757,7 @@ namespace AppointmentQueue
 
         public static void UpDateDoctorCalendarsList(String drw_id, String drc_status)
         {
-            SqlConnection cn = new SqlConnection(global::AppointmentQueue.Properties.Settings.Default.Database1ConnectionString);
+            SqlConnection cn = new SqlConnection(ConnectionStr);
             SqlCommand command = new SqlCommand(
                 "UPDATE DoctorCalendars SET drc_status = @drc_status " +
                 "WHERE drc_drw = @drw_id ", cn);
@@ -774,7 +775,7 @@ namespace AppointmentQueue
         
         public static void UpDateDoctorCalendarsList(String drw_id, String drc_status, DateTime drw_sdate, DateTime drw_edate)
         {
-            SqlConnection cn = new SqlConnection(global::AppointmentQueue.Properties.Settings.Default.Database1ConnectionString);
+            SqlConnection cn = new SqlConnection(ConnectionStr);
             SqlCommand command = new SqlCommand(
                 "UPDATE DoctorCalendars SET drc_status = @drc_status " +
                 "WHERE drc_drw = @drw_id "+
@@ -796,7 +797,7 @@ namespace AppointmentQueue
 
         public static void DropDoctorCalendarsList(String drc_drw)
         {
-            SqlConnection cn = new SqlConnection(global::AppointmentQueue.Properties.Settings.Default.Database1ConnectionString);
+            SqlConnection cn = new SqlConnection(ConnectionStr);
             SqlCommand command = new SqlCommand("DELETE FROM DoctorCalendars WHERE drc_drw = '" + drc_drw.Trim() + "'", cn);
             cn.Open();
             command.ExecuteNonQuery();
@@ -805,7 +806,7 @@ namespace AppointmentQueue
 
         public static void UpDateAppointmentsWhenCalendarListWereCanceled(String drc_status,String ap_appstatus)
         {
-            SqlConnection cn = new SqlConnection(global::AppointmentQueue.Properties.Settings.Default.Database1ConnectionString);
+            SqlConnection cn = new SqlConnection(ConnectionStr);
             SqlCommand command = new SqlCommand(
                 "UPDATE Appointments SET ap_appstatus = @ap_appstatus " +
                 "WHERE ap_drc IN (SELECT drc_id FROM DoctorCalendars WHERE drc_status LIKE '%"+drc_status+"%' ) "+
@@ -864,7 +865,7 @@ namespace AppointmentQueue
        
         public static ComboBox readScanner(ComboBox scan_CoBox)
         {
-            SqlConnection cn = new SqlConnection(global::AppointmentQueue.Properties.Settings.Default.Database1ConnectionString);
+            SqlConnection cn = new SqlConnection(ConnectionStr);
             cn.Open();
             SqlCommand command = new SqlCommand("SELECT scan_id,scan_name FROM Scanners", cn);
             SqlDataReader reader = command.ExecuteReader();
@@ -880,7 +881,7 @@ namespace AppointmentQueue
 
         public static ComboBox readRequest(ComboBox reqCob)
         {
-            SqlConnection cn = new SqlConnection(global::AppointmentQueue.Properties.Settings.Default.Database1ConnectionString);
+            SqlConnection cn = new SqlConnection(ConnectionStr);
             cn.Open();
             SqlCommand command = new SqlCommand("SELECT req_id,req_bodypart FROM Requests ", cn);
             SqlDataReader reader = command.ExecuteReader();
