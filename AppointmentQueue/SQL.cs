@@ -15,7 +15,7 @@ namespace AppointmentQueue
 {
     class SQL
     {
-        public static String ConnectionStr = "Data Source=(LocalDB)\\MSSQLLocalDB;AttachDbFilename=E:\\GitHub\\MRI_Scheduling\\ScheduleV1\\AppointmentQueue\\Database1.mdf;Integrated Security=True";
+        public static String ConnectionStr = "Data Source=(LocalDB)\\MSSQLLocalDB;AttachDbFilename=C:\\Users\\Toon\\Documents\\GitDoc\\ScheduleHospital\\AppointmentQueue\\Database1.mdf;Integrated Security=True";
         public static DataTable GetAppointment(DateTime startT, DateTime endT, String patient, String period, String request)
         {
             SqlConnection cn = new SqlConnection(ConnectionStr);
