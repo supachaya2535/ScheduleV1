@@ -41,7 +41,7 @@ namespace AppointmentQueue
 
             SqlDataReader reader = command.ExecuteReader();
             DataTable dt = new DataTable();
-            dt.Columns.Add("ap_id", typeof(Int16));
+            dt.Columns.Add("ap_Id", typeof(Int16));
             dt.Columns.Add("ap_drc", typeof(String));
             dt.Columns.Add("drc_date", typeof(String));
             dt.Columns.Add("ap_patient", typeof(String));
@@ -55,6 +55,19 @@ namespace AppointmentQueue
             dt.Columns.Add("ap_request", typeof(Int16));
 
             dt.Load(reader);
+
+            dt.Columns["ap_Id"].ColumnName = "Appointment ID";
+            dt.Columns["ap_drc"].ColumnName = "Appointment Docter Calendar";
+            dt.Columns["drc_date"].ColumnName = "Date of Appointment";
+            dt.Columns["ap_patient"].ColumnName = "Patient Information";
+            dt.Columns["dr_name"].ColumnName = "Doctor Name";
+            dt.Columns["drw_period"].ColumnName = "Doctor Work Period";
+            dt.Columns["req_bodypart"].ColumnName = "Part of request";
+            dt.Columns["ap_appstatus"].ColumnName = "Appointment Status";
+            dt.Columns["drw_kid"].ColumnName = "Kid Status";
+            dt.Columns["ap_detail"].ColumnName = "Appointment Detail";
+            dt.Columns["drw_dr"].ColumnName = "Doctor Work";
+            dt.Columns["ap_request"].ColumnName = "Appointment Request";
 
             cn.Close();
             return dt;
@@ -152,6 +165,10 @@ namespace AppointmentQueue
             dt.Columns.Add("dr_lname", typeof(string));
 
             dt.Load(reader);
+            dt.Columns["dr_id"].ColumnName = "Doctor ID";
+            dt.Columns["dr_name"].ColumnName = "Doctor Name";
+            dt.Columns["dr_lname"].ColumnName = "Doctor Last Name";
+
             cn.Close();
             return dt;
         }
@@ -410,6 +427,13 @@ namespace AppointmentQueue
             dt.Columns.Add("dr_name", typeof(String));
 
             dt.Load(reader);
+
+            dt.Columns["drreq_Id"].ColumnName = "Doctor Request ID";
+            dt.Columns["drreq_req"].ColumnName = "Request ID";
+            dt.Columns["req_bodypart"].ColumnName = "Bodypart";
+            dt.Columns["drreq_dr"].ColumnName = "Doctor ID";
+            dt.Columns["dr_name"].ColumnName = "Doctor Name";
+
             cn.Close();
             return dt;
         }
@@ -518,6 +542,21 @@ namespace AppointmentQueue
             dt.Columns.Add("drw_scan", typeof(String));
 
             dt.Load(reader);
+
+            dt.Columns["drw_id"].ColumnName = "Doctor Work ID";
+            dt.Columns["drw_dr"].ColumnName = "Doctor Name";
+            dt.Columns["drw_sdate"].ColumnName = "Start Date";
+            dt.Columns["drw_edate"].ColumnName = "End Date";
+            dt.Columns["drw_dow"].ColumnName = "Day of Work";
+            dt.Columns["drw_period"].ColumnName = "Period Of Day";
+            dt.Columns["drw_kid"].ColumnName = "Kid Status";
+            dt.Columns["drw_w1"].ColumnName = "Week1 Work";
+            dt.Columns["drw_w2"].ColumnName = "Week2 Work";
+            dt.Columns["drw_w3"].ColumnName = "Week3 Work";
+            dt.Columns["drw_w4"].ColumnName = "Week4 Work";
+            dt.Columns["drw_status"].ColumnName = "Status";
+            dt.Columns["drw_scan"].ColumnName = "Scanner";
+
             cn.Close();
             return dt;
         }
@@ -528,7 +567,7 @@ namespace AppointmentQueue
             cn.Open();
             
             SqlCommand command = new SqlCommand(
-            "SELECT drc_id,drc_date,drc_drw,drc_time,drc_status,drw_dr,dr_name,drw_period " +
+            "SELECT drc_id,drc_date,drc_time,drc_status,dr_name,drw_period " +
             "FROM DoctorCalendars "+
             "JOIN DoctorWorks ON drw_id=drc_drw "+
             "JOIN Doctors ON dr_Id=drw_dr " +
@@ -554,10 +593,18 @@ namespace AppointmentQueue
             dt.Columns.Add("drw_period", typeof(String));
             dt.Columns.Add("drc_id", typeof(Int16));
             dt.Columns.Add("drc_status", typeof(String));
-            dt.Columns.Add("drw_dr", typeof(Int16));
-            dt.Columns.Add("drc_drw", typeof(String));
+            //dt.Columns.Add("drw_dr", typeof(Int16));
+            //dt.Columns.Add("drc_drw", typeof(String));
 
             dt.Load(reader);
+
+            dt.Columns["drc_time"].ColumnName = "Doctor Used Time";
+            dt.Columns["drc_date"].ColumnName = "Date and Time";
+            dt.Columns["dr_name"].ColumnName = "Doctor Name";
+            dt.Columns["drw_period"].ColumnName = "Doctor Work Period";
+            dt.Columns["drc_id"].ColumnName = "Doctor Calendar ID";
+            dt.Columns["drc_status"].ColumnName = "Status";
+
             cn.Close();
             return dt;
         }

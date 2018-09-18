@@ -642,7 +642,7 @@ namespace AppointmentQueue
             // change back color of suggrst date
             foreach (DataRow row in suggestDate.Rows)
             {
-                DateTime date_row = Convert.ToDateTime(row["drc_date"].ToString());
+                DateTime date_row = Convert.ToDateTime(row["Date and Time"].ToString());
                 FindSuggestDateAndChangeBackColorOfButton(date_row);
             }
         }

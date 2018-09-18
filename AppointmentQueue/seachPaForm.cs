@@ -69,6 +69,12 @@ namespace AppointmentQueue
             dt.Columns.Add("pa_lname", typeof(string));
             dt.Columns.Add("pa_birthday", typeof(string));
             dt.Load(reader);
+
+            dt.Columns["pa_id"].ColumnName = "Patient ID";
+            dt.Columns["pa_name"].ColumnName = "Patient Name";
+            dt.Columns["pa_lname"].ColumnName = "Patient Last Name";
+            dt.Columns["pa_birthday"].ColumnName = "Patient Birthday";
+
             cn.Close();
             return dt;
         }
