@@ -128,6 +128,11 @@ namespace AppointmentQueue
             dt.Columns.Add("req_time", typeof(Int16)); // minute measure
 
             dt.Load(reader);
+
+            dt.Columns["req_Id"].ColumnName = "Request ID";
+            dt.Columns["req_bodypart"].ColumnName = "Bodypart";
+            dt.Columns["req_time"].ColumnName = "Time Used of each Request";
+
             cn.Close();
             return dt;
         }
@@ -145,6 +150,10 @@ namespace AppointmentQueue
             dt.Columns.Add("scan_Id", typeof(Int16));
             dt.Columns.Add("scan_name", typeof(string));
             dt.Load(reader);
+
+            dt.Columns["scan_Id"].ColumnName = "Scanner ID";
+            dt.Columns["scan_name"].ColumnName = "Scanner Name";
+
             cn.Close();
             return dt;
         }
@@ -230,6 +239,14 @@ namespace AppointmentQueue
             dt.Columns.Add("df_period", typeof(string));
             dt.Columns.Add("df_detail", typeof(string));
             dt.Load(reader);
+
+            dt.Columns["df_id"].ColumnName = "Day Off ID";
+            dt.Columns["df_date"].ColumnName = "Date and Time";
+            dt.Columns["df_dr"].ColumnName = "Doctor ID";
+            dt.Columns["dr_name"].ColumnName = "Doctor Name";
+            dt.Columns["df_period"].ColumnName = "Day Off Period";
+            dt.Columns["df_detail"].ColumnName = "Detail";
+
             cn.Close();
 
             /*foreach (DataRow item in dt.Rows)
