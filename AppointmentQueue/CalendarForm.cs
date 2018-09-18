@@ -591,6 +591,9 @@ namespace AppointmentQueue
             }
 
             GenarateCalendar(cur_month, cur_year);
+
+            // suggest date assign back color box
+            ChangeSuggestDateBackColor();
         }
 
         private void next_month_btn_Click(object sender, EventArgs e)
@@ -606,6 +609,9 @@ namespace AppointmentQueue
             }
 
             GenarateCalendar(cur_month, cur_year);
+
+            // suggest date assign back color box
+            ChangeSuggestDateBackColor();
         }
 
         private void seachDateForReq_Click(object sender, EventArgs e)
@@ -616,14 +622,20 @@ namespace AppointmentQueue
             int month = Convert.ToInt32(Enum.Parse(typeof(MonthName), month_btn.Text));
             GenarateCalendar(month, year);
 
-            startT = startT.Date;
+            startT = Convert.ToDateTime(dateTimePicker1.Value.ToShortDateString());
+            ChangeSuggestDateBackColor();
+            
+        }
+
+        private void ChangeSuggestDateBackColor()
+        {
             int offSet = Convert.ToInt16(dayNumericUpDown.Value);
             DateTime endT = startT.AddDays(offSet);
 
-            DataTable suggestDate = SQL.GetDoctorCalendars(startT, 
-                endT, 
+            DataTable suggestDate = SQL.GetDoctorCalendars(startT,
+                endT,
                 reqCob.SelectedItem.ToString().Trim(),
-                Convert.ToInt16(kidCheckBox.Checked).ToString().Trim(), 
+                Convert.ToInt16(kidCheckBox.Checked).ToString().Trim(),
                 comboBox1.SelectedItem.ToString().Trim());
             suggDataGridView.DataSource = suggestDate;
 
@@ -633,7 +645,6 @@ namespace AppointmentQueue
                 DateTime date_row = Convert.ToDateTime(row["drc_date"].ToString());
                 FindSuggestDateAndChangeBackColorOfButton(date_row);
             }
-            
         }
 
         private void FindSuggestDateAndChangeBackColorOfButton(DateTime date)
