@@ -48,9 +48,10 @@
             this.drDataGridView.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
             this.drDataGridView.BackgroundColor = System.Drawing.SystemColors.ActiveBorder;
             this.drDataGridView.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.drDataGridView.Location = new System.Drawing.Point(1, 166);
+            this.drDataGridView.Location = new System.Drawing.Point(1, 204);
+            this.drDataGridView.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.drDataGridView.Name = "drDataGridView";
-            this.drDataGridView.Size = new System.Drawing.Size(384, 375);
+            this.drDataGridView.Size = new System.Drawing.Size(512, 462);
             this.drDataGridView.TabIndex = 61;
             this.drDataGridView.RowHeaderMouseDoubleClick += new System.Windows.Forms.DataGridViewCellMouseEventHandler(this.drDataGridView_RowHeaderMouseDoubleClick);
             // 
@@ -64,9 +65,11 @@
             this.groupBox3.Controls.Add(this.drNameTxt);
             this.groupBox3.Controls.Add(this.label11);
             this.groupBox3.Font = new System.Drawing.Font("Verdana", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.groupBox3.Location = new System.Drawing.Point(4, 7);
+            this.groupBox3.Location = new System.Drawing.Point(5, 9);
+            this.groupBox3.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.groupBox3.Name = "groupBox3";
-            this.groupBox3.Size = new System.Drawing.Size(381, 119);
+            this.groupBox3.Padding = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.groupBox3.Size = new System.Drawing.Size(508, 146);
             this.groupBox3.TabIndex = 60;
             this.groupBox3.TabStop = false;
             this.groupBox3.Text = "Seach Doctor";
@@ -74,9 +77,10 @@
             // drLnameTxt
             // 
             this.drLnameTxt.Font = new System.Drawing.Font("Verdana", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.drLnameTxt.Location = new System.Drawing.Point(86, 88);
+            this.drLnameTxt.Location = new System.Drawing.Point(115, 108);
+            this.drLnameTxt.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.drLnameTxt.Name = "drLnameTxt";
-            this.drLnameTxt.Size = new System.Drawing.Size(287, 23);
+            this.drLnameTxt.Size = new System.Drawing.Size(381, 27);
             this.drLnameTxt.TabIndex = 34;
             this.drLnameTxt.TextChanged += new System.EventHandler(this.drLnameTxt_TextChanged);
             // 
@@ -84,18 +88,20 @@
             // 
             this.Idtxt.Enabled = false;
             this.Idtxt.Font = new System.Drawing.Font("Verdana", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.Idtxt.Location = new System.Drawing.Point(86, 33);
+            this.Idtxt.Location = new System.Drawing.Point(115, 41);
+            this.Idtxt.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.Idtxt.Name = "Idtxt";
-            this.Idtxt.Size = new System.Drawing.Size(287, 23);
+            this.Idtxt.Size = new System.Drawing.Size(381, 27);
             this.Idtxt.TabIndex = 32;
             // 
             // label9
             // 
             this.label9.AutoSize = true;
             this.label9.Font = new System.Drawing.Font("Verdana", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label9.Location = new System.Drawing.Point(6, 91);
+            this.label9.Location = new System.Drawing.Point(8, 112);
+            this.label9.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label9.Name = "label9";
-            this.label9.Size = new System.Drawing.Size(77, 16);
+            this.label9.Size = new System.Drawing.Size(100, 20);
             this.label9.TabIndex = 33;
             this.label9.Text = "Last Name";
             // 
@@ -103,18 +109,20 @@
             // 
             this.label10.AutoSize = true;
             this.label10.Font = new System.Drawing.Font("Verdana", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label10.Location = new System.Drawing.Point(8, 63);
+            this.label10.Location = new System.Drawing.Point(11, 78);
+            this.label10.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label10.Name = "label10";
-            this.label10.Size = new System.Drawing.Size(61, 16);
+            this.label10.Size = new System.Drawing.Size(83, 20);
             this.label10.TabIndex = 29;
             this.label10.Text = "Dr.Name";
             // 
             // drNameTxt
             // 
             this.drNameTxt.Font = new System.Drawing.Font("Verdana", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.drNameTxt.Location = new System.Drawing.Point(86, 60);
+            this.drNameTxt.Location = new System.Drawing.Point(115, 74);
+            this.drNameTxt.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.drNameTxt.Name = "drNameTxt";
-            this.drNameTxt.Size = new System.Drawing.Size(287, 23);
+            this.drNameTxt.Size = new System.Drawing.Size(381, 27);
             this.drNameTxt.TabIndex = 30;
             this.drNameTxt.TextChanged += new System.EventHandler(this.drNameTxt_TextChanged);
             // 
@@ -122,9 +130,10 @@
             // 
             this.label11.AutoSize = true;
             this.label11.Font = new System.Drawing.Font("Verdana", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label11.Location = new System.Drawing.Point(8, 36);
+            this.label11.Location = new System.Drawing.Point(11, 44);
+            this.label11.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label11.Name = "label11";
-            this.label11.Size = new System.Drawing.Size(44, 16);
+            this.label11.Size = new System.Drawing.Size(60, 20);
             this.label11.TabIndex = 31;
             this.label11.Text = "Dr. ID";
             // 
@@ -132,9 +141,10 @@
             // 
             this.acceptBtn.Enabled = false;
             this.acceptBtn.Font = new System.Drawing.Font("Verdana", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.acceptBtn.Location = new System.Drawing.Point(269, 132);
+            this.acceptBtn.Location = new System.Drawing.Point(359, 162);
+            this.acceptBtn.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.acceptBtn.Name = "acceptBtn";
-            this.acceptBtn.Size = new System.Drawing.Size(108, 30);
+            this.acceptBtn.Size = new System.Drawing.Size(144, 37);
             this.acceptBtn.TabIndex = 63;
             this.acceptBtn.Text = "Accept";
             this.acceptBtn.UseVisualStyleBackColor = true;
@@ -144,9 +154,10 @@
             // 
             this.drDelBtn.Enabled = false;
             this.drDelBtn.Font = new System.Drawing.Font("Verdana", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.drDelBtn.Location = new System.Drawing.Point(140, 132);
+            this.drDelBtn.Location = new System.Drawing.Point(187, 162);
+            this.drDelBtn.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.drDelBtn.Name = "drDelBtn";
-            this.drDelBtn.Size = new System.Drawing.Size(114, 30);
+            this.drDelBtn.Size = new System.Drawing.Size(152, 37);
             this.drDelBtn.TabIndex = 61;
             this.drDelBtn.Text = "Delete";
             this.drDelBtn.UseVisualStyleBackColor = true;
@@ -155,9 +166,10 @@
             // drInsertBtn
             // 
             this.drInsertBtn.Font = new System.Drawing.Font("Verdana", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.drInsertBtn.Location = new System.Drawing.Point(4, 132);
+            this.drInsertBtn.Location = new System.Drawing.Point(5, 162);
+            this.drInsertBtn.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.drInsertBtn.Name = "drInsertBtn";
-            this.drInsertBtn.Size = new System.Drawing.Size(123, 30);
+            this.drInsertBtn.Size = new System.Drawing.Size(164, 37);
             this.drInsertBtn.TabIndex = 55;
             this.drInsertBtn.Text = "Insert";
             this.drInsertBtn.UseVisualStyleBackColor = true;
@@ -165,14 +177,15 @@
             // 
             // DoctorForm
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(387, 544);
+            this.ClientSize = new System.Drawing.Size(516, 670);
             this.Controls.Add(this.acceptBtn);
             this.Controls.Add(this.drDataGridView);
             this.Controls.Add(this.drDelBtn);
             this.Controls.Add(this.drInsertBtn);
             this.Controls.Add(this.groupBox3);
+            this.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.Name = "DoctorForm";
             this.Text = "doctorForm";
             ((System.ComponentModel.ISupportInitialize)(this.drDataGridView)).EndInit();

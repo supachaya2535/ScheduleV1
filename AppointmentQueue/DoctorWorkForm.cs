@@ -144,7 +144,7 @@ namespace AppointmentQueue
     
         private void button1_Click(object sender, EventArgs e)
         {
-            DoctorForm sForm = new DoctorForm();
+            DoctorForm sForm = new DoctorForm(false,false);
             sForm.exist = false;
             sForm.ShowDialog();
             if ((sForm.exist == true))
