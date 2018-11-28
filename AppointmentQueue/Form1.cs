@@ -14,6 +14,7 @@ namespace AppointmentQueue
 {
     public partial class Form1 : Form
     {
+        public static String ConnectionStr = "Data Source=(LocalDB)\\MSSQLLocalDB;AttachDbFilename=" + Environment.CurrentDirectory.Split(new string[] { "bin" }, StringSplitOptions.None)[0] + "Database1.mdf;Integrated Security=True";
         public string drc_id;
         public Form1()
         {
@@ -127,7 +128,7 @@ namespace AppointmentQueue
             try {
                 if (MessageBox.Show("Do you want to insert a new appointment?", "Insert new appointment", MessageBoxButtons.YesNo) == DialogResult.Yes)
                 {
-                    SqlConnection cn = new SqlConnection(global::AppointmentQueue.Properties.Settings.Default.Database1ConnectionString);
+                    SqlConnection cn = new SqlConnection(ConnectionStr);
                     SqlCommand command = new SqlCommand(
                         "INSERT INTO Appointments (ap_date,ap_patient,ap_request,ap_appstatus,ap_drc,ap_detail) " +
                         "VALUES (@ap_date,@ap_patient,@ap_request,@ap_appstatus,@ap_drc,@ap_detail)", cn);

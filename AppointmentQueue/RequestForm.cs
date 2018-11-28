@@ -13,6 +13,8 @@ namespace AppointmentQueue
 {
     public partial class RequestForm : Form
     {
+        public static String ConnectionStr = "Data Source=(LocalDB)\\MSSQLLocalDB;AttachDbFilename=" + Environment.CurrentDirectory.Split(new string[] { "bin" }, StringSplitOptions.None)[0] + "Database1.mdf;Integrated Security=True";
+
         public RequestForm()
         {
             InitializeComponent();
@@ -27,7 +29,7 @@ namespace AppointmentQueue
             {
                 if (MessageBox.Show("Do you want to insert a new request?", "Insert new request", MessageBoxButtons.YesNo) == DialogResult.Yes)
                 {
-                    SqlConnection cn = new SqlConnection(global::AppointmentQueue.Properties.Settings.Default.Database1ConnectionString);
+                    SqlConnection cn = new SqlConnection(ConnectionStr);
                     SqlCommand command = new SqlCommand(
                         "UPDATE Requests SET req_time = @newV " +
                         "WHERE req_Id = @req_Id"

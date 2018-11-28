@@ -488,7 +488,7 @@
             this.manDayOff.Name = "manDayOff";
             this.manDayOff.Size = new System.Drawing.Size(139, 63);
             this.manDayOff.TabIndex = 56;
-            this.manDayOff.Text = "Manage Day-Off";
+            this.manDayOff.Text = "Manage Day Off";
             this.manDayOff.UseVisualStyleBackColor = true;
             this.manDayOff.Click += new System.EventHandler(this.manDayOff_Click);
             // 

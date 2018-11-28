@@ -54,8 +54,10 @@
             this.groupBox6.Controls.Add(this.saveBtn);
             this.groupBox6.Font = new System.Drawing.Font("Verdana", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.groupBox6.Location = new System.Drawing.Point(1, 1);
+            this.groupBox6.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.groupBox6.Name = "groupBox6";
-            this.groupBox6.Size = new System.Drawing.Size(373, 155);
+            this.groupBox6.Padding = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.groupBox6.Size = new System.Drawing.Size(497, 191);
             this.groupBox6.TabIndex = 58;
             this.groupBox6.TabStop = false;
             this.groupBox6.Text = "Request Information";
@@ -64,18 +66,20 @@
             // 
             this.drReqId.Enabled = false;
             this.drReqId.Font = new System.Drawing.Font("Verdana", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.drReqId.Location = new System.Drawing.Point(115, 26);
+            this.drReqId.Location = new System.Drawing.Point(153, 32);
+            this.drReqId.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.drReqId.Name = "drReqId";
-            this.drReqId.Size = new System.Drawing.Size(233, 23);
+            this.drReqId.Size = new System.Drawing.Size(309, 27);
             this.drReqId.TabIndex = 69;
             // 
             // label2
             // 
             this.label2.AutoSize = true;
             this.label2.Font = new System.Drawing.Font("Verdana", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label2.Location = new System.Drawing.Point(31, 29);
+            this.label2.Location = new System.Drawing.Point(41, 36);
+            this.label2.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(51, 16);
+            this.label2.Size = new System.Drawing.Size(69, 20);
             this.label2.TabIndex = 68;
             this.label2.Text = "Req.ID";
             // 
@@ -83,25 +87,28 @@
             // 
             this.reqName.Enabled = false;
             this.reqName.Font = new System.Drawing.Font("Verdana", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.reqName.Location = new System.Drawing.Point(115, 55);
+            this.reqName.Location = new System.Drawing.Point(153, 68);
+            this.reqName.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.reqName.Name = "reqName";
-            this.reqName.Size = new System.Drawing.Size(233, 23);
+            this.reqName.Size = new System.Drawing.Size(309, 27);
             this.reqName.TabIndex = 46;
             // 
             // label1
             // 
             this.label1.AutoSize = true;
             this.label1.Font = new System.Drawing.Font("Verdana", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.Location = new System.Drawing.Point(11, 89);
+            this.label1.Location = new System.Drawing.Point(15, 110);
+            this.label1.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(95, 16);
+            this.label1.Size = new System.Drawing.Size(134, 20);
             this.label1.TabIndex = 45;
-            this.label1.Text = "RequiredTime";
+            this.label1.Text = "Required Time";
             // 
             // reqTime
             // 
             this.reqTime.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.reqTime.Location = new System.Drawing.Point(115, 84);
+            this.reqTime.Location = new System.Drawing.Point(153, 103);
+            this.reqTime.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.reqTime.Maximum = new decimal(new int[] {
             150,
             0,
@@ -113,7 +120,7 @@
             0,
             -2147483648});
             this.reqTime.Name = "reqTime";
-            this.reqTime.Size = new System.Drawing.Size(143, 22);
+            this.reqTime.Size = new System.Drawing.Size(191, 26);
             this.reqTime.TabIndex = 44;
             this.reqTime.Value = new decimal(new int[] {
             30,
@@ -126,9 +133,10 @@
             // 
             this.label20.AutoSize = true;
             this.label20.Font = new System.Drawing.Font("Verdana", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label20.Location = new System.Drawing.Point(25, 58);
+            this.label20.Location = new System.Drawing.Point(33, 71);
+            this.label20.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label20.Name = "label20";
-            this.label20.Size = new System.Drawing.Size(67, 16);
+            this.label20.Size = new System.Drawing.Size(86, 20);
             this.label20.TabIndex = 35;
             this.label20.Text = "BodyPart";
             // 
@@ -136,11 +144,12 @@
             // 
             this.saveBtn.Enabled = false;
             this.saveBtn.Font = new System.Drawing.Font("Verdana", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.saveBtn.Location = new System.Drawing.Point(95, 119);
+            this.saveBtn.Location = new System.Drawing.Point(127, 146);
+            this.saveBtn.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.saveBtn.Name = "saveBtn";
-            this.saveBtn.Size = new System.Drawing.Size(180, 30);
+            this.saveBtn.Size = new System.Drawing.Size(240, 37);
             this.saveBtn.TabIndex = 38;
-            this.saveBtn.Text = "Save adjusting request";
+            this.saveBtn.Text = "Save Required Time";
             this.saveBtn.UseVisualStyleBackColor = true;
             this.saveBtn.Click += new System.EventHandler(this.reqEditBtn_Click);
             // 
@@ -150,21 +159,23 @@
             this.reqDataGridView.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
             this.reqDataGridView.BackgroundColor = System.Drawing.SystemColors.ActiveBorder;
             this.reqDataGridView.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.reqDataGridView.Location = new System.Drawing.Point(1, 162);
+            this.reqDataGridView.Location = new System.Drawing.Point(1, 199);
+            this.reqDataGridView.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.reqDataGridView.Name = "reqDataGridView";
-            this.reqDataGridView.Size = new System.Drawing.Size(373, 345);
+            this.reqDataGridView.Size = new System.Drawing.Size(497, 425);
             this.reqDataGridView.TabIndex = 59;
             this.reqDataGridView.RowHeaderMouseDoubleClick += new System.Windows.Forms.DataGridViewCellMouseEventHandler(this.reqDataGridView_RowHeaderMouseDoubleClick);
             // 
             // RequestForm
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(376, 508);
+            this.ClientSize = new System.Drawing.Size(501, 625);
             this.Controls.Add(this.reqDataGridView);
             this.Controls.Add(this.groupBox6);
+            this.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.Name = "RequestForm";
-            this.Text = "mageRequestForm";
+            this.Text = "Request Management Form";
             this.groupBox6.ResumeLayout(false);
             this.groupBox6.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.reqTime)).EndInit();
