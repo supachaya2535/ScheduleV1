@@ -81,7 +81,7 @@
             this.todayDay.Font = new System.Drawing.Font("Verdana", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.todayDay.Format = System.Windows.Forms.DateTimePickerFormat.Short;
             this.todayDay.Location = new System.Drawing.Point(549, 44);
-            this.todayDay.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.todayDay.Margin = new System.Windows.Forms.Padding(4);
             this.todayDay.MaxDate = new System.DateTime(2019, 12, 31, 0, 0, 0, 0);
             this.todayDay.MinDate = new System.DateTime(1909, 11, 24, 0, 0, 0, 0);
             this.todayDay.Name = "todayDay";
@@ -117,9 +117,9 @@
             this.reqGroupBox.Controls.Add(this.label5);
             this.reqGroupBox.Font = new System.Drawing.Font("Verdana", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.reqGroupBox.Location = new System.Drawing.Point(4, 252);
-            this.reqGroupBox.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.reqGroupBox.Margin = new System.Windows.Forms.Padding(4);
             this.reqGroupBox.Name = "reqGroupBox";
-            this.reqGroupBox.Padding = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.reqGroupBox.Padding = new System.Windows.Forms.Padding(4);
             this.reqGroupBox.Size = new System.Drawing.Size(436, 335);
             this.reqGroupBox.TabIndex = 31;
             this.reqGroupBox.TabStop = false;
@@ -131,7 +131,7 @@
             this.kidCheckBox.Enabled = false;
             this.kidCheckBox.Font = new System.Drawing.Font("Verdana", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.kidCheckBox.Location = new System.Drawing.Point(105, 106);
-            this.kidCheckBox.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.kidCheckBox.Margin = new System.Windows.Forms.Padding(4);
             this.kidCheckBox.Name = "kidCheckBox";
             this.kidCheckBox.Size = new System.Drawing.Size(180, 24);
             this.kidCheckBox.TabIndex = 74;
@@ -143,7 +143,7 @@
             this.drTxt.Enabled = false;
             this.drTxt.Font = new System.Drawing.Font("Verdana", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.drTxt.Location = new System.Drawing.Point(105, 73);
-            this.drTxt.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.drTxt.Margin = new System.Windows.Forms.Padding(4);
             this.drTxt.Name = "drTxt";
             this.drTxt.Size = new System.Drawing.Size(307, 27);
             this.drTxt.TabIndex = 26;
@@ -163,7 +163,7 @@
             // 
             this.detail_text.Font = new System.Drawing.Font("Verdana", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.detail_text.Location = new System.Drawing.Point(104, 212);
-            this.detail_text.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.detail_text.Margin = new System.Windows.Forms.Padding(4);
             this.detail_text.Multiline = true;
             this.detail_text.Name = "detail_text";
             this.detail_text.Size = new System.Drawing.Size(307, 63);
@@ -198,7 +198,7 @@
             this.todayDatePicker.Font = new System.Drawing.Font("Verdana", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.todayDatePicker.Format = System.Windows.Forms.DateTimePickerFormat.Short;
             this.todayDatePicker.Location = new System.Drawing.Point(105, 32);
-            this.todayDatePicker.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.todayDatePicker.Margin = new System.Windows.Forms.Padding(4);
             this.todayDatePicker.MaxDate = new System.DateTime(2019, 12, 31, 0, 0, 0, 0);
             this.todayDatePicker.MinDate = new System.DateTime(1909, 11, 24, 0, 0, 0, 0);
             this.todayDatePicker.Name = "todayDatePicker";
@@ -213,7 +213,7 @@
             this.reqCob.Font = new System.Drawing.Font("Verdana", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.reqCob.FormattingEnabled = true;
             this.reqCob.Location = new System.Drawing.Point(104, 138);
-            this.reqCob.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.reqCob.Margin = new System.Windows.Forms.Padding(4);
             this.reqCob.Name = "reqCob";
             this.reqCob.Size = new System.Drawing.Size(307, 26);
             this.reqCob.TabIndex = 8;
@@ -240,7 +240,7 @@
             "Afternoon",
             "Evening"});
             this.paidCob.Location = new System.Drawing.Point(104, 175);
-            this.paidCob.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.paidCob.Margin = new System.Windows.Forms.Padding(4);
             this.paidCob.Name = "paidCob";
             this.paidCob.Size = new System.Drawing.Size(307, 26);
             this.paidCob.TabIndex = 12;
@@ -272,9 +272,9 @@
             this.groupBox2.Controls.Add(this.HNtxt);
             this.groupBox2.Font = new System.Drawing.Font("Verdana", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.groupBox2.Location = new System.Drawing.Point(4, 9);
-            this.groupBox2.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.groupBox2.Margin = new System.Windows.Forms.Padding(4);
             this.groupBox2.Name = "groupBox2";
-            this.groupBox2.Padding = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.groupBox2.Padding = new System.Windows.Forms.Padding(4);
             this.groupBox2.Size = new System.Drawing.Size(436, 224);
             this.groupBox2.TabIndex = 33;
             this.groupBox2.TabStop = false;
@@ -295,7 +295,7 @@
             // 
             this.seachPaBtn.Font = new System.Drawing.Font("Verdana", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.seachPaBtn.Location = new System.Drawing.Point(328, 28);
-            this.seachPaBtn.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.seachPaBtn.Margin = new System.Windows.Forms.Padding(4);
             this.seachPaBtn.Name = "seachPaBtn";
             this.seachPaBtn.Size = new System.Drawing.Size(84, 37);
             this.seachPaBtn.TabIndex = 20;
@@ -321,7 +321,7 @@
             this.birthDatePicker.Font = new System.Drawing.Font("Verdana", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.birthDatePicker.Format = System.Windows.Forms.DateTimePickerFormat.Short;
             this.birthDatePicker.Location = new System.Drawing.Point(104, 148);
-            this.birthDatePicker.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.birthDatePicker.Margin = new System.Windows.Forms.Padding(4);
             this.birthDatePicker.MaxDate = new System.DateTime(2019, 12, 31, 0, 0, 0, 0);
             this.birthDatePicker.MinDate = new System.DateTime(1900, 12, 31, 0, 0, 0, 0);
             this.birthDatePicker.Name = "birthDatePicker";
@@ -334,7 +334,7 @@
             this.lnameTxt.Enabled = false;
             this.lnameTxt.Font = new System.Drawing.Font("Verdana", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lnameTxt.Location = new System.Drawing.Point(104, 110);
-            this.lnameTxt.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.lnameTxt.Margin = new System.Windows.Forms.Padding(4);
             this.lnameTxt.Name = "lnameTxt";
             this.lnameTxt.Size = new System.Drawing.Size(307, 27);
             this.lnameTxt.TabIndex = 17;
@@ -344,7 +344,7 @@
             this.ageTxt.Enabled = false;
             this.ageTxt.Font = new System.Drawing.Font("Verdana", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.ageTxt.Location = new System.Drawing.Point(104, 186);
-            this.ageTxt.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.ageTxt.Margin = new System.Windows.Forms.Padding(4);
             this.ageTxt.Name = "ageTxt";
             this.ageTxt.Size = new System.Drawing.Size(307, 27);
             this.ageTxt.TabIndex = 16;
@@ -365,7 +365,7 @@
             this.nameTxt.Enabled = false;
             this.nameTxt.Font = new System.Drawing.Font("Verdana", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.nameTxt.Location = new System.Drawing.Point(104, 73);
-            this.nameTxt.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.nameTxt.Margin = new System.Windows.Forms.Padding(4);
             this.nameTxt.Name = "nameTxt";
             this.nameTxt.Size = new System.Drawing.Size(307, 27);
             this.nameTxt.TabIndex = 5;
@@ -396,7 +396,7 @@
             // 
             this.HNtxt.Font = new System.Drawing.Font("Verdana", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.HNtxt.Location = new System.Drawing.Point(104, 33);
-            this.HNtxt.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.HNtxt.Margin = new System.Windows.Forms.Padding(4);
             this.HNtxt.Name = "HNtxt";
             this.HNtxt.Size = new System.Drawing.Size(216, 27);
             this.HNtxt.TabIndex = 5;
@@ -407,7 +407,7 @@
             this.appDataGridView.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.ColumnHeader;
             this.appDataGridView.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.appDataGridView.Location = new System.Drawing.Point(444, 79);
-            this.appDataGridView.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.appDataGridView.Margin = new System.Windows.Forms.Padding(4);
             this.appDataGridView.Name = "appDataGridView";
             this.appDataGridView.Size = new System.Drawing.Size(968, 508);
             this.appDataGridView.TabIndex = 34;
@@ -418,7 +418,7 @@
             this.addBtn.Enabled = false;
             this.addBtn.Font = new System.Drawing.Font("Verdana", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.addBtn.Location = new System.Drawing.Point(131, 594);
-            this.addBtn.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.addBtn.Margin = new System.Windows.Forms.Padding(4);
             this.addBtn.Name = "addBtn";
             this.addBtn.Size = new System.Drawing.Size(133, 63);
             this.addBtn.TabIndex = 32;
@@ -433,7 +433,7 @@
             this.todayCheckBox.CheckState = System.Windows.Forms.CheckState.Checked;
             this.todayCheckBox.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.todayCheckBox.Location = new System.Drawing.Point(452, 47);
-            this.todayCheckBox.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.todayCheckBox.Margin = new System.Windows.Forms.Padding(4);
             this.todayCheckBox.Name = "todayCheckBox";
             this.todayCheckBox.Size = new System.Drawing.Size(76, 24);
             this.todayCheckBox.TabIndex = 41;
@@ -447,7 +447,7 @@
             this.startDate.Font = new System.Drawing.Font("Verdana", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.startDate.Format = System.Windows.Forms.DateTimePickerFormat.Short;
             this.startDate.Location = new System.Drawing.Point(979, 44);
-            this.startDate.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.startDate.Margin = new System.Windows.Forms.Padding(4);
             this.startDate.MaxDate = new System.DateTime(2019, 12, 31, 0, 0, 0, 0);
             this.startDate.MinDate = new System.DateTime(1909, 11, 24, 0, 0, 0, 0);
             this.startDate.Name = "startDate";
@@ -461,7 +461,7 @@
             this.betweenCheckBox.AutoSize = true;
             this.betweenCheckBox.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.betweenCheckBox.Location = new System.Drawing.Point(861, 46);
-            this.betweenCheckBox.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.betweenCheckBox.Margin = new System.Windows.Forms.Padding(4);
             this.betweenCheckBox.Name = "betweenCheckBox";
             this.betweenCheckBox.Size = new System.Drawing.Size(96, 24);
             this.betweenCheckBox.TabIndex = 44;
@@ -534,7 +534,7 @@
             this.endDate.Font = new System.Drawing.Font("Verdana", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.endDate.Format = System.Windows.Forms.DateTimePickerFormat.Short;
             this.endDate.Location = new System.Drawing.Point(1224, 43);
-            this.endDate.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.endDate.Margin = new System.Windows.Forms.Padding(4);
             this.endDate.MaxDate = new System.DateTime(2029, 12, 31, 0, 0, 0, 0);
             this.endDate.MinDate = new System.DateTime(2018, 6, 1, 0, 0, 0, 0);
             this.endDate.Name = "endDate";
@@ -587,7 +587,7 @@
             this.waitCheckBox.CheckState = System.Windows.Forms.CheckState.Checked;
             this.waitCheckBox.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.waitCheckBox.Location = new System.Drawing.Point(861, 12);
-            this.waitCheckBox.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.waitCheckBox.Margin = new System.Windows.Forms.Padding(4);
             this.waitCheckBox.Name = "waitCheckBox";
             this.waitCheckBox.Size = new System.Drawing.Size(350, 24);
             this.waitCheckBox.TabIndex = 63;
@@ -619,7 +619,7 @@
             this.Controls.Add(this.addBtn);
             this.Controls.Add(this.groupBox2);
             this.Controls.Add(this.appDataGridView);
-            this.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.Margin = new System.Windows.Forms.Padding(4);
             this.MaximizeBox = false;
             this.MinimizeBox = false;
             this.Name = "Form1";

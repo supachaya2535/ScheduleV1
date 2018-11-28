@@ -117,6 +117,7 @@ namespace AppointmentQueue
 
                 DataTable suggestDate = SQL.GetDoctorCalendars(startT, startT, "", "", "");
                 suggDataGridView.DataSource = suggestDate;
+                SQL.ChangeHeaderText(suggestDate, suggDataGridView);
 
                 //detail_form.ShowDialog();
             }
@@ -638,6 +639,7 @@ namespace AppointmentQueue
                 Convert.ToInt16(kidCheckBox.Checked).ToString().Trim(),
                 comboBox1.SelectedItem.ToString().Trim());
             suggDataGridView.DataSource = suggestDate;
+            SQL.ChangeHeaderText(suggestDate, suggDataGridView);
 
             // change back color of suggrst date
             foreach (DataRow row in suggestDate.Rows)

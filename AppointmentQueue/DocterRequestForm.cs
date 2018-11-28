@@ -26,18 +26,21 @@ namespace AppointmentQueue
         {
             DataTable dt = SQL.GetDoctors(drNameTxt2.Text, drLnameTxt2.Text);
             drDataGridView2.DataSource = dt;
+            SQL.ChangeHeaderText(dt, drDataGridView2);
         }
 
         private void drNameTxt2_TextChanged(object sender, EventArgs e)
         {
             DataTable dt = SQL.GetDoctors(drNameTxt2.Text, drLnameTxt2.Text);
             drDataGridView2.DataSource = dt;
+            SQL.ChangeHeaderText(dt, drDataGridView2);
         }
 
         private void drLnameTxt2_TextChanged(object sender, EventArgs e)
         {
             DataTable dt = SQL.GetDoctors(drNameTxt2.Text, drLnameTxt2.Text);
             drDataGridView2.DataSource = dt;
+            SQL.ChangeHeaderText(dt, drDataGridView2);
         }
 
         private void reqComb_SelectedIndexChanged(object sender, EventArgs e)
@@ -77,6 +80,7 @@ namespace AppointmentQueue
         {
             DataTable dt = SQL.GetDoctorRequests( "", drNameTxt2.Text);
             drReqGidView.DataSource = dt;
+            SQL.ChangeHeaderText(dt, drReqGidView);
         }
 
         private void drReqAddBtn_Click(object sender, EventArgs e)

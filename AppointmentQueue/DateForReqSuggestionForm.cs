@@ -67,6 +67,7 @@ namespace AppointmentQueue
            //1.Find possible day of week of req in the range time
             DataTable dtPossibleDrReq = SQL.GetDoctorRequests(reqCob.SelectedItem.ToString().Trim(),"");
             req_dataGridView.DataSource = dtPossibleDrReq;
+            SQL.ChangeHeaderText(dtPossibleDrReq, req_dataGridView);
 
             //2.Find Day off of req in the range time
             startT = startT.Date;
@@ -74,11 +75,13 @@ namespace AppointmentQueue
             DateTime endT = startT.AddDays(offSet);
             DataTable dtDayOff = SQL.GetDayOffs(startT,endT,"");
             dataGridView1.DataSource = dtDayOff;
+            SQL.ChangeHeaderText(dtDayOff, dataGridView1);
 
             DataTable suggestDate = SQL.GetDoctorCalendars(startT, endT, reqCob.SelectedItem.ToString().Trim(),
                 Convert.ToInt16(kidCheckBox.Checked).ToString().Trim(), 
                 comboBox1.SelectedItem.ToString().Trim());
             suggDataGridView.DataSource = suggestDate;
+            SQL.ChangeHeaderText(suggestDate, suggDataGridView);
             
             return suggestDate;
         }

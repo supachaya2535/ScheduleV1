@@ -45,18 +45,21 @@ namespace AppointmentQueue
         {
             DataTable dt = SQL.GetDoctors(drNameTxt2.Text, drLnameTxt2.Text);
             drDataGridView2.DataSource = dt;
+            SQL.ChangeHeaderText(dt, drDataGridView2);
         }
 
         private void drNameTxt2_TextChanged(object sender, EventArgs e)
         {
             DataTable dt = SQL.GetDoctors(drNameTxt2.Text, drLnameTxt2.Text);
             drDataGridView2.DataSource = dt;
+            SQL.ChangeHeaderText(dt, drDataGridView2);
         }
 
         private void drLnameTxt2_TextChanged(object sender, EventArgs e)
         {
             DataTable dt = SQL.GetDoctors(drNameTxt2.Text, drLnameTxt2.Text);
             drDataGridView2.DataSource = dt;
+            SQL.ChangeHeaderText(dt, drDataGridView2);
         }
 
         private void drDataGridView2_RowHeaderMouseDoubleClick(object sender, DataGridViewCellMouseEventArgs e)
@@ -80,6 +83,7 @@ namespace AppointmentQueue
         {
             DataTable dt = SQL.GetDayOffs(drNameTxt2.Text);
             dayOffGridView.DataSource = dt;
+            SQL.ChangeHeaderText(dt, dayOffGridView);
         }
 
         private void button2_Click(object sender, EventArgs e)

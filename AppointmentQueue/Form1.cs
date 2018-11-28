@@ -30,6 +30,7 @@ namespace AppointmentQueue
             
             DataTable dt = SQL.GetAppointment(todayDay.Value, todayDay.Value, " ", " ", " ");
             appDataGridView.DataSource = dt;
+            SQL.ChangeHeaderText(dt, appDataGridView);
 
             detail_text.Enabled = false;
             HNtxt.Enabled = false;
@@ -71,6 +72,7 @@ namespace AppointmentQueue
                 waitCheckBox.Checked = false;
                 DataTable dt = SQL.GetAppointment(startDate.Value, endDate.Value, "", "", "");
                 appDataGridView.DataSource = dt;
+                SQL.ChangeHeaderText(dt, appDataGridView);
             }
         }
 
@@ -82,6 +84,7 @@ namespace AppointmentQueue
                 betweenCheckBox.Checked = false;
                 DataTable dt = SQL.GetAppointment(todayDay.Value, todayDay.Value, "", "", "");
                 appDataGridView.DataSource = dt;
+                SQL.ChangeHeaderText(dt, appDataGridView);
             }
         }
 
@@ -258,6 +261,7 @@ namespace AppointmentQueue
                 betweenCheckBox.Checked = false;
                 DataTable dt = SQL.GetAppointment("Waiting");
                 appDataGridView.DataSource = dt;
+                SQL.ChangeHeaderText(dt, appDataGridView);
             }
         }
     }

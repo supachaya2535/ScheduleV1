@@ -43,6 +43,7 @@ namespace AppointmentQueue
         {
             DataTable dt = SQL.GetDoctorWorks("", drIdTxt.Text.Trim(),"","","");
             drWorkGidView.DataSource = dt;
+            SQL.ChangeHeaderText(dt, drWorkGidView);
         }
         
         private void drWorkAddBtn_Click(object sender, EventArgs e)

@@ -18,6 +18,7 @@ namespace AppointmentQueue
             InitializeComponent();
             DataTable dt = SQL.GetRequests("");
             reqDataGridView.DataSource = dt;
+            SQL.ChangeHeaderText(dt, reqDataGridView);
         }
 
         private void reqEditBtn_Click(object sender, EventArgs e)

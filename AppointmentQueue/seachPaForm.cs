@@ -25,6 +25,7 @@ namespace AppointmentQueue
             InitializeComponent();
             DataTable dt = readPatient(HNtxt.Text, nametxt.Text, lnametxt.Text);
             drGridView.DataSource = dt;
+            SQL.ChangeHeaderText(dt, drGridView);
         }
 
         private void seachPaForm_Load(object sender, EventArgs e)
@@ -84,6 +85,7 @@ namespace AppointmentQueue
             {
                 DataTable dt = readPatient(HNtxt.Text, nametxt.Text, lnametxt.Text);
                 drGridView.DataSource = dt;
+                SQL.ChangeHeaderText(dt, drGridView);
                 acceptBtn.Enabled = false;
             }
         }
@@ -94,6 +96,7 @@ namespace AppointmentQueue
             {
                 DataTable dt = readPatient(HNtxt.Text, nametxt.Text, lnametxt.Text);
                 drGridView.DataSource = dt;
+                SQL.ChangeHeaderText(dt, drGridView);
                 acceptBtn.Enabled = false;
             }
         }
@@ -103,6 +106,7 @@ namespace AppointmentQueue
             if (!did_lock) {
                 DataTable dt = readPatient(HNtxt.Text, nametxt.Text, lnametxt.Text);
                 drGridView.DataSource = dt;
+                SQL.ChangeHeaderText(dt, drGridView);
                 acceptBtn.Enabled = false;
             }
         }

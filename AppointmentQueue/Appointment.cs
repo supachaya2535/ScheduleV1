@@ -80,32 +80,6 @@ namespace AppointmentQueue
             return r;
         }
         
-        private void showTable(DataTable table)
-        {
-            foreach (DataColumn col in table.Columns)
-            {
-                Console.Write("{0,-9}\t| ", col.ColumnName);
-            }
-            Console.WriteLine();
-
-            foreach (DataRow row in table.Rows)
-            {
-                foreach (Object col in row.ItemArray)
-                {
-                    int temp = -1;
-                    bool check = int.TryParse(col.ToString(), out temp);
-
-                    if (!check)
-                    {
-                        Console.Write("{0,-9:dd}\t| ", col);
-                    }
-                    else
-                        Console.Write("{0,-9}\t| ", col);
-                }
-                Console.WriteLine();
-            }
-            Console.WriteLine();
-        }
 
     }
 }

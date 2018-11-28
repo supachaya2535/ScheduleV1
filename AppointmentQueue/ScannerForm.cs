@@ -20,12 +20,13 @@ namespace AppointmentQueue
             InitializeComponent();
             DataTable dt = SQL.GetScanner("");
             scanDataGridView.DataSource = dt;
+            SQL.ChangeHeaderText(dt, scanDataGridView);
         }
 
         private void insertBtn_Click(object sender, EventArgs e)
         {
             try {
-                if (MessageBox.Show("Do you want to insert a new appointment?", "Insert new appointment", MessageBoxButtons.YesNo) == DialogResult.Yes)
+                if (MessageBox.Show("Do you want to insert a new Scanner?", "Insert new Scanner", MessageBoxButtons.YesNo) == DialogResult.Yes)
                 {
                     SqlConnection cn = new SqlConnection(global::AppointmentQueue.Properties.Settings.Default.Database1ConnectionString);
                     SqlCommand command = new SqlCommand(
@@ -40,6 +41,7 @@ namespace AppointmentQueue
                     cn.Close();
                     DataTable dt = SQL.GetScanner("");
                     scanDataGridView.DataSource = dt;
+                    SQL.ChangeHeaderText(dt, scanDataGridView);
                 }
 
             }
@@ -53,7 +55,7 @@ namespace AppointmentQueue
         {
             try
             {
-                if (MessageBox.Show("Do you want to insert a new appointment?", "Insert new appointment", MessageBoxButtons.YesNo) == DialogResult.Yes)
+                if (MessageBox.Show("Do you want to delete this Scanner?", "delete Scanner Success", MessageBoxButtons.YesNo) == DialogResult.Yes)
                 {
                     SqlConnection cn = new SqlConnection(global::AppointmentQueue.Properties.Settings.Default.Database1ConnectionString);
 
@@ -63,6 +65,7 @@ namespace AppointmentQueue
                     cn.Close();
                     DataTable dt = SQL.GetScanner("");
                     scanDataGridView.DataSource = dt;
+                    SQL.ChangeHeaderText(dt, scanDataGridView);
                 }
                 
             }

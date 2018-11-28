@@ -30,9 +30,9 @@ namespace AppointmentQueue
             int numrow = Convert.ToInt16(dt.Rows.Count);
             if (drNameTxt.Text.Trim() !="" && drLnameTxt.Text.Trim() != ""&& numrow == 0)
             {
-                if (MessageBox.Show("Do you want to insert a new day off?", "Insert new day off", MessageBoxButtons.YesNo) == DialogResult.Yes)
+                if (MessageBox.Show("Do you want to insert a new doctor?", "Insert new doctor Success", MessageBoxButtons.YesNo) == DialogResult.Yes)
                 {
-                    SqlConnection cn = new SqlConnection("Data Source=(LocalDB)\\MSSQLLocalDB;AttachDbFilename=E:\\GitHub\\MRI_Scheduling\\ScheduleV1\\AppointmentQueue\\Database1.mdf;Integrated Security=True");
+                    SqlConnection cn = new SqlConnection("Data Source=(LocalDB)\\MSSQLLocalDB;AttachDbFilename=C:\\Users\\Toon\\Documents\\GitDoc\\ScheduleHospital\\AppointmentQueue\\Database1.mdf;Integrated Security=True");
                     SqlCommand command = new SqlCommand(
                         "INSERT INTO Doctors (dr_name,dr_lname) " +
                         "VALUES (@dr_name,@dr_lname)", cn);
@@ -65,7 +65,7 @@ namespace AppointmentQueue
             {
                 if (MessageBox.Show("Do you want to delete this record?", "Detete this record", MessageBoxButtons.YesNo) == DialogResult.Yes)
                 {
-                    SqlConnection cn = new SqlConnection("Data Source=(LocalDB)\\MSSQLLocalDB;AttachDbFilename=E:\\GitHub\\MRI_Scheduling\\ScheduleV1\\AppointmentQueue\\Database1.mdf;Integrated Security=True");
+                    SqlConnection cn = new SqlConnection("Data Source=(LocalDB)\\MSSQLLocalDB;AttachDbFilename=C:\\Users\\Toon\\Documents\\GitDoc\\ScheduleHospital\\AppointmentQueue\\Database1.mdf;Integrated Security=True");
                     SqlCommand command = new SqlCommand("DELETE FROM Doctors WHERE dr_Id = '" + drId + "'", cn);
                     command.Connection = cn;
 
@@ -93,12 +93,14 @@ namespace AppointmentQueue
         {
             DataTable dt = SQL.GetDoctors(drNameTxt.Text, drLnameTxt.Text);
             drDataGridView.DataSource = dt;
+            SQL.ChangeHeaderText(dt, drDataGridView);
         }
 
         private void drLnameTxt_TextChanged(object sender, EventArgs e)
         {
             DataTable dt = SQL.GetDoctors(drNameTxt.Text, drLnameTxt.Text);
             drDataGridView.DataSource = dt;
+            SQL.ChangeHeaderText(dt, drDataGridView);
         }
 
         private void drDataGridView_RowHeaderMouseDoubleClick(object sender, DataGridViewCellMouseEventArgs e)
