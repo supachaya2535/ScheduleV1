@@ -27,7 +27,7 @@ namespace AppointmentQueue
             {
                 if (MessageBox.Show("Do you want to insert a new request?", "Insert new request", MessageBoxButtons.YesNo) == DialogResult.Yes)
                 {
-                    SqlConnection cn = new SqlConnection(global::AppointmentQueue.Properties.Settings.Default.Database1ConnectionString);
+                    SqlConnection cn = new SqlConnection(SQL.ConnectionStr);
                     SqlCommand command = new SqlCommand(
                         "UPDATE Requests SET req_time = @newV " +
                         "WHERE req_Id = @req_Id"
@@ -61,6 +61,14 @@ namespace AppointmentQueue
         private void reqTime_ValueChanged(object sender, EventArgs e)
         {
             saveBtn.Enabled = true;
+        }
+
+        private void reqDataGridView_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
+            int ID = reqDataGridView.CurrentCell.RowIndex;
+            drReqId.Text = reqDataGridView.Rows[ID].Cells[0].Value.ToString().Trim();
+            reqName.Text = reqDataGridView.Rows[ID].Cells[1].Value.ToString().Trim();
+            reqTime.Value = Convert.ToInt16(reqDataGridView.Rows[ID].Cells[2].Value.ToString().Trim());
         }
     }
 }
