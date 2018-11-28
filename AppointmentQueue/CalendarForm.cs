@@ -644,7 +644,7 @@ namespace AppointmentQueue
             // change back color of suggrst date
             foreach (DataRow row in suggestDate.Rows)
             {
-                DateTime date_row = Convert.ToDateTime(row["Date and Time"].ToString());
+                DateTime date_row = Convert.ToDateTime(row["drc_date"].ToString());
                 FindSuggestDateAndChangeBackColorOfButton(date_row);
             }
         }
@@ -678,7 +678,7 @@ namespace AppointmentQueue
             reqCob.SelectedIndex = requestInx;
             comboBox1.SelectedIndex = periodInx;
             kidCheckBox.Checked = Convert.ToBoolean(kidInx);
-            drInx = suggDataGridView.Rows[ID].Cells["drw_dr"].Value.ToString().Trim();
+            drInx = suggDataGridView.Rows[ID].Cells["dr_name"].Value.ToString().Trim();
             drcInx = suggDataGridView.Rows[ID].Cells["drc_id"].Value.ToString().Trim();
 
             chosenT = Convert.ToDateTime(suggDataGridView.Rows[ID].Cells["drc_date"].Value.ToString().Trim());
@@ -702,7 +702,7 @@ namespace AppointmentQueue
             reqCob.SelectedIndex = requestInx;
             comboBox1.SelectedIndex = periodInx;
             kidCheckBox.Checked = Convert.ToBoolean(kidInx);
-            drInx = suggDataGridView.Rows[ID].Cells["drw_dr"].Value.ToString().Trim();
+            drInx = suggDataGridView.Rows[ID].Cells["dr_name"].Value.ToString().Trim();
             drcInx = suggDataGridView.Rows[ID].Cells["drc_id"].Value.ToString().Trim();
 
             chosenT = Convert.ToDateTime(suggDataGridView.Rows[ID].Cells["drc_date"].Value.ToString().Trim());
