@@ -14,6 +14,7 @@ namespace AppointmentQueue
 {
     public partial class DoctorWorkForm : Form
     {
+        public static String ConnectionStr = "Data Source=(LocalDB)\\MSSQLLocalDB;AttachDbFilename=" + Environment.CurrentDirectory.Split(new string[] { "bin" }, StringSplitOptions.None)[0] + "Database1.mdf;Integrated Security=True";
         public DateTime sdate;
         public DateTime edate;
         public DoctorWorkForm()
@@ -145,7 +146,7 @@ namespace AppointmentQueue
     
         private void button1_Click(object sender, EventArgs e)
         {
-            DoctorForm sForm = new DoctorForm();
+            DoctorForm sForm = new DoctorForm(false,false);
             sForm.exist = false;
             sForm.ShowDialog();
             if ((sForm.exist == true))

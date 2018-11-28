@@ -299,7 +299,7 @@
             this.seachPaBtn.Name = "seachPaBtn";
             this.seachPaBtn.Size = new System.Drawing.Size(84, 37);
             this.seachPaBtn.TabIndex = 20;
-            this.seachPaBtn.Text = "Seach";
+            this.seachPaBtn.Text = "Search";
             this.seachPaBtn.UseVisualStyleBackColor = true;
             this.seachPaBtn.Click += new System.EventHandler(this.seachPaBtn_Click_1);
             // 
@@ -500,7 +500,7 @@
             this.manReq.Name = "manReq";
             this.manReq.Size = new System.Drawing.Size(144, 63);
             this.manReq.TabIndex = 55;
-            this.manReq.Text = "Manage DoctorRequest";
+            this.manReq.Text = "Manage Doctor Request";
             this.manReq.UseVisualStyleBackColor = true;
             this.manReq.Click += new System.EventHandler(this.manReq_Click);
             // 
@@ -564,7 +564,7 @@
             this.manDrWorkBtn.Name = "manDrWorkBtn";
             this.manDrWorkBtn.Size = new System.Drawing.Size(144, 63);
             this.manDrWorkBtn.TabIndex = 61;
-            this.manDrWorkBtn.Text = "Manage DoctorWork";
+            this.manDrWorkBtn.Text = "Manage Doctor Working";
             this.manDrWorkBtn.UseVisualStyleBackColor = true;
             this.manDrWorkBtn.Click += new System.EventHandler(this.manDrWorkBtn_Click);
             // 

@@ -15,6 +15,8 @@ namespace AppointmentQueue
     public partial class ScannerForm : Form
     {
         public bool exit = false;
+        public static String ConnectionStr = "Data Source=(LocalDB)\\MSSQLLocalDB;AttachDbFilename=" + Environment.CurrentDirectory.Split(new string[] { "bin" }, StringSplitOptions.None)[0] + "Database1.mdf;Integrated Security=True";
+
         public ScannerForm()
         {
             InitializeComponent();
@@ -28,7 +30,7 @@ namespace AppointmentQueue
             try {
                 if (MessageBox.Show("Do you want to insert a new Scanner?", "Insert new Scanner", MessageBoxButtons.YesNo) == DialogResult.Yes)
                 {
-                    SqlConnection cn = new SqlConnection(global::AppointmentQueue.Properties.Settings.Default.Database1ConnectionString);
+                    SqlConnection cn = new SqlConnection(ConnectionStr);
                     SqlCommand command = new SqlCommand(
                         "INSERT INTO Scanners (scan_name) " +
                         "VALUES (@scan_name)", cn);
@@ -45,8 +47,7 @@ namespace AppointmentQueue
                 }
 
             }
-            catch (SystemException ex)
-            {
+            catch (SystemException ex){
                 MessageBox.Show(string.Format("Couldn't insert a new record : An error occurred: {0}", ex.Message));
             }
         }
@@ -57,7 +58,7 @@ namespace AppointmentQueue
             {
                 if (MessageBox.Show("Do you want to delete this Scanner?", "delete Scanner Success", MessageBoxButtons.YesNo) == DialogResult.Yes)
                 {
-                    SqlConnection cn = new SqlConnection(global::AppointmentQueue.Properties.Settings.Default.Database1ConnectionString);
+                    SqlConnection cn = new SqlConnection(ConnectionStr);
 
                     SqlCommand command = new SqlCommand("DELETE FROM Scanners  WHERE scan_id = " + scanId.Text.Trim(), cn);
                     cn.Open();
@@ -85,6 +86,7 @@ namespace AppointmentQueue
             int ID = scanDataGridView.CurrentCell.RowIndex;
             scanId.Text = scanDataGridView.Rows[ID].Cells[0].Value.ToString().Trim();
             scanName.Text = scanDataGridView.Rows[ID].Cells[1].Value.ToString().Trim();
+            this.delBtn.Enabled = true;
         }
     }
 }

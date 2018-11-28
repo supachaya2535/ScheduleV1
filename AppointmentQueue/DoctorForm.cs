@@ -23,6 +23,12 @@ namespace AppointmentQueue
         {
             InitializeComponent();
         }
+        public DoctorForm(bool insert,bool delete)
+        {
+            InitializeComponent();
+            this.drInsertBtn.Visible = insert;
+            this.drDelBtn.Visible = delete;
+        }
 
         private void drInsertBtn_Click(object sender, EventArgs e)
         {

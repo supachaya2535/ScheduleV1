@@ -41,44 +41,7 @@ namespace AppointmentQueue
             
         }
 
-        private void drIdTxt_TextChanged(object sender, EventArgs e)
-        {
-            DataTable dt = SQL.GetDoctors(drNameTxt2.Text, drLnameTxt2.Text);
-            drDataGridView2.DataSource = dt;
-            SQL.ChangeHeaderText(dt, drDataGridView2);
-        }
-
-        private void drNameTxt2_TextChanged(object sender, EventArgs e)
-        {
-            DataTable dt = SQL.GetDoctors(drNameTxt2.Text, drLnameTxt2.Text);
-            drDataGridView2.DataSource = dt;
-            SQL.ChangeHeaderText(dt, drDataGridView2);
-        }
-
-        private void drLnameTxt2_TextChanged(object sender, EventArgs e)
-        {
-            DataTable dt = SQL.GetDoctors(drNameTxt2.Text, drLnameTxt2.Text);
-            drDataGridView2.DataSource = dt;
-            SQL.ChangeHeaderText(dt, drDataGridView2);
-        }
-
-        private void drDataGridView2_RowHeaderMouseDoubleClick(object sender, DataGridViewCellMouseEventArgs e)
-        {
-            int ID = drDataGridView2.CurrentCell.RowIndex;
-
-            String tempdrIdTxt = drDataGridView2.Rows[ID].Cells[0].Value.ToString().Trim();
-            String tempdrNameTxt = drDataGridView2.Rows[ID].Cells[1].Value.ToString().Trim();
-            String tempdrLnameTxt = drDataGridView2.Rows[ID].Cells[2].Value.ToString().Trim();
-
-            pkDr = tempdrIdTxt;
-            drName2.Text = tempdrNameTxt;
-            drLname2.Text = tempdrLnameTxt;
-
-            drIdTxt.Text = tempdrIdTxt;
-            drNameTxt2.Text = tempdrNameTxt;
-            drLnameTxt2.Text = tempdrLnameTxt;
-        }
-
+        
         private void seachDrReq_Click(object sender, EventArgs e)
         {
             DataTable dt = SQL.GetDayOffs(drNameTxt2.Text);
@@ -115,6 +78,20 @@ namespace AppointmentQueue
         {
             int ID = dayOffGridView.CurrentCell.RowIndex;
             id_df = Convert.ToInt32(dayOffGridView.Rows[ID].Cells[0].Value.ToString().Trim());
+        }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+            DoctorForm sForm = new DoctorForm(false, false);
+            sForm.exist = false;
+            sForm.ShowDialog();
+            if ((sForm.exist == true))
+            {
+                this.drIdTxt.Text = Convert.ToString(sForm.drId).Trim();
+                this.drNameTxt2.Text = sForm.drName.ToString().Trim();
+                this.drLnameTxt2.Text = sForm.drLname.ToString().Trim();
+
+            }
         }
     }
 }
