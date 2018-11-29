@@ -130,10 +130,9 @@ namespace AppointmentQueue
                 {
                     SqlConnection cn = new SqlConnection(ConnectionStr);
                     SqlCommand command = new SqlCommand(
-                        "INSERT INTO Appointments (ap_date,ap_patient,ap_request,ap_appstatus,ap_drc,ap_detail) " +
-                        "VALUES (@ap_date,@ap_patient,@ap_request,@ap_appstatus,@ap_drc,@ap_detail)", cn);
+                        "INSERT INTO Appointments (ap_patient,ap_request,ap_appstatus,ap_drc,ap_detail) " +
+                        "VALUES (@ap_patient,@ap_request,@ap_appstatus,@ap_drc,@ap_detail)", cn);
 
-                    command.Parameters.AddWithValue("@ap_date", todayDatePicker.Value.Date.ToString().Trim());
                     command.Parameters.AddWithValue("@ap_patient", HNtxt.Text.Trim());
                     command.Parameters.AddWithValue("@ap_request", reqCob.SelectedIndex);
                     command.Parameters.AddWithValue("@ap_appstatus", "Waiting");
