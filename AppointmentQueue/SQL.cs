@@ -67,7 +67,7 @@ namespace AppointmentQueue
             dt.Columns["ap_appstatus"].Caption = "Appointment Status";
             dt.Columns["drw_kid"].Caption = "Kid Status";
             dt.Columns["ap_detail"].Caption = "Appointment Detail";
-            dt.Columns["drw_dr"].Caption = "Doctor Work";
+            dt.Columns["drw_dr"].Caption = "Doctor Name";
             dt.Columns["ap_request"].Caption = "Appointment Request";
 
             cn.Close();

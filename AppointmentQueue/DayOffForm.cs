@@ -27,15 +27,23 @@ namespace AppointmentQueue
 
             if (MessageBox.Show("Do you want to insert a new day off?", "Insert new day off", MessageBoxButtons.YesNo) == DialogResult.Yes)
             {
-                SQL.InsertDayOffs(dayOffDate.Value, pkDr, pedCob.SelectedItem.ToString(), detailTxt.Text);
-                seachDrReq_Click(sender, e);
-                detailTxt.Text = "";
-                DataTable dt = SQL.GetDoctorCalendars(pkDr, dayOffDate.Value);
-                int numrow = Convert.ToInt16(dt.Rows.Count);
-                if (numrow > 0)
+                pkDr = drIdTxt.Text;
+                if (pkDr == "" || dayOffDate.Value == null || pedCob.SelectedItem.ToString() == "")
                 {
-                    SQL.UpDateDoctorCalendars(dt.Rows[0]["drc_id"].ToString().Trim(), "Canceled");
-                    SQL.UpDateAppointmentsWhenCalendarListWereCanceled("Canceled", "Waiting");
+                    MessageBox.Show("Please fill your information");
+                }
+                else
+                {
+                    SQL.InsertDayOffs(dayOffDate.Value, pkDr, pedCob.SelectedItem.ToString(), detailTxt.Text);
+                    seachDrReq_Click(sender, e);
+                    detailTxt.Text = "";
+                    DataTable dt = SQL.GetDoctorCalendars(pkDr, dayOffDate.Value);
+                    int numrow = Convert.ToInt16(dt.Rows.Count);
+                    if (numrow > 0)
+                    {
+                        SQL.UpDateDoctorCalendars(dt.Rows[0]["drc_id"].ToString().Trim(), "Canceled");
+                        SQL.UpDateAppointmentsWhenCalendarListWereCanceled("Canceled", "Waiting");
+                    }
                 }
             }
             
@@ -55,8 +63,8 @@ namespace AppointmentQueue
             {
                 if (MessageBox.Show("Do you want to delete a Day off record?", "Delete Day-off", MessageBoxButtons.YesNo) == DialogResult.Yes)
                 {
-                    SqlConnection cn = new SqlConnection(global::AppointmentQueue.Properties.Settings.Default.Database1ConnectionString);
-                    SqlCommand command = new SqlCommand("DELETE FROM DayOffs WHERE df_id = '" + id_df + "'", cn);
+                    SqlConnection cn = new SqlConnection(SQL.ConnectionStr);
+                    SqlCommand command = new SqlCommand("DELETE FROM DayOffs WHERE df_id = " + Convert.ToInt32(id_df), cn);
 
                     cn.Open();
                     command.ExecuteNonQuery();

@@ -13,7 +13,6 @@ namespace AppointmentQueue
 {
     public partial class RequestForm : Form
     {
-        public static String ConnectionStr = "Data Source=(LocalDB)\\MSSQLLocalDB;AttachDbFilename=" + Environment.CurrentDirectory.Split(new string[] { "bin" }, StringSplitOptions.None)[0] + "Database1.mdf;Integrated Security=True";
 
         public RequestForm()
         {
@@ -29,7 +28,7 @@ namespace AppointmentQueue
             {
                 if (MessageBox.Show("Do you want to insert a new request?", "Insert new request", MessageBoxButtons.YesNo) == DialogResult.Yes)
                 {
-                    SqlConnection cn = new SqlConnection(ConnectionStr);
+                    SqlConnection cn = new SqlConnection(SQL.ConnectionStr);
                     SqlCommand command = new SqlCommand(
                         "UPDATE Requests SET req_time = @newV " +
                         "WHERE req_Id = @req_Id"
@@ -63,6 +62,14 @@ namespace AppointmentQueue
         private void reqTime_ValueChanged(object sender, EventArgs e)
         {
             saveBtn.Enabled = true;
+        }
+
+        private void reqDataGridView_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
+            int ID = reqDataGridView.CurrentCell.RowIndex;
+            drReqId.Text = reqDataGridView.Rows[ID].Cells[0].Value.ToString().Trim();
+            reqName.Text = reqDataGridView.Rows[ID].Cells[1].Value.ToString().Trim();
+            reqTime.Value = Convert.ToInt16(reqDataGridView.Rows[ID].Cells[2].Value.ToString().Trim());
         }
     }
 }
