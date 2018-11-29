@@ -298,7 +298,7 @@
             // 
             // drWorkGidView
             // 
-            this.drWorkGidView.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
+            this.drWorkGidView.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.ColumnHeader;
             this.drWorkGidView.BackgroundColor = System.Drawing.SystemColors.ActiveBorder;
             this.drWorkGidView.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.drWorkGidView.Location = new System.Drawing.Point(397, 42);

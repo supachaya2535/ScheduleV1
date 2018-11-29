@@ -1264,9 +1264,9 @@
             this.groupBox1.Controls.Add(this.label7);
             this.groupBox1.Font = new System.Drawing.Font("Verdana", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.groupBox1.Location = new System.Drawing.Point(1223, 57);
-            this.groupBox1.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.groupBox1.Margin = new System.Windows.Forms.Padding(4);
             this.groupBox1.Name = "groupBox1";
-            this.groupBox1.Padding = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.groupBox1.Padding = new System.Windows.Forms.Padding(4);
             this.groupBox1.Size = new System.Drawing.Size(476, 281);
             this.groupBox1.TabIndex = 49;
             this.groupBox1.TabStop = false;
@@ -1277,7 +1277,7 @@
             this.kidCheckBox.AutoSize = true;
             this.kidCheckBox.Font = new System.Drawing.Font("Verdana", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.kidCheckBox.Location = new System.Drawing.Point(105, 196);
-            this.kidCheckBox.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.kidCheckBox.Margin = new System.Windows.Forms.Padding(4);
             this.kidCheckBox.Name = "kidCheckBox";
             this.kidCheckBox.Size = new System.Drawing.Size(180, 24);
             this.kidCheckBox.TabIndex = 73;
@@ -1324,7 +1324,7 @@
             this.dateTimePicker1.Font = new System.Drawing.Font("Verdana", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.dateTimePicker1.Format = System.Windows.Forms.DateTimePickerFormat.Short;
             this.dateTimePicker1.Location = new System.Drawing.Point(104, 34);
-            this.dateTimePicker1.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.dateTimePicker1.Margin = new System.Windows.Forms.Padding(4);
             this.dateTimePicker1.MaxDate = new System.DateTime(2019, 12, 31, 0, 0, 0, 0);
             this.dateTimePicker1.MinDate = new System.DateTime(1909, 11, 24, 0, 0, 0, 0);
             this.dateTimePicker1.Name = "dateTimePicker1";
@@ -1348,7 +1348,7 @@
             this.reqCob.Font = new System.Drawing.Font("Verdana", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.reqCob.FormattingEnabled = true;
             this.reqCob.Location = new System.Drawing.Point(104, 153);
-            this.reqCob.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.reqCob.Margin = new System.Windows.Forms.Padding(4);
             this.reqCob.Name = "reqCob";
             this.reqCob.Size = new System.Drawing.Size(297, 26);
             this.reqCob.TabIndex = 8;
@@ -1358,7 +1358,7 @@
             // 
             this.dayNumericUpDown.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.dayNumericUpDown.Location = new System.Drawing.Point(104, 66);
-            this.dayNumericUpDown.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.dayNumericUpDown.Margin = new System.Windows.Forms.Padding(4);
             this.dayNumericUpDown.Maximum = new decimal(new int[] {
             365,
             0,
@@ -1398,7 +1398,7 @@
             "Afternoon",
             "Evening"});
             this.comboBox1.Location = new System.Drawing.Point(104, 117);
-            this.comboBox1.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.comboBox1.Margin = new System.Windows.Forms.Padding(4);
             this.comboBox1.Name = "comboBox1";
             this.comboBox1.Size = new System.Drawing.Size(297, 26);
             this.comboBox1.TabIndex = 12;
@@ -1432,7 +1432,7 @@
             this.selectedDate.Font = new System.Drawing.Font("Verdana", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.selectedDate.Format = System.Windows.Forms.DateTimePickerFormat.Short;
             this.selectedDate.Location = new System.Drawing.Point(1368, 14);
-            this.selectedDate.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.selectedDate.Margin = new System.Windows.Forms.Padding(4);
             this.selectedDate.MaxDate = new System.DateTime(2019, 12, 31, 0, 0, 0, 0);
             this.selectedDate.MinDate = new System.DateTime(1909, 11, 24, 0, 0, 0, 0);
             this.selectedDate.Name = "selectedDate";
@@ -1468,7 +1468,7 @@
             this.suggDataGridView.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.AllCells;
             this.suggDataGridView.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.suggDataGridView.Location = new System.Drawing.Point(1223, 368);
-            this.suggDataGridView.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.suggDataGridView.Margin = new System.Windows.Forms.Padding(4);
             this.suggDataGridView.Name = "suggDataGridView";
             this.suggDataGridView.Size = new System.Drawing.Size(476, 363);
             this.suggDataGridView.TabIndex = 77;
@@ -1479,6 +1479,8 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.AutoSize = true;
+            this.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
             this.ClientSize = new System.Drawing.Size(1705, 734);
             this.Controls.Add(this.label10);
             this.Controls.Add(this.suggDataGridView);
