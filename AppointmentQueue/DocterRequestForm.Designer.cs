@@ -123,7 +123,7 @@
             this.drReqId.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.drReqId.Enabled = false;
             this.drReqId.Font = new System.Drawing.Font("Verdana", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.drReqId.Location = new System.Drawing.Point(193, 33);
+            this.drReqId.Location = new System.Drawing.Point(142, 40);
             this.drReqId.Margin = new System.Windows.Forms.Padding(4);
             this.drReqId.Name = "drReqId";
             this.drReqId.Size = new System.Drawing.Size(151, 20);

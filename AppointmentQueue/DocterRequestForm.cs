@@ -14,7 +14,6 @@ namespace AppointmentQueue
 {
     public partial class DocterRequestForm : Form
     {
-        public static String ConnectionStr = "Data Source=(LocalDB)\\MSSQLLocalDB;AttachDbFilename=" + Environment.CurrentDirectory.Split(new string[] { "bin" }, StringSplitOptions.None)[0] + "Database1.mdf;Integrated Security=True";
         int pkDr;
         int pkReq;
         public DocterRequestForm()
@@ -32,11 +31,11 @@ namespace AppointmentQueue
         private void drReqGidView_RowHeaderMouseDoubleClick(object sender, DataGridViewCellMouseEventArgs e)
         {//drreq_Id,req_bodypart,dr_name,drreq_period,drreq_time,drreq_dayofweek,
             int ID = drReqGidView.CurrentCell.RowIndex;
-            pkReq = Convert.ToInt16(SQL.getDof(drReqGidView.Rows[ID].Cells[5].Value.ToString().Trim()));
-            pkDr = Convert.ToInt16(drReqGidView.Rows[ID].Cells[6].Value.ToString().Trim());
+            pkReq = Convert.ToInt16(drReqGidView.Rows[ID].Cells["drreq_req"].Value.ToString().Trim());
+            pkDr = Convert.ToInt16(drReqGidView.Rows[ID].Cells["drreq_dr"].Value.ToString().Trim());
 
-            drReqId.Text = drReqGidView.Rows[ID].Cells[0].Value.ToString().Trim();
-            reqComb.Text = drReqGidView.Rows[ID].Cells[1].Value.ToString().Trim();
+            drReqId.Text = drReqGidView.Rows[ID].Cells["drreq_id"].Value.ToString().Trim();
+            reqComb.Text = drReqGidView.Rows[ID].Cells["req_bodypart"].Value.ToString().Trim();
             
         }
         
@@ -49,17 +48,20 @@ namespace AppointmentQueue
 
         private void drReqAddBtn_Click(object sender, EventArgs e)
         {
+            pkReq = Convert.ToInt16(reqComb.SelectedIndex);
+            pkDr = Convert.ToInt16(drIdTxt.Text.Trim());
+            
             try
             {
                 if (MessageBox.Show("Do you want to insert a new doctor request?", "Insert new appointment", MessageBoxButtons.YesNo) == DialogResult.Yes)
                 {
-                    SqlConnection cn = new SqlConnection(ConnectionStr);
+                    SqlConnection cn = new SqlConnection(SQL.ConnectionStr);
                     SqlCommand command = new SqlCommand(
                         "INSERT INTO DoctorRequests (drreq_Id,drreq_req,drreq_dr) " +
                         "VALUES (@drreq_Id,@drreq_req,@drreq_dr)", cn);
                     
-                    command.Parameters.AddWithValue("@drreq_Id", Convert.ToString(SQL.getIdReq(pkDr)+SQL.getIdReq(pkReq)));
-                    command.Parameters.AddWithValue("@drreq_req", Convert.ToString(pkReq).Trim());
+                    command.Parameters.AddWithValue("@drreq_Id", Convert.ToString(SQL.getIdReq(pkDr)+ Convert.ToString(SQL.getIdReq(pkReq))));
+                    command.Parameters.AddWithValue("@drreq_req", pkReq);
                     command.Parameters.AddWithValue("@drreq_dr", Convert.ToString(pkDr));
                     command.Connection = cn;
 
@@ -67,6 +69,7 @@ namespace AppointmentQueue
                     command.ExecuteNonQuery();
                     cn.Close();
                     seachDrReq_Click(sender, e);
+                    MessageBox.Show("Insert Requests Success");
                 }
 
             }
@@ -83,8 +86,8 @@ namespace AppointmentQueue
             {
                 if (MessageBox.Show("Do you want to delete doctor request?", "Delete doctor request", MessageBoxButtons.YesNo) == DialogResult.Yes)
                 {
-                    int id_del = Convert.ToInt32(drReqId.Text);
-                    SqlConnection cn = new SqlConnection(ConnectionStr);
+                    string id_del = drReqId.Text.Trim();
+                    SqlConnection cn = new SqlConnection(SQL.ConnectionStr);
                     SqlCommand command = new SqlCommand("DELETE FROM DoctorRequests WHERE drreq_Id = '" + id_del + "'", cn);
 
                     cn.Open();
