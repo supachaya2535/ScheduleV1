@@ -491,19 +491,15 @@ namespace AppointmentQueue {
             
             private global::System.Data.DataColumn columnap_Id;
             
-            private global::System.Data.DataColumn columnap_startT;
-            
             private global::System.Data.DataColumn columnap_patient;
             
             private global::System.Data.DataColumn columnap_request;
             
             private global::System.Data.DataColumn columnap_detail;
             
-            private global::System.Data.DataColumn columnap_period;
-            
             private global::System.Data.DataColumn columnap_appstatus;
             
-            private global::System.Data.DataColumn columnap_scan;
+            private global::System.Data.DataColumn columnap_drc;
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
@@ -548,14 +544,6 @@ namespace AppointmentQueue {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
-            public global::System.Data.DataColumn ap_startTColumn {
-                get {
-                    return this.columnap_startT;
-                }
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
             public global::System.Data.DataColumn ap_patientColumn {
                 get {
                     return this.columnap_patient;
@@ -580,14 +568,6 @@ namespace AppointmentQueue {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
-            public global::System.Data.DataColumn ap_periodColumn {
-                get {
-                    return this.columnap_period;
-                }
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
             public global::System.Data.DataColumn ap_appstatusColumn {
                 get {
                     return this.columnap_appstatus;
@@ -596,9 +576,9 @@ namespace AppointmentQueue {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
-            public global::System.Data.DataColumn ap_scanColumn {
+            public global::System.Data.DataColumn ap_drcColumn {
                 get {
-                    return this.columnap_scan;
+                    return this.columnap_drc;
                 }
             }
             
@@ -639,17 +619,15 @@ namespace AppointmentQueue {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
-            public AppointmentsRow AddAppointmentsRow(System.DateTime ap_startT, string ap_patient, int ap_request, string ap_detail, string ap_period, string ap_appstatus, string ap_scan) {
+            public AppointmentsRow AddAppointmentsRow(string ap_patient, int ap_request, string ap_detail, string ap_appstatus, int ap_drc) {
                 AppointmentsRow rowAppointmentsRow = ((AppointmentsRow)(this.NewRow()));
                 object[] columnValuesArray = new object[] {
                         null,
-                        ap_startT,
                         ap_patient,
                         ap_request,
                         ap_detail,
-                        ap_period,
                         ap_appstatus,
-                        ap_scan};
+                        ap_drc};
                 rowAppointmentsRow.ItemArray = columnValuesArray;
                 this.Rows.Add(rowAppointmentsRow);
                 return rowAppointmentsRow;
@@ -680,13 +658,11 @@ namespace AppointmentQueue {
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
             internal void InitVars() {
                 this.columnap_Id = base.Columns["ap_Id"];
-                this.columnap_startT = base.Columns["ap_startT"];
                 this.columnap_patient = base.Columns["ap_patient"];
                 this.columnap_request = base.Columns["ap_request"];
                 this.columnap_detail = base.Columns["ap_detail"];
-                this.columnap_period = base.Columns["ap_period"];
                 this.columnap_appstatus = base.Columns["ap_appstatus"];
-                this.columnap_scan = base.Columns["ap_scan"];
+                this.columnap_drc = base.Columns["ap_drc"];
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -694,20 +670,16 @@ namespace AppointmentQueue {
             private void InitClass() {
                 this.columnap_Id = new global::System.Data.DataColumn("ap_Id", typeof(int), null, global::System.Data.MappingType.Element);
                 base.Columns.Add(this.columnap_Id);
-                this.columnap_startT = new global::System.Data.DataColumn("ap_startT", typeof(global::System.DateTime), null, global::System.Data.MappingType.Element);
-                base.Columns.Add(this.columnap_startT);
                 this.columnap_patient = new global::System.Data.DataColumn("ap_patient", typeof(string), null, global::System.Data.MappingType.Element);
                 base.Columns.Add(this.columnap_patient);
                 this.columnap_request = new global::System.Data.DataColumn("ap_request", typeof(int), null, global::System.Data.MappingType.Element);
                 base.Columns.Add(this.columnap_request);
                 this.columnap_detail = new global::System.Data.DataColumn("ap_detail", typeof(string), null, global::System.Data.MappingType.Element);
                 base.Columns.Add(this.columnap_detail);
-                this.columnap_period = new global::System.Data.DataColumn("ap_period", typeof(string), null, global::System.Data.MappingType.Element);
-                base.Columns.Add(this.columnap_period);
                 this.columnap_appstatus = new global::System.Data.DataColumn("ap_appstatus", typeof(string), null, global::System.Data.MappingType.Element);
                 base.Columns.Add(this.columnap_appstatus);
-                this.columnap_scan = new global::System.Data.DataColumn("ap_scan", typeof(string), null, global::System.Data.MappingType.Element);
-                base.Columns.Add(this.columnap_scan);
+                this.columnap_drc = new global::System.Data.DataColumn("ap_drc", typeof(int), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnap_drc);
                 this.Constraints.Add(new global::System.Data.UniqueConstraint("Constraint1", new global::System.Data.DataColumn[] {
                                 this.columnap_Id}, true));
                 this.columnap_Id.AutoIncrement = true;
@@ -718,9 +690,7 @@ namespace AppointmentQueue {
                 this.columnap_Id.Unique = true;
                 this.columnap_patient.MaxLength = 10;
                 this.columnap_detail.MaxLength = 100;
-                this.columnap_period.MaxLength = 10;
                 this.columnap_appstatus.MaxLength = 10;
-                this.columnap_scan.MaxLength = 10;
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -2372,8 +2342,6 @@ namespace AppointmentQueue {
             
             private global::System.Data.DataColumn columnscan_name;
             
-            private global::System.Data.DataColumn columnscan_quantity;
-            
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
             public ScannersDataTable() {
@@ -2425,14 +2393,6 @@ namespace AppointmentQueue {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
-            public global::System.Data.DataColumn scan_quantityColumn {
-                get {
-                    return this.columnscan_quantity;
-                }
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
             [global::System.ComponentModel.Browsable(false)]
             public int Count {
                 get {
@@ -2468,12 +2428,11 @@ namespace AppointmentQueue {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
-            public ScannersRow AddScannersRow(string scan_name, int scan_quantity) {
+            public ScannersRow AddScannersRow(string scan_name) {
                 ScannersRow rowScannersRow = ((ScannersRow)(this.NewRow()));
                 object[] columnValuesArray = new object[] {
                         null,
-                        scan_name,
-                        scan_quantity};
+                        scan_name};
                 rowScannersRow.ItemArray = columnValuesArray;
                 this.Rows.Add(rowScannersRow);
                 return rowScannersRow;
@@ -2505,7 +2464,6 @@ namespace AppointmentQueue {
             internal void InitVars() {
                 this.columnscan_Id = base.Columns["scan_Id"];
                 this.columnscan_name = base.Columns["scan_name"];
-                this.columnscan_quantity = base.Columns["scan_quantity"];
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -2515,8 +2473,6 @@ namespace AppointmentQueue {
                 base.Columns.Add(this.columnscan_Id);
                 this.columnscan_name = new global::System.Data.DataColumn("scan_name", typeof(string), null, global::System.Data.MappingType.Element);
                 base.Columns.Add(this.columnscan_name);
-                this.columnscan_quantity = new global::System.Data.DataColumn("scan_quantity", typeof(int), null, global::System.Data.MappingType.Element);
-                base.Columns.Add(this.columnscan_quantity);
                 this.Constraints.Add(new global::System.Data.UniqueConstraint("Constraint1", new global::System.Data.DataColumn[] {
                                 this.columnscan_Id}, true));
                 this.columnscan_Id.AutoIncrement = true;
@@ -2679,22 +2635,6 @@ namespace AppointmentQueue {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
-            public System.DateTime ap_startT {
-                get {
-                    try {
-                        return ((global::System.DateTime)(this[this.tableAppointments.ap_startTColumn]));
-                    }
-                    catch (global::System.InvalidCastException e) {
-                        throw new global::System.Data.StrongTypingException("The value for column \'ap_startT\' in table \'Appointments\' is DBNull.", e);
-                    }
-                }
-                set {
-                    this[this.tableAppointments.ap_startTColumn] = value;
-                }
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
             public string ap_patient {
                 get {
                     try {
@@ -2743,22 +2683,6 @@ namespace AppointmentQueue {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
-            public string ap_period {
-                get {
-                    try {
-                        return ((string)(this[this.tableAppointments.ap_periodColumn]));
-                    }
-                    catch (global::System.InvalidCastException e) {
-                        throw new global::System.Data.StrongTypingException("The value for column \'ap_period\' in table \'Appointments\' is DBNull.", e);
-                    }
-                }
-                set {
-                    this[this.tableAppointments.ap_periodColumn] = value;
-                }
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
             public string ap_appstatus {
                 get {
                     try {
@@ -2775,30 +2699,18 @@ namespace AppointmentQueue {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
-            public string ap_scan {
+            public int ap_drc {
                 get {
                     try {
-                        return ((string)(this[this.tableAppointments.ap_scanColumn]));
+                        return ((int)(this[this.tableAppointments.ap_drcColumn]));
                     }
                     catch (global::System.InvalidCastException e) {
-                        throw new global::System.Data.StrongTypingException("The value for column \'ap_scan\' in table \'Appointments\' is DBNull.", e);
+                        throw new global::System.Data.StrongTypingException("The value for column \'ap_drc\' in table \'Appointments\' is DBNull.", e);
                     }
                 }
                 set {
-                    this[this.tableAppointments.ap_scanColumn] = value;
+                    this[this.tableAppointments.ap_drcColumn] = value;
                 }
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
-            public bool Isap_startTNull() {
-                return this.IsNull(this.tableAppointments.ap_startTColumn);
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
-            public void Setap_startTNull() {
-                this[this.tableAppointments.ap_startTColumn] = global::System.Convert.DBNull;
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -2839,18 +2751,6 @@ namespace AppointmentQueue {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
-            public bool Isap_periodNull() {
-                return this.IsNull(this.tableAppointments.ap_periodColumn);
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
-            public void Setap_periodNull() {
-                this[this.tableAppointments.ap_periodColumn] = global::System.Convert.DBNull;
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
             public bool Isap_appstatusNull() {
                 return this.IsNull(this.tableAppointments.ap_appstatusColumn);
             }
@@ -2863,14 +2763,14 @@ namespace AppointmentQueue {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
-            public bool Isap_scanNull() {
-                return this.IsNull(this.tableAppointments.ap_scanColumn);
+            public bool Isap_drcNull() {
+                return this.IsNull(this.tableAppointments.ap_drcColumn);
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
-            public void Setap_scanNull() {
-                this[this.tableAppointments.ap_scanColumn] = global::System.Convert.DBNull;
+            public void Setap_drcNull() {
+                this[this.tableAppointments.ap_drcColumn] = global::System.Convert.DBNull;
             }
         }
         
@@ -3433,22 +3333,6 @@ namespace AppointmentQueue {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
-            public int scan_quantity {
-                get {
-                    try {
-                        return ((int)(this[this.tableScanners.scan_quantityColumn]));
-                    }
-                    catch (global::System.InvalidCastException e) {
-                        throw new global::System.Data.StrongTypingException("The value for column \'scan_quantity\' in table \'Scanners\' is DBNull.", e);
-                    }
-                }
-                set {
-                    this[this.tableScanners.scan_quantityColumn] = value;
-                }
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
             public bool Isscan_nameNull() {
                 return this.IsNull(this.tableScanners.scan_nameColumn);
             }
@@ -3457,18 +3341,6 @@ namespace AppointmentQueue {
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
             public void Setscan_nameNull() {
                 this[this.tableScanners.scan_nameColumn] = global::System.Convert.DBNull;
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
-            public bool Isscan_quantityNull() {
-                return this.IsNull(this.tableScanners.scan_quantityColumn);
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
-            public void Setscan_quantityNull() {
-                this[this.tableScanners.scan_quantityColumn] = global::System.Convert.DBNull;
             }
         }
         
@@ -3836,72 +3708,58 @@ namespace AppointmentQueue.Database1DataSetTableAdapters {
             tableMapping.SourceTable = "Table";
             tableMapping.DataSetTable = "Appointments";
             tableMapping.ColumnMappings.Add("ap_Id", "ap_Id");
-            tableMapping.ColumnMappings.Add("ap_startT", "ap_startT");
             tableMapping.ColumnMappings.Add("ap_patient", "ap_patient");
             tableMapping.ColumnMappings.Add("ap_request", "ap_request");
             tableMapping.ColumnMappings.Add("ap_detail", "ap_detail");
-            tableMapping.ColumnMappings.Add("ap_period", "ap_period");
             tableMapping.ColumnMappings.Add("ap_appstatus", "ap_appstatus");
-            tableMapping.ColumnMappings.Add("ap_scan", "ap_scan");
+            tableMapping.ColumnMappings.Add("ap_drc", "ap_drc");
             this._adapter.TableMappings.Add(tableMapping);
             this._adapter.DeleteCommand = new global::System.Data.SqlClient.SqlCommand();
             this._adapter.DeleteCommand.Connection = this.Connection;
-            this._adapter.DeleteCommand.CommandText = @"DELETE FROM [dbo].[Appointments] WHERE (([ap_Id] = @Original_ap_Id) AND ((@IsNull_ap_startT = 1 AND [ap_startT] IS NULL) OR ([ap_startT] = @Original_ap_startT)) AND ((@IsNull_ap_patient = 1 AND [ap_patient] IS NULL) OR ([ap_patient] = @Original_ap_patient)) AND ((@IsNull_ap_request = 1 AND [ap_request] IS NULL) OR ([ap_request] = @Original_ap_request)) AND ((@IsNull_ap_detail = 1 AND [ap_detail] IS NULL) OR ([ap_detail] = @Original_ap_detail)) AND ((@IsNull_ap_period = 1 AND [ap_period] IS NULL) OR ([ap_period] = @Original_ap_period)) AND ((@IsNull_ap_appstatus = 1 AND [ap_appstatus] IS NULL) OR ([ap_appstatus] = @Original_ap_appstatus)) AND ((@IsNull_ap_scan = 1 AND [ap_scan] IS NULL) OR ([ap_scan] = @Original_ap_scan)))";
+            this._adapter.DeleteCommand.CommandText = @"DELETE FROM [Appointments] WHERE (([ap_Id] = @Original_ap_Id) AND ((@IsNull_ap_patient = 1 AND [ap_patient] IS NULL) OR ([ap_patient] = @Original_ap_patient)) AND ((@IsNull_ap_request = 1 AND [ap_request] IS NULL) OR ([ap_request] = @Original_ap_request)) AND ((@IsNull_ap_detail = 1 AND [ap_detail] IS NULL) OR ([ap_detail] = @Original_ap_detail)) AND ((@IsNull_ap_appstatus = 1 AND [ap_appstatus] IS NULL) OR ([ap_appstatus] = @Original_ap_appstatus)) AND ((@IsNull_ap_drc = 1 AND [ap_drc] IS NULL) OR ([ap_drc] = @Original_ap_drc)))";
             this._adapter.DeleteCommand.CommandType = global::System.Data.CommandType.Text;
             this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_ap_Id", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "ap_Id", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
-            this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@IsNull_ap_startT", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "ap_startT", global::System.Data.DataRowVersion.Original, true, null, "", "", ""));
-            this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_ap_startT", global::System.Data.SqlDbType.DateTime, 0, global::System.Data.ParameterDirection.Input, 0, 0, "ap_startT", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
             this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@IsNull_ap_patient", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "ap_patient", global::System.Data.DataRowVersion.Original, true, null, "", "", ""));
             this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_ap_patient", global::System.Data.SqlDbType.NChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "ap_patient", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
             this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@IsNull_ap_request", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "ap_request", global::System.Data.DataRowVersion.Original, true, null, "", "", ""));
             this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_ap_request", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "ap_request", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
             this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@IsNull_ap_detail", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "ap_detail", global::System.Data.DataRowVersion.Original, true, null, "", "", ""));
             this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_ap_detail", global::System.Data.SqlDbType.NChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "ap_detail", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
-            this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@IsNull_ap_period", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "ap_period", global::System.Data.DataRowVersion.Original, true, null, "", "", ""));
-            this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_ap_period", global::System.Data.SqlDbType.NChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "ap_period", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
             this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@IsNull_ap_appstatus", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "ap_appstatus", global::System.Data.DataRowVersion.Original, true, null, "", "", ""));
             this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_ap_appstatus", global::System.Data.SqlDbType.NChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "ap_appstatus", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
-            this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@IsNull_ap_scan", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "ap_scan", global::System.Data.DataRowVersion.Original, true, null, "", "", ""));
-            this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_ap_scan", global::System.Data.SqlDbType.NChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "ap_scan", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
+            this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@IsNull_ap_drc", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "ap_drc", global::System.Data.DataRowVersion.Original, true, null, "", "", ""));
+            this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_ap_drc", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "ap_drc", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
             this._adapter.InsertCommand = new global::System.Data.SqlClient.SqlCommand();
             this._adapter.InsertCommand.Connection = this.Connection;
-            this._adapter.InsertCommand.CommandText = @"INSERT INTO [dbo].[Appointments] ([ap_startT], [ap_patient], [ap_request], [ap_detail], [ap_period], [ap_appstatus], [ap_scan]) VALUES (@ap_startT, @ap_patient, @ap_request, @ap_detail, @ap_period, @ap_appstatus, @ap_scan);
-SELECT ap_Id, ap_startT, ap_patient, ap_request, ap_detail, ap_period, ap_appstatus, ap_scan FROM Appointments WHERE (ap_Id = SCOPE_IDENTITY())";
+            this._adapter.InsertCommand.CommandText = @"INSERT INTO [Appointments] ([ap_patient], [ap_request], [ap_detail], [ap_appstatus], [ap_drc]) VALUES (@ap_patient, @ap_request, @ap_detail, @ap_appstatus, @ap_drc);
+SELECT ap_Id, ap_patient, ap_request, ap_detail, ap_appstatus, ap_drc FROM Appointments WHERE (ap_Id = SCOPE_IDENTITY())";
             this._adapter.InsertCommand.CommandType = global::System.Data.CommandType.Text;
-            this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@ap_startT", global::System.Data.SqlDbType.DateTime, 0, global::System.Data.ParameterDirection.Input, 0, 0, "ap_startT", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@ap_patient", global::System.Data.SqlDbType.NChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "ap_patient", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@ap_request", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "ap_request", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@ap_detail", global::System.Data.SqlDbType.NChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "ap_detail", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
-            this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@ap_period", global::System.Data.SqlDbType.NChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "ap_period", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@ap_appstatus", global::System.Data.SqlDbType.NChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "ap_appstatus", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
-            this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@ap_scan", global::System.Data.SqlDbType.NChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "ap_scan", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@ap_drc", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "ap_drc", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._adapter.UpdateCommand = new global::System.Data.SqlClient.SqlCommand();
             this._adapter.UpdateCommand.Connection = this.Connection;
-            this._adapter.UpdateCommand.CommandText = @"UPDATE [dbo].[Appointments] SET [ap_startT] = @ap_startT, [ap_patient] = @ap_patient, [ap_request] = @ap_request, [ap_detail] = @ap_detail, [ap_period] = @ap_period, [ap_appstatus] = @ap_appstatus, [ap_scan] = @ap_scan WHERE (([ap_Id] = @Original_ap_Id) AND ((@IsNull_ap_startT = 1 AND [ap_startT] IS NULL) OR ([ap_startT] = @Original_ap_startT)) AND ((@IsNull_ap_patient = 1 AND [ap_patient] IS NULL) OR ([ap_patient] = @Original_ap_patient)) AND ((@IsNull_ap_request = 1 AND [ap_request] IS NULL) OR ([ap_request] = @Original_ap_request)) AND ((@IsNull_ap_detail = 1 AND [ap_detail] IS NULL) OR ([ap_detail] = @Original_ap_detail)) AND ((@IsNull_ap_period = 1 AND [ap_period] IS NULL) OR ([ap_period] = @Original_ap_period)) AND ((@IsNull_ap_appstatus = 1 AND [ap_appstatus] IS NULL) OR ([ap_appstatus] = @Original_ap_appstatus)) AND ((@IsNull_ap_scan = 1 AND [ap_scan] IS NULL) OR ([ap_scan] = @Original_ap_scan)));
-SELECT ap_Id, ap_startT, ap_patient, ap_request, ap_detail, ap_period, ap_appstatus, ap_scan FROM Appointments WHERE (ap_Id = @ap_Id)";
+            this._adapter.UpdateCommand.CommandText = @"UPDATE [Appointments] SET [ap_patient] = @ap_patient, [ap_request] = @ap_request, [ap_detail] = @ap_detail, [ap_appstatus] = @ap_appstatus, [ap_drc] = @ap_drc WHERE (([ap_Id] = @Original_ap_Id) AND ((@IsNull_ap_patient = 1 AND [ap_patient] IS NULL) OR ([ap_patient] = @Original_ap_patient)) AND ((@IsNull_ap_request = 1 AND [ap_request] IS NULL) OR ([ap_request] = @Original_ap_request)) AND ((@IsNull_ap_detail = 1 AND [ap_detail] IS NULL) OR ([ap_detail] = @Original_ap_detail)) AND ((@IsNull_ap_appstatus = 1 AND [ap_appstatus] IS NULL) OR ([ap_appstatus] = @Original_ap_appstatus)) AND ((@IsNull_ap_drc = 1 AND [ap_drc] IS NULL) OR ([ap_drc] = @Original_ap_drc)));
+SELECT ap_Id, ap_patient, ap_request, ap_detail, ap_appstatus, ap_drc FROM Appointments WHERE (ap_Id = @ap_Id)";
             this._adapter.UpdateCommand.CommandType = global::System.Data.CommandType.Text;
-            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@ap_startT", global::System.Data.SqlDbType.DateTime, 0, global::System.Data.ParameterDirection.Input, 0, 0, "ap_startT", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@ap_patient", global::System.Data.SqlDbType.NChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "ap_patient", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@ap_request", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "ap_request", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@ap_detail", global::System.Data.SqlDbType.NChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "ap_detail", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
-            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@ap_period", global::System.Data.SqlDbType.NChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "ap_period", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@ap_appstatus", global::System.Data.SqlDbType.NChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "ap_appstatus", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
-            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@ap_scan", global::System.Data.SqlDbType.NChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "ap_scan", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@ap_drc", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "ap_drc", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_ap_Id", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "ap_Id", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
-            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@IsNull_ap_startT", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "ap_startT", global::System.Data.DataRowVersion.Original, true, null, "", "", ""));
-            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_ap_startT", global::System.Data.SqlDbType.DateTime, 0, global::System.Data.ParameterDirection.Input, 0, 0, "ap_startT", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
             this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@IsNull_ap_patient", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "ap_patient", global::System.Data.DataRowVersion.Original, true, null, "", "", ""));
             this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_ap_patient", global::System.Data.SqlDbType.NChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "ap_patient", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
             this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@IsNull_ap_request", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "ap_request", global::System.Data.DataRowVersion.Original, true, null, "", "", ""));
             this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_ap_request", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "ap_request", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
             this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@IsNull_ap_detail", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "ap_detail", global::System.Data.DataRowVersion.Original, true, null, "", "", ""));
             this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_ap_detail", global::System.Data.SqlDbType.NChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "ap_detail", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
-            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@IsNull_ap_period", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "ap_period", global::System.Data.DataRowVersion.Original, true, null, "", "", ""));
-            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_ap_period", global::System.Data.SqlDbType.NChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "ap_period", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
             this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@IsNull_ap_appstatus", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "ap_appstatus", global::System.Data.DataRowVersion.Original, true, null, "", "", ""));
             this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_ap_appstatus", global::System.Data.SqlDbType.NChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "ap_appstatus", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
-            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@IsNull_ap_scan", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "ap_scan", global::System.Data.DataRowVersion.Original, true, null, "", "", ""));
-            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_ap_scan", global::System.Data.SqlDbType.NChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "ap_scan", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
+            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@IsNull_ap_drc", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "ap_drc", global::System.Data.DataRowVersion.Original, true, null, "", "", ""));
+            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_ap_drc", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "ap_drc", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
             this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@ap_Id", global::System.Data.SqlDbType.Int, 4, global::System.Data.ParameterDirection.Input, 0, 0, "ap_Id", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
         }
         
@@ -3918,8 +3776,8 @@ SELECT ap_Id, ap_startT, ap_patient, ap_request, ap_detail, ap_period, ap_appsta
             this._commandCollection = new global::System.Data.SqlClient.SqlCommand[1];
             this._commandCollection[0] = new global::System.Data.SqlClient.SqlCommand();
             this._commandCollection[0].Connection = this.Connection;
-            this._commandCollection[0].CommandText = "SELECT ap_Id, ap_startT, ap_patient, ap_request, ap_detail, ap_period, ap_appstat" +
-                "us, ap_scan FROM dbo.Appointments";
+            this._commandCollection[0].CommandText = "SELECT ap_Id, ap_patient, ap_request, ap_detail, ap_appstatus, ap_drc FROM Appoin" +
+                "tments";
             this._commandCollection[0].CommandType = global::System.Data.CommandType.Text;
         }
         
@@ -3980,63 +3838,47 @@ SELECT ap_Id, ap_startT, ap_patient, ap_request, ap_detail, ap_period, ap_appsta
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
         [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Delete, true)]
-        public virtual int Delete(int Original_ap_Id, global::System.Nullable<global::System.DateTime> Original_ap_startT, string Original_ap_patient, global::System.Nullable<int> Original_ap_request, string Original_ap_detail, string Original_ap_period, string Original_ap_appstatus, string Original_ap_scan) {
+        public virtual int Delete(int Original_ap_Id, string Original_ap_patient, global::System.Nullable<int> Original_ap_request, string Original_ap_detail, string Original_ap_appstatus, global::System.Nullable<int> Original_ap_drc) {
             this.Adapter.DeleteCommand.Parameters[0].Value = ((int)(Original_ap_Id));
-            if ((Original_ap_startT.HasValue == true)) {
-                this.Adapter.DeleteCommand.Parameters[1].Value = ((object)(0));
-                this.Adapter.DeleteCommand.Parameters[2].Value = ((System.DateTime)(Original_ap_startT.Value));
-            }
-            else {
+            if ((Original_ap_patient == null)) {
                 this.Adapter.DeleteCommand.Parameters[1].Value = ((object)(1));
                 this.Adapter.DeleteCommand.Parameters[2].Value = global::System.DBNull.Value;
             }
-            if ((Original_ap_patient == null)) {
+            else {
+                this.Adapter.DeleteCommand.Parameters[1].Value = ((object)(0));
+                this.Adapter.DeleteCommand.Parameters[2].Value = ((string)(Original_ap_patient));
+            }
+            if ((Original_ap_request.HasValue == true)) {
+                this.Adapter.DeleteCommand.Parameters[3].Value = ((object)(0));
+                this.Adapter.DeleteCommand.Parameters[4].Value = ((int)(Original_ap_request.Value));
+            }
+            else {
                 this.Adapter.DeleteCommand.Parameters[3].Value = ((object)(1));
                 this.Adapter.DeleteCommand.Parameters[4].Value = global::System.DBNull.Value;
             }
-            else {
-                this.Adapter.DeleteCommand.Parameters[3].Value = ((object)(0));
-                this.Adapter.DeleteCommand.Parameters[4].Value = ((string)(Original_ap_patient));
-            }
-            if ((Original_ap_request.HasValue == true)) {
-                this.Adapter.DeleteCommand.Parameters[5].Value = ((object)(0));
-                this.Adapter.DeleteCommand.Parameters[6].Value = ((int)(Original_ap_request.Value));
-            }
-            else {
+            if ((Original_ap_detail == null)) {
                 this.Adapter.DeleteCommand.Parameters[5].Value = ((object)(1));
                 this.Adapter.DeleteCommand.Parameters[6].Value = global::System.DBNull.Value;
             }
-            if ((Original_ap_detail == null)) {
+            else {
+                this.Adapter.DeleteCommand.Parameters[5].Value = ((object)(0));
+                this.Adapter.DeleteCommand.Parameters[6].Value = ((string)(Original_ap_detail));
+            }
+            if ((Original_ap_appstatus == null)) {
                 this.Adapter.DeleteCommand.Parameters[7].Value = ((object)(1));
                 this.Adapter.DeleteCommand.Parameters[8].Value = global::System.DBNull.Value;
             }
             else {
                 this.Adapter.DeleteCommand.Parameters[7].Value = ((object)(0));
-                this.Adapter.DeleteCommand.Parameters[8].Value = ((string)(Original_ap_detail));
+                this.Adapter.DeleteCommand.Parameters[8].Value = ((string)(Original_ap_appstatus));
             }
-            if ((Original_ap_period == null)) {
+            if ((Original_ap_drc.HasValue == true)) {
+                this.Adapter.DeleteCommand.Parameters[9].Value = ((object)(0));
+                this.Adapter.DeleteCommand.Parameters[10].Value = ((int)(Original_ap_drc.Value));
+            }
+            else {
                 this.Adapter.DeleteCommand.Parameters[9].Value = ((object)(1));
                 this.Adapter.DeleteCommand.Parameters[10].Value = global::System.DBNull.Value;
-            }
-            else {
-                this.Adapter.DeleteCommand.Parameters[9].Value = ((object)(0));
-                this.Adapter.DeleteCommand.Parameters[10].Value = ((string)(Original_ap_period));
-            }
-            if ((Original_ap_appstatus == null)) {
-                this.Adapter.DeleteCommand.Parameters[11].Value = ((object)(1));
-                this.Adapter.DeleteCommand.Parameters[12].Value = global::System.DBNull.Value;
-            }
-            else {
-                this.Adapter.DeleteCommand.Parameters[11].Value = ((object)(0));
-                this.Adapter.DeleteCommand.Parameters[12].Value = ((string)(Original_ap_appstatus));
-            }
-            if ((Original_ap_scan == null)) {
-                this.Adapter.DeleteCommand.Parameters[13].Value = ((object)(1));
-                this.Adapter.DeleteCommand.Parameters[14].Value = global::System.DBNull.Value;
-            }
-            else {
-                this.Adapter.DeleteCommand.Parameters[13].Value = ((object)(0));
-                this.Adapter.DeleteCommand.Parameters[14].Value = ((string)(Original_ap_scan));
             }
             global::System.Data.ConnectionState previousConnectionState = this.Adapter.DeleteCommand.Connection.State;
             if (((this.Adapter.DeleteCommand.Connection.State & global::System.Data.ConnectionState.Open) 
@@ -4058,48 +3900,36 @@ SELECT ap_Id, ap_startT, ap_patient, ap_request, ap_detail, ap_period, ap_appsta
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
         [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Insert, true)]
-        public virtual int Insert(global::System.Nullable<global::System.DateTime> ap_startT, string ap_patient, global::System.Nullable<int> ap_request, string ap_detail, string ap_period, string ap_appstatus, string ap_scan) {
-            if ((ap_startT.HasValue == true)) {
-                this.Adapter.InsertCommand.Parameters[0].Value = ((System.DateTime)(ap_startT.Value));
-            }
-            else {
+        public virtual int Insert(string ap_patient, global::System.Nullable<int> ap_request, string ap_detail, string ap_appstatus, global::System.Nullable<int> ap_drc) {
+            if ((ap_patient == null)) {
                 this.Adapter.InsertCommand.Parameters[0].Value = global::System.DBNull.Value;
             }
-            if ((ap_patient == null)) {
-                this.Adapter.InsertCommand.Parameters[1].Value = global::System.DBNull.Value;
-            }
             else {
-                this.Adapter.InsertCommand.Parameters[1].Value = ((string)(ap_patient));
+                this.Adapter.InsertCommand.Parameters[0].Value = ((string)(ap_patient));
             }
             if ((ap_request.HasValue == true)) {
-                this.Adapter.InsertCommand.Parameters[2].Value = ((int)(ap_request.Value));
+                this.Adapter.InsertCommand.Parameters[1].Value = ((int)(ap_request.Value));
             }
             else {
-                this.Adapter.InsertCommand.Parameters[2].Value = global::System.DBNull.Value;
+                this.Adapter.InsertCommand.Parameters[1].Value = global::System.DBNull.Value;
             }
             if ((ap_detail == null)) {
+                this.Adapter.InsertCommand.Parameters[2].Value = global::System.DBNull.Value;
+            }
+            else {
+                this.Adapter.InsertCommand.Parameters[2].Value = ((string)(ap_detail));
+            }
+            if ((ap_appstatus == null)) {
                 this.Adapter.InsertCommand.Parameters[3].Value = global::System.DBNull.Value;
             }
             else {
-                this.Adapter.InsertCommand.Parameters[3].Value = ((string)(ap_detail));
+                this.Adapter.InsertCommand.Parameters[3].Value = ((string)(ap_appstatus));
             }
-            if ((ap_period == null)) {
+            if ((ap_drc.HasValue == true)) {
+                this.Adapter.InsertCommand.Parameters[4].Value = ((int)(ap_drc.Value));
+            }
+            else {
                 this.Adapter.InsertCommand.Parameters[4].Value = global::System.DBNull.Value;
-            }
-            else {
-                this.Adapter.InsertCommand.Parameters[4].Value = ((string)(ap_period));
-            }
-            if ((ap_appstatus == null)) {
-                this.Adapter.InsertCommand.Parameters[5].Value = global::System.DBNull.Value;
-            }
-            else {
-                this.Adapter.InsertCommand.Parameters[5].Value = ((string)(ap_appstatus));
-            }
-            if ((ap_scan == null)) {
-                this.Adapter.InsertCommand.Parameters[6].Value = global::System.DBNull.Value;
-            }
-            else {
-                this.Adapter.InsertCommand.Parameters[6].Value = ((string)(ap_scan));
             }
             global::System.Data.ConnectionState previousConnectionState = this.Adapter.InsertCommand.Connection.State;
             if (((this.Adapter.InsertCommand.Connection.State & global::System.Data.ConnectionState.Open) 
@@ -4121,123 +3951,79 @@ SELECT ap_Id, ap_startT, ap_patient, ap_request, ap_detail, ap_period, ap_appsta
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
         [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Update, true)]
-        public virtual int Update(
-                    global::System.Nullable<global::System.DateTime> ap_startT, 
-                    string ap_patient, 
-                    global::System.Nullable<int> ap_request, 
-                    string ap_detail, 
-                    string ap_period, 
-                    string ap_appstatus, 
-                    string ap_scan, 
-                    int Original_ap_Id, 
-                    global::System.Nullable<global::System.DateTime> Original_ap_startT, 
-                    string Original_ap_patient, 
-                    global::System.Nullable<int> Original_ap_request, 
-                    string Original_ap_detail, 
-                    string Original_ap_period, 
-                    string Original_ap_appstatus, 
-                    string Original_ap_scan, 
-                    int ap_Id) {
-            if ((ap_startT.HasValue == true)) {
-                this.Adapter.UpdateCommand.Parameters[0].Value = ((System.DateTime)(ap_startT.Value));
-            }
-            else {
+        public virtual int Update(string ap_patient, global::System.Nullable<int> ap_request, string ap_detail, string ap_appstatus, global::System.Nullable<int> ap_drc, int Original_ap_Id, string Original_ap_patient, global::System.Nullable<int> Original_ap_request, string Original_ap_detail, string Original_ap_appstatus, global::System.Nullable<int> Original_ap_drc, int ap_Id) {
+            if ((ap_patient == null)) {
                 this.Adapter.UpdateCommand.Parameters[0].Value = global::System.DBNull.Value;
             }
-            if ((ap_patient == null)) {
-                this.Adapter.UpdateCommand.Parameters[1].Value = global::System.DBNull.Value;
-            }
             else {
-                this.Adapter.UpdateCommand.Parameters[1].Value = ((string)(ap_patient));
+                this.Adapter.UpdateCommand.Parameters[0].Value = ((string)(ap_patient));
             }
             if ((ap_request.HasValue == true)) {
-                this.Adapter.UpdateCommand.Parameters[2].Value = ((int)(ap_request.Value));
+                this.Adapter.UpdateCommand.Parameters[1].Value = ((int)(ap_request.Value));
             }
             else {
-                this.Adapter.UpdateCommand.Parameters[2].Value = global::System.DBNull.Value;
+                this.Adapter.UpdateCommand.Parameters[1].Value = global::System.DBNull.Value;
             }
             if ((ap_detail == null)) {
+                this.Adapter.UpdateCommand.Parameters[2].Value = global::System.DBNull.Value;
+            }
+            else {
+                this.Adapter.UpdateCommand.Parameters[2].Value = ((string)(ap_detail));
+            }
+            if ((ap_appstatus == null)) {
                 this.Adapter.UpdateCommand.Parameters[3].Value = global::System.DBNull.Value;
             }
             else {
-                this.Adapter.UpdateCommand.Parameters[3].Value = ((string)(ap_detail));
+                this.Adapter.UpdateCommand.Parameters[3].Value = ((string)(ap_appstatus));
             }
-            if ((ap_period == null)) {
+            if ((ap_drc.HasValue == true)) {
+                this.Adapter.UpdateCommand.Parameters[4].Value = ((int)(ap_drc.Value));
+            }
+            else {
                 this.Adapter.UpdateCommand.Parameters[4].Value = global::System.DBNull.Value;
             }
-            else {
-                this.Adapter.UpdateCommand.Parameters[4].Value = ((string)(ap_period));
-            }
-            if ((ap_appstatus == null)) {
-                this.Adapter.UpdateCommand.Parameters[5].Value = global::System.DBNull.Value;
-            }
-            else {
-                this.Adapter.UpdateCommand.Parameters[5].Value = ((string)(ap_appstatus));
-            }
-            if ((ap_scan == null)) {
-                this.Adapter.UpdateCommand.Parameters[6].Value = global::System.DBNull.Value;
+            this.Adapter.UpdateCommand.Parameters[5].Value = ((int)(Original_ap_Id));
+            if ((Original_ap_patient == null)) {
+                this.Adapter.UpdateCommand.Parameters[6].Value = ((object)(1));
+                this.Adapter.UpdateCommand.Parameters[7].Value = global::System.DBNull.Value;
             }
             else {
-                this.Adapter.UpdateCommand.Parameters[6].Value = ((string)(ap_scan));
+                this.Adapter.UpdateCommand.Parameters[6].Value = ((object)(0));
+                this.Adapter.UpdateCommand.Parameters[7].Value = ((string)(Original_ap_patient));
             }
-            this.Adapter.UpdateCommand.Parameters[7].Value = ((int)(Original_ap_Id));
-            if ((Original_ap_startT.HasValue == true)) {
+            if ((Original_ap_request.HasValue == true)) {
                 this.Adapter.UpdateCommand.Parameters[8].Value = ((object)(0));
-                this.Adapter.UpdateCommand.Parameters[9].Value = ((System.DateTime)(Original_ap_startT.Value));
+                this.Adapter.UpdateCommand.Parameters[9].Value = ((int)(Original_ap_request.Value));
             }
             else {
                 this.Adapter.UpdateCommand.Parameters[8].Value = ((object)(1));
                 this.Adapter.UpdateCommand.Parameters[9].Value = global::System.DBNull.Value;
             }
-            if ((Original_ap_patient == null)) {
+            if ((Original_ap_detail == null)) {
                 this.Adapter.UpdateCommand.Parameters[10].Value = ((object)(1));
                 this.Adapter.UpdateCommand.Parameters[11].Value = global::System.DBNull.Value;
             }
             else {
                 this.Adapter.UpdateCommand.Parameters[10].Value = ((object)(0));
-                this.Adapter.UpdateCommand.Parameters[11].Value = ((string)(Original_ap_patient));
+                this.Adapter.UpdateCommand.Parameters[11].Value = ((string)(Original_ap_detail));
             }
-            if ((Original_ap_request.HasValue == true)) {
-                this.Adapter.UpdateCommand.Parameters[12].Value = ((object)(0));
-                this.Adapter.UpdateCommand.Parameters[13].Value = ((int)(Original_ap_request.Value));
-            }
-            else {
+            if ((Original_ap_appstatus == null)) {
                 this.Adapter.UpdateCommand.Parameters[12].Value = ((object)(1));
                 this.Adapter.UpdateCommand.Parameters[13].Value = global::System.DBNull.Value;
             }
-            if ((Original_ap_detail == null)) {
+            else {
+                this.Adapter.UpdateCommand.Parameters[12].Value = ((object)(0));
+                this.Adapter.UpdateCommand.Parameters[13].Value = ((string)(Original_ap_appstatus));
+            }
+            if ((Original_ap_drc.HasValue == true)) {
+                this.Adapter.UpdateCommand.Parameters[14].Value = ((object)(0));
+                this.Adapter.UpdateCommand.Parameters[15].Value = ((int)(Original_ap_drc.Value));
+            }
+            else {
                 this.Adapter.UpdateCommand.Parameters[14].Value = ((object)(1));
                 this.Adapter.UpdateCommand.Parameters[15].Value = global::System.DBNull.Value;
             }
-            else {
-                this.Adapter.UpdateCommand.Parameters[14].Value = ((object)(0));
-                this.Adapter.UpdateCommand.Parameters[15].Value = ((string)(Original_ap_detail));
-            }
-            if ((Original_ap_period == null)) {
-                this.Adapter.UpdateCommand.Parameters[16].Value = ((object)(1));
-                this.Adapter.UpdateCommand.Parameters[17].Value = global::System.DBNull.Value;
-            }
-            else {
-                this.Adapter.UpdateCommand.Parameters[16].Value = ((object)(0));
-                this.Adapter.UpdateCommand.Parameters[17].Value = ((string)(Original_ap_period));
-            }
-            if ((Original_ap_appstatus == null)) {
-                this.Adapter.UpdateCommand.Parameters[18].Value = ((object)(1));
-                this.Adapter.UpdateCommand.Parameters[19].Value = global::System.DBNull.Value;
-            }
-            else {
-                this.Adapter.UpdateCommand.Parameters[18].Value = ((object)(0));
-                this.Adapter.UpdateCommand.Parameters[19].Value = ((string)(Original_ap_appstatus));
-            }
-            if ((Original_ap_scan == null)) {
-                this.Adapter.UpdateCommand.Parameters[20].Value = ((object)(1));
-                this.Adapter.UpdateCommand.Parameters[21].Value = global::System.DBNull.Value;
-            }
-            else {
-                this.Adapter.UpdateCommand.Parameters[20].Value = ((object)(0));
-                this.Adapter.UpdateCommand.Parameters[21].Value = ((string)(Original_ap_scan));
-            }
-            this.Adapter.UpdateCommand.Parameters[22].Value = ((int)(ap_Id));
+            this.Adapter.UpdateCommand.Parameters[16].Value = ((int)(ap_Id));
             global::System.Data.ConnectionState previousConnectionState = this.Adapter.UpdateCommand.Connection.State;
             if (((this.Adapter.UpdateCommand.Connection.State & global::System.Data.ConnectionState.Open) 
                         != global::System.Data.ConnectionState.Open)) {
@@ -4258,8 +4044,8 @@ SELECT ap_Id, ap_startT, ap_patient, ap_request, ap_detail, ap_period, ap_appsta
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
         [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Update, true)]
-        public virtual int Update(global::System.Nullable<global::System.DateTime> ap_startT, string ap_patient, global::System.Nullable<int> ap_request, string ap_detail, string ap_period, string ap_appstatus, string ap_scan, int Original_ap_Id, global::System.Nullable<global::System.DateTime> Original_ap_startT, string Original_ap_patient, global::System.Nullable<int> Original_ap_request, string Original_ap_detail, string Original_ap_period, string Original_ap_appstatus, string Original_ap_scan) {
-            return this.Update(ap_startT, ap_patient, ap_request, ap_detail, ap_period, ap_appstatus, ap_scan, Original_ap_Id, Original_ap_startT, Original_ap_patient, Original_ap_request, Original_ap_detail, Original_ap_period, Original_ap_appstatus, Original_ap_scan, Original_ap_Id);
+        public virtual int Update(string ap_patient, global::System.Nullable<int> ap_request, string ap_detail, string ap_appstatus, global::System.Nullable<int> ap_drc, int Original_ap_Id, string Original_ap_patient, global::System.Nullable<int> Original_ap_request, string Original_ap_detail, string Original_ap_appstatus, global::System.Nullable<int> Original_ap_drc) {
+            return this.Update(ap_patient, ap_request, ap_detail, ap_appstatus, ap_drc, Original_ap_Id, Original_ap_patient, Original_ap_request, Original_ap_detail, Original_ap_appstatus, Original_ap_drc, Original_ap_Id);
         }
     }
     
@@ -6389,37 +6175,32 @@ SELECT req_Id, req_bodypart, req_time FROM Requests WHERE (req_Id = @req_Id)";
             tableMapping.DataSetTable = "Scanners";
             tableMapping.ColumnMappings.Add("scan_Id", "scan_Id");
             tableMapping.ColumnMappings.Add("scan_name", "scan_name");
-            tableMapping.ColumnMappings.Add("scan_quantity", "scan_quantity");
             this._adapter.TableMappings.Add(tableMapping);
             this._adapter.DeleteCommand = new global::System.Data.SqlClient.SqlCommand();
             this._adapter.DeleteCommand.Connection = this.Connection;
-            this._adapter.DeleteCommand.CommandText = @"DELETE FROM [dbo].[Scanners] WHERE (([scan_Id] = @Original_scan_Id) AND ((@IsNull_scan_name = 1 AND [scan_name] IS NULL) OR ([scan_name] = @Original_scan_name)) AND ((@IsNull_scan_quantity = 1 AND [scan_quantity] IS NULL) OR ([scan_quantity] = @Original_scan_quantity)))";
+            this._adapter.DeleteCommand.CommandText = "DELETE FROM [Scanners] WHERE (([scan_Id] = @Original_scan_Id) AND ((@IsNull_scan_" +
+                "name = 1 AND [scan_name] IS NULL) OR ([scan_name] = @Original_scan_name)))";
             this._adapter.DeleteCommand.CommandType = global::System.Data.CommandType.Text;
             this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_scan_Id", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "scan_Id", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
             this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@IsNull_scan_name", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "scan_name", global::System.Data.DataRowVersion.Original, true, null, "", "", ""));
             this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_scan_name", global::System.Data.SqlDbType.NChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "scan_name", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
-            this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@IsNull_scan_quantity", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "scan_quantity", global::System.Data.DataRowVersion.Original, true, null, "", "", ""));
-            this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_scan_quantity", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "scan_quantity", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
             this._adapter.InsertCommand = new global::System.Data.SqlClient.SqlCommand();
             this._adapter.InsertCommand.Connection = this.Connection;
-            this._adapter.InsertCommand.CommandText = "INSERT INTO [dbo].[Scanners] ([scan_name], [scan_quantity]) VALUES (@scan_name, @" +
-                "scan_quantity);\r\nSELECT scan_Id, scan_name, scan_quantity FROM Scanners WHERE (s" +
-                "can_Id = SCOPE_IDENTITY())";
+            this._adapter.InsertCommand.CommandText = "INSERT INTO [Scanners] ([scan_name]) VALUES (@scan_name);\r\nSELECT scan_Id, scan_n" +
+                "ame FROM Scanners WHERE (scan_Id = SCOPE_IDENTITY())";
             this._adapter.InsertCommand.CommandType = global::System.Data.CommandType.Text;
             this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@scan_name", global::System.Data.SqlDbType.NChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "scan_name", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
-            this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@scan_quantity", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "scan_quantity", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._adapter.UpdateCommand = new global::System.Data.SqlClient.SqlCommand();
             this._adapter.UpdateCommand.Connection = this.Connection;
-            this._adapter.UpdateCommand.CommandText = @"UPDATE [dbo].[Scanners] SET [scan_name] = @scan_name, [scan_quantity] = @scan_quantity WHERE (([scan_Id] = @Original_scan_Id) AND ((@IsNull_scan_name = 1 AND [scan_name] IS NULL) OR ([scan_name] = @Original_scan_name)) AND ((@IsNull_scan_quantity = 1 AND [scan_quantity] IS NULL) OR ([scan_quantity] = @Original_scan_quantity)));
-SELECT scan_Id, scan_name, scan_quantity FROM Scanners WHERE (scan_Id = @scan_Id)";
+            this._adapter.UpdateCommand.CommandText = "UPDATE [Scanners] SET [scan_name] = @scan_name WHERE (([scan_Id] = @Original_scan" +
+                "_Id) AND ((@IsNull_scan_name = 1 AND [scan_name] IS NULL) OR ([scan_name] = @Ori" +
+                "ginal_scan_name)));\r\nSELECT scan_Id, scan_name FROM Scanners WHERE (scan_Id = @s" +
+                "can_Id)";
             this._adapter.UpdateCommand.CommandType = global::System.Data.CommandType.Text;
             this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@scan_name", global::System.Data.SqlDbType.NChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "scan_name", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
-            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@scan_quantity", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "scan_quantity", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_scan_Id", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "scan_Id", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
             this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@IsNull_scan_name", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "scan_name", global::System.Data.DataRowVersion.Original, true, null, "", "", ""));
             this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_scan_name", global::System.Data.SqlDbType.NChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "scan_name", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
-            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@IsNull_scan_quantity", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "scan_quantity", global::System.Data.DataRowVersion.Original, true, null, "", "", ""));
-            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_scan_quantity", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "scan_quantity", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
             this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@scan_Id", global::System.Data.SqlDbType.Int, 4, global::System.Data.ParameterDirection.Input, 0, 0, "scan_Id", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
         }
         
@@ -6436,7 +6217,7 @@ SELECT scan_Id, scan_name, scan_quantity FROM Scanners WHERE (scan_Id = @scan_Id
             this._commandCollection = new global::System.Data.SqlClient.SqlCommand[1];
             this._commandCollection[0] = new global::System.Data.SqlClient.SqlCommand();
             this._commandCollection[0].Connection = this.Connection;
-            this._commandCollection[0].CommandText = "SELECT scan_Id, scan_name, scan_quantity FROM dbo.Scanners";
+            this._commandCollection[0].CommandText = "SELECT scan_Id, scan_name FROM Scanners";
             this._commandCollection[0].CommandType = global::System.Data.CommandType.Text;
         }
         
@@ -6497,7 +6278,7 @@ SELECT scan_Id, scan_name, scan_quantity FROM Scanners WHERE (scan_Id = @scan_Id
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
         [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Delete, true)]
-        public virtual int Delete(int Original_scan_Id, string Original_scan_name, global::System.Nullable<int> Original_scan_quantity) {
+        public virtual int Delete(int Original_scan_Id, string Original_scan_name) {
             this.Adapter.DeleteCommand.Parameters[0].Value = ((int)(Original_scan_Id));
             if ((Original_scan_name == null)) {
                 this.Adapter.DeleteCommand.Parameters[1].Value = ((object)(1));
@@ -6506,14 +6287,6 @@ SELECT scan_Id, scan_name, scan_quantity FROM Scanners WHERE (scan_Id = @scan_Id
             else {
                 this.Adapter.DeleteCommand.Parameters[1].Value = ((object)(0));
                 this.Adapter.DeleteCommand.Parameters[2].Value = ((string)(Original_scan_name));
-            }
-            if ((Original_scan_quantity.HasValue == true)) {
-                this.Adapter.DeleteCommand.Parameters[3].Value = ((object)(0));
-                this.Adapter.DeleteCommand.Parameters[4].Value = ((int)(Original_scan_quantity.Value));
-            }
-            else {
-                this.Adapter.DeleteCommand.Parameters[3].Value = ((object)(1));
-                this.Adapter.DeleteCommand.Parameters[4].Value = global::System.DBNull.Value;
             }
             global::System.Data.ConnectionState previousConnectionState = this.Adapter.DeleteCommand.Connection.State;
             if (((this.Adapter.DeleteCommand.Connection.State & global::System.Data.ConnectionState.Open) 
@@ -6535,18 +6308,12 @@ SELECT scan_Id, scan_name, scan_quantity FROM Scanners WHERE (scan_Id = @scan_Id
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
         [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Insert, true)]
-        public virtual int Insert(string scan_name, global::System.Nullable<int> scan_quantity) {
+        public virtual int Insert(string scan_name) {
             if ((scan_name == null)) {
                 this.Adapter.InsertCommand.Parameters[0].Value = global::System.DBNull.Value;
             }
             else {
                 this.Adapter.InsertCommand.Parameters[0].Value = ((string)(scan_name));
-            }
-            if ((scan_quantity.HasValue == true)) {
-                this.Adapter.InsertCommand.Parameters[1].Value = ((int)(scan_quantity.Value));
-            }
-            else {
-                this.Adapter.InsertCommand.Parameters[1].Value = global::System.DBNull.Value;
             }
             global::System.Data.ConnectionState previousConnectionState = this.Adapter.InsertCommand.Connection.State;
             if (((this.Adapter.InsertCommand.Connection.State & global::System.Data.ConnectionState.Open) 
@@ -6568,37 +6335,23 @@ SELECT scan_Id, scan_name, scan_quantity FROM Scanners WHERE (scan_Id = @scan_Id
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
         [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Update, true)]
-        public virtual int Update(string scan_name, global::System.Nullable<int> scan_quantity, int Original_scan_Id, string Original_scan_name, global::System.Nullable<int> Original_scan_quantity, int scan_Id) {
+        public virtual int Update(string scan_name, int Original_scan_Id, string Original_scan_name, int scan_Id) {
             if ((scan_name == null)) {
                 this.Adapter.UpdateCommand.Parameters[0].Value = global::System.DBNull.Value;
             }
             else {
                 this.Adapter.UpdateCommand.Parameters[0].Value = ((string)(scan_name));
             }
-            if ((scan_quantity.HasValue == true)) {
-                this.Adapter.UpdateCommand.Parameters[1].Value = ((int)(scan_quantity.Value));
-            }
-            else {
-                this.Adapter.UpdateCommand.Parameters[1].Value = global::System.DBNull.Value;
-            }
-            this.Adapter.UpdateCommand.Parameters[2].Value = ((int)(Original_scan_Id));
+            this.Adapter.UpdateCommand.Parameters[1].Value = ((int)(Original_scan_Id));
             if ((Original_scan_name == null)) {
-                this.Adapter.UpdateCommand.Parameters[3].Value = ((object)(1));
-                this.Adapter.UpdateCommand.Parameters[4].Value = global::System.DBNull.Value;
+                this.Adapter.UpdateCommand.Parameters[2].Value = ((object)(1));
+                this.Adapter.UpdateCommand.Parameters[3].Value = global::System.DBNull.Value;
             }
             else {
-                this.Adapter.UpdateCommand.Parameters[3].Value = ((object)(0));
-                this.Adapter.UpdateCommand.Parameters[4].Value = ((string)(Original_scan_name));
+                this.Adapter.UpdateCommand.Parameters[2].Value = ((object)(0));
+                this.Adapter.UpdateCommand.Parameters[3].Value = ((string)(Original_scan_name));
             }
-            if ((Original_scan_quantity.HasValue == true)) {
-                this.Adapter.UpdateCommand.Parameters[5].Value = ((object)(0));
-                this.Adapter.UpdateCommand.Parameters[6].Value = ((int)(Original_scan_quantity.Value));
-            }
-            else {
-                this.Adapter.UpdateCommand.Parameters[5].Value = ((object)(1));
-                this.Adapter.UpdateCommand.Parameters[6].Value = global::System.DBNull.Value;
-            }
-            this.Adapter.UpdateCommand.Parameters[7].Value = ((int)(scan_Id));
+            this.Adapter.UpdateCommand.Parameters[4].Value = ((int)(scan_Id));
             global::System.Data.ConnectionState previousConnectionState = this.Adapter.UpdateCommand.Connection.State;
             if (((this.Adapter.UpdateCommand.Connection.State & global::System.Data.ConnectionState.Open) 
                         != global::System.Data.ConnectionState.Open)) {
@@ -6619,8 +6372,8 @@ SELECT scan_Id, scan_name, scan_quantity FROM Scanners WHERE (scan_Id = @scan_Id
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
         [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Update, true)]
-        public virtual int Update(string scan_name, global::System.Nullable<int> scan_quantity, int Original_scan_Id, string Original_scan_name, global::System.Nullable<int> Original_scan_quantity) {
-            return this.Update(scan_name, scan_quantity, Original_scan_Id, Original_scan_name, Original_scan_quantity, Original_scan_Id);
+        public virtual int Update(string scan_name, int Original_scan_Id, string Original_scan_name) {
+            return this.Update(scan_name, Original_scan_Id, Original_scan_name, Original_scan_Id);
         }
     }
     
