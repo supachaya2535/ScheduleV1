@@ -13,6 +13,7 @@ namespace AppointmentQueue
 {
     public partial class RequestForm : Form
     {
+
         public RequestForm()
         {
             InitializeComponent();

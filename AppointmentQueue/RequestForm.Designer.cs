@@ -100,9 +100,9 @@
             this.label1.Location = new System.Drawing.Point(15, 110);
             this.label1.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(128, 20);
+            this.label1.Size = new System.Drawing.Size(134, 20);
             this.label1.TabIndex = 45;
-            this.label1.Text = "RequiredTime";
+            this.label1.Text = "Required Time";
             // 
             // reqTime
             // 
@@ -149,7 +149,7 @@
             this.saveBtn.Name = "saveBtn";
             this.saveBtn.Size = new System.Drawing.Size(240, 37);
             this.saveBtn.TabIndex = 38;
-            this.saveBtn.Text = "Save adjusting request";
+            this.saveBtn.Text = "Save Required Time";
             this.saveBtn.UseVisualStyleBackColor = true;
             this.saveBtn.Click += new System.EventHandler(this.reqEditBtn_Click);
             // 
@@ -164,7 +164,6 @@
             this.reqDataGridView.Name = "reqDataGridView";
             this.reqDataGridView.Size = new System.Drawing.Size(497, 425);
             this.reqDataGridView.TabIndex = 59;
-            this.reqDataGridView.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.reqDataGridView_CellContentClick);
             this.reqDataGridView.RowHeaderMouseDoubleClick += new System.Windows.Forms.DataGridViewCellMouseEventHandler(this.reqDataGridView_RowHeaderMouseDoubleClick);
             // 
             // RequestForm
@@ -176,7 +175,7 @@
             this.Controls.Add(this.groupBox6);
             this.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.Name = "RequestForm";
-            this.Text = "mageRequestForm";
+            this.Text = "Request Management Form";
             this.groupBox6.ResumeLayout(false);
             this.groupBox6.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.reqTime)).EndInit();

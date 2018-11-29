@@ -14,6 +14,8 @@ namespace AppointmentQueue
 {
     public partial class DoctorForm : Form
     {
+        public static String ConnectionStr = "Data Source=(LocalDB)\\MSSQLLocalDB;AttachDbFilename=" + Environment.CurrentDirectory.Split(new string[] { "bin" }, StringSplitOptions.None)[0] + "Database1.mdf;Integrated Security=True";
+
         public int drId;
         public String drName;
         public String drLname;
@@ -38,7 +40,7 @@ namespace AppointmentQueue
             {
                 if (MessageBox.Show("Do you want to insert a new doctor?", "Insert new doctor Success", MessageBoxButtons.YesNo) == DialogResult.Yes)
                 {
-                    SqlConnection cn = new SqlConnection("Data Source=(LocalDB)\\MSSQLLocalDB;AttachDbFilename=C:\\Users\\Toon\\Documents\\GitDoc\\ScheduleHospital\\AppointmentQueue\\Database1.mdf;Integrated Security=True");
+                    SqlConnection cn = new SqlConnection(ConnectionStr);
                     SqlCommand command = new SqlCommand(
                         "INSERT INTO Doctors (dr_name,dr_lname) " +
                         "VALUES (@dr_name,@dr_lname)", cn);
@@ -71,7 +73,7 @@ namespace AppointmentQueue
             {
                 if (MessageBox.Show("Do you want to delete this record?", "Detete this record", MessageBoxButtons.YesNo) == DialogResult.Yes)
                 {
-                    SqlConnection cn = new SqlConnection("Data Source=(LocalDB)\\MSSQLLocalDB;AttachDbFilename=C:\\Users\\Toon\\Documents\\GitDoc\\ScheduleHospital\\AppointmentQueue\\Database1.mdf;Integrated Security=True");
+                    SqlConnection cn = new SqlConnection(ConnectionStr);
                     SqlCommand command = new SqlCommand("DELETE FROM Doctors WHERE dr_Id = '" + drId + "'", cn);
                     command.Connection = cn;
 
