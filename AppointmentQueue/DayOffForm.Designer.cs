@@ -80,7 +80,7 @@
             this.detailTxt.Margin = new System.Windows.Forms.Padding(4);
             this.detailTxt.Multiline = true;
             this.detailTxt.Name = "detailTxt";
-            this.detailTxt.Size = new System.Drawing.Size(382, 42);
+            this.detailTxt.Size = new System.Drawing.Size(568, 42);
             this.detailTxt.TabIndex = 53;
             // 
             // pedCob
@@ -160,6 +160,7 @@
             // 
             this.groupBox4.BackColor = System.Drawing.SystemColors.GradientActiveCaption;
             this.groupBox4.Controls.Add(this.button1);
+            this.groupBox4.Controls.Add(this.seachDrReq);
             this.groupBox4.Controls.Add(this.label14);
             this.groupBox4.Controls.Add(this.drLnameTxt2);
             this.groupBox4.Controls.Add(this.drIdTxt);
@@ -179,12 +180,12 @@
             // button1
             // 
             this.button1.Font = new System.Drawing.Font("Verdana", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button1.Location = new System.Drawing.Point(494, 64);
+            this.button1.Location = new System.Drawing.Point(494, 37);
             this.button1.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(156, 37);
+            this.button1.Size = new System.Drawing.Size(179, 37);
             this.button1.TabIndex = 70;
-            this.button1.Text = "Search Doctor";
+            this.button1.Text = "Select Doctor";
             this.button1.UseVisualStyleBackColor = true;
             this.button1.Click += new System.EventHandler(this.button1_Click);
             // 
@@ -252,10 +253,10 @@
             // seachDrReq
             // 
             this.seachDrReq.Font = new System.Drawing.Font("Verdana", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.seachDrReq.Location = new System.Drawing.Point(497, 216);
+            this.seachDrReq.Location = new System.Drawing.Point(493, 96);
             this.seachDrReq.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.seachDrReq.Name = "seachDrReq";
-            this.seachDrReq.Size = new System.Drawing.Size(180, 36);
+            this.seachDrReq.Size = new System.Drawing.Size(180, 42);
             this.seachDrReq.TabIndex = 72;
             this.seachDrReq.Text = "Search by Doctor";
             this.seachDrReq.UseVisualStyleBackColor = true;
@@ -267,7 +268,6 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(693, 686);
             this.Controls.Add(this.groupBox4);
-            this.Controls.Add(this.seachDrReq);
             this.Controls.Add(this.button2);
             this.Controls.Add(this.label4);
             this.Controls.Add(this.detailTxt);

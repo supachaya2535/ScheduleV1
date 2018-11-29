@@ -88,9 +88,9 @@
             this.groupBox7.Controls.Add(this.label17);
             this.groupBox7.Font = new System.Drawing.Font("Verdana", 10F);
             this.groupBox7.Location = new System.Drawing.Point(4, 197);
-            this.groupBox7.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.groupBox7.Margin = new System.Windows.Forms.Padding(4);
             this.groupBox7.Name = "groupBox7";
-            this.groupBox7.Padding = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.groupBox7.Padding = new System.Windows.Forms.Padding(4);
             this.groupBox7.Size = new System.Drawing.Size(385, 410);
             this.groupBox7.TabIndex = 58;
             this.groupBox7.TabStop = false;
@@ -112,7 +112,7 @@
             this.scanComb.Font = new System.Drawing.Font("Verdana", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.scanComb.FormattingEnabled = true;
             this.scanComb.Location = new System.Drawing.Point(136, 33);
-            this.scanComb.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.scanComb.Margin = new System.Windows.Forms.Padding(4);
             this.scanComb.Name = "scanComb";
             this.scanComb.Size = new System.Drawing.Size(187, 26);
             this.scanComb.TabIndex = 81;
@@ -133,7 +133,7 @@
             this.week4CheckBox.AutoSize = true;
             this.week4CheckBox.Font = new System.Drawing.Font("Verdana", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.week4CheckBox.Location = new System.Drawing.Point(233, 140);
-            this.week4CheckBox.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.week4CheckBox.Margin = new System.Windows.Forms.Padding(4);
             this.week4CheckBox.Name = "week4CheckBox";
             this.week4CheckBox.Size = new System.Drawing.Size(86, 24);
             this.week4CheckBox.TabIndex = 76;
@@ -145,7 +145,7 @@
             this.week3CheckBox.AutoSize = true;
             this.week3CheckBox.Font = new System.Drawing.Font("Verdana", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.week3CheckBox.Location = new System.Drawing.Point(103, 140);
-            this.week3CheckBox.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.week3CheckBox.Margin = new System.Windows.Forms.Padding(4);
             this.week3CheckBox.Name = "week3CheckBox";
             this.week3CheckBox.Size = new System.Drawing.Size(86, 24);
             this.week3CheckBox.TabIndex = 75;
@@ -157,7 +157,7 @@
             this.drWorkAddBtn.Enabled = false;
             this.drWorkAddBtn.Font = new System.Drawing.Font("Verdana", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.drWorkAddBtn.Location = new System.Drawing.Point(103, 331);
-            this.drWorkAddBtn.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.drWorkAddBtn.Margin = new System.Windows.Forms.Padding(4);
             this.drWorkAddBtn.Name = "drWorkAddBtn";
             this.drWorkAddBtn.Size = new System.Drawing.Size(184, 37);
             this.drWorkAddBtn.TabIndex = 35;
@@ -171,7 +171,7 @@
             this.endDate.Font = new System.Drawing.Font("Verdana", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.endDate.Format = System.Windows.Forms.DateTimePickerFormat.Short;
             this.endDate.Location = new System.Drawing.Point(137, 277);
-            this.endDate.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.endDate.Margin = new System.Windows.Forms.Padding(4);
             this.endDate.MaxDate = new System.DateTime(2019, 12, 31, 0, 0, 0, 0);
             this.endDate.MinDate = new System.DateTime(2018, 5, 18, 0, 0, 0, 0);
             this.endDate.Name = "endDate";
@@ -185,7 +185,7 @@
             this.week2CheckBox.AutoSize = true;
             this.week2CheckBox.Font = new System.Drawing.Font("Verdana", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.week2CheckBox.Location = new System.Drawing.Point(233, 113);
-            this.week2CheckBox.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.week2CheckBox.Margin = new System.Windows.Forms.Padding(4);
             this.week2CheckBox.Name = "week2CheckBox";
             this.week2CheckBox.Size = new System.Drawing.Size(86, 24);
             this.week2CheckBox.TabIndex = 74;
@@ -197,7 +197,7 @@
             this.week1CheckBox.AutoSize = true;
             this.week1CheckBox.Font = new System.Drawing.Font("Verdana", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.week1CheckBox.Location = new System.Drawing.Point(103, 113);
-            this.week1CheckBox.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.week1CheckBox.Margin = new System.Windows.Forms.Padding(4);
             this.week1CheckBox.Name = "week1CheckBox";
             this.week1CheckBox.Size = new System.Drawing.Size(86, 24);
             this.week1CheckBox.TabIndex = 73;
@@ -220,7 +220,7 @@
             this.kidCheckBox.AutoSize = true;
             this.kidCheckBox.Font = new System.Drawing.Font("Verdana", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.kidCheckBox.Location = new System.Drawing.Point(103, 172);
-            this.kidCheckBox.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.kidCheckBox.Margin = new System.Windows.Forms.Padding(4);
             this.kidCheckBox.Name = "kidCheckBox";
             this.kidCheckBox.Size = new System.Drawing.Size(180, 24);
             this.kidCheckBox.TabIndex = 72;
@@ -251,7 +251,7 @@
             "Saturday",
             "Sunday"});
             this.dofComb.Location = new System.Drawing.Point(137, 75);
-            this.dofComb.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.dofComb.Margin = new System.Windows.Forms.Padding(4);
             this.dofComb.Name = "dofComb";
             this.dofComb.Size = new System.Drawing.Size(187, 26);
             this.dofComb.TabIndex = 48;
@@ -262,7 +262,7 @@
             this.startDate.Font = new System.Drawing.Font("Verdana", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.startDate.Format = System.Windows.Forms.DateTimePickerFormat.Short;
             this.startDate.Location = new System.Drawing.Point(137, 240);
-            this.startDate.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.startDate.Margin = new System.Windows.Forms.Padding(4);
             this.startDate.MaxDate = new System.DateTime(2019, 12, 31, 0, 0, 0, 0);
             this.startDate.MinDate = new System.DateTime(2018, 5, 18, 0, 0, 0, 0);
             this.startDate.Name = "startDate";
@@ -280,7 +280,7 @@
             "Afternoon",
             "Evening"});
             this.pedComb.Location = new System.Drawing.Point(137, 204);
-            this.pedComb.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.pedComb.Margin = new System.Windows.Forms.Padding(4);
             this.pedComb.Name = "pedComb";
             this.pedComb.Size = new System.Drawing.Size(187, 26);
             this.pedComb.TabIndex = 47;
@@ -302,7 +302,7 @@
             this.drWorkGidView.BackgroundColor = System.Drawing.SystemColors.ActiveBorder;
             this.drWorkGidView.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.drWorkGidView.Location = new System.Drawing.Point(397, 42);
-            this.drWorkGidView.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.drWorkGidView.Margin = new System.Windows.Forms.Padding(4);
             this.drWorkGidView.Name = "drWorkGidView";
             this.drWorkGidView.Size = new System.Drawing.Size(971, 567);
             this.drWorkGidView.TabIndex = 60;
@@ -320,9 +320,9 @@
             this.groupBox4.Controls.Add(this.label16);
             this.groupBox4.Font = new System.Drawing.Font("Verdana", 10F);
             this.groupBox4.Location = new System.Drawing.Point(1, 4);
-            this.groupBox4.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.groupBox4.Margin = new System.Windows.Forms.Padding(4);
             this.groupBox4.Name = "groupBox4";
-            this.groupBox4.Padding = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.groupBox4.Padding = new System.Windows.Forms.Padding(4);
             this.groupBox4.Size = new System.Drawing.Size(388, 188);
             this.groupBox4.TabIndex = 57;
             this.groupBox4.TabStop = false;
@@ -336,7 +336,7 @@
             this.button1.Name = "button1";
             this.button1.Size = new System.Drawing.Size(156, 37);
             this.button1.TabIndex = 69;
-            this.button1.Text = "Search Doctor";
+            this.button1.Text = "Select Doctor";
             this.button1.UseVisualStyleBackColor = true;
             this.button1.Click += new System.EventHandler(this.button1_Click);
             // 
@@ -356,7 +356,7 @@
             this.drLnameTxt2.Enabled = false;
             this.drLnameTxt2.Font = new System.Drawing.Font("Verdana", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.drLnameTxt2.Location = new System.Drawing.Point(105, 111);
-            this.drLnameTxt2.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.drLnameTxt2.Margin = new System.Windows.Forms.Padding(4);
             this.drLnameTxt2.Name = "drLnameTxt2";
             this.drLnameTxt2.Size = new System.Drawing.Size(255, 27);
             this.drLnameTxt2.TabIndex = 34;
@@ -366,7 +366,7 @@
             this.drIdTxt.Enabled = false;
             this.drIdTxt.Font = new System.Drawing.Font("Verdana", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.drIdTxt.Location = new System.Drawing.Point(105, 38);
-            this.drIdTxt.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.drIdTxt.Margin = new System.Windows.Forms.Padding(4);
             this.drIdTxt.Name = "drIdTxt";
             this.drIdTxt.Size = new System.Drawing.Size(255, 27);
             this.drIdTxt.TabIndex = 32;
@@ -387,7 +387,7 @@
             this.drNameTxt2.Enabled = false;
             this.drNameTxt2.Font = new System.Drawing.Font("Verdana", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.drNameTxt2.Location = new System.Drawing.Point(105, 74);
-            this.drNameTxt2.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.drNameTxt2.Margin = new System.Windows.Forms.Padding(4);
             this.drNameTxt2.Name = "drNameTxt2";
             this.drNameTxt2.Size = new System.Drawing.Size(255, 27);
             this.drNameTxt2.TabIndex = 30;
@@ -408,7 +408,7 @@
             this.drWorkDeleteBtn.Enabled = false;
             this.drWorkDeleteBtn.Font = new System.Drawing.Font("Verdana", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.drWorkDeleteBtn.Location = new System.Drawing.Point(726, 1);
-            this.drWorkDeleteBtn.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.drWorkDeleteBtn.Margin = new System.Windows.Forms.Padding(4);
             this.drWorkDeleteBtn.Name = "drWorkDeleteBtn";
             this.drWorkDeleteBtn.Size = new System.Drawing.Size(101, 37);
             this.drWorkDeleteBtn.TabIndex = 62;
@@ -421,7 +421,7 @@
             this.drWorkId.Enabled = false;
             this.drWorkId.Font = new System.Drawing.Font("Verdana", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.drWorkId.Location = new System.Drawing.Point(541, 6);
-            this.drWorkId.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.drWorkId.Margin = new System.Windows.Forms.Padding(4);
             this.drWorkId.Name = "drWorkId";
             this.drWorkId.Size = new System.Drawing.Size(171, 27);
             this.drWorkId.TabIndex = 70;
@@ -454,7 +454,7 @@
             this.startDateEdit.Font = new System.Drawing.Font("Verdana", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.startDateEdit.Format = System.Windows.Forms.DateTimePickerFormat.Short;
             this.startDateEdit.Location = new System.Drawing.Point(899, 7);
-            this.startDateEdit.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.startDateEdit.Margin = new System.Windows.Forms.Padding(4);
             this.startDateEdit.MaxDate = new System.DateTime(2019, 12, 31, 0, 0, 0, 0);
             this.startDateEdit.MinDate = new System.DateTime(2018, 5, 18, 0, 0, 0, 0);
             this.startDateEdit.Name = "startDateEdit";
@@ -480,7 +480,7 @@
             this.endDateEdit.Font = new System.Drawing.Font("Verdana", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.endDateEdit.Format = System.Windows.Forms.DateTimePickerFormat.Short;
             this.endDateEdit.Location = new System.Drawing.Point(1108, 9);
-            this.endDateEdit.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.endDateEdit.Margin = new System.Windows.Forms.Padding(4);
             this.endDateEdit.MaxDate = new System.DateTime(2019, 12, 31, 0, 0, 0, 0);
             this.endDateEdit.MinDate = new System.DateTime(2018, 5, 18, 0, 0, 0, 0);
             this.endDateEdit.Name = "endDateEdit";
@@ -494,7 +494,7 @@
             this.drWorkSaveBtn.Enabled = false;
             this.drWorkSaveBtn.Font = new System.Drawing.Font("Verdana", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.drWorkSaveBtn.Location = new System.Drawing.Point(1267, 4);
-            this.drWorkSaveBtn.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.drWorkSaveBtn.Margin = new System.Windows.Forms.Padding(4);
             this.drWorkSaveBtn.Name = "drWorkSaveBtn";
             this.drWorkSaveBtn.Size = new System.Drawing.Size(101, 37);
             this.drWorkSaveBtn.TabIndex = 83;
@@ -506,6 +506,8 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.AutoSize = true;
+            this.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
             this.ClientSize = new System.Drawing.Size(1371, 612);
             this.Controls.Add(this.drWorkSaveBtn);
             this.Controls.Add(this.label5);
@@ -518,7 +520,7 @@
             this.Controls.Add(this.groupBox7);
             this.Controls.Add(this.drWorkGidView);
             this.Controls.Add(this.groupBox4);
-            this.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.Margin = new System.Windows.Forms.Padding(4);
             this.Name = "DoctorWorkForm";
             this.Text = "Doctor Working Management Form";
             this.groupBox7.ResumeLayout(false);
