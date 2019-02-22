@@ -293,7 +293,7 @@ namespace AppointmentQueue
                 if (startDateEdit.Value > endDateEdit.Value)
                 {
                     MessageBox.Show("StartDate can not be greater than EndDate");
-                    startDateEdit.Value = sdate;
+                    startDateEdit.Value = DateTime.Today;
                 }
             }
             else
