@@ -38,6 +38,10 @@ namespace AppointmentQueue
             startDateEdit.MinDate = DateTime.Today.AddYears(-5);
             endDateEdit.MaxDate = DateTime.Today.AddYears(5);
             endDateEdit.MaxDate = DateTime.Today.AddYears(5);
+
+            DataTable dt = SQL.GetDoctorWorks("","", "", "", "");
+            drWorkGidView.DataSource = dt;
+            SQL.ChangeHeaderText(dt, drWorkGidView);
         }
 
         private void seachDrWork_Click(object sender, EventArgs e)
