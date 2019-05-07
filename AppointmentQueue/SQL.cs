@@ -411,7 +411,7 @@ namespace AppointmentQueue
             dt.Columns.Add("dr_name", typeof(String));
             dt.Columns.Add("dr_lname", typeof(String));
             dt.Columns.Add("drw_period", typeof(String));
-            dt.Columns.Add("drc_id", typeof(Int16));
+            //dt.Columns.Add("drc_id", typeof(Int16));
             dt.Columns.Add("drc_status", typeof(String));
             //dt.Columns.Add("req_bodypart", typeof(String));
             dt.Columns.Add("drw_kid", typeof(String));
@@ -423,7 +423,7 @@ namespace AppointmentQueue
             dt.Columns["dr_name"].Caption = "Dr. Name";
             dt.Columns["dr_lname"].Caption = "Last Name";
             dt.Columns["drw_period"].Caption = "Period";
-            dt.Columns["drc_id"].Caption = "Calendar ID";
+            //dt.Columns["drc_id"].Caption = "Calendar ID";
             dt.Columns["drc_status"].Caption = "Status";
             //dt.Columns["req_bodypart"].Caption = "Request";
             dt.Columns["drw_kid"].Caption = "Kid";
@@ -432,6 +432,55 @@ namespace AppointmentQueue
             return dt;
         }
 
+        public static DataTable GetDoctorCalendars(String drc_status, String req, String kid, String ped)
+        {
+            SqlConnection cn = new SqlConnection(ConnectionStr);
+            cn.Open();
+
+            SqlCommand command = new SqlCommand(
+            "SELECT drc_id,drc_date,drc_time,drc_status,dr_name,drw_period,dr_lname,drw_kid " +
+            "FROM DoctorCalendars " +
+            "JOIN DoctorWorks ON drw_id=drc_drw " +
+            "JOIN Doctors ON dr_Id=drw_dr " +
+            "WHERE drc_drw IN (SELECT drw_id FROM DoctorWorks " +
+                               "WHERE drw_dr IN (SELECT drreq_dr FROM DoctorRequests " +
+                                                "JOIN Requests ON req_Id = drreq_req " +
+                                                "WHERE drw_period LIKE '" + ped.Trim() + "%' " +
+                                                "AND req_bodypart LIKE '%" + req.Trim() + "%') " +
+                               "AND drw_kid LIKE '" + kid.Trim() + "%') " +
+             "AND drc_status LIKE '%" + drc_status + "%'"
+             , cn);
+
+
+
+            SqlDataReader reader = command.ExecuteReader();
+
+            DataTable dt = new DataTable();
+            //dt.Columns.Add("drc_time", typeof(Int16));
+            dt.Columns.Add("drc_date", typeof(String));
+            dt.Columns.Add("dr_name", typeof(String));
+            dt.Columns.Add("dr_lname", typeof(String));
+            dt.Columns.Add("drw_period", typeof(String));
+            //dt.Columns.Add("drc_id", typeof(Int16));
+            dt.Columns.Add("drc_status", typeof(String));
+            //dt.Columns.Add("req_bodypart", typeof(String));
+            dt.Columns.Add("drw_kid", typeof(String));
+
+            dt.Load(reader);
+
+            //dt.Columns["drc_time"].Caption = "Doctor Used Time";
+            dt.Columns["drc_date"].Caption = "Date/Time";
+            dt.Columns["dr_name"].Caption = "Dr. Name";
+            dt.Columns["dr_lname"].Caption = "Last Name";
+            dt.Columns["drw_period"].Caption = "Period";
+            //dt.Columns["drc_id"].Caption = "Calendar ID";
+            dt.Columns["drc_status"].Caption = "Status";
+            //dt.Columns["req_bodypart"].Caption = "Request";
+            dt.Columns["drw_kid"].Caption = "Kid";
+
+            cn.Close();
+            return dt;
+        }
 
         public static DataTable GetDoctorCalendars(String dr_id, DateTime date)
         {
@@ -655,10 +704,10 @@ namespace AppointmentQueue
             dt.Columns["drw_dow"].Caption = "Day of Work";
             dt.Columns["drw_period"].Caption = "Period Of Day";
             dt.Columns["drw_kid"].Caption = "Kid Status";
-            dt.Columns["drw_w1"].Caption = "Week1 Work";
-            dt.Columns["drw_w2"].Caption = "Week2 Work";
-            dt.Columns["drw_w3"].Caption = "Week3 Work";
-            dt.Columns["drw_w4"].Caption = "Week4 Work";
+            dt.Columns["drw_w1"].Caption = "Week1";
+            dt.Columns["drw_w2"].Caption = "Week2";
+            dt.Columns["drw_w3"].Caption = "Week3";
+            dt.Columns["drw_w4"].Caption = "Week4";
             dt.Columns["drw_status"].Caption = "Status";
             dt.Columns["drw_scan"].Caption = "Scanner";
 

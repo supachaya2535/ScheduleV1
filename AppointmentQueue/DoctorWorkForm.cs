@@ -92,7 +92,7 @@ namespace AppointmentQueue
                 DateTime edate = Convert.ToDateTime(dt.Rows[0]["drw_edate"].ToString().Trim());
                 ///Check overappling date
 
-                if (MessageBox.Show("This doctor working slot already exists, Do you want to combine them together ", "Combine a new doctor work time", MessageBoxButtons.YesNo) == DialogResult.Yes)
+                if (MessageBox.Show("This Ddoctor Working slot already exists, Do you want to combine them together ", "Combine a new Doctor working time", MessageBoxButtons.YesNo) == DialogResult.Yes)
                 {
                     if (startDate.Value <= sdate && endDate.Value >= sdate && endDate.Value <= edate)//Left
                     {
@@ -107,7 +107,7 @@ namespace AppointmentQueue
                     }
                     else if (startDate.Value >= sdate && endDate.Value <= edate)//Midle
                     {
-                        MessageBox.Show("This doctor work is already exist in the same time, Do not do anything");
+                        MessageBox.Show("This Doctor Working is already exist");
                     }
                     else if (startDate.Value >= sdate && startDate.Value <= edate && endDate.Value >= edate)//Right
                     {
@@ -116,7 +116,7 @@ namespace AppointmentQueue
                     }
                     else
                     {
-                        MessageBox.Show("This doctor work is already exist but in the differrence time");
+                        MessageBox.Show("This Doctor Working is already exist but in the differrence time");
                         if (MessageBox.Show("Do you want to insert a new doctor work time", "Insertion successful", MessageBoxButtons.YesNo) == DialogResult.Yes)
                         {
                             SQL.InsertDoctorWorks(drIdTxt.Text.Trim(),
@@ -170,7 +170,7 @@ namespace AppointmentQueue
             if(dt.Rows[0]["drw_status"].ToString().Trim() == "Active")
             {
                 //Delete Calendar list
-                if (MessageBox.Show("This Doctor work record is \"Active\". Deleting this record will effect to some Appointment records ." +
+                if (MessageBox.Show("This Doctor Working record is \"Active\". Deleting this record will effect to some Calendar records ." +
                     "\nDo you want to delete this record?", "Detete this record", MessageBoxButtons.YesNo) == DialogResult.Yes)
                 {
                     SQL.UpDateDoctorWorks(drWorkId.Text.Trim(), "Inactive");
@@ -181,9 +181,7 @@ namespace AppointmentQueue
                    
                     SQL.UpDateAppointmentsWhenCalendarListWereCanceled("Canceled", "Waiting");
 
-                    MessageBox.Show("All related calender records were calceled!." +
-                       " It will effect to change status 'InQueue' of some appointment records become 'Waiting'" +
-                       "(Waiting for you change the appointment date");
+                    MessageBox.Show("All related Calender records were calceled!.");
                 }
 
             }
@@ -202,12 +200,14 @@ namespace AppointmentQueue
 
         private void startDate_ValueChanged(object sender, EventArgs e)
         {
-            if (startDate.Value < DateTime.Today)
+            /*if (startDate.Value < DateTime.Today)
             {
                 MessageBox.Show("Can not assign The Date in past");
                startDate.Value = DateTime.Today;
             }
-            else if (endDate.Value < startDate.Value)
+            else 
+            */
+            if (endDate.Value < startDate.Value)
             {
                 MessageBox.Show("StartDate can not be greater than EndDate");
                 endDate.Value = startDate.Value;
@@ -241,104 +241,112 @@ namespace AppointmentQueue
 
         private void drWorkSaveBtn_Click(object sender, EventArgs e)
         {
-            DataTable dt = SQL.GetDoctorWorks(drWorkId.Text.Trim());
-            String drw_id = dt.Rows[0]["drw_id"].ToString().Trim();
-            DateTime sdate = Convert.ToDateTime(dt.Rows[0]["drw_sdate"].ToString().Trim());
-            DateTime edate = Convert.ToDateTime(dt.Rows[0]["drw_edate"].ToString().Trim());
-
-            if (dt.Rows[0]["drw_status"].ToString().Trim() == "Active")
+            if (startDateEdit.Value > endDateEdit.Value)
             {
-                //Delete Calendar list
-                if (MessageBox.Show("Do you want to change this date range?", "Change this record", MessageBoxButtons.YesNo) == DialogResult.Yes)
-                {
-                    SQL.UpDateDoctorWorks(drWorkId.Text.Trim(), startDateEdit.Value, endDateEdit.Value);
-                    seachDrWork_Click(sender, e);
-                    MessageBox.Show("Update the record successful");
-
-                    //1.
-                    if(startDateEdit.Value < sdate)
-                    {//Insert more
-                        SQL.UpdateAddDoctorCalendarsList(drw_id, "Available", sdate, startDateEdit.Value.AddDays(-1));
-                    }
-                    else if(startDateEdit.Value > sdate)
-                    {//Cancle 
-                        SQL.UpDateDoctorCalendarsList(drw_id, "Canceled", startDateEdit.Value, endDateEdit.Value);
-                    }
-
-                    if(endDateEdit.Value > edate)
-                    {//Insert more
-                        SQL.UpdateAddDoctorCalendarsList(drw_id, "Available", edate.AddDays(1), endDateEdit.Value);
-                    }
-                    else if(endDateEdit.Value < edate)
-                    {//Cancle 
-                        SQL.UpDateDoctorCalendarsList(drw_id, "Canceled", endDateEdit.Value.AddDays(-1), edate);
-                    }
-                    
-                    SQL.UpDateAppointmentsWhenCalendarListWereCanceled("Canceled", "Waiting");
-
-                    MessageBox.Show("All related calender records were calceled!." +
-                       " It will effect to change status 'InQueue' of some appointment records become 'Waiting'" +
-                       "(Waiting for you change the appointment date");
-
-                }
-
+                MessageBox.Show("StartDate can not be greater than EndDate");
+                startDateEdit.Value = sdate;
             }
             else
             {
-                MessageBox.Show("This record is InActive, You can't do anything with this record");
-             
+                DataTable dt = SQL.GetDoctorWorks(drWorkId.Text.Trim());
+                String drw_id = dt.Rows[0]["drw_id"].ToString().Trim();
+                sdate = Convert.ToDateTime(dt.Rows[0]["drw_sdate"].ToString().Trim());
+                edate = Convert.ToDateTime(dt.Rows[0]["drw_edate"].ToString().Trim());
+
+                if (dt.Rows[0]["drw_status"].ToString().Trim() == "Active")
+                {
+                    //Delete Calendar list
+                    if (MessageBox.Show("Do you want to change this date range?", "Change this record", MessageBoxButtons.YesNo) == DialogResult.Yes)
+                    {
+                        SQL.UpDateDoctorWorks(drWorkId.Text.Trim(), startDateEdit.Value, endDateEdit.Value);
+                        seachDrWork_Click(sender, e);
+                        MessageBox.Show("Update the record successful");
+
+                        //1.
+                        if (startDateEdit.Value < sdate)
+                        {//Insert more
+                            SQL.UpdateAddDoctorCalendarsList(drw_id, "Available", sdate, startDateEdit.Value.AddDays(-1));
+                        }
+                        else if (startDateEdit.Value > sdate)
+                        {//Cancle 
+                            SQL.UpDateDoctorCalendarsList(drw_id, "Canceled", startDateEdit.Value, endDateEdit.Value);
+                        }
+
+                        if (endDateEdit.Value > edate)
+                        {//Insert more
+                            SQL.UpdateAddDoctorCalendarsList(drw_id, "Available", edate.AddDays(1), endDateEdit.Value);
+                        }
+                        else if (endDateEdit.Value < edate)
+                        {//Cancle 
+                            SQL.UpDateDoctorCalendarsList(drw_id, "Canceled", endDateEdit.Value.AddDays(-1), edate);
+                        }
+
+                        SQL.UpDateAppointmentsWhenCalendarListWereCanceled("Canceled", "Waiting");
+
+                        MessageBox.Show("All related calender records were calceled!." +
+                           " It will effect to change status 'InQueue' of some appointment records become 'Waiting'" +
+                           "(Waiting for you change the appointment date");
+
+                    }
+
+                }
+                else
+                {
+                    MessageBox.Show("This record is InActive, You can't do anything with this record");
+
+                }
             }
         }
 
         private void startDateEdit_ValueChanged(object sender, EventArgs e)
         {
-            if(sdate < DateTime.Today)
-            {
-                if (startDateEdit.Value > endDateEdit.Value)
-                {
-                    MessageBox.Show("StartDate can not be greater than EndDate");
-                    startDateEdit.Value = DateTime.Today;
-                }
-            }
-            else
-            {
-                if (startDateEdit.Value < DateTime.Today)
-                {
-                    MessageBox.Show("Can not assign The Date in past");
-                    startDateEdit.Value = DateTime.Today;
-                }
-                else if (startDateEdit.Value > endDateEdit.Value)
-                {
-                    MessageBox.Show("StartDate can not be greater than EndDate");
-                    startDateEdit.Value = sdate;
-                }
-            }
+            //if(sdate < DateTime.Today)
+            //{
+            //    if (startDateEdit.Value > endDateEdit.Value)
+            //    {
+            //        MessageBox.Show("StartDate can not be greater than EndDate");
+            //        startDateEdit.Value = DateTime.Today;
+            //    }
+            //}
+            //else
+            //{
+            //    if (startDateEdit.Value < DateTime.Today)
+            //    {
+            //        MessageBox.Show("Can not assign The Date in past");
+            //        startDateEdit.Value = DateTime.Today;
+            //    }
+            //    else if (startDateEdit.Value > endDateEdit.Value)
+            //    {
+            //        MessageBox.Show("StartDate can not be greater than EndDate");
+            //        startDateEdit.Value = sdate;
+            //    }
+            //}
 
         }
 
         private void endDateEdit_ValueChanged(object sender, EventArgs e)
         {
-            if (sdate < DateTime.Today)
-            {
-                if (endDateEdit.Value < startDateEdit.Value)
-                {
-                    MessageBox.Show("StartDate can not be greater than EndDate");
-                    endDateEdit.Value = startDateEdit.Value;
-                }
-            }
-            else
-            {
-                if (endDateEdit.Value < DateTime.Today)
-                {
-                    MessageBox.Show("Can not assign The Date in past");
-                    endDate.Value = DateTime.Today;
-                }
-                else if (endDateEdit.Value < startDateEdit.Value)
-                {
-                    MessageBox.Show("EndDate can not be lesser than EndDate");
-                    endDateEdit.Value = startDateEdit.Value;
-                }
-            }
+            //if (sdate < DateTime.Today)
+            //{
+            //    if (endDateEdit.Value < startDateEdit.Value)
+            //    {
+            //        MessageBox.Show("StartDate can not be greater than EndDate");
+            //        endDateEdit.Value = startDateEdit.Value;
+            //    }
+            //}
+            //else
+            //{
+            //    if (endDateEdit.Value < DateTime.Today)
+            //    {
+            //        MessageBox.Show("Can not assign The Date in past");
+            //        endDate.Value = DateTime.Today;
+            //    }
+            //    else if (endDateEdit.Value < startDateEdit.Value)
+            //    {
+            //        MessageBox.Show("EndDate can not be lesser than EndDate");
+            //        endDateEdit.Value = startDateEdit.Value;
+            //    }
+            //}
             
         }
     }

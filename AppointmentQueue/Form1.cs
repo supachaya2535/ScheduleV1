@@ -42,12 +42,22 @@ namespace AppointmentQueue
             if (req_checkBox.Checked == false) req_chk = ""; else req_chk = reqCob.SelectedItem.ToString().Trim();
             if (ped_checkBox.Checked == false) ped_chk = ""; else ped_chk = paidCob.SelectedItem.ToString().Trim();
 
+            if(betweenCheckBox.Checked == false)
+            {
+                dt = SQL.GetDoctorCalendars( available,
+                                req_chk,
+                                Convert.ToInt16(kidCheckBox.Checked).ToString().Trim(),
+                                ped_chk);
+            }
+            else
+            {
+                dt = SQL.GetDoctorCalendars(startDate.Value, endDate.Value, available,
+                                req_chk,
+                                Convert.ToInt16(kidCheckBox.Checked).ToString().Trim(), 
+                                ped_chk);
 
-            dt = SQL.GetDoctorCalendars(startDate.Value, endDate.Value, available,
-                req_chk,
-                Convert.ToInt16(kidCheckBox.Checked).ToString().Trim(), 
-                ped_chk);
-
+            }
+            
             appDataGridView.DataSource = dt;
             SQL.ChangeHeaderText(dt, appDataGridView);
 
@@ -161,6 +171,11 @@ namespace AppointmentQueue
         private void reqCob_SelectedIndexChanged(object sender, EventArgs e)
         {
             update_datagridview();
+        }
+
+        private void Form1_Load(object sender, EventArgs e)
+        {
+
         }
     }
 }

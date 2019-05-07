@@ -57,7 +57,7 @@
             // 
             this.label23.AutoSize = true;
             this.label23.Font = new System.Drawing.Font("Verdana", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label23.Location = new System.Drawing.Point(188, 12);
+            this.label23.Location = new System.Drawing.Point(189, 139);
             this.label23.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label23.Name = "label23";
             this.label23.Size = new System.Drawing.Size(236, 25);
@@ -68,12 +68,12 @@
             // 
             this.kidCheckBox.AutoSize = true;
             this.kidCheckBox.Font = new System.Drawing.Font("Verdana", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.kidCheckBox.Location = new System.Drawing.Point(193, 125);
+            this.kidCheckBox.Location = new System.Drawing.Point(194, 83);
             this.kidCheckBox.Margin = new System.Windows.Forms.Padding(4);
             this.kidCheckBox.Name = "kidCheckBox";
-            this.kidCheckBox.Size = new System.Drawing.Size(396, 24);
+            this.kidCheckBox.Size = new System.Drawing.Size(297, 24);
             this.kidCheckBox.TabIndex = 74;
-            this.kidCheckBox.Text = "Show only \"Request for Pediatric Patients\"";
+            this.kidCheckBox.Text = "Show only \" Pediatric Patients\"";
             this.kidCheckBox.UseVisualStyleBackColor = true;
             this.kidCheckBox.CheckedChanged += new System.EventHandler(this.kidCheckBox_CheckedChanged);
             // 
@@ -81,7 +81,7 @@
             // 
             this.reqCob.Font = new System.Drawing.Font("Verdana", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.reqCob.FormattingEnabled = true;
-            this.reqCob.Location = new System.Drawing.Point(906, 84);
+            this.reqCob.Location = new System.Drawing.Point(906, 46);
             this.reqCob.Margin = new System.Windows.Forms.Padding(4);
             this.reqCob.Name = "reqCob";
             this.reqCob.Size = new System.Drawing.Size(307, 26);
@@ -96,7 +96,7 @@
             "Morning",
             "Afternoon",
             "Evening"});
-            this.paidCob.Location = new System.Drawing.Point(400, 90);
+            this.paidCob.Location = new System.Drawing.Point(401, 48);
             this.paidCob.Margin = new System.Windows.Forms.Padding(4);
             this.paidCob.Name = "paidCob";
             this.paidCob.Size = new System.Drawing.Size(197, 26);
@@ -109,7 +109,7 @@
             this.appDataGridView.Location = new System.Drawing.Point(193, 168);
             this.appDataGridView.Margin = new System.Windows.Forms.Padding(4);
             this.appDataGridView.Name = "appDataGridView";
-            this.appDataGridView.Size = new System.Drawing.Size(1058, 575);
+            this.appDataGridView.Size = new System.Drawing.Size(736, 575);
             this.appDataGridView.TabIndex = 34;
             this.appDataGridView.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.appDataGridView_CellContentClick);
             this.appDataGridView.RowHeaderMouseDoubleClick += new System.Windows.Forms.DataGridViewCellMouseEventHandler(this.appDataGridView_RowHeaderMouseDoubleClick);
@@ -119,7 +119,7 @@
             this.startDate.CalendarFont = new System.Drawing.Font("Verdana", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.startDate.Font = new System.Drawing.Font("Verdana", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.startDate.Format = System.Windows.Forms.DateTimePickerFormat.Short;
-            this.startDate.Location = new System.Drawing.Point(783, 122);
+            this.startDate.Location = new System.Drawing.Point(783, 84);
             this.startDate.Margin = new System.Windows.Forms.Padding(4);
             this.startDate.MaxDate = new System.DateTime(2019, 12, 31, 0, 0, 0, 0);
             this.startDate.MinDate = new System.DateTime(1909, 11, 24, 0, 0, 0, 0);
@@ -133,7 +133,7 @@
             // 
             this.betweenCheckBox.AutoSize = true;
             this.betweenCheckBox.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.betweenCheckBox.Location = new System.Drawing.Point(665, 124);
+            this.betweenCheckBox.Location = new System.Drawing.Point(665, 86);
             this.betweenCheckBox.Margin = new System.Windows.Forms.Padding(4);
             this.betweenCheckBox.Name = "betweenCheckBox";
             this.betweenCheckBox.Size = new System.Drawing.Size(96, 24);
@@ -146,7 +146,7 @@
             // 
             this.label4.AutoSize = true;
             this.label4.Font = new System.Drawing.Font("Verdana", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label4.Location = new System.Drawing.Point(977, 124);
+            this.label4.Location = new System.Drawing.Point(977, 86);
             this.label4.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(41, 20);
@@ -206,7 +206,7 @@
             this.endDate.CalendarFont = new System.Drawing.Font("Verdana", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.endDate.Font = new System.Drawing.Font("Verdana", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.endDate.Format = System.Windows.Forms.DateTimePickerFormat.Short;
-            this.endDate.Location = new System.Drawing.Point(1028, 121);
+            this.endDate.Location = new System.Drawing.Point(1028, 83);
             this.endDate.Margin = new System.Windows.Forms.Padding(4);
             this.endDate.MaxDate = new System.DateTime(2029, 12, 31, 0, 0, 0, 0);
             this.endDate.MinDate = new System.DateTime(2018, 6, 1, 0, 0, 0, 0);
@@ -258,12 +258,12 @@
             this.waitCheckBox.Checked = true;
             this.waitCheckBox.CheckState = System.Windows.Forms.CheckState.Checked;
             this.waitCheckBox.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.waitCheckBox.Location = new System.Drawing.Point(192, 54);
+            this.waitCheckBox.Location = new System.Drawing.Point(193, 12);
             this.waitCheckBox.Margin = new System.Windows.Forms.Padding(4);
             this.waitCheckBox.Name = "waitCheckBox";
             this.waitCheckBox.Size = new System.Drawing.Size(305, 24);
             this.waitCheckBox.TabIndex = 63;
-            this.waitCheckBox.Text = "Show only \"Availabel\" doctor working";
+            this.waitCheckBox.Text = "Show only \"Available\" doctor working";
             this.waitCheckBox.UseVisualStyleBackColor = true;
             this.waitCheckBox.CheckedChanged += new System.EventHandler(this.waitCheckBox_CheckedChanged);
             // 
@@ -273,7 +273,7 @@
             this.req_checkBox.Checked = true;
             this.req_checkBox.CheckState = System.Windows.Forms.CheckState.Checked;
             this.req_checkBox.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.req_checkBox.Location = new System.Drawing.Point(665, 86);
+            this.req_checkBox.Location = new System.Drawing.Point(665, 48);
             this.req_checkBox.Margin = new System.Windows.Forms.Padding(4);
             this.req_checkBox.Name = "req_checkBox";
             this.req_checkBox.Size = new System.Drawing.Size(186, 24);
@@ -288,7 +288,7 @@
             this.ped_checkBox.Checked = true;
             this.ped_checkBox.CheckState = System.Windows.Forms.CheckState.Checked;
             this.ped_checkBox.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.ped_checkBox.Location = new System.Drawing.Point(192, 92);
+            this.ped_checkBox.Location = new System.Drawing.Point(193, 50);
             this.ped_checkBox.Margin = new System.Windows.Forms.Padding(4);
             this.ped_checkBox.Name = "ped_checkBox";
             this.ped_checkBox.Size = new System.Drawing.Size(172, 24);
@@ -300,7 +300,7 @@
             // 
             this.reqDataGridView.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.AllCells;
             this.reqDataGridView.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.reqDataGridView.Location = new System.Drawing.Point(1259, 168);
+            this.reqDataGridView.Location = new System.Drawing.Point(948, 168);
             this.reqDataGridView.Margin = new System.Windows.Forms.Padding(4);
             this.reqDataGridView.Name = "reqDataGridView";
             this.reqDataGridView.Size = new System.Drawing.Size(409, 575);
@@ -310,7 +310,7 @@
             // 
             this.label1.AutoSize = true;
             this.label1.Font = new System.Drawing.Font("Verdana", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.Location = new System.Drawing.Point(1286, 139);
+            this.label1.Location = new System.Drawing.Point(956, 139);
             this.label1.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(317, 25);
@@ -322,7 +322,7 @@
             this.AutoScaleDimensions = new System.Drawing.SizeF(120F, 120F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Dpi;
             this.AutoSize = true;
-            this.ClientSize = new System.Drawing.Size(1727, 756);
+            this.ClientSize = new System.Drawing.Size(1381, 756);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.reqDataGridView);
             this.Controls.Add(this.ped_checkBox);
@@ -350,6 +350,7 @@
             this.Name = "Form1";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Information Scheduling Form";
+            this.Load += new System.EventHandler(this.Form1_Load);
             ((System.ComponentModel.ISupportInitialize)(this.appDataGridView)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.reqDataGridView)).EndInit();
             this.ResumeLayout(false);
