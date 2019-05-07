@@ -557,7 +557,7 @@ namespace AppointmentQueue {
         ///</summary>
         [global::System.Serializable()]
         [global::System.Xml.Serialization.XmlSchemaProviderAttribute("GetTypedTableSchema")]
-        public partial class AppointmentsDataTable : global::System.Data.TypedTableBase<AppointmentsRow> {
+        public partial class AppointmentsDataTable : global::System.Data.DataTable, global::System.Collections.IEnumerable {
             
             private global::System.Data.DataColumn columnap_Id;
             
@@ -708,6 +708,12 @@ namespace AppointmentQueue {
             public AppointmentsRow FindByap_Id(int ap_Id) {
                 return ((AppointmentsRow)(this.Rows.Find(new object[] {
                             ap_Id})));
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+            public virtual global::System.Collections.IEnumerator GetEnumerator() {
+                return this.Rows.GetEnumerator();
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -892,7 +898,7 @@ namespace AppointmentQueue {
         ///</summary>
         [global::System.Serializable()]
         [global::System.Xml.Serialization.XmlSchemaProviderAttribute("GetTypedTableSchema")]
-        public partial class DayOffsDataTable : global::System.Data.TypedTableBase<DayOffsRow> {
+        public partial class DayOffsDataTable : global::System.Data.DataTable, global::System.Collections.IEnumerable {
             
             private global::System.Data.DataColumn columndf_id;
             
@@ -1032,6 +1038,12 @@ namespace AppointmentQueue {
             public DayOffsRow FindBydf_id(string df_id) {
                 return ((DayOffsRow)(this.Rows.Find(new object[] {
                             df_id})));
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+            public virtual global::System.Collections.IEnumerator GetEnumerator() {
+                return this.Rows.GetEnumerator();
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -1210,7 +1222,7 @@ namespace AppointmentQueue {
         ///</summary>
         [global::System.Serializable()]
         [global::System.Xml.Serialization.XmlSchemaProviderAttribute("GetTypedTableSchema")]
-        public partial class DoctorCalendarsDataTable : global::System.Data.TypedTableBase<DoctorCalendarsRow> {
+        public partial class DoctorCalendarsDataTable : global::System.Data.DataTable, global::System.Collections.IEnumerable {
             
             private global::System.Data.DataColumn columndrc_id;
             
@@ -1350,6 +1362,12 @@ namespace AppointmentQueue {
             public DoctorCalendarsRow FindBydrc_id(int drc_id) {
                 return ((DoctorCalendarsRow)(this.Rows.Find(new object[] {
                             drc_id})));
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+            public virtual global::System.Collections.IEnumerator GetEnumerator() {
+                return this.Rows.GetEnumerator();
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -1526,7 +1544,7 @@ namespace AppointmentQueue {
         ///</summary>
         [global::System.Serializable()]
         [global::System.Xml.Serialization.XmlSchemaProviderAttribute("GetTypedTableSchema")]
-        public partial class DoctorRequestsDataTable : global::System.Data.TypedTableBase<DoctorRequestsRow> {
+        public partial class DoctorRequestsDataTable : global::System.Data.DataTable, global::System.Collections.IEnumerable {
             
             private global::System.Data.DataColumn columndrreq_Id;
             
@@ -1644,6 +1662,12 @@ namespace AppointmentQueue {
             public DoctorRequestsRow FindBydrreq_Id(string drreq_Id) {
                 return ((DoctorRequestsRow)(this.Rows.Find(new object[] {
                             drreq_Id})));
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+            public virtual global::System.Collections.IEnumerator GetEnumerator() {
+                return this.Rows.GetEnumerator();
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -1816,7 +1840,7 @@ namespace AppointmentQueue {
         ///</summary>
         [global::System.Serializable()]
         [global::System.Xml.Serialization.XmlSchemaProviderAttribute("GetTypedTableSchema")]
-        public partial class PatientsDataTable : global::System.Data.TypedTableBase<PatientsRow> {
+        public partial class PatientsDataTable : global::System.Data.DataTable, global::System.Collections.IEnumerable {
             
             private global::System.Data.DataColumn columnpa_Id;
             
@@ -1945,6 +1969,12 @@ namespace AppointmentQueue {
             public PatientsRow FindBypa_Id(string pa_Id) {
                 return ((PatientsRow)(this.Rows.Find(new object[] {
                             pa_Id})));
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+            public virtual global::System.Collections.IEnumerator GetEnumerator() {
+                return this.Rows.GetEnumerator();
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -2119,7 +2149,7 @@ namespace AppointmentQueue {
         ///</summary>
         [global::System.Serializable()]
         [global::System.Xml.Serialization.XmlSchemaProviderAttribute("GetTypedTableSchema")]
-        public partial class RequestsDataTable : global::System.Data.TypedTableBase<RequestsRow> {
+        public partial class RequestsDataTable : global::System.Data.DataTable, global::System.Collections.IEnumerable {
             
             private global::System.Data.DataColumn columnreq_Id;
             
@@ -2237,6 +2267,12 @@ namespace AppointmentQueue {
             public RequestsRow FindByreq_Id(int req_Id) {
                 return ((RequestsRow)(this.Rows.Find(new object[] {
                             req_Id})));
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+            public virtual global::System.Collections.IEnumerator GetEnumerator() {
+                return this.Rows.GetEnumerator();
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -2406,7 +2442,7 @@ namespace AppointmentQueue {
         ///</summary>
         [global::System.Serializable()]
         [global::System.Xml.Serialization.XmlSchemaProviderAttribute("GetTypedTableSchema")]
-        public partial class ScannersDataTable : global::System.Data.TypedTableBase<ScannersRow> {
+        public partial class ScannersDataTable : global::System.Data.DataTable, global::System.Collections.IEnumerable {
             
             private global::System.Data.DataColumn columnscan_Id;
             
@@ -2513,6 +2549,12 @@ namespace AppointmentQueue {
             public ScannersRow FindByscan_Id(int scan_Id) {
                 return ((ScannersRow)(this.Rows.Find(new object[] {
                             scan_Id})));
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+            public virtual global::System.Collections.IEnumerator GetEnumerator() {
+                return this.Rows.GetEnumerator();
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -2683,7 +2725,7 @@ namespace AppointmentQueue {
         ///</summary>
         [global::System.Serializable()]
         [global::System.Xml.Serialization.XmlSchemaProviderAttribute("GetTypedTableSchema")]
-        public partial class DoctorsDataTable : global::System.Data.TypedTableBase<DoctorsRow> {
+        public partial class DoctorsDataTable : global::System.Data.DataTable, global::System.Collections.IEnumerable {
             
             private global::System.Data.DataColumn columndr_Id;
             
@@ -2801,6 +2843,12 @@ namespace AppointmentQueue {
             public DoctorsRow FindBydr_Id(int dr_Id) {
                 return ((DoctorsRow)(this.Rows.Find(new object[] {
                             dr_Id})));
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+            public virtual global::System.Collections.IEnumerator GetEnumerator() {
+                return this.Rows.GetEnumerator();
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -2977,7 +3025,7 @@ namespace AppointmentQueue {
         ///</summary>
         [global::System.Serializable()]
         [global::System.Xml.Serialization.XmlSchemaProviderAttribute("GetTypedTableSchema")]
-        public partial class DoctorWorksDataTable : global::System.Data.TypedTableBase<DoctorWorksRow> {
+        public partial class DoctorWorksDataTable : global::System.Data.DataTable, global::System.Collections.IEnumerable {
             
             private global::System.Data.DataColumn columndrw_id;
             
@@ -3205,6 +3253,12 @@ namespace AppointmentQueue {
             public DoctorWorksRow FindBydrw_id(int drw_id) {
                 return ((DoctorWorksRow)(this.Rows.Find(new object[] {
                             drw_id})));
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+            public virtual global::System.Collections.IEnumerator GetEnumerator() {
+                return this.Rows.GetEnumerator();
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]

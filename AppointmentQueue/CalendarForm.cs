@@ -3,9 +3,8 @@ using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
 using System.Drawing;
-using System.Linq;
+ 
 using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
 using System.Globalization;
 
@@ -91,7 +90,7 @@ namespace AppointmentQueue
                 for (int j = 0; j < calendar_day_all_btn.GetLength(1); j++)
                 {
                     string name_bt = "day_" + i + "_" + j + "_btn";
-                    Button bt = this.Controls.Find(name_bt, true).FirstOrDefault() as Button;
+                    Button bt = this.Controls.Find(name_bt, true)[0] as Button;
                     calendar_day_all_btn[i, j] = bt;
                 }
             }
